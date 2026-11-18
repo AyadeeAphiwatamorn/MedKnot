@@ -2,7 +2,9 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
+import { createClient } from "@supabase/supabase-js";
 import { supabase } from "./config/supabase";
+
 
 dotenv.config();
 
@@ -61,9 +63,52 @@ app.get("/api/health/supabase", async (req, res) => {
 });
 
 // Database connection test
+
+// Database connection test
 app.get("/api/health/database", async (req, res) => {
   try {
-    const { data, error } = await supabase
+    // Get the user's access token
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      res.status(401).json({
+        success: false,
+        message: "Authorization token is required",
+      });
+      return;
+    }
+
+    const accessToken = authHeader.substring(7);
+
+    // Create Supabase client with user's access token
+    const userSupabase = createClient(
+      process.env.SUPABASE_URL!,
+      process.env.SUPABASE_PUBLISHABLE_KEY!,
+      {
+        global: {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        },
+      }
+    );
+
+    // Verify the authenticated user
+    const {
+      data: { user },
+      error: authError,
+    } = await userSupabase.auth.getUser(accessToken);
+
+    if (authError || !user) {
+      res.status(401).json({
+        success: false,
+        message: "Invalid or expired access token",
+      });
+      return;
+    }
+
+    // Query the roles table
+    const { data, error } = await userSupabase
       .from("roles")
       .select("id, name")
       .limit(5);
@@ -75,6 +120,7 @@ app.get("/api/health/database", async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Database query completed successfully!",
+      userId: user.id,
       roles: data,
     });
   } catch (error) {
