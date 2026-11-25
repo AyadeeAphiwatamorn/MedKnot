@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { type UserSession, DEFAULT_ADMIN, clearClientSession, getClientSession } from "@/lib/auth";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
 
 interface ProfileViewProps {
   initialUser?: UserSession;
@@ -361,20 +359,9 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
   };
 
   return (
-    <div className="registration-theme font-body-md text-body-md text-[#1F2B46] min-h-screen antialiased bg-[#E4EBE0]">
-      {/* ── SHARED REUSABLE SIDEBAR ────────────────────────────────────── */}
-      <DashboardSidebar
-        user={user}
-        activeNav="my-profile"
-        onSignOut={handleSignOut}
-      />
-
-      {/* ── TOP HEADER & MAIN VIEWPORT ───────────────────────────────── */}
-      <div className="pl-72">
-        <DashboardHeader user={user} />
-
-        <main className="relative pt-16 bg-[#E4EBE0] min-h-screen w-full px-8 pb-16">
-          <div className="flex flex-col w-full max-w-[1600px] mx-auto">
+    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] antialiased bg-transparent w-full min-w-0 flex-1">
+      <main className="relative bg-transparent w-full min-w-0 px-4 md:px-8 pt-2 pb-16">
+        <div className="flex flex-col w-full min-w-0">
             {/* Toast Notification */}
             {toastMessage && (
               <div className="fixed top-20 right-8 z-50 bg-[#1F2B46] text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-in fade-in slide-in-from-top-4">
@@ -1257,8 +1244,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               </div>
             </div>
           </div>
-        </main>
-      </div>
+      </main>
 
       {/* ── MODAL 1: CHANGE PASSWORD ──────────────────────────────────────── */}
       {showPasswordModal && (

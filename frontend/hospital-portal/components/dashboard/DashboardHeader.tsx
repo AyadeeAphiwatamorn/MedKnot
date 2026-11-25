@@ -1,52 +1,129 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { type UserSession, DEFAULT_ADMIN } from "@/lib/auth";
+import { NotificationPanel } from "@/components/dashboard/notifications/NotificationPanel";
+import { NotificationService } from "@/lib/notifications/notification-service";
+import { NotificationItem } from "@/lib/notifications/types";
+import { FacilitySelector } from "@/components/dashboard/facility/FacilitySelector";
+import { useSidebar } from "@/components/dashboard/SidebarContext";
+import { Menu } from "lucide-react";
 
 interface DashboardHeaderProps {
   user?: UserSession;
 }
 
 export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeaderProps) {
+  const { toggleMobile } = useSidebar();
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  const bellContainerRef = useRef<HTMLDivElement>(null);
+
+  const refreshNotifications = useCallback(() => {
+    const list = NotificationService.getNotifications();
+    setNotifications(list);
+    setUnreadCount(list.filter((n) => !n.read).length);
+  }, []);
+
+  // Initialize and subscribe to notification changes
+  useEffect(() => {
+    refreshNotifications();
+
+    const handleNotificationsChanged = () => {
+      refreshNotifications();
+    };
+
+    window.addEventListener("medknot:notifications-changed", handleNotificationsChanged);
+    window.addEventListener("storage", handleNotificationsChanged);
+
+    return () => {
+      window.removeEventListener("medknot:notifications-changed", handleNotificationsChanged);
+      window.removeEventListener("storage", handleNotificationsChanged);
+    };
+  }, [refreshNotifications]);
+
+  // Click outside listener and Escape key dismissal
+  useEffect(() => {
+    if (!isNotificationOpen) return;
+
+    const handlePointerDown = (e: MouseEvent) => {
+      if (bellContainerRef.current && !bellContainerRef.current.contains(e.target as Node)) {
+        setIsNotificationOpen(false);
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsNotificationOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isNotificationOpen]);
+
   return (
-    <header className="fixed top-0 left-72 right-0 h-16 bg-[#F3F6F0]/90 backdrop-blur-xl border-b border-[#DDE6DA] shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8">
-      {/* Left: Facility Switcher Pill */}
-      <div className="flex items-center min-w-0">
-        <div className="flex items-center gap-space-sm bg-white border border-[#DDE6DA] px-space-md py-space-xs rounded-xl shadow-sm text-[#1F2B46] cursor-pointer hover:bg-[#F3F6F0] transition-colors">
-          <span className="material-symbols-outlined text-[#0055A4] text-xl shrink-0">
-            local_hospital
-          </span>
-          <div className="flex flex-col text-left min-w-0">
-            <span className="font-supporting text-supporting text-[#5A6372] uppercase tracking-wider font-semibold truncate">
-              Facility
-            </span>
-            <span className="font-card-heading text-card-heading text-[#1F2B46] truncate">
-              {user.facility}
-            </span>
-          </div>
-          <span className="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-supporting text-supporting font-semibold uppercase tracking-wider hidden md:inline-block shrink-0">
-            Campus North
-          </span>
-          <span className="material-symbols-outlined text-[#5A6372] text-lg ml-space-xs shrink-0">
-            expand_more
-          </span>
-        </div>
+    <header className="sticky top-0 z-30 h-16 w-full bg-[#F3F6F0]/90 backdrop-blur-xl border-b border-[#DDE6DA] shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-4 md:px-8 gap-2">
+      {/* Left: Mobile Drawer Trigger + Functional Facility & Campus Selector */}
+      <div className="flex items-center gap-2 min-w-0">
+        <button
+          type="button"
+          onClick={toggleMobile}
+          aria-label="Open navigation menu"
+          title="Open navigation menu"
+          className="md:hidden p-2 rounded-xl text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46] transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+        <FacilitySelector />
       </div>
 
       {/* Right: Notifications & User Profile */}
       <div className="flex items-center gap-space-lg shrink-0">
-        <button
-          className="relative p-space-sm text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46] rounded-full transition-colors flex items-center justify-center cursor-pointer"
-          type="button"
-          aria-label="Notifications"
-        >
-          <span className="material-symbols-outlined text-xl">
-            notifications
-          </span>
-          <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full ring-2 ring-white"></span>
-        </button>
+        {/* Functional Notification Center Dropdown */}
+        <div className="relative" ref={bellContainerRef}>
+          <button
+            onClick={() => setIsNotificationOpen((prev) => !prev)}
+            className={`relative p-2.5 rounded-xl transition-all flex items-center justify-center cursor-pointer ${
+              isNotificationOpen
+                ? "bg-[#0055A4] text-white shadow-xs"
+                : "text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46]"
+            }`}
+            type="button"
+            aria-label="Notifications"
+            aria-expanded={isNotificationOpen}
+            aria-haspopup="true"
+          >
+            <span className="material-symbols-outlined text-xl">
+              notifications
+            </span>
+
+            {/* Unread Badge Count */}
+            {unreadCount > 0 && (
+              <span className="absolute -top-1 -right-1 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-[#BA1A1A] text-[10px] font-bold text-white shadow-xs ring-2 ring-white">
+                {unreadCount > 9 ? "9+" : unreadCount}
+              </span>
+            )}
+          </button>
+
+          {/* Notification Dropdown Panel */}
+          {isNotificationOpen && (
+            <NotificationPanel
+              notifications={notifications}
+              onClose={() => setIsNotificationOpen(false)}
+              onRefresh={refreshNotifications}
+            />
+          )}
+        </div>
 
         <div className="flex items-center gap-space-md pl-space-md">
           <Link

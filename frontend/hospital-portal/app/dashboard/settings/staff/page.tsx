@@ -35,7 +35,7 @@ async function StaffManagementGuard() {
 
 export default function StaffManagementPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#EDF2E9]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
       <StaffManagementGuard />
     </Suspense>
   );

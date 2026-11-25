@@ -8,8 +8,6 @@ import {
   DEFAULT_ADMIN,
   clearClientSession,
 } from "@/lib/auth";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -80,18 +78,9 @@ export default function SettingsHubView({ initialUser }: SettingsHubViewProps) {
   ];
 
   return (
-    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] min-h-screen antialiased bg-[#EDF2E9]">
-      <DashboardSidebar
-        user={user}
-        activeNav="settings"
-        onSignOut={handleSignOut}
-      />
-
-      <div className="pl-72">
-        <DashboardHeader user={user} />
-
-        <main className="relative pt-16 bg-[#EDF2E9] min-h-screen w-full px-8 pb-16">
-          <div className="flex flex-col w-full max-w-[1500px] mx-auto">
+    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] antialiased bg-transparent w-full min-w-0 flex-1">
+      <main className="relative bg-transparent w-full min-w-0 px-4 md:px-8 pt-2 pb-16">
+        <div className="flex flex-col w-full min-w-0">
             {/* Breadcrumb & Sub-header */}
             <div className="w-full py-space-lg flex flex-col gap-space-sm">
               <nav
@@ -207,8 +196,7 @@ export default function SettingsHubView({ initialUser }: SettingsHubViewProps) {
               </CardContent>
             </Card>
           </div>
-        </main>
-      </div>
+      </main>
     </div>
   );
 }

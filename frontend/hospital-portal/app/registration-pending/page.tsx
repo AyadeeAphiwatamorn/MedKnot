@@ -51,7 +51,7 @@ function RegistrationPendingContent() {
   };
 
   return (
-    <div className="registration-theme min-h-screen bg-[#E4EBE0] text-[#1F2B46] font-body-md antialiased flex flex-col justify-between">
+    <div className="registration-theme min-h-screen bg-transparent text-[#1F2B46] font-body-md antialiased flex flex-col justify-between">
       {/* Top Header */}
       <header className="w-full bg-[#EDF2E9] border-b border-[#D5DFD2] py-4 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
@@ -359,7 +359,7 @@ function RegistrationPendingContent() {
 
 export default function RegistrationPendingPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#E4EBE0]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
       <RegistrationPendingContent />
     </Suspense>
   );

@@ -5,6 +5,50 @@ import AuthLayout from '@/components/auth/AuthLayout';
 import OtpVerificationForm from '@/components/auth/OtpVerificationForm';
 import type { OtpState } from '@/components/auth/OtpInput';
 
+/* ── Verification page feature highlights ───────────────────────────── */
+function IconShield() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  );
+}
+
+function IconLock() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
+  );
+}
+
+function IconCheck() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
+}
+
+const VERIFY_FEATURES = [
+  {
+    icon: <IconShield />,
+    title: 'HIPAA-Compliant Security',
+    description: 'All verification is encrypted end-to-end',
+  },
+  {
+    icon: <IconLock />,
+    title: 'Multi-Factor Protection',
+    description: 'Secure access with one-time verification codes',
+  },
+  {
+    icon: <IconCheck />,
+    title: 'Instant Access',
+    description: 'Complete verification and start in seconds',
+  },
+];
+
 export default function VerifyPage() {
   const [demoState, setDemoState] = useState<OtpState>('default');
 
@@ -52,10 +96,11 @@ export default function VerifyPage() {
 
   return (
     <AuthLayout
-      variant="green"
-      headline="One secure step to get started."
+      variant="blue"
+      headline={"One secure step\nto get started."}
       subCopy="Verify your contact information to help protect access to your professional healthcare workspace."
       footerTagline="For authorized healthcare professionals only."
+      features={VERIFY_FEATURES}
       headerElement={demoSwitcher}
       footerElement={legalFooter}
     >

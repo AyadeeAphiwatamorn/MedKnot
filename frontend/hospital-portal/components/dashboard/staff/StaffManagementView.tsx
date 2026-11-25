@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { type UserSession, DEFAULT_ADMIN, clearClientSession } from "@/lib/auth";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import { useFacility } from "@/components/dashboard/facility/FacilityContext";
 
 interface StaffManagementViewProps {
   initialUser?: UserSession;
@@ -33,11 +32,13 @@ export interface StaffRecord {
   shift?: string;
   specialty?: string;
   licenseNumber?: string;
+  campusIds?: string[];
 }
 
 export default function StaffManagementView({ initialUser }: StaffManagementViewProps) {
   const router = useRouter();
   const user: UserSession = initialUser || DEFAULT_ADMIN;
+  const { activeCampus } = useFacility();
 
   const handleSignOut = () => {
     clearClientSession();
@@ -62,6 +63,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
       shift: "Morning (08:00 - 16:00)",
       specialty: "Internal Medicine & Critical Care",
       licenseNumber: "MD-LIC-2015-891",
+      campusIds: ["FAC-STJUDE-NORTH", "FAC-MERCY-MAIN"],
     },
     {
       id: "2",
@@ -79,6 +81,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
       shift: "General (09:00 - 17:00)",
       specialty: "Interventional Cardiology",
       licenseNumber: "MD-LIC-2017-440",
+      campusIds: ["FAC-STJUDE-NORTH", "FAC-STJUDE-SOUTH"],
     },
     {
       id: "3",
@@ -519,6 +522,11 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
   // ── 6. Filtering & Searching Logic ───────────────────────────────────────
   const filteredStaff = useMemo(() => {
     return staffList.filter((staff) => {
+      // Campus isolation filter
+      if (!(staff.campusIds || ["FAC-STJUDE-NORTH"]).includes(activeCampus.id)) {
+        return false;
+      }
+
       // Search query filter (matches name, email, or staffId)
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase().trim();
@@ -547,7 +555,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
 
       return true;
     });
-  }, [staffList, searchQuery, roleFilter, departmentFilter, statusFilter]);
+  }, [staffList, searchQuery, roleFilter, departmentFilter, statusFilter, activeCampus.id]);
 
   // Reset page whenever search or filter criteria change
   const handleFilterChange = (setter: (val: string) => void, val: string) => {
@@ -760,20 +768,9 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
   };
 
   return (
-    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] min-h-screen antialiased bg-[#EDF2E9]">
-      {/* ── SHARED REUSABLE SIDEBAR ────────────────────────────────────── */}
-      <DashboardSidebar
-        user={user}
-        activeNav="staff-management"
-        onSignOut={handleSignOut}
-      />
-
-      {/* ── TOP HEADER & MAIN VIEWPORT ───────────────────────────────── */}
-      <div className="pl-72">
-        <DashboardHeader user={user} />
-
-        <main className="relative pt-16 bg-[#EDF2E9] min-h-screen w-full px-8 pb-16">
-          <div className="flex flex-col w-full max-w-[1600px] mx-auto">
+    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] antialiased bg-transparent w-full min-w-0 flex-1">
+      <main className="relative bg-transparent w-full min-w-0 px-4 md:px-8 pt-2 pb-16">
+        <div className="flex flex-col w-full min-w-0">
             {/* Toast Notification Alert */}
             {toastMessage && (
               <div className="fixed top-20 right-8 z-50 p-4 rounded-xl bg-white border border-[#D5E3FF] shadow-xl flex items-start gap-3 max-w-md animate-in fade-in slide-in-from-top-4">
@@ -1469,8 +1466,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
             </div>
           </div>
-        </main>
-      </div>
+      </main>
 
       {/* ── MODAL A: INVITE STAFF MODAL ────────────────────────────────────── */}
       {showInviteModal && (

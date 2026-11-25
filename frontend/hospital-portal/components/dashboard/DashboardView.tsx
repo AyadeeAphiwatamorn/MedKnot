@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   clearClientSession,
@@ -10,8 +11,22 @@ import {
   type UserSession,
 } from "@/lib/auth";
 
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import { useFacility } from "@/components/dashboard/facility/FacilityContext";
+import { PatientService } from "@/lib/patients/patient-service";
+import { AppointmentService } from "@/lib/appointments/appointment-service";
+import { QueueService } from "@/lib/queue/queue-service";
+import { INITIAL_STAFF_MEMBERS } from "@/lib/operations-data";
+import {
+  DateRangeOption,
+  ShiftOption,
+  MOCK_DATASET_TODAY,
+  SHIFT_WINDOWS,
+  matchesDateFilter,
+  matchesShiftFilter,
+  matchesStaffShift,
+  formatDashboardFilterLabel,
+  formatShortCustomDate,
+} from "@/lib/dashboard/shift-filter";
 
 interface DashboardViewProps {
   initialUser?: UserSession;
@@ -21,6 +36,95 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
   const router = useRouter();
   const user: UserSession = initialUser || DEFAULT_ADMIN;
   const [activeAptFilter, setActiveAptFilter] = useState<string>("all");
+  const [formattedCurrentDate, setFormattedCurrentDate] = useState<string>("");
+  const [clientNow, setClientNow] = useState<Date | null>(null);
+  const { activeFacility, activeCampus } = useFacility();
+
+  // Date & Shift Filter state
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [appliedDateRange, setAppliedDateRange] = useState<DateRangeOption>("today");
+  const [appliedCustomDate, setAppliedCustomDate] = useState<string>(MOCK_DATASET_TODAY);
+  const [appliedShift, setAppliedShift] = useState<ShiftOption>("all");
+  const [draftDateRange, setDraftDateRange] = useState<DateRangeOption>("today");
+  const [draftCustomDate, setDraftCustomDate] = useState<string>(MOCK_DATASET_TODAY);
+  const [draftShift, setDraftShift] = useState<ShiftOption>("all");
+  const filterContainerRef = useRef<HTMLDivElement>(null);
+
+  // Close Date & Shift dropdown on outside click or Escape key
+  useEffect(() => {
+    if (!isFilterOpen) return;
+
+    const handlePointerDown = (e: MouseEvent) => {
+      if (filterContainerRef.current && !filterContainerRef.current.contains(e.target as Node)) {
+        setIsFilterOpen(false);
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsFilterOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isFilterOpen]);
+
+  const handleToggleFilter = () => {
+    if (!isFilterOpen) {
+      setDraftDateRange(appliedDateRange);
+      setDraftCustomDate(appliedCustomDate);
+      setDraftShift(appliedShift);
+    }
+    setIsFilterOpen((prev) => !prev);
+  };
+
+  const handleApplyFilters = () => {
+    setAppliedDateRange(draftDateRange);
+    setAppliedCustomDate(draftCustomDate);
+    setAppliedShift(draftShift);
+    setIsFilterOpen(false);
+  };
+
+  const handleResetFilters = () => {
+    setDraftDateRange("today");
+    setDraftCustomDate(MOCK_DATASET_TODAY);
+    setDraftShift("all");
+    setAppliedDateRange("today");
+    setAppliedCustomDate(MOCK_DATASET_TODAY);
+    setAppliedShift("all");
+    setIsFilterOpen(false);
+  };
+
+  const filterButtonLabel = formatDashboardFilterLabel(
+    appliedDateRange,
+    appliedCustomDate,
+    appliedShift
+  );
+  const isDefaultFilter = appliedDateRange === "today" && appliedShift === "all";
+
+  // Client-safe local date formatter (avoids SSR hydration mismatch & updates on day change)
+  useEffect(() => {
+    const updateCurrentDate = () => {
+      const now = new Date();
+      setClientNow(now);
+      setFormattedCurrentDate(
+        now.toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })
+      );
+    };
+    updateCurrentDate();
+    const interval = setInterval(updateCurrentDate, 60_000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Verify client session on mount
   useEffect(() => {
@@ -34,97 +138,159 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
     router.push("/login");
   };
 
-  // Appointment mock data
-  const appointments = [
-    {
-      id: "PT-89402",
-      patientName: "Eleanor Vance",
-      details: "42 yrs • Female",
-      doctor: "Dr. Chen Wei",
-      specialty: "Internal Med • General",
-      time: "09:30 AM",
-      status: "in-consultation",
-      statusLabel: "In Consultation",
-      badgeClass: "bg-secondary-fixed text-on-secondary-fixed",
-      avatar:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDexZAwJ9ISyg1U1Fa3SRg-2FnduokuuBehRdSjhopQ3aAani7kJrSR_UL5wLSciXu2VaUcyoJ8LetU0XxXjUcHvMF3PXBwObHyN4xhanSv-Vk9vH37jzS_JsDOvr0ZbUt6eI5pw2ad074a6jSBTKjyIbIGvAVMjzLu9b6YRAHVB5Nk5qQa8uSOakq8mhG0uDTEGPNJtcXZJavgCKfdeFTcDLAe1fMZeMp2TRc5",
-    },
-    {
-      id: "PT-89415",
-      patientName: "Marcus Chen",
-      details: "29 yrs • Male",
-      doctor: "Dr. Sarah Thomas",
-      specialty: "Cardiology Clinic",
-      time: "10:00 AM",
-      status: "waiting",
-      statusLabel: "Waiting",
-      badgeClass: "bg-secondary-fixed-dim text-on-secondary-fixed-variant",
-      avatar:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCQrG4VJwvWypVNmfSIyHAfAD-DUPv-loqTUja8enZ65SUx4UwQpnwY1pxvwk6DBSAM5bO8szrDMitj5-wrQmtyeqVzAXfrkZKmwKqHafTsYLnZFyYAOsIEzu_4D7wpcabtJSUGJ3lATN3OLwhtxuxpkUhZBPCRB5ZYwRnZHw8aAZUribPbvwgc5CQV4Je4GAl3gDCkiVypsOFxFWqGlelt7mvMhfp2F1RrqbZI",
-    },
-    {
-      id: "PT-89420",
-      patientName: "Aarav Patel",
-      details: "61 yrs • Male",
-      doctor: "Dr. Rajeshwar Kulkarni",
-      specialty: "Orthopedics",
-      time: "10:15 AM",
-      status: "confirmed",
-      statusLabel: "Confirmed",
-      badgeClass: "bg-primary-fixed text-[#0055A4]",
-      avatar:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBR4NC6dPlw1AL6N1Qkfbk5iiYbUyxPXgsF1QU73rCoQzdmjWkW4yTZ_Hys37XvII0_Nwivw-hBWmuqoN8J4Zp6W3TQUiVNw7IQmq0XhzkEtDdWvTTlKM4Cel0BC2BF9Dp3t1Fug65V-P4a7atnUzFsZi7C4Ppcu8O1f44AIw7YGG5sUjgGyV4lKKfZuVG3P9dQVhvkKgQQiko3yjgIgiEMiJE0co8_BH3uBWuG",
-    },
-    {
-      id: "PT-89433",
-      patientName: "Sophia Rodriguez",
-      details: "35 yrs • Female",
-      doctor: "Dr. Maria Santos",
-      specialty: "Pediatrics",
-      time: "10:45 AM",
-      status: "completed",
-      statusLabel: "Completed",
-      badgeClass: "bg-tertiary-fixed text-on-tertiary-fixed",
-      initials: "SR",
-    },
-    {
-      id: "PT-89445",
-      patientName: "James Wilson",
-      details: "54 yrs • Male",
-      doctor: "Dr. Chen Wei",
-      specialty: "Internal Med • Review",
-      time: "11:15 AM",
-      status: "confirmed",
-      statusLabel: "Confirmed",
-      badgeClass: "bg-primary-fixed text-[#0055A4]",
-      initials: "JW",
-    },
-  ];
+  // Live campus-scoped metrics & filtered operational slices
+  const patientStats = React.useMemo(
+    () => PatientService.getDirectoryStats(activeCampus.id),
+    [activeCampus.id]
+  );
+
+  const filteredCampusAppointments = React.useMemo(() => {
+    const campusApts = AppointmentService.getAllAppointments(activeCampus.id);
+    return campusApts.filter(
+      (apt) =>
+        matchesDateFilter(apt.appointmentDate, appliedDateRange, appliedCustomDate, clientNow) &&
+        matchesShiftFilter(apt.timeSlot, appliedShift)
+    );
+  }, [activeCampus.id, appliedDateRange, appliedCustomDate, appliedShift, clientNow]);
+
+  const aptStats = React.useMemo(() => {
+    const totalToday = filteredCampusAppointments.length;
+    const pendingRequests = filteredCampusAppointments.filter((a) =>
+      ["Requested", "Under Review", "Awaiting Patient Response", "Reschedule Requested"].includes(a.status)
+    ).length;
+    const confirmedAppointments = filteredCampusAppointments.filter((a) => a.status === "Confirmed").length;
+    const completedAppointments = filteredCampusAppointments.filter((a) => a.status === "Completed").length;
+    const cancelledAppointments = filteredCampusAppointments.filter((a) => a.status === "Cancelled").length;
+    return {
+      totalToday,
+      pendingRequests,
+      confirmedAppointments,
+      completedAppointments,
+      cancelledAppointments,
+    };
+  }, [filteredCampusAppointments]);
+
+  const filteredCampusQueue = React.useMemo(() => {
+    const allQueue = QueueService.getAllQueueEntries(activeCampus.id);
+    return allQueue.filter(
+      (q) =>
+        matchesDateFilter(q.appointmentDate, appliedDateRange, appliedCustomDate, clientNow) &&
+        matchesShiftFilter(q.appointmentTime || q.checkInTime, appliedShift)
+    );
+  }, [activeCampus.id, appliedDateRange, appliedCustomDate, appliedShift, clientNow]);
+
+  const queueStats = React.useMemo(() => {
+    const totalToday = filteredCampusQueue.length;
+    const checkedIn = filteredCampusQueue.filter((q) => q.status === "Checked In").length;
+    const waiting = filteredCampusQueue.filter((q) => q.status === "Waiting").length;
+    const inConsultation = filteredCampusQueue.filter((q) => q.status === "In Consultation").length;
+    const completed = filteredCampusQueue.filter((q) => q.status === "Completed").length;
+    const noShow = filteredCampusQueue.filter((q) => q.status === "No Show").length;
+    const cancelled = filteredCampusQueue.filter((q) => q.status === "Cancelled").length;
+    const waitingEntries = filteredCampusQueue.filter((q) => q.actualWaitMinutes !== undefined);
+    const averageWaitMinutes =
+      waitingEntries.length > 0
+        ? Math.round(
+            waitingEntries.reduce((acc, curr) => acc + (curr.actualWaitMinutes || 0), 0) /
+              waitingEntries.length
+          )
+        : 0;
+    return {
+      totalToday,
+      checkedIn,
+      waiting,
+      inConsultation,
+      completed,
+      noShow,
+      cancelled,
+      averageWaitMinutes,
+    };
+  }, [filteredCampusQueue]);
+
+  const appointments = React.useMemo(() => {
+    return filteredCampusAppointments.map((apt) => {
+      const statusKey =
+        apt.status === "Confirmed"
+          ? "confirmed"
+          : apt.status === "Completed"
+          ? "completed"
+          : ["Requested", "Under Review", "Awaiting Patient Response", "Reschedule Requested"].includes(apt.status)
+          ? "waiting"
+          : "in-consultation";
+      const badgeClass =
+        statusKey === "completed"
+          ? "bg-tertiary-fixed text-on-tertiary-fixed"
+          : statusKey === "waiting"
+          ? "bg-secondary-fixed-dim text-on-secondary-fixed-variant"
+          : "bg-primary-fixed text-[#0055A4]";
+      const initials = apt.patientName
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2);
+
+      return {
+        id: apt.facilityPatientId,
+        appointmentId: apt.id,
+        patientName: apt.patientName,
+        details: `${apt.patientAge} yrs • ${apt.patientGender}`,
+        doctor: apt.doctorName,
+        specialty: apt.department,
+        time: apt.timeSlot,
+        date: apt.appointmentDate,
+        status: statusKey,
+        statusLabel: apt.status,
+        badgeClass,
+        initials,
+        avatar: undefined as string | undefined,
+      };
+    });
+  }, [filteredCampusAppointments]);
 
   const filteredApts =
     activeAptFilter === "all"
       ? appointments
       : appointments.filter((apt) => apt.status === activeAptFilter);
 
+  const aptTabCounts = React.useMemo(() => {
+    return {
+      all: appointments.length,
+      "in-consultation": appointments.filter((a) => a.status === "in-consultation").length,
+      waiting: appointments.filter((a) => a.status === "waiting").length,
+      confirmed: appointments.filter((a) => a.status === "confirmed").length,
+      completed: appointments.filter((a) => a.status === "completed").length,
+    };
+  }, [appointments]);
+
+  const activeQueueDisplay = React.useMemo(() => {
+    const activeOnly = filteredCampusQueue.filter(
+      (q) => !["Cancelled", "No Show"].includes(q.status)
+    );
+    return (activeOnly.length > 0 ? activeOnly : filteredCampusQueue).slice(0, 4);
+  }, [filteredCampusQueue]);
+
+  const activeStaffOnShift = React.useMemo(() => {
+    return INITIAL_STAFF_MEMBERS.filter((member) =>
+      matchesStaffShift(member.shift, appliedShift)
+    );
+  }, [appliedShift]);
+
+  const dateCardTitle =
+    appliedDateRange === "today"
+      ? "Today's Appointments"
+      : appliedDateRange === "tomorrow"
+      ? "Tomorrow's Appointments"
+      : appliedDateRange === "week"
+      ? "This Week's Appointments"
+      : `Appointments (${formatShortCustomDate(appliedCustomDate)})`;
+
   const firstName = user.name.split(" ")[0] || "Administrator";
 
   return (
-    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] min-h-screen antialiased bg-[#EDF2E9]">
-      {/* ── SHARED REUSABLE SIDEBAR ────────────────────────────────────── */}
-      <DashboardSidebar
-        user={user}
-        activeNav="dashboard"
-        onSignOut={handleSignOut}
-      />
-
-      {/* ── TOP HEADER & MAIN VIEWPORT ───────────────────────────────── */}
-      <div className="pl-72">
-        {/* Shared Reusable Header */}
-        <DashboardHeader user={user} />
-
-        {/* Main Content Area */}
-        <main className="relative pt-16 bg-[#EDF2E9] min-h-screen w-full px-8 pb-12">
-          <div className="flex flex-col w-full max-w-[1600px] mx-auto">
+    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] antialiased bg-transparent w-full min-w-0 flex-1">
+      <main className="relative bg-transparent w-full min-w-0 px-4 md:px-8 pt-6 pb-12">
+        <div className="flex flex-col w-full min-w-0">
             {/* Top Greeting & Header Bar */}
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg mb-space-2xl mt-6">
               <div>
@@ -141,7 +307,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   </span>
                 </div>
                 <p className="font-body-md text-body-md text-[#5A6372]">
-                  Here&apos;s what&apos;s happening at {user.facility} today.
+                  Here&apos;s what&apos;s happening at {activeFacility.name} — {activeCampus.name} today.
                 </p>
               </div>
 
@@ -152,37 +318,187 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   <span className="material-symbols-outlined text-[#0055A4] text-xl">
                     event
                   </span>
-                  <span className="font-card-heading text-card-heading">
-                    Wednesday, Oct 24, 2025
+                  <span className="font-card-heading text-card-heading min-w-[160px]">
+                    {formattedCurrentDate || "\u00A0"}
                   </span>
                 </div>
 
                 {/* Filter Dropdown */}
-                <div className="relative inline-block text-left shrink-0">
+                <div className="relative inline-block text-left shrink-0" ref={filterContainerRef}>
                   <button
-                    className="flex items-center gap-space-sm px-space-md py-2 rounded-xl bg-white border border-[#DDE6DA] shadow-sm hover:bg-[#F3F6F0] transition-colors text-[#1F2B46] font-card-heading text-card-heading cursor-pointer"
+                    onClick={handleToggleFilter}
+                    className={`flex items-center gap-space-sm px-space-md py-2 rounded-xl border shadow-sm transition-colors font-card-heading text-card-heading cursor-pointer ${
+                      isFilterOpen || !isDefaultFilter
+                        ? "bg-[#E7F0FF] border-[#0055A4]/40 text-[#0055A4]"
+                        : "bg-white border-[#DDE6DA] hover:bg-[#F3F6F0] text-[#1F2B46]"
+                    }`}
                     type="button"
+                    aria-expanded={isFilterOpen}
+                    aria-haspopup="true"
                   >
-                    <span className="material-symbols-outlined text-[#5A6372] text-lg">
+                    <span className="material-symbols-outlined text-lg">
                       tune
                     </span>
-                    <span>Today • All Shifts</span>
-                    <span className="material-symbols-outlined text-[#5A6372] text-base">
+                    <span>{filterButtonLabel}</span>
+                    <span
+                      className={`material-symbols-outlined text-base transition-transform duration-150 ${
+                        isFilterOpen ? "rotate-180" : ""
+                      }`}
+                    >
                       expand_more
                     </span>
                   </button>
+
+                  {isFilterOpen && (
+                    <div
+                      className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-white rounded-2xl border border-[#D5DFD2] shadow-2xl z-40 overflow-hidden"
+                      role="dialog"
+                      aria-label="Date Range and Shift Filter"
+                    >
+                      <div className="p-4 border-b border-[#DDE6DA] bg-[#F8FAF6] flex items-center justify-between">
+                        <div>
+                          <h3 className="text-sm font-bold text-[#1F2B46]">
+                            Operational View Filter
+                          </h3>
+                          <p className="text-[11px] text-[#5A6372]">
+                            Filter dashboard metrics by date range &amp; facility shift
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setIsFilterOpen(false)}
+                          className="p-1 rounded-lg text-[#5A6372] hover:bg-[#E8EFE5] hover:text-[#1F2B46] transition-colors cursor-pointer"
+                          aria-label="Close filter dropdown"
+                        >
+                          <span className="material-symbols-outlined text-lg">close</span>
+                        </button>
+                      </div>
+
+                      <div className="p-4 space-y-4">
+                        {/* Section A: Date Range */}
+                        <div>
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#5A6372] block mb-2">
+                            Date Range
+                          </span>
+                          <div className="grid grid-cols-2 gap-2">
+                            {(
+                              [
+                                { id: "today", label: "Today" },
+                                { id: "tomorrow", label: "Tomorrow" },
+                                { id: "week", label: "This Week" },
+                                { id: "custom", label: "Custom Date" },
+                              ] as { id: DateRangeOption; label: string }[]
+                            ).map((option) => {
+                              const active = draftDateRange === option.id;
+                              return (
+                                <button
+                                  key={option.id}
+                                  type="button"
+                                  onClick={() => setDraftDateRange(option.id)}
+                                  className={`px-3 py-2 rounded-xl text-xs font-semibold border text-left flex items-center justify-between transition-all cursor-pointer ${
+                                    active
+                                      ? "bg-[#0055A4] text-white border-[#0055A4] shadow-xs"
+                                      : "bg-[#F3F6F0] text-[#1F2B46] border-[#DDE6DA] hover:bg-[#E8EFE5]"
+                                  }`}
+                                >
+                                  <span>{option.label}</span>
+                                  {active && (
+                                    <span className="material-symbols-outlined text-sm">
+                                      check
+                                    </span>
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
+
+                          {draftDateRange === "custom" && (
+                            <div className="mt-2.5 p-2.5 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
+                              <label className="block text-[11px] font-semibold text-[#5A6372] mb-1">
+                                Select Date
+                              </label>
+                              <input
+                                type="date"
+                                value={draftCustomDate}
+                                onChange={(e) => setDraftCustomDate(e.target.value)}
+                                className="w-full px-3 py-1.5 rounded-lg bg-white border border-[#D5DFD2] text-xs font-medium text-[#1F2B46] focus:outline-none focus:border-[#0055A4]"
+                              />
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Section B: Shift */}
+                        <div>
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#5A6372] block mb-2">
+                            Hospital Shift
+                          </span>
+                          <div className="space-y-1.5">
+                            {(["all", "morning", "afternoon", "night"] as ShiftOption[]).map(
+                              (shiftKey) => {
+                                const win = SHIFT_WINDOWS[shiftKey];
+                                const active = draftShift === shiftKey;
+                                return (
+                                  <button
+                                    key={shiftKey}
+                                    type="button"
+                                    onClick={() => setDraftShift(shiftKey)}
+                                    className={`w-full px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-between transition-all cursor-pointer ${
+                                      active
+                                        ? "bg-[#E7F0FF] text-[#0055A4] border-[#0055A4]"
+                                        : "bg-white text-[#1F2B46] border-[#DDE6DA] hover:bg-[#F3F6F0]"
+                                    }`}
+                                  >
+                                    <span>{win.label}</span>
+                                    <span
+                                      className={`w-4 h-4 rounded-full border flex items-center justify-center ${
+                                        active
+                                          ? "border-[#0055A4] bg-[#0055A4] text-white"
+                                          : "border-[#C2C6D3]"
+                                      }`}
+                                    >
+                                      {active && (
+                                        <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                                      )}
+                                    </span>
+                                  </button>
+                                );
+                              }
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Actions */}
+                      <div className="p-3 border-t border-[#DDE6DA] bg-[#F8FAF6] flex items-center justify-between gap-2">
+                        <button
+                          type="button"
+                          onClick={handleResetFilters}
+                          className="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#5A6372] hover:bg-[#E8EFE5] hover:text-[#1F2B46] transition-colors cursor-pointer"
+                        >
+                          Reset
+                        </button>
+                        <button
+                          type="button"
+                          onClick={handleApplyFilters}
+                          className="px-4 py-1.5 rounded-xl text-xs font-semibold bg-[#0055A4] hover:bg-[#00478a] text-white shadow-xs transition-colors cursor-pointer"
+                        >
+                          Apply Filters
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Primary Action CTA */}
-                <button
+                <Link
+                  href="/dashboard/patients/new"
                   className="flex items-center gap-space-xs bg-[#0055A4] hover:bg-[#00478a] text-white px-space-lg py-2.5 rounded-xl font-button-label text-button-label shadow-sm hover:shadow transition-all cursor-pointer shrink-0"
-                  type="button"
                 >
                   <span className="material-symbols-outlined text-xl">
                     person_add
                   </span>
                   <span>+ Register Patient</span>
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -196,7 +512,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       Total Patients
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
-                      2,845
+                      {patientStats.totalPatients}
                     </div>
                   </div>
                   <div className="w-12 h-12 rounded-xl bg-[#0055A4] text-white flex items-center justify-center shadow-sm shrink-0">
@@ -207,7 +523,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
                   <span className="font-supporting text-supporting text-[#5A6372] truncate">
-                    Registered at Campus North
+                    Registered at {activeCampus.name}
                   </span>
                   <span className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-tertiary-fixed text-on-tertiary-fixed shrink-0">
                     <span className="material-symbols-outlined text-xs">
@@ -223,10 +539,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
                     <span className="font-supporting text-supporting uppercase tracking-wider text-[#5A6372] font-semibold block">
-                      Today&apos;s Appointments
+                      {dateCardTitle}
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
-                      48
+                      {aptStats.totalToday}
                     </div>
                   </div>
                   <div className="w-12 h-12 rounded-xl bg-primary-fixed text-[#0055A4] flex items-center justify-center shadow-sm shrink-0">
@@ -237,10 +553,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
                   <span className="font-supporting text-supporting text-[#5A6372] truncate">
-                    36 completed or active
+                    {aptStats.completedAppointments} completed
                   </span>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#EDF2E9] border border-[#DDE6DA] text-[#0055A4] shrink-0">
-                    12 remaining
+                    {aptStats.confirmedAppointments} confirmed
                   </span>
                 </div>
               </div>
@@ -253,7 +569,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       Patients in Queue
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
-                      14
+                      {queueStats.waiting + queueStats.inConsultation + queueStats.checkedIn}
                     </div>
                   </div>
                   <div className="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-sm shrink-0">
@@ -264,7 +580,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
                   <span className="font-supporting text-supporting text-[#5A6372] truncate">
-                    Avg. wait time: 18 min
+                    Avg. wait time: {queueStats.averageWaitMinutes} min
                   </span>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#E2E8DE] text-[#3B4D0D] shrink-0">
                     Optimal throughput
@@ -280,7 +596,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       Pending Requests
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
-                      08
+                      {aptStats.pendingRequests}
                     </div>
                   </div>
                   <div className="w-12 h-12 rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-[#5A6372] flex items-center justify-center shadow-sm shrink-0">
@@ -291,7 +607,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
                   <span className="font-supporting text-supporting text-[#5A6372] truncate">
-                    08 awaiting staff action
+                    {aptStats.pendingRequests} awaiting staff action
                   </span>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-secondary-fixed-dim text-on-secondary-fixed-variant shrink-0">
                     Requires action
@@ -428,9 +744,9 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </span>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md">
-                <button
+                <Link
+                  href="/dashboard/patients/new"
                   className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
-                  type="button"
                 >
                   <div className="w-8 h-8 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
                     <span className="material-symbols-outlined text-lg">
@@ -440,7 +756,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   <span className="font-button-label text-body-md font-semibold text-[#1F2B46] group-hover:text-white truncate transition-colors">
                     + Register Patient
                   </span>
-                </button>
+                </Link>
 
                 <button
                   className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
@@ -509,15 +825,21 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-space-lg gap-space-md">
                     <div className="flex items-center gap-space-sm">
                       <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
-                        Today&apos;s Appointment Overview
+                        {appliedDateRange === "today"
+                          ? "Today's Appointment Overview"
+                          : appliedDateRange === "tomorrow"
+                          ? "Tomorrow's Appointment Overview"
+                          : appliedDateRange === "week"
+                          ? "This Week's Appointment Overview"
+                          : `Appointment Overview (${formatShortCustomDate(appliedCustomDate)})`}
                       </h2>
                       <span className="px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#F3F6F0] border border-[#DDE6DA] text-[#5A6372]">
-                        48 Scheduled
+                        {aptStats.totalToday} Scheduled
                       </span>
                     </div>
-                    <a
+                    <Link
                       className="font-button-label text-body-md text-[#0055A4] hover:underline flex items-center gap-1"
-                      href="#"
+                      href="/dashboard/appointments"
                     >
                       <span className="material-symbols-outlined text-base">
                         calendar_view_day
@@ -526,17 +848,17 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       <span className="material-symbols-outlined text-base">
                         arrow_forward
                       </span>
-                    </a>
+                    </Link>
                   </div>
 
                   {/* Filter Tabs */}
                   <div className="flex items-center gap-2 overflow-x-auto pb-space-md mb-space-md">
                     {[
-                      { id: "all", label: "All (48)" },
-                      { id: "in-consultation", label: "In Consultation (4)" },
-                      { id: "waiting", label: "Waiting (8)" },
-                      { id: "confirmed", label: "Confirmed (24)" },
-                      { id: "completed", label: "Completed (12)" },
+                      { id: "all", label: `All (${aptTabCounts.all})` },
+                      { id: "in-consultation", label: `In Consultation (${aptTabCounts["in-consultation"]})` },
+                      { id: "waiting", label: `Waiting (${aptTabCounts.waiting})` },
+                      { id: "confirmed", label: `Confirmed (${aptTabCounts.confirmed})` },
+                      { id: "completed", label: `Completed (${aptTabCounts.completed})` },
                     ].map((tab) => (
                       <button
                         key={tab.id}
@@ -573,91 +895,102 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                         </tr>
                       </thead>
                       <tbody className="font-body-md text-body-md text-[#1F2B46]">
-                        {filteredApts.map((apt) => (
-                          <tr
-                            key={apt.id}
-                            className="hover:bg-[#F3F6F0]/70 transition-colors border-b border-[#DDE6DA]"
-                          >
-                            <td className="py-3.5 px-space-md">
-                              <div className="flex items-center gap-space-sm">
-                                {apt.avatar ? (
-                                  <Image
-                                    className="w-9 h-9 rounded-full object-cover shadow-sm shrink-0"
-                                    alt={apt.patientName}
-                                    src={apt.avatar}
-                                    width={36}
-                                    height={36}
-                                    unoptimized
-                                  />
-                                ) : (
-                                  <div className="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold flex items-center justify-center text-sm shadow-sm">
-                                    {apt.initials}
-                                  </div>
-                                )}
-                                <div className="flex flex-col min-w-0">
-                                  <span className="font-card-heading text-card-heading text-[#1F2B46] leading-tight truncate">
-                                    {apt.patientName}
-                                  </span>
-                                  <span className="font-supporting text-supporting text-[#5A6372]">
-                                    {apt.details}
-                                  </span>
-                                </div>
-                              </div>
-                            </td>
-                            <td className="py-3.5 px-space-md font-mono text-supporting text-[#5A6372]">
-                              {apt.id}
-                            </td>
-                            <td className="py-3.5 px-space-md">
-                              <div className="flex flex-col">
-                                <span className="font-semibold text-[#1F2B46]">
-                                  {apt.doctor}
-                                </span>
-                                <span className="font-supporting text-supporting text-[#5A6372]">
-                                  {apt.specialty}
-                                </span>
-                              </div>
-                            </td>
-                            <td className="py-3.5 px-space-md font-semibold text-[#0055A4] whitespace-nowrap">{apt.time}</td>
-                            <td className="py-3.5 px-space-md whitespace-nowrap">
-                              <span
-                                className={`inline-flex items-center px-2.5 py-1 rounded-full font-supporting text-supporting font-semibold shrink-0 ${apt.badgeClass}`}
-                              >
-                                {apt.statusLabel}
-                              </span>
-                            </td>
-                            <td className="py-3.5 px-space-md text-right whitespace-nowrap">
-                              <div className="flex items-center justify-end gap-1 shrink-0">
-                                <button
-                                  title="View EHR"
-                                  className="p-1.5 rounded-lg text-[#0055A4] hover:bg-primary-fixed transition-colors cursor-pointer"
-                                  type="button"
-                                >
-                                  <span className="material-symbols-outlined text-lg">
-                                    clinical_notes
-                                  </span>
-                                </button>
-                                <button
-                                  title="Check In"
-                                  className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] transition-colors cursor-pointer"
-                                  type="button"
-                                >
-                                  <span className="material-symbols-outlined text-lg">
-                                    how_to_reg
-                                  </span>
-                                </button>
-                                <button
-                                  title="Reschedule"
-                                  className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] transition-colors cursor-pointer"
-                                  type="button"
-                                >
-                                  <span className="material-symbols-outlined text-lg">
-                                    edit_calendar
-                                  </span>
-                                </button>
-                              </div>
+                        {filteredApts.length === 0 ? (
+                          <tr>
+                            <td colSpan={6} className="py-10 text-center text-[#5A6372]">
+                              No appointments scheduled for <span className="font-semibold text-[#1F2B46]">{filterButtonLabel}</span> at {activeCampus.name}.
                             </td>
                           </tr>
-                        ))}
+                        ) : (
+                          filteredApts.slice(0, 6).map((apt) => (
+                            <tr
+                              key={apt.appointmentId}
+                              className="hover:bg-[#F3F6F0]/70 transition-colors border-b border-[#DDE6DA]"
+                            >
+                              <td className="py-3.5 px-space-md">
+                                <div className="flex items-center gap-space-sm">
+                                  {apt.avatar ? (
+                                    <Image
+                                      className="w-9 h-9 rounded-full object-cover shadow-sm shrink-0"
+                                      alt={apt.patientName}
+                                      src={apt.avatar}
+                                      width={36}
+                                      height={36}
+                                      unoptimized
+                                    />
+                                  ) : (
+                                    <div className="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold flex items-center justify-center text-sm shadow-sm">
+                                      {apt.initials}
+                                    </div>
+                                  )}
+                                  <div className="flex flex-col min-w-0">
+                                    <span className="font-card-heading text-card-heading text-[#1F2B46] leading-tight truncate">
+                                      {apt.patientName}
+                                    </span>
+                                    <span className="font-supporting text-supporting text-[#5A6372]">
+                                      {apt.details}
+                                    </span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="py-3.5 px-space-md font-mono text-supporting text-[#5A6372] whitespace-nowrap">
+                                {apt.id}
+                              </td>
+                              <td className="py-3.5 px-space-md">
+                                <div className="flex flex-col">
+                                  <span className="font-semibold text-[#1F2B46]">
+                                    {apt.doctor}
+                                  </span>
+                                  <span className="font-supporting text-supporting text-[#5A6372]">
+                                    {apt.specialty}
+                                  </span>
+                                </div>
+                              </td>
+                              <td className="py-3.5 px-space-md font-semibold text-[#0055A4] whitespace-nowrap">{apt.time}</td>
+                              <td className="py-3.5 px-space-md whitespace-nowrap">
+                                <span
+                                  className={`inline-flex items-center px-2.5 py-1 rounded-full font-supporting text-supporting font-semibold shrink-0 ${apt.badgeClass}`}
+                                >
+                                  {apt.statusLabel}
+                                </span>
+                              </td>
+                              <td className="py-3.5 px-space-md text-right whitespace-nowrap">
+                                <div className="flex items-center justify-end gap-1 shrink-0">
+                                  <button
+                                    title="View EHR"
+                                    onClick={() => router.push(`/dashboard/patients/${apt.id}`)}
+                                    className="p-1.5 rounded-lg text-[#0055A4] hover:bg-primary-fixed transition-colors cursor-pointer"
+                                    type="button"
+                                  >
+                                    <span className="material-symbols-outlined text-lg">
+                                      clinical_notes
+                                    </span>
+                                  </button>
+                                  <button
+                                    title="Check In"
+                                    onClick={() => router.push(`/dashboard/appointments/${apt.appointmentId}`)}
+                                    className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] transition-colors cursor-pointer"
+                                    type="button"
+                                  >
+                                    <span className="material-symbols-outlined text-lg">
+                                      how_to_reg
+                                    </span>
+                                  </button>
+                                  <button
+                                    title="Reschedule"
+                                    onClick={() => router.push(`/dashboard/appointments/${apt.appointmentId}`)}
+                                    className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] transition-colors cursor-pointer"
+                                    type="button"
+                                  >
+                                    <span className="material-symbols-outlined text-lg">
+                                      edit_calendar
+                                    </span>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          ))
+                        )}
                       </tbody>
                     </table>
                   </div>
@@ -671,146 +1004,84 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                         Patient Queue Overview (OPD &amp; Triage)
                       </h2>
                       <span className="px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-secondary-fixed text-on-secondary-fixed">
-                        14 Waiting
+                        {queueStats.waiting + queueStats.checkedIn + queueStats.inConsultation} Active
                       </span>
                     </div>
-                    <a
+                    <Link
                       className="font-button-label text-body-md text-[#0055A4] hover:underline flex items-center gap-1"
-                      href="#"
+                      href="/dashboard/queue"
                     >
                       View Live Queue Console{" "}
                       <span className="material-symbols-outlined text-base">
                         open_in_new
                       </span>
-                    </a>
+                    </Link>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                    {/* Queue Card 1 */}
-                    <div className="p-space-lg rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col justify-between hover:bg-[#E8EFE5] transition-colors">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex items-center gap-space-md min-w-0">
-                          <span className="px-3 py-1.5 rounded-xl bg-[#0055A4] text-white font-headline-sm text-headline-sm font-mono shadow-sm shrink-0">
-                            A-104
-                          </span>
-                          <div className="min-w-0">
-                            <h3 className="font-card-heading text-card-heading text-[#1F2B46] truncate">
-                              Marcus Chen
-                            </h3>
-                            <p className="font-supporting text-supporting text-[#5A6372] truncate">
-                              Room 304 • Dr. Chen Wei
-                            </p>
-                          </div>
-                        </div>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-supporting text-supporting font-semibold bg-secondary-fixed text-on-secondary-fixed shrink-0">
-                          <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />{" "}
-                          Called
-                        </span>
-                      </div>
-                      <div className="mt-space-md pt-space-sm border-t border-[#DDE6DA] flex items-center justify-between font-supporting text-supporting text-[#5A6372]">
-                        <span>Department: General Medicine</span>
-                        <span className="flex items-center gap-1 font-semibold text-[#1F2B46] shrink-0">
-                          <span className="material-symbols-outlined text-sm shrink-0">
-                            schedule
-                          </span>{" "}
-                          12 min in wait
-                        </span>
-                      </div>
+                  {activeQueueDisplay.length === 0 ? (
+                    <div className="p-8 rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-center text-[#5A6372] font-body-md text-body-md">
+                      No queue entries recorded for <span className="font-semibold text-[#1F2B46]">{filterButtonLabel}</span> at {activeCampus.name}.
                     </div>
-
-                    {/* Queue Card 2 */}
-                    <div className="p-space-lg rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col justify-between hover:bg-[#E8EFE5] transition-colors">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex items-center gap-space-md min-w-0">
-                          <span className="px-3 py-1.5 rounded-xl bg-white border border-[#DDE6DA] text-[#0055A4] font-headline-sm text-headline-sm font-mono shadow-sm shrink-0">
-                            B-201
-                          </span>
-                          <div className="min-w-0">
-                            <h3 className="font-card-heading text-card-heading text-[#1F2B46] truncate">
-                              Devon Vance
-                            </h3>
-                            <p className="font-supporting text-supporting text-[#5A6372] truncate">
-                              Room 210 • Dr. Sarah Thomas
-                            </p>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                      {activeQueueDisplay.map((entry, idx) => {
+                        const waitMins = entry.actualWaitMinutes ?? entry.estimatedWaitMinutes ?? 0;
+                        const statusChipClass =
+                          entry.status === "In Consultation"
+                            ? "bg-secondary-fixed text-on-secondary-fixed"
+                            : entry.status === "Waiting"
+                            ? "bg-secondary-fixed-dim text-on-secondary-fixed-variant"
+                            : entry.status === "Completed"
+                            ? "bg-tertiary-fixed text-on-tertiary-fixed"
+                            : "bg-primary-fixed text-[#0055A4]";
+                        return (
+                          <div
+                            key={entry.id}
+                            className="p-space-lg rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col justify-between hover:bg-[#E8EFE5] transition-colors"
+                          >
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-space-md min-w-0">
+                                <span
+                                  className={`px-3 py-1.5 rounded-xl font-headline-sm text-headline-sm font-mono shadow-sm shrink-0 ${
+                                    idx === 0
+                                      ? "bg-[#0055A4] text-white"
+                                      : "bg-white border border-[#DDE6DA] text-[#0055A4]"
+                                  }`}
+                                >
+                                  {entry.queueNumber}
+                                </span>
+                                <div className="min-w-0">
+                                  <h3 className="font-card-heading text-card-heading text-[#1F2B46] truncate">
+                                    {entry.patientName}
+                                  </h3>
+                                  <p className="font-supporting text-supporting text-[#5A6372] truncate">
+                                    {entry.roomNumber || "Triage Desk"} • {entry.doctorName}
+                                  </p>
+                                </div>
+                              </div>
+                              <span
+                                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-supporting text-supporting font-semibold shrink-0 ${statusChipClass}`}
+                              >
+                                {entry.status === "In Consultation" && (
+                                  <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                                )}
+                                {entry.status}
+                              </span>
+                            </div>
+                            <div className="mt-space-md pt-space-sm border-t border-[#DDE6DA] flex items-center justify-between font-supporting text-supporting text-[#5A6372]">
+                              <span>Department: {entry.department}</span>
+                              <span className="flex items-center gap-1 font-semibold text-[#1F2B46] shrink-0">
+                                <span className="material-symbols-outlined text-sm shrink-0">
+                                  schedule
+                                </span>{" "}
+                                {waitMins} min wait
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full font-supporting text-supporting font-semibold bg-tertiary-fixed text-on-tertiary-fixed shrink-0">
-                          Triage Complete
-                        </span>
-                      </div>
-                      <div className="mt-space-md pt-space-sm border-t border-[#DDE6DA] flex items-center justify-between font-supporting text-supporting text-[#5A6372]">
-                        <span>Department: Cardiology</span>
-                        <span className="flex items-center gap-1 font-semibold text-[#1F2B46] shrink-0">
-                          <span className="material-symbols-outlined text-sm shrink-0">
-                            schedule
-                          </span>{" "}
-                          24 min in wait
-                        </span>
-                      </div>
+                        );
+                      })}
                     </div>
-
-                    {/* Queue Card 3 */}
-                    <div className="p-space-lg rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col justify-between hover:bg-[#E8EFE5] transition-colors">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex items-center gap-space-md min-w-0">
-                          <span className="px-3 py-1.5 rounded-xl bg-white border border-[#DDE6DA] text-[#0055A4] font-headline-sm text-headline-sm font-mono shadow-sm shrink-0">
-                            A-105
-                          </span>
-                          <div className="min-w-0">
-                            <h3 className="font-card-heading text-card-heading text-[#1F2B46] truncate">
-                              Aarav Patel
-                            </h3>
-                            <p className="font-supporting text-supporting text-[#5A6372] truncate">
-                              Room 108 • Dr. Rajeshwar Kulkarni
-                            </p>
-                          </div>
-                        </div>
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full font-supporting text-supporting font-semibold bg-primary-fixed text-[#0055A4] shrink-0">
-                          Vitals In Progress
-                        </span>
-                      </div>
-                      <div className="mt-space-md pt-space-sm border-t border-[#DDE6DA] flex items-center justify-between font-supporting text-supporting text-[#5A6372]">
-                        <span>Department: Orthopedics</span>
-                        <span className="flex items-center gap-1 font-semibold text-[#1F2B46] shrink-0">
-                          <span className="material-symbols-outlined text-sm shrink-0">
-                            schedule
-                          </span>{" "}
-                          8 min in wait
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Queue Card 4 */}
-                    <div className="p-space-lg rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col justify-between hover:bg-[#E8EFE5] transition-colors">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex items-center gap-space-md min-w-0">
-                          <span className="px-3 py-1.5 rounded-xl bg-white border border-[#DDE6DA] text-[#0055A4] font-headline-sm text-headline-sm font-mono shadow-sm shrink-0">
-                            C-302
-                          </span>
-                          <div className="min-w-0">
-                            <h3 className="font-card-heading text-card-heading text-[#1F2B46] truncate">
-                              Chloe Simmons
-                            </h3>
-                            <p className="font-supporting text-supporting text-[#5A6372] truncate">
-                              Room 112 • Dr. Maria Santos
-                            </p>
-                          </div>
-                        </div>
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full font-supporting text-supporting font-semibold bg-secondary-fixed-dim text-on-secondary-fixed-variant shrink-0">
-                          Queue Verified
-                        </span>
-                      </div>
-                      <div className="mt-space-md pt-space-sm border-t border-[#DDE6DA] flex items-center justify-between font-supporting text-supporting text-[#5A6372]">
-                        <span>Department: Pediatrics</span>
-                        <span className="flex items-center gap-1 font-semibold text-[#1F2B46] shrink-0">
-                          <span className="material-symbols-outlined text-sm shrink-0">
-                            schedule
-                          </span>{" "}
-                          15 min in wait
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
 
@@ -950,11 +1221,12 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                             Appointment Requests
                           </span>
                           <span className="font-supporting text-supporting text-[#5A6372] block truncate">
-                            5 requests via patient portal
+                            {aptStats.pendingRequests} requests via patient portal
                           </span>
                         </div>
                       </div>
                       <button
+                        onClick={() => router.push("/dashboard/appointments/requests")}
                         className="px-space-md py-1 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-button-label text-supporting font-semibold hover:bg-secondary-fixed-dim transition-colors cursor-pointer shrink-0"
                         type="button"
                       >
@@ -1132,77 +1404,86 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 {/* E. Recent Facility Activity */}
                 <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-sm p-space-xl flex flex-col">
                   <div className="flex items-center justify-between pb-space-md">
-                    <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
-                      Recent Facility Activity
-                    </h2>
+                    <div>
+                      <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
+                        Recent Facility Activity
+                      </h2>
+                      <span className="font-supporting text-supporting text-[#5A6372]">
+                        {filterButtonLabel} • {activeStaffOnShift.length} staff on shift
+                      </span>
+                    </div>
                     <span className="material-symbols-outlined text-[#5A6372] text-lg">
                       history
                     </span>
                   </div>
-                  <div className="relative pl-6 space-y-space-lg">
-                    <div className="absolute left-2.5 top-2 bottom-2 w-0.5 bg-[#DDE6DA]"></div>
-
-                    <div className="relative flex items-start gap-space-sm">
-                      <span className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-[#0055A4] ring-4 ring-white" />
-                      <div>
-                        <p className="font-body-md text-body-md text-[#1F2B46] leading-tight">
-                          <span className="font-semibold">Dr. Chen Wei</span>{" "}
-                          completed consultation for Marcus Chen (PT-89415)
-                        </p>
-                        <span className="font-supporting text-supporting text-[#5A6372]">
-                          10m ago • OPD Station 3
-                        </span>
-                      </div>
+                  {filteredCampusQueue.length === 0 &&
+                  filteredCampusAppointments.length === 0 &&
+                  activeStaffOnShift.length === 0 ? (
+                    <div className="p-4 rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-supporting text-[#5A6372]">
+                      No operational or staff shift activity recorded for {filterButtonLabel}.
                     </div>
+                  ) : (
+                    <div className="relative pl-6 space-y-space-lg">
+                      <div className="absolute left-2.5 top-2 bottom-2 w-0.5 bg-[#DDE6DA]"></div>
 
-                    <div className="relative flex items-start gap-space-sm">
-                      <span className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary ring-4 ring-white" />
-                      <div>
-                        <p className="font-body-md text-body-md text-[#1F2B46] leading-tight">
-                          New patient{" "}
-                          <span className="font-semibold">Eleanor Vance</span>{" "}
-                          registered at Front Desk
-                        </p>
-                        <span className="font-supporting text-supporting text-[#5A6372]">
-                          18m ago • Admin {user.name}
-                        </span>
-                      </div>
-                    </div>
+                      {filteredCampusQueue.slice(0, 2).map((q, idx) => (
+                        <div key={q.id} className="relative flex items-start gap-space-sm">
+                          <span
+                            className={`absolute -left-6 top-1 w-3 h-3 rounded-full ring-4 ring-white ${
+                              idx === 0 ? "bg-[#0055A4]" : "bg-secondary"
+                            }`}
+                          />
+                          <div>
+                            <p className="font-body-md text-body-md text-[#1F2B46] leading-tight">
+                              <span className="font-semibold">{q.doctorName}</span>{" "}
+                              — Queue{" "}
+                              <span className="font-mono font-semibold">{q.queueNumber}</span>{" "}
+                              ({q.status}) for {q.patientName}
+                            </p>
+                            <span className="font-supporting text-supporting text-[#5A6372]">
+                              {q.checkInTime} • {q.roomNumber || q.department}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
 
-                    <div className="relative flex items-start gap-space-sm">
-                      <span className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-tertiary ring-4 ring-white" />
-                      <div>
-                        <p className="font-body-md text-body-md text-[#1F2B46] leading-tight">
-                          Lab telemetry uploaded for{" "}
-                          <span className="font-semibold">Aarav Patel</span>{" "}
-                          (PT-89420)
-                        </p>
-                        <span className="font-supporting text-supporting text-[#5A6372]">
-                          25m ago • Diagnostics Hub
-                        </span>
-                      </div>
-                    </div>
+                      {filteredCampusAppointments.slice(0, 1).map((apt) => (
+                        <div key={apt.id} className="relative flex items-start gap-space-sm">
+                          <span className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-tertiary ring-4 ring-white" />
+                          <div>
+                            <p className="font-body-md text-body-md text-[#1F2B46] leading-tight">
+                              Appointment{" "}
+                              <span className="font-semibold">{apt.patientName}</span>{" "}
+                              ({apt.facilityPatientId}) • {apt.status}
+                            </p>
+                            <span className="font-supporting text-supporting text-[#5A6372]">
+                              {apt.appointmentDate} at {apt.timeSlot} • {apt.department}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
 
-                    <div className="relative flex items-start gap-space-sm">
-                      <span className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-variant ring-4 ring-white" />
-                      <div>
-                        <p className="font-body-md text-body-md text-[#1F2B46] leading-tight">
-                          Queue token{" "}
-                          <span className="font-semibold font-mono">B-204</span>{" "}
-                          routed to Triage Station 2
-                        </p>
-                        <span className="font-supporting text-supporting text-[#5A6372]">
-                          34m ago • Auto Allocation
-                        </span>
-                      </div>
+                      {activeStaffOnShift.slice(0, 2).map((staff) => (
+                        <div key={staff.id} className="relative flex items-start gap-space-sm">
+                          <span className="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-variant ring-4 ring-white" />
+                          <div>
+                            <p className="font-body-md text-body-md text-[#1F2B46] leading-tight">
+                              <span className="font-semibold">{staff.name}</span>{" "}
+                              ({staff.role}) • {staff.status === "on_leave" ? "Scheduled Leave" : staff.lastActive}
+                            </p>
+                            <span className="font-supporting text-supporting text-[#5A6372]">
+                              {staff.shift} • {staff.department}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
           </div>
-        </main>
-      </div>
+      </main>
     </div>
   );
 }

@@ -60,7 +60,7 @@ export default function PasswordInput({
         className={`relative rounded-xl border bg-white shadow-sm transition-all
           ${hasError
             ? 'border-red-400 ring-2 ring-red-200'
-            : 'border-slate-200 focus-within:border-[#0055A4] focus-within:ring-2 focus-within:ring-[#0055A4]/15'
+            : 'border-slate-200 focus-within:border-[#015CA9] focus-within:ring-2 focus-within:ring-[#015CA9]/15'
           }`}
       >
         {/* Lock icon */}

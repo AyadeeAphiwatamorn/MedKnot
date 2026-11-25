@@ -1,12 +1,8 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
 import BrandPanel, { type BrandPanelProps } from '@/components/auth/BrandPanel';
+import AnimatedMedKnotBackground from '@/components/auth/AnimatedMedKnotBackground';
 
-/**
- * Inter is scoped to auth pages only.
- * The root layout uses Geist to avoid overriding global font settings
- * and conflicting with other team members' modules (M5–M8).
- */
 const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -16,71 +12,77 @@ const inter = Inter({
 
 export interface AuthLayoutProps extends BrandPanelProps {
   children: React.ReactNode;
-  /** Override the outer page background colour (hex/rgb). */
-  pageBg?: string;
-  /** Optional top header element (e.g. demo state switcher for audit/QA). */
   headerElement?: React.ReactNode;
-  /** Optional bottom footer element (e.g. legal disclaimer bar). */
   footerElement?: React.ReactNode;
 }
 
 /**
- * AuthLayout — Shared page shell for all authentication screens.
+ * AuthLayout — Shared page shell for all MedKnot authentication screens.
  *
- * Renders:
- *   - Full-screen background (radial gradient or solid, per variant)
- *   - Centered white card with rounded corners and soft shadow
- *   - Two-column layout: BrandPanel (left) | form slot (right)
- *   - On mobile/tablet: single column, BrandPanel stacks above form
- *   - Optional header and footer slots for state switcher and disclaimer
+ * Layout structure:
+ *   ┌─ Fixed full-screen animated gradient background (z:0) ─────────┐
+ *   │  ┌─ Outer centering wrapper (relative z:10) ──────────────────┐ │
+ *   │  │  [optional headerElement / demo switcher]                  │ │
+ *   │  │  ┌─ Main two-column card ───────────────────────────────┐  │ │
+ *   │  │  │  Left: BrandPanel (transparent, animated bg visible)  │  │ │
+ *   │  │  │  Right: white form panel                             │  │ │
+ *   │  │  └──────────────────────────────────────────────────────┘  │ │
+ *   │  │  [optional footerElement / legal]                          │ │
+ *   │  └────────────────────────────────────────────────────────────┘ │
+ *   └────────────────────────────────────────────────────────────────┘
  *
- * Inter font is applied here and scoped to auth pages only.
- * BrandPanel headline, subCopy, and variant are forwarded through props.
- *
- * Used by: /login, /forgot-password, /verify, /reset-password
+ * The animated background is FIXED (not absolute), so it fills the viewport
+ * and is fully visible through the transparent BrandPanel.
+ * The white login card on the right keeps a solid bg-white.
  */
 export default function AuthLayout({
   children,
-  pageBg,
   headline,
   subCopy,
   footerTagline,
   variant = 'blue',
+  features,
   headerElement,
   footerElement,
 }: AuthLayoutProps) {
-  const defaultBg =
-    variant === 'green'
-      ? '#EBECE7'
-      : 'radial-gradient(circle at 10% 20%, #E6F4FF 0%, #F7FBF5 50%, #F0F7EE 100%)';
-
   return (
+    /*
+     * Root wrapper — transparent background so the fixed animated canvas shows through.
+     * min-h-screen + relative so the z-10 centering wrapper stacks above z-0 background.
+     */
     <div
-      className={`${inter.variable} min-h-screen w-full font-[var(--font-inter)] antialiased`}
-      style={{ background: pageBg ?? defaultBg }}
+      className={`${inter.variable} relative min-h-screen w-full overflow-x-hidden font-[var(--font-inter)] antialiased`}
     >
-      {/* Outer centering wrapper */}
+      {/* ① Animated gradient background — fixed, full-viewport, z:0 */}
+      <AnimatedMedKnotBackground />
+
+      {/* ② Page content — relative, z:10, sits above the animated canvas */}
       <div
-        className={`flex min-h-screen w-full flex-col items-center ${
+        className={`relative z-10 flex min-h-screen w-full flex-col items-center ${
           headerElement || footerElement
-            ? 'justify-between p-4 sm:p-6 lg:p-10'
-            : 'justify-center p-4 md:p-8'
+            ? 'justify-between p-4 sm:p-6 lg:p-8'
+            : 'justify-center p-4 md:p-6 lg:p-8'
         }`}
       >
         {headerElement}
 
-        {/* Main card */}
-        <main className="flex w-full max-w-[1360px] flex-col overflow-hidden rounded-[28px] border border-[#E9ECEF] bg-white shadow-[0_20px_50px_rgba(9,37,64,0.06)] lg:min-h-[820px] lg:flex-row">
-          {/* Left: branding panel */}
+        {/*
+          ③ Split-screen layout over the living gradient canvas:
+          Left BrandPanel floats transparently over the animated silk waves;
+          Right login card remains a crisp, stationary solid white rounded surface.
+        */}
+        <main className="flex w-full max-w-[1320px] flex-col items-center gap-8 lg:min-h-[780px] lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+          {/* Left: BrandPanel — transparent background, animated canvas shows through */}
           <BrandPanel
             headline={headline}
             subCopy={subCopy}
             footerTagline={footerTagline}
             variant={variant}
+            features={features}
           />
 
-          {/* Right: page-specific form content */}
-          <section className="relative flex flex-col items-center justify-center bg-white p-8 lg:w-1/2 md:p-14 lg:p-16">
+          {/* Right: stationary white rounded login card */}
+          <section className="relative flex w-full flex-col items-center justify-center rounded-[28px] bg-white p-8 shadow-[0_24px_64px_rgba(1,92,169,0.12),0_8px_24px_rgba(15,23,42,0.06)] md:p-12 lg:w-[46%] lg:max-w-[540px] lg:p-14">
             {children}
           </section>
         </main>

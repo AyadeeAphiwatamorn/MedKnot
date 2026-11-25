@@ -194,7 +194,7 @@ export default function LoginForm() {
 
         {/* ── Top status bar ─────────────────────────────────────────── */}
         <div className="mb-2 flex items-center justify-between text-xs text-slate-400">
-          <span className="inline-flex items-center rounded-md bg-[#E6F4FF] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#0055A4]">
+          <span className="inline-flex items-center rounded-md bg-[#E1F2FD] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#015CA9]">
             Hospital Portal
           </span>
           <span className="flex items-center text-[11px] text-slate-400">
@@ -244,7 +244,7 @@ export default function LoginForm() {
               className={`relative rounded-xl border bg-white shadow-sm transition-all
                 ${errors.identifier
                   ? 'border-red-400 ring-2 ring-red-200'
-                  : 'border-slate-200 focus-within:border-[#0055A4] focus-within:ring-2 focus-within:ring-[#0055A4]/15'
+                  : 'border-slate-200 focus-within:border-[#015CA9] focus-within:ring-2 focus-within:ring-[#015CA9]/15'
                 }`}
             >
               {/* Person icon */}
@@ -270,7 +270,7 @@ export default function LoginForm() {
                 type="text"
                 value={values.identifier}
                 onChange={handleChange}
-                placeholder="Enter your work email or staff ID"
+                placeholder="dr.chen@stjudes.medknot.org"
                 autoComplete="username"
                 disabled={isLoading}
                 required
@@ -312,7 +312,7 @@ export default function LoginForm() {
             <button
               type="submit"
               disabled={isLoading}
-              className="flex w-full cursor-pointer items-center justify-center rounded-xl bg-[#0055A4] px-4 py-3.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(0,85,164,0.3)] transition-all hover:bg-[#00478a] active:bg-[#003b73] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-75"
+              className="flex w-full cursor-pointer items-center justify-center rounded-xl bg-[#015CA9] px-4 py-3.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(1,92,169,0.28)] transition-all hover:bg-[#004e90] active:bg-[#00437c] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#015CA9] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-75"
               aria-busy={isLoading}
             >
               {isLoading ? (

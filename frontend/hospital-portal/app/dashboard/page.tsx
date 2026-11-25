@@ -41,7 +41,7 @@ async function DashboardGuard() {
  */
 export default function DashboardPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#EDF2E9]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
       <DashboardGuard />
     </Suspense>
   );

@@ -30,7 +30,7 @@ export default function RegistrationLayout({
   };
 
   return (
-    <div className="registration-theme min-h-screen bg-[#E4EBE0] text-[#1F2B46] font-body-md antialiased flex flex-col">
+    <div className="registration-theme min-h-screen bg-transparent text-[#1F2B46] font-body-md antialiased flex flex-col">
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed top-20 right-8 z-50 bg-[#1F2B46] text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-in fade-in slide-in-from-top-4">

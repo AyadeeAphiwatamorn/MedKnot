@@ -42,7 +42,7 @@ async function ProfileGuard() {
  */
 export default function ProfilePage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#E4EBE0]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
       <ProfileGuard />
     </Suspense>
   );

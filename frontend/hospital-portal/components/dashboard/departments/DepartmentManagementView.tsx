@@ -9,8 +9,7 @@ import {
   DEFAULT_ADMIN,
   clearClientSession,
 } from "@/lib/auth";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import { useFacility } from "@/components/dashboard/facility/FacilityContext";
 import {
   INITIAL_DEPARTMENTS,
   INITIAL_DOCTORS,
@@ -79,6 +78,7 @@ export default function DepartmentManagementView({
   };
 
   // State
+  const { activeCampus } = useFacility();
   const [departments, setDepartments] =
     useState<Department[]>(INITIAL_DEPARTMENTS);
   const [doctors, setDoctors] = useState<Doctor[]>(INITIAL_DOCTORS);
@@ -127,9 +127,26 @@ export default function DepartmentManagementView({
     setTimeout(() => setToastMessage(null), 4000);
   };
 
+  // Campus-scoped departments & doctors
+  const campusDepartments = useMemo(
+    () =>
+      departments.filter((dept) =>
+        (dept.campusIds || ["FAC-STJUDE-NORTH"]).includes(activeCampus.id)
+      ),
+    [departments, activeCampus.id]
+  );
+
+  const campusDoctors = useMemo(
+    () =>
+      doctors.filter((doc) =>
+        (doc.campusIds || ["FAC-STJUDE-NORTH"]).includes(activeCampus.id)
+      ),
+    [doctors, activeCampus.id]
+  );
+
   // Filtered Departments
   const filteredDepartments = useMemo(() => {
-    return departments.filter((dept) => {
+    return campusDepartments.filter((dept) => {
       const matchSearch =
         dept.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         dept.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -146,15 +163,15 @@ export default function DepartmentManagementView({
 
       return matchSearch && matchStatus && matchEmergency;
     });
-  }, [departments, searchQuery, selectedStatusFilter, onlyEmergency]);
+  }, [campusDepartments, searchQuery, selectedStatusFilter, onlyEmergency]);
 
   // Statistics
   const stats = useMemo(() => {
-    const totalDepts = departments.length;
-    const totalBeds = departments.reduce((acc, d) => acc + d.totalBeds, 0);
-    const occupiedBeds = departments.reduce((acc, d) => acc + d.occupiedBeds, 0);
-    const emergencyUnits = departments.filter((d) => d.emergencyCapable).length;
-    const totalAssignedDocs = doctors.length;
+    const totalDepts = campusDepartments.length;
+    const totalBeds = campusDepartments.reduce((acc, d) => acc + d.totalBeds, 0);
+    const occupiedBeds = campusDepartments.reduce((acc, d) => acc + d.occupiedBeds, 0);
+    const emergencyUnits = campusDepartments.filter((d) => d.emergencyCapable).length;
+    const totalAssignedDocs = campusDoctors.length;
     const occupancyRate =
       totalBeds > 0 ? Math.round((occupiedBeds / totalBeds) * 100) : 0;
 
@@ -379,20 +396,9 @@ export default function DepartmentManagementView({
   };
 
   return (
-    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] min-h-screen antialiased bg-[#EDF2E9]">
-      {/* ── SIDEBAR ─────────────────────────────────────── */}
-      <DashboardSidebar
-        user={user}
-        activeNav="departments"
-        onSignOut={handleSignOut}
-      />
-
-      {/* ── TOP HEADER & MAIN VIEWPORT ────────────────────── */}
-      <div className="pl-72">
-        <DashboardHeader user={user} />
-
-        <main className="relative pt-16 bg-[#EDF2E9] min-h-screen w-full px-8 pb-16">
-          <div className="flex flex-col w-full max-w-[1600px] mx-auto">
+    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] antialiased bg-transparent w-full min-w-0 flex-1">
+      <main className="relative bg-transparent w-full min-w-0 px-4 md:px-8 pt-2 pb-16">
+        <div className="flex flex-col w-full min-w-0">
             {/* Toast Notification */}
             {toastMessage && (
               <div className="fixed top-20 right-8 z-50 bg-[#1F2B46] text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-in fade-in slide-in-from-top-4 border border-[#015CA9]">
@@ -753,8 +759,7 @@ export default function DepartmentManagementView({
               })}
             </div>
           </div>
-        </main>
-      </div>
+      </main>
 
       {/* ── MODAL 1: VIEW DEPARTMENT DETAILS & ROSTER ─────── */}
       <Dialog

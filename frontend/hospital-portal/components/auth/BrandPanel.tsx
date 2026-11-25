@@ -2,180 +2,189 @@ import React from 'react';
 import Image from 'next/image';
 
 export interface BrandPanelProps {
-  /**
-   * Headline text shown below the central illustration.
-   * Each string is a separate line (rendered in a single <h1>).
-   */
   headline?: string;
-  /** Sub-copy paragraph shown below the headline. */
   subCopy?: string;
-  /** Left-panel footer tagline (default: "One platform. Connected healthcare.") */
   footerTagline?: string;
   /**
-   * Variant controls the left-panel gradient and colour mood.
-   * - 'blue'  — login (blue/cream)   [default]
-   * - 'green' — reset-password / verify (green/white)
+   * - 'blue'  — login / forgot-password  (default)
+   * - 'green' — verify / reset-password
    */
   variant?: 'blue' | 'green';
+  /**
+   * Optional feature highlights shown below the sub-copy.
+   * Defaults to the three Login highlights when not provided.
+   */
+  features?: Array<{ icon: React.ReactNode; title: string; description: string }>;
 }
 
-const VARIANTS = {
-  blue: {
-    section:
-      'relative flex flex-col justify-between border-b border-[#E2ECE4] bg-gradient-to-br from-[#E6F4FF]/70 via-[#F7FBF5] to-[#DCF4A2]/20 p-10 lg:w-1/2 lg:border-b-0 lg:border-r md:p-14 lg:p-16',
-    blur1: 'pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-[#E6F4FF] opacity-60 blur-3xl',
-    blur2: 'pointer-events-none absolute bottom-10 right-10 h-72 w-72 rounded-full bg-[#DCF4A2] opacity-40 blur-3xl',
-    illustrationWrap:
-      'absolute inset-0 rounded-full bg-gradient-to-tr from-[#E6F4FF] via-white to-[#DCF4A2]/40 shadow-inner',
-    card: 'relative z-10 flex h-44 w-44 items-center justify-center rounded-2xl border border-white bg-white/90 p-4 shadow-[0_12px_30px_rgba(0,85,164,0.08)] backdrop-blur-md',
-    h1Color: 'text-[#003669]',
+/* ── Default feature icons ──────────────────────────────────────────── */
+
+function IconCalendar() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
+function IconUsers() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+}
+
+function IconChart() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <line x1="18" y1="20" x2="18" y2="10" />
+      <line x1="12" y1="20" x2="12" y2="4" />
+      <line x1="6"  y1="20" x2="6"  y2="14" />
+    </svg>
+  );
+}
+
+const DEFAULT_FEATURES: BrandPanelProps['features'] = [
+  {
+    icon: <IconCalendar />,
+    title: 'Unified Appointments',
+    description: 'Coordinate across clinics and hospitals',
   },
-  green: {
-    section:
-      'relative flex flex-col justify-between border-b border-[#E6EBE4] bg-gradient-to-b from-[#FAFDF9] via-[#F4F9F2] to-[#EEF6EB] p-8 lg:w-1/2 lg:border-b-0 lg:border-r md:p-14 lg:p-16 overflow-hidden',
-    blur1: 'pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full bg-[#DCF4A2] opacity-30 blur-3xl',
-    blur2: 'pointer-events-none absolute bottom-8 right-8 h-64 w-64 rounded-full bg-[#E6F4FF] opacity-30 blur-3xl',
-    illustrationWrap:
-      'absolute inset-0 rounded-full',
-    card: 'relative z-10 flex h-48 w-48 items-center justify-center rounded-3xl border border-white bg-white p-6 shadow-[0_12px_32px_rgba(0,85,164,0.08)] md:h-56 md:w-56 md:p-8',
-    h1Color: 'text-[#092540]',
+  {
+    icon: <IconUsers />,
+    title: 'Patient Records at Hand',
+    description: 'Access and manage patient information securely',
   },
-};
+  {
+    icon: <IconChart />,
+    title: 'Smarter Clinic Operations',
+    description: 'Track queues, resources, and workload in real time',
+  },
+];
 
 /**
- * BrandPanel — Left column of the authentication layout.
+ * BrandPanel — Left column of the MedKnot authentication layout.
  *
- * Shared across all authentication pages. Accepts props to customise:
- * - Headline and sub-copy (each page has different copy)
- * - Variant (blue for login, green for recovery/verify)
+ * Intentionally transparent background so the animated gradient canvas
+ * (rendered in AuthLayout behind the card) shows through naturally.
  *
- * Uses the official MedKnot logo from /logo.png.
- * Stateless — no client-side behavior. Safe to use as a Server Component.
+ * Layout matches Screenshot 4:
+ *   - MedKnot logo + brand name top-left
+ *   - Spacer
+ *   - Large headline (Care teams, connected.)
+ *   - Sub-copy description
+ *   - Three feature highlight rows
+ *   - Footer bar
  */
 export default function BrandPanel({
-  headline = 'Care teams, connected.',
+  headline = 'Care teams,\nconnected.',
   subCopy = 'One secure workspace for doctors and hospital teams to coordinate appointments, review patient records, and optimize live clinic queues.',
   footerTagline = 'One platform. Connected healthcare.',
   variant = 'blue',
+  features = DEFAULT_FEATURES,
 }: BrandPanelProps) {
-  const v = VARIANTS[variant];
+  const headlineColor = variant === 'green' ? 'text-[#003669]' : 'text-[#003669]';
+
+  /* Split headline on \n so "connected." can be italicised */
+  const headlineParts = headline.split('\n');
 
   return (
-    <section className={v.section} aria-label="MedKnot branding panel">
-      {/* ── Ambient decorative blurs ────────────────────────────────── */}
-      <div aria-hidden="true" className={v.blur1} />
-      <div aria-hidden="true" className={v.blur2} />
-
-      {/* ── Logo / Header ────────────────────────────────────────────── */}
+    <section
+      className="relative flex w-full flex-col justify-between p-4 sm:p-6 lg:w-[50%] lg:py-8 lg:pr-6 lg:pl-2"
+      aria-label="MedKnot branding panel"
+      /* Fully transparent — animated background shows through */
+      style={{ background: 'transparent' }}
+    >
+      {/* ── MedKnot logo + brand name ──────────────────────────────── */}
       <div className="relative z-10">
         <div className="flex items-center gap-3">
-          {/* Logo icon box */}
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-100 bg-white p-2 shadow-sm">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/90 p-2 shadow-sm">
             <Image
               src="/logo.png"
               alt="MedKnot logo"
-              width={40}
-              height={40}
+              width={36}
+              height={36}
               className="h-full w-full object-contain"
               priority
             />
           </div>
-
-          {/* Brand name + badge */}
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold tracking-tight text-[#1F2B46]">
-                Med<span className="text-[#0055A4]">Knot</span>
+              <span className="text-xl font-bold tracking-tight text-[#1F2B46]">
+                Med<span className="text-[#015CA9]">Knot</span>
               </span>
-              <span className="inline-flex items-center rounded border border-[#0055A4]/20 bg-[#E6F4FF] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-[#0055A4]">
+              <span className="inline-flex items-center rounded border border-[#015CA9]/20 bg-white/70 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#015CA9]">
                 Hospital Portal
               </span>
             </div>
-            <p className="mt-0.5 text-xs font-medium tracking-wide text-slate-500">
+            <p className="mt-0.5 text-[11px] font-medium tracking-wide text-slate-500">
               Connected care. Brighter lives.
             </p>
           </div>
         </div>
       </div>
 
-      {/* ── Centre illustration + headline ───────────────────────────── */}
-      <div className="relative z-10 my-8 flex flex-col items-center lg:my-0">
+      {/* ── Hero content — headline + description + features ───────── */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center py-10 lg:py-0 lg:mt-10 lg:mb-8">
 
-        {/* Circular / radial illustration stage */}
-        <div
-          className="relative flex h-64 w-64 items-center justify-center rounded-full md:h-72 md:w-72 lg:mx-0"
-          style={
-            variant === 'green'
-              ? {
-                  background:
-                    'radial-gradient(circle, rgba(220,244,162,0.45) 0%, rgba(230,244,255,0.5) 45%, rgba(247,251,245,0) 72%)',
-                }
-              : undefined
-          }
-        >
-          {variant === 'blue' && (
-            <div aria-hidden="true" className={v.illustrationWrap} />
+        {/* Large headline */}
+        <h1 className={`text-[2.6rem] font-extrabold leading-[1.1] tracking-tight lg:text-[3.2rem] ${headlineColor}`}>
+          {headlineParts.map((part, i) =>
+            i === headlineParts.length - 1 ? (
+              <span key={i} className="block italic">{part}</span>
+            ) : (
+              <span key={i} className="block">{part}</span>
+            )
           )}
+        </h1>
 
-          {/* Glass card with logo */}
-          <div className={v.card}>
-            <Image
-              src="/logo.png"
-              alt="MedKnot interconnected symbol"
-              width={160}
-              height={160}
-              className="h-full w-full object-contain"
-            />
-          </div>
+        {/* Decorative underline accent (matches Screenshot 4) */}
+        <div className="mt-3 h-[3px] w-20 rounded-full bg-gradient-to-r from-[#DFEEA9] to-[#A3C8B4]" />
 
-          {/* Floating badge — top right: Multi-Clinic Unified */}
-          <div
-            className="absolute right-2 top-4 flex animate-pulse items-center gap-2 rounded-full border border-[#A4CBBA]/40 bg-white/95 px-3.5 py-1.5 text-[11px] font-medium text-slate-700 shadow-sm backdrop-blur-sm"
-            aria-hidden="true"
-          >
-            <span className="h-2 w-2 rounded-full bg-[#0055A4]" />
-            Multi-Clinic Unified
-          </div>
+        {/* Sub-copy */}
+        <p className="mt-5 max-w-[420px] text-base leading-relaxed text-slate-700">
+          {subCopy}
+        </p>
 
-          {/* Floating badge — bottom left: HIPAA & SOC-2 Ready */}
-          <div
-            className="absolute bottom-6 left-2 flex items-center gap-2 rounded-full border border-[#DCF4A2] bg-white/95 px-3.5 py-1.5 text-[11px] font-medium text-slate-700 shadow-sm backdrop-blur-sm"
-            aria-hidden="true"
-          >
-            <svg className="h-3.5 w-3.5 text-[#0055A4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-              />
-            </svg>
-            HIPAA &amp; SOC-2 Ready
-          </div>
-        </div>
-
-        {/* Headline + sub-copy */}
-        <div className="mt-8 max-w-md space-y-3 text-center lg:text-left">
-          <h1 className={`text-3xl font-extrabold leading-tight tracking-tight md:text-4xl ${v.h1Color}`}>
-            {headline}
-          </h1>
-          <p className="text-sm leading-relaxed text-slate-600 md:text-base">
-            {subCopy}
-          </p>
-        </div>
+        {/* Feature highlights */}
+        {features && features.length > 0 && (
+          <ul className="mt-8 space-y-4">
+            {features.map((feature, i) => (
+              <li key={i} className="flex items-start gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/80 text-[#015CA9] shadow-sm ring-1 ring-white/50">
+                  {feature.icon}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-[#1F2B46]">{feature.title}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{feature.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
-      {/* ── Bottom footer bar ─────────────────────────────────────────── */}
-      <div className="relative z-10 flex flex-col items-center justify-between gap-3 border-t border-[#0055A4]/10 pt-6 text-xs text-slate-500 sm:flex-row">
+      {/* ── Footer bar ─────────────────────────────────────────────── */}
+      <div className="relative z-10 mt-6 flex flex-col items-start justify-between gap-3 border-t border-[#015CA9]/10 pt-5 text-xs text-slate-600 sm:flex-row sm:items-center">
         <div className="flex items-center gap-2">
-          <span className="inline-block h-2 w-2 rounded-full bg-[#A4CBBA]" aria-hidden="true" />
-          <span className="font-medium text-slate-700">{footerTagline}</span>
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#A3C8B4]" aria-hidden="true" />
+          <span className="font-medium text-slate-600">{footerTagline}</span>
         </div>
         <div className="flex items-center gap-3 text-[11px] text-slate-400">
-          <span className="rounded border border-slate-200 bg-white/80 px-2 py-0.5">v2.4 Pro</span>
+          <span className="rounded border border-white/60 bg-white/60 px-2 py-0.5">v2.4 Pro</span>
           <span aria-hidden="true">•</span>
-          <a href="#" className="transition-colors hover:text-[#0055A4] focus:outline-none focus-visible:text-[#0055A4]">
+          <a href="#" className="transition-colors hover:text-[#015CA9] focus:outline-none focus-visible:text-[#015CA9]">
             System Status
           </a>
           <span aria-hidden="true">•</span>
-          <a href="#" className="transition-colors hover:text-[#0055A4] focus:outline-none focus-visible:text-[#0055A4]">
+          <a href="#" className="transition-colors hover:text-[#015CA9] focus:outline-none focus-visible:text-[#015CA9]">
             Security Policy
           </a>
         </div>

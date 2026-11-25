@@ -44,7 +44,7 @@ async function FacilityOverviewGuard() {
  */
 export default function FacilitySettingsPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#EDF2E9]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
       <FacilityOverviewGuard />
     </Suspense>
   );

@@ -41,6 +41,7 @@ export interface Doctor {
   bio: string;
   rating?: number;
   patientsCount?: number;
+  campusIds?: string[];
   availabilitySchedule: Record<DayOfWeek, DaySchedule>;
 }
 
@@ -62,6 +63,7 @@ export interface Department {
   emergencyCapable: boolean;
   iconName: string;
   doctorCount?: number;
+  campusIds?: string[];
 }
 
 export interface FacilitySettings {

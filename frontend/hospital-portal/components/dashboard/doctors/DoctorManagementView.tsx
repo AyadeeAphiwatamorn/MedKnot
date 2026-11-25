@@ -9,8 +9,7 @@ import {
   DEFAULT_ADMIN,
   clearClientSession,
 } from "@/lib/auth";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import { useFacility } from "@/components/dashboard/facility/FacilityContext";
 import {
   INITIAL_DOCTORS,
   INITIAL_DEPARTMENTS,
@@ -96,6 +95,7 @@ export default function DoctorManagementView({
   };
 
   // State
+  const { activeCampus } = useFacility();
   const [doctors, setDoctors] = useState<Doctor[]>(INITIAL_DOCTORS);
   const [departments] = useState<Department[]>(INITIAL_DEPARTMENTS);
 
@@ -152,9 +152,18 @@ export default function DoctorManagementView({
     setTimeout(() => setToastMessage(null), 4000);
   };
 
+  // Campus-scoped doctors
+  const campusDoctors = useMemo(
+    () =>
+      doctors.filter((doc) =>
+        (doc.campusIds || ["FAC-STJUDE-NORTH"]).includes(activeCampus.id)
+      ),
+    [doctors, activeCampus.id]
+  );
+
   // Filtered Doctors
   const filteredDoctors = useMemo(() => {
-    return doctors.filter((doc) => {
+    return campusDoctors.filter((doc) => {
       const matchSearch =
         doc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         doc.primarySpecialty
@@ -174,17 +183,17 @@ export default function DoctorManagementView({
 
       return matchSearch && matchDept && matchStatus && matchOnCall;
     });
-  }, [doctors, searchQuery, selectedDeptFilter, selectedStatusFilter, onlyOnCall]);
+  }, [campusDoctors, searchQuery, selectedDeptFilter, selectedStatusFilter, onlyOnCall]);
 
   // Statistics
   const stats = useMemo(() => {
-    const total = doctors.length;
-    const active = doctors.filter((d) => d.status === "active").length;
-    const inSurgery = doctors.filter((d) => d.status === "in-surgery").length;
-    const onCall = doctors.filter((d) => d.onCall).length;
-    const onLeave = doctors.filter((d) => d.status === "on-leave").length;
+    const total = campusDoctors.length;
+    const active = campusDoctors.filter((d) => d.status === "active").length;
+    const inSurgery = campusDoctors.filter((d) => d.status === "in-surgery").length;
+    const onCall = campusDoctors.filter((d) => d.onCall).length;
+    const onLeave = campusDoctors.filter((d) => d.status === "on-leave").length;
     return { total, active, inSurgery, onCall, onLeave };
-  }, [doctors]);
+  }, [campusDoctors]);
 
   // Handle Open Schedule Editor
   const openScheduleEditor = (doc: Doctor) => {
@@ -435,20 +444,9 @@ export default function DoctorManagementView({
   };
 
   return (
-    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] min-h-screen antialiased bg-[#EDF2E9]">
-      {/* ── SIDEBAR ─────────────────────────────────────── */}
-      <DashboardSidebar
-        user={user}
-        activeNav="doctors"
-        onSignOut={handleSignOut}
-      />
-
-      {/* ── TOP HEADER & MAIN VIEWPORT ────────────────────── */}
-      <div className="pl-72">
-        <DashboardHeader user={user} />
-
-        <main className="relative pt-16 bg-[#EDF2E9] min-h-screen w-full px-8 pb-16">
-          <div className="flex flex-col w-full max-w-[1600px] mx-auto">
+    <div className="dashboard-theme font-body-md text-body-md text-[#1F2B46] antialiased bg-transparent w-full min-w-0 flex-1">
+      <main className="relative bg-transparent w-full min-w-0 px-4 md:px-8 pt-2 pb-16">
+        <div className="flex flex-col w-full min-w-0">
             {/* Toast Notification */}
             {toastMessage && (
               <div className="fixed top-20 right-8 z-50 bg-[#1F2B46] text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-in fade-in slide-in-from-top-4 border border-[#015CA9]">
@@ -995,8 +993,7 @@ export default function DoctorManagementView({
               </div>
             )}
           </div>
-        </main>
-      </div>
+      </main>
 
       {/* ── MODAL 1: VIEW DOCTOR PROFILE ─────────────────── */}
       <Dialog

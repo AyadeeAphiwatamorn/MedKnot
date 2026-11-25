@@ -41,7 +41,7 @@ async function StaffGuard() {
  */
 export default function StaffPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#EDF2E9]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
       <StaffGuard />
     </Suspense>
   );

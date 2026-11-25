@@ -35,7 +35,7 @@ async function DoctorManagementGuard() {
 
 export default function DoctorManagementPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#EDF2E9]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
       <DoctorManagementGuard />
     </Suspense>
   );

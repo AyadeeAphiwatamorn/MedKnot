@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { type UserSession, DEFAULT_ADMIN, clearClientSession, getClientSession } from "@/lib/auth";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
 
 interface FacilityOverviewViewProps {
   initialUser?: UserSession;
@@ -282,12 +280,12 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
   };
 
   return (
-    <div className="min-h-screen bg-[#EDF2E9] text-[#1F2B46] font-sans antialiased flex flex-col">
+    <div className="w-full min-w-0 flex-1 bg-transparent text-[#1F2B46] font-sans antialiased flex flex-col">
       {/* Toast Notification */}
       {toastMessage && (
         <div
           role="alert"
-          className={`fixed bottom-6 right-6 z-50 px-5 py-3.5 rounded-xl shadow-lg border flex items-center gap-3 transition-all animate-bounce-short ${
+          className={`fixed top-20 right-6 z-50 px-5 py-3.5 rounded-xl shadow-lg border flex items-center gap-3 transition-all animate-bounce-short ${
             toastMessage.type === "success"
               ? "bg-[#0055A4] text-white border-[#004382]"
               : "bg-[#1F2B46] text-white border-[#3B4863]"
@@ -307,15 +305,9 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
         </div>
       )}
 
-      {/* Shared Dashboard Sidebar */}
-      <DashboardSidebar user={user} activeNav="facility-settings" onSignOut={handleSignOut} />
-
-      {/* Shared Dashboard Header */}
-      <DashboardHeader user={user} />
-
       {/* Main Content Area */}
-      <main className="ml-72 mt-16 p-8 flex-1">
-        <div className="max-w-7xl mx-auto space-y-6">
+      <main className="w-full min-w-0 p-4 md:p-8 flex-1">
+        <div className="w-full min-w-0 space-y-6">
           {/* Breadcrumbs & Context Badges */}
           <div className="flex flex-wrap items-center justify-between gap-4">
             <nav className="flex items-center gap-2 text-xs text-[#5A6372]">
