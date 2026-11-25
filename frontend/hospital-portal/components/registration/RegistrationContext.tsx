@@ -11,7 +11,24 @@ export interface DocumentItem {
   error?: string;
 }
 
+export type HospitalApplicationStatus =
+  | "Draft"
+  | "Submitted"
+  | "Under Review"
+  | "Approved"
+  | "Rejected";
+
+export type AdminAccountStatus =
+  | "Not Created"
+  | "Invitation Pending"
+  | "Invitation Sent"
+  | "Active";
+
 export interface RegistrationState {
+  // Application & Account Status (Confirmed Business Rule)
+  applicationStatus: HospitalApplicationStatus;
+  adminAccountStatus: AdminAccountStatus;
+
   // Step 1: Facility Info
   facilityName: string;
   facilityType: string;
@@ -64,6 +81,8 @@ interface RegistrationContextType {
   uploadDocument: (docKey: keyof RegistrationState["documents"], file: File) => void;
   removeDocument: (docKey: keyof RegistrationState["documents"]) => void;
   setLogo: (file: File | null, preview: string | null) => void;
+  setApplicationStatus: (status: HospitalApplicationStatus) => void;
+  setAdminAccountStatus: (status: AdminAccountStatus) => void;
   saveDraft: () => string;
   submitRegistration: () => string;
 }
@@ -100,6 +119,8 @@ const defaultDocuments: RegistrationState["documents"] = {
 };
 
 const initialRegistrationState: RegistrationState = {
+  applicationStatus: "Draft",
+  adminAccountStatus: "Not Created",
   facilityName: "St. Jude Specialty Hospital & Research Centre",
   facilityType: "Multispecialty Hospital",
   registrationNumber: "REG-MH-2024-91024",
@@ -199,6 +220,14 @@ export function RegistrationProvider({ children }: { children: React.ReactNode }
     return timeStr;
   };
 
+  const setApplicationStatus = (status: HospitalApplicationStatus) => {
+    setState((prev) => ({ ...prev, applicationStatus: status }));
+  };
+
+  const setAdminAccountStatus = (status: AdminAccountStatus) => {
+    setState((prev) => ({ ...prev, adminAccountStatus: status }));
+  };
+
   const submitRegistration = (): string => {
     const randomSuffix = Math.floor(1000 + Math.random() * 9000);
     const ref = `MK-HOSP-2026-${randomSuffix}`;
@@ -212,6 +241,8 @@ export function RegistrationProvider({ children }: { children: React.ReactNode }
     });
     setState((prev) => ({
       ...prev,
+      applicationStatus: "Submitted",
+      adminAccountStatus: "Invitation Pending",
       referenceNumber: ref,
       submissionDate: formatted,
     }));
@@ -227,6 +258,8 @@ export function RegistrationProvider({ children }: { children: React.ReactNode }
         uploadDocument,
         removeDocument,
         setLogo,
+        setApplicationStatus,
+        setAdminAccountStatus,
         saveDraft,
         submitRegistration,
       }}

@@ -1,17 +1,58 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import {
+  type HospitalApplicationStatus,
+  type AdminAccountStatus,
+} from "@/components/registration/RegistrationContext";
 
 function RegistrationPendingContent() {
   const searchParams = useSearchParams();
   const refParam = searchParams.get("ref") || "MK-HOSP-2026-8942";
 
+  // Simulated status lifecycle states (per confirmed business rules)
+  const [appStatus, setAppStatus] = useState<HospitalApplicationStatus>("Submitted");
+  const [adminStatus, setAdminStatus] = useState<AdminAccountStatus>("Invitation Pending");
+
+  // Status badge styling helpers
+  const getAppStatusBadge = (status: HospitalApplicationStatus) => {
+    switch (status) {
+      case "Draft":
+        return "bg-slate-100 text-slate-700 border-slate-300";
+      case "Submitted":
+        return "bg-blue-50 text-[#0055A4] border-blue-200";
+      case "Under Review":
+        return "bg-amber-50 text-amber-800 border-amber-300";
+      case "Approved":
+        return "bg-emerald-50 text-emerald-800 border-emerald-300";
+      case "Rejected":
+        return "bg-red-50 text-red-800 border-red-300";
+      default:
+        return "bg-slate-100 text-slate-700 border-slate-300";
+    }
+  };
+
+  const getAdminStatusBadge = (status: AdminAccountStatus) => {
+    switch (status) {
+      case "Not Created":
+        return "bg-slate-100 text-slate-600 border-slate-300";
+      case "Invitation Pending":
+        return "bg-amber-50 text-amber-800 border-amber-300";
+      case "Invitation Sent":
+        return "bg-indigo-50 text-indigo-800 border-indigo-300";
+      case "Active":
+        return "bg-emerald-50 text-emerald-800 border-emerald-300";
+      default:
+        return "bg-slate-100 text-slate-600 border-slate-300";
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#EDF2E9] text-[#1F2B46] font-body-md antialiased flex flex-col justify-between">
-      {/* Top Simple Header */}
+      {/* Top Header */}
       <header className="w-full bg-[#F3F6F0] border-b border-[#DDE6DA] py-4 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link href="/login" className="flex items-center gap-space-sm">
@@ -45,7 +86,7 @@ function RegistrationPendingContent() {
         </div>
       </header>
 
-      {/* Main Success Container */}
+      {/* Main Success & Status Container */}
       <main className="w-full max-w-4xl mx-auto px-6 py-12 flex-1 flex flex-col items-center justify-center">
         <div className="w-full bg-white border border-[#DDE6DA] rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col items-center text-center">
           {/* Animated Success Badge */}
@@ -67,9 +108,9 @@ function RegistrationPendingContent() {
             Thank you for registering with the MedKnot Connected Care network. Your institutional registration application has been received and entered our compliance vetting queue.
           </p>
 
-          {/* Reference Card */}
-          <div className="w-full max-w-xl p-6 rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] mb-8 text-left">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Reference Card with Strict Status Separation */}
+          <div className="w-full max-w-2xl p-6 rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] mb-8 text-left space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-[#DDE6DA]">
               <div>
                 <span className="font-supporting text-supporting text-[#5A6372] uppercase tracking-wider block">
                   Application Reference Number
@@ -81,29 +122,68 @@ function RegistrationPendingContent() {
 
               <div>
                 <span className="font-supporting text-supporting text-[#5A6372] uppercase tracking-wider block">
-                  Application Status
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold mt-1">
-                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-                  Pending Review
-                </span>
-              </div>
-
-              <div>
-                <span className="font-supporting text-supporting text-[#5A6372] uppercase tracking-wider block">
-                  Administrator Account Status
-                </span>
-                <span className="text-sm font-semibold text-[#1F2B46] block mt-1">
-                  Invitation Pending Approval
-                </span>
-              </div>
-
-              <div>
-                <span className="font-supporting text-supporting text-[#5A6372] uppercase tracking-wider block">
                   Estimated Review Timeframe
                 </span>
                 <span className="text-sm font-semibold text-[#1F2B46] block mt-1">
                   24–48 Business Hours
+                </span>
+              </div>
+            </div>
+
+            {/* Status Separation Panel */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              {/* 1. Hospital Application Status */}
+              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] flex flex-col gap-1.5">
+                <span className="font-supporting text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold">
+                  1. Hospital Application Status
+                </span>
+                <div className="flex items-center gap-2">
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-bold ${getAppStatusBadge(
+                      appStatus
+                    )}`}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
+                    {appStatus}
+                  </span>
+                </div>
+                <p className="text-[11px] text-[#5A6372] mt-1">
+                  Institutional vetting by MedKnot central administration.
+                </p>
+              </div>
+
+              {/* 2. Administrator Account Status */}
+              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] flex flex-col gap-1.5">
+                <span className="font-supporting text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold">
+                  2. Administrator Account Status
+                </span>
+                <div className="flex items-center gap-2">
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-bold ${getAdminStatusBadge(
+                      adminStatus
+                    )}`}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-current" />
+                    {adminStatus}
+                  </span>
+                </div>
+                <p className="text-[11px] text-[#5A6372] mt-1">
+                  Activation invitation sent only after application approval.
+                </p>
+              </div>
+            </div>
+
+            {/* First Hospital Admin Designation Callout */}
+            <div className="p-3.5 rounded-xl bg-[#EBF3FC] border border-[#DDE6DA] flex items-start gap-3">
+              <span className="material-symbols-outlined text-[#0055A4] text-xl shrink-0 mt-0.5">
+                admin_panel_settings
+              </span>
+              <div className="flex flex-col text-xs leading-relaxed text-[#1F2B46]">
+                <span className="font-bold text-[#0055A4]">
+                  First Hospital Admin Account Notice
+                </span>
+                <span>
+                  The designated Authorized Administrator will establish the hospital’s primary administrative node. Submitting this registration does <strong>not</strong> grant immediate login access. An activation invitation will be dispatched to their verified institutional email upon approval.
                 </span>
               </div>
             </div>
@@ -156,6 +236,92 @@ function RegistrationPendingContent() {
                   The administrator creates their secure password, activates the first Hospital Admin account, and can then invite physicians, nurses, and desk staff.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Interactive Status Lifecycle Simulator (Frontend Prototype Demonstration) */}
+          <div className="w-full max-w-2xl text-left mb-8 p-4 rounded-2xl bg-slate-50 border border-dashed border-slate-300">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                <span className="material-symbols-outlined text-[16px] text-[#0055A4]">science</span>
+                Demo Simulation: Preview Status Progression
+              </span>
+              <span className="text-[10px] text-slate-400">Frontend Prototype Mode</span>
+            </div>
+            <p className="text-xs text-slate-600 mb-3">
+              In production, status transitions are triggered by the Spring Boot backend when administrators take review actions. Click below to preview each lifecycle state:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setAppStatus("Submitted");
+                  setAdminStatus("Invitation Pending");
+                }}
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+                  appStatus === "Submitted"
+                    ? "bg-[#0055A4] text-white shadow-xs"
+                    : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-100"
+                }`}
+              >
+                1. Application Submitted
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setAppStatus("Under Review");
+                  setAdminStatus("Invitation Pending");
+                }}
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+                  appStatus === "Under Review"
+                    ? "bg-[#0055A4] text-white shadow-xs"
+                    : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-100"
+                }`}
+              >
+                2. Under Review
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setAppStatus("Approved");
+                  setAdminStatus("Invitation Sent");
+                }}
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+                  appStatus === "Approved" && adminStatus === "Invitation Sent"
+                    ? "bg-[#0055A4] text-white shadow-xs"
+                    : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-100"
+                }`}
+              >
+                3. Approved &amp; Invitation Dispatched
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setAppStatus("Approved");
+                  setAdminStatus("Active");
+                }}
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+                  adminStatus === "Active"
+                    ? "bg-[#0055A4] text-white shadow-xs"
+                    : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-100"
+                }`}
+              >
+                4. Administrator Activated
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setAppStatus("Rejected");
+                  setAdminStatus("Not Created");
+                }}
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+                  appStatus === "Rejected"
+                    ? "bg-red-600 text-white shadow-xs"
+                    : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-100"
+                }`}
+              >
+                5. Rejected
+              </button>
             </div>
           </div>
 
