@@ -6,7 +6,7 @@ export default function RegistrationSidebar() {
   return (
     <div className="lg:col-span-4 flex flex-col gap-space-lg min-w-0">
       {/* ── Card 1: Verification Checklist ─────────────────────────── */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+      <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
         <div className="flex items-center justify-between gap-space-sm">
           <span className="font-card-heading text-card-heading text-[#1F2B46] font-bold truncate">
             Verification Checklist
@@ -21,7 +21,7 @@ export default function RegistrationSidebar() {
 
         <div className="flex flex-col gap-space-sm pt-space-xs">
           {/* Item 1 */}
-          <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-start gap-space-sm">
+          <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-start gap-space-sm">
             <div className="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
               <span className="material-symbols-outlined text-[16px]">check</span>
             </div>
@@ -39,7 +39,7 @@ export default function RegistrationSidebar() {
           </div>
 
           {/* Item 2 */}
-          <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-start gap-space-sm">
+          <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-start gap-space-sm">
             <div className="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
               <span className="material-symbols-outlined text-[16px]">check</span>
             </div>
@@ -57,8 +57,8 @@ export default function RegistrationSidebar() {
           </div>
 
           {/* Item 3 */}
-          <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-start gap-space-sm opacity-90">
-            <div className="w-6 h-6 rounded-full bg-[#E2E8DE] text-[#727783] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+          <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-start gap-space-sm opacity-90">
+            <div className="w-6 h-6 rounded-full bg-[#D5DFD2] text-[#727783] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
               <span className="material-symbols-outlined text-[16px]">hourglass_empty</span>
             </div>
             <div className="flex flex-col min-w-0">
@@ -78,7 +78,7 @@ export default function RegistrationSidebar() {
         </div>
 
         {/* SLA Note */}
-        <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-[#1F2B46] font-supporting text-supporting flex items-start gap-2">
+        <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] text-[#1F2B46] font-supporting text-supporting flex items-start gap-2">
           <span className="material-symbols-outlined text-[#0055A4] text-[18px] shrink-0 mt-0.5">
             speed
           </span>
@@ -89,7 +89,7 @@ export default function RegistrationSidebar() {
       </div>
 
       {/* ── Card 2: Initial Admin Policy ────────────────────────────── */}
-      <div className="bg-[#EBF3FC] border border-[#DDE6DA] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+      <div className="bg-[#EBF3FC] border border-[#D5DFD2] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-sm">
         <div className="flex items-center gap-space-sm">
           <span className="material-symbols-outlined text-[#0055A4] text-[22px] shrink-0">
             admin_panel_settings
@@ -104,7 +104,7 @@ export default function RegistrationSidebar() {
       </div>
 
       {/* ── Card 3: Why Register with MedKnot? ──────────────────────── */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+      <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
         <div className="flex items-center gap-space-sm">
           <span className="material-symbols-outlined text-secondary text-[24px] shrink-0">
             verified
@@ -129,7 +129,7 @@ export default function RegistrationSidebar() {
             </div>
           </div>
 
-          <div className="w-full h-px bg-[#DDE6DA]"></div>
+          <div className="w-full h-px bg-[#D5DFD2]"></div>
 
           <div className="flex items-start gap-space-sm">
             <div className="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 shadow-xs">
@@ -145,7 +145,7 @@ export default function RegistrationSidebar() {
             </div>
           </div>
 
-          <div className="w-full h-px bg-[#DDE6DA]"></div>
+          <div className="w-full h-px bg-[#D5DFD2]"></div>
 
           <div className="flex items-start gap-space-sm">
             <div className="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 shadow-xs">
@@ -164,7 +164,7 @@ export default function RegistrationSidebar() {
       </div>
 
       {/* ── Card 4: Need Registration Assistance? ──────────────────── */}
-      <div className="rounded-2xl p-space-lg bg-[#F3F6F0] border border-[#DDE6DA] shadow-sm flex flex-col gap-space-sm">
+      <div className="rounded-2xl p-space-lg bg-[#EDF2E9] border border-[#D5DFD2] shadow-sm flex flex-col gap-space-sm">
         <div className="flex items-center gap-space-sm">
           <span className="material-symbols-outlined text-[#0055A4] text-[20px] shrink-0">
             support_agent

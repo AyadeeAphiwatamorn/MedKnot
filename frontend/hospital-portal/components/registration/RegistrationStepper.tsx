@@ -33,7 +33,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
 
   return (
     <div className="w-full pb-space-lg">
-      <div className="w-full bg-white border border-[#DDE6DA] rounded-2xl p-space-md shadow-sm">
+      <div className="w-full bg-white border border-[#D5DFD2] rounded-2xl p-space-md shadow-sm">
         <div className="max-w-5xl mx-auto flex items-center justify-between relative overflow-x-auto py-1">
           {steps.map((step, idx) => {
             const isCompleted = currentStep > step.num;
@@ -47,7 +47,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
                       ? "bg-[#0055A4] text-white font-bold ring-4 ring-[#0055A4]/15"
                       : isCompleted
                       ? "bg-tertiary-fixed text-tertiary font-bold"
-                      : "bg-[#F3F6F0] border border-[#DDE6DA] text-[#727783]"
+                      : "bg-[#EDF2E9] border border-[#D5DFD2] text-[#727783]"
                   }`}
                 >
                   {isCompleted ? (
@@ -94,7 +94,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
                 {idx < steps.length - 1 && (
                   <div
                     className={`flex-1 h-0.5 min-w-[20px] transition-colors ${
-                      currentStep > step.num ? "bg-tertiary-fixed" : "bg-[#DDE6DA]"
+                      currentStep > step.num ? "bg-tertiary-fixed" : "bg-[#D5DFD2]"
                     }`}
                   />
                 )}

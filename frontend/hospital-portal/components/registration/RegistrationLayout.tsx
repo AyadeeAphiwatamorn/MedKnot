@@ -30,7 +30,7 @@ export default function RegistrationLayout({
   };
 
   return (
-    <div className="min-h-screen bg-[#EDF2E9] text-[#1F2B46] font-body-md antialiased flex flex-col">
+    <div className="registration-theme min-h-screen bg-[#E4EBE0] text-[#1F2B46] font-body-md antialiased flex flex-col">
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed top-20 right-8 z-50 bg-[#1F2B46] text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-in fade-in slide-in-from-top-4">
@@ -107,7 +107,7 @@ export default function RegistrationLayout({
             </span>
             <button
               onClick={handleSaveDraft}
-              className="px-space-md py-1.5 rounded-lg bg-white border border-[#DDE6DA] hover:bg-[#F3F6F0] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
+              className="px-space-md py-1.5 rounded-lg bg-white border border-[#D5DFD2] hover:bg-[#EDF2E9] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
               type="button"
               title="Save Draft"
             >
@@ -132,7 +132,7 @@ export default function RegistrationLayout({
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-[#DDE6DA] bg-[#F3F6F0] py-6 mt-12 text-center text-xs text-[#5A6372]">
+      <footer className="w-full border-t border-[#D5DFD2] bg-[#EDF2E9] py-6 mt-12 text-center text-xs text-[#5A6372]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span>© 2026 MedKnot Health Informatics Inc. All clinical rights reserved. Protected under Federal &amp; ABDM Safeguards.</span>
           <div className="flex items-center gap-4 text-[#0055A4] font-medium">

@@ -46,7 +46,7 @@ export default function Step4ReviewPage() {
     >
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-xl">
         {/* Main Review Card */}
-        <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-xl">
+        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-xl">
           <div className="flex items-start justify-between gap-space-md">
             <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-space-sm">
@@ -67,8 +67,8 @@ export default function Step4ReviewPage() {
           </div>
 
           {/* Section 1: Facility Information Summary */}
-          <div className="p-space-lg rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col gap-space-md">
-            <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-space-sm">
+          <div className="p-space-lg rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-space-md">
+            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-space-sm">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4] text-[20px]">domain</span>
                 <h3 className="font-card-heading text-card-heading text-[#1F2B46] font-bold">
@@ -116,7 +116,7 @@ export default function Step4ReviewPage() {
               )}
               {state.logoPreview && (
                 <div className="md:col-span-2 flex items-center gap-3 pt-1">
-                  <div className="w-12 h-12 rounded-lg bg-white border border-[#DDE6DA] p-1 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-white border border-[#D5DFD2] p-1 flex items-center justify-center shrink-0">
                     <Image
                       src={state.logoPreview}
                       alt="Logo"
@@ -131,7 +131,7 @@ export default function Step4ReviewPage() {
               )}
               <div className="md:col-span-2">
                 <span className="text-[#5A6372] block text-xs">Overview &amp; Infrastructure</span>
-                <p className="text-xs text-[#1F2B46] mt-0.5 leading-relaxed bg-white/70 p-3 rounded-lg border border-[#DDE6DA]">
+                <p className="text-xs text-[#1F2B46] mt-0.5 leading-relaxed bg-white/70 p-3 rounded-lg border border-[#D5DFD2]">
                   {state.overview}
                 </p>
               </div>
@@ -139,8 +139,8 @@ export default function Step4ReviewPage() {
           </div>
 
           {/* Section 2: Contact Details Summary */}
-          <div className="p-space-lg rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col gap-space-md">
-            <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-space-sm">
+          <div className="p-space-lg rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-space-md">
+            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-space-sm">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4] text-[20px]">location_on</span>
                 <h3 className="font-card-heading text-card-heading text-[#1F2B46] font-bold">
@@ -175,8 +175,8 @@ export default function Step4ReviewPage() {
           </div>
 
           {/* Section 3: Authorized Administrator (First Hospital Admin) */}
-          <div className="p-space-lg rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col gap-space-md">
-            <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-space-sm">
+          <div className="p-space-lg rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-space-md">
+            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-space-sm">
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="material-symbols-outlined text-[#0055A4] text-[20px]">verified_user</span>
                 <h3 className="font-card-heading text-card-heading text-[#1F2B46] font-bold">
@@ -214,7 +214,7 @@ export default function Step4ReviewPage() {
               </div>
 
               {state.isApplicantDifferent && (
-                <div className="md:col-span-2 pt-2 border-t border-[#DDE6DA] text-xs">
+                <div className="md:col-span-2 pt-2 border-t border-[#D5DFD2] text-xs">
                   <span className="text-[#5A6372] block font-semibold">Submitted by Authorized Representative:</span>
                   <span className="text-[#1F2B46]">
                     {state.applicantName} ({state.applicantEmail} {state.applicantPhone ? `• ${state.applicantPhone}` : ""})
@@ -225,8 +225,8 @@ export default function Step4ReviewPage() {
           </div>
 
           {/* Section 4: Uploaded Documents Summary */}
-          <div className="p-space-lg rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col gap-space-md">
-            <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-space-sm">
+          <div className="p-space-lg rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-space-md">
+            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-space-sm">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4] text-[20px]">folder_open</span>
                 <h3 className="font-card-heading text-card-heading text-[#1F2B46] font-bold">
@@ -254,7 +254,7 @@ export default function Step4ReviewPage() {
                 return (
                   <div
                     key={key}
-                    className="p-3 bg-white rounded-xl border border-[#DDE6DA] flex items-center justify-between text-xs"
+                    className="p-3 bg-white rounded-xl border border-[#D5DFD2] flex items-center justify-between text-xs"
                   >
                     <div className="flex items-center gap-2 min-w-0">
                       <span className="material-symbols-outlined text-[#0055A4] text-[18px] shrink-0">description</span>
@@ -273,7 +273,7 @@ export default function Step4ReviewPage() {
           </div>
 
           {/* Declarations & Agreements Checkboxes */}
-          <div className="p-space-lg rounded-2xl bg-[#EBF3FC] border border-[#DDE6DA] flex flex-col gap-space-md">
+          <div className="p-space-lg rounded-2xl bg-[#EBF3FC] border border-[#D5DFD2] flex flex-col gap-space-md">
             <h3 className="font-card-heading text-card-heading text-[#0055A4] font-bold">
               Institutional Declarations &amp; Legal Undertaking
             </h3>
@@ -285,7 +285,7 @@ export default function Step4ReviewPage() {
                   name="declarationAgreed"
                   checked={state.declarationAgreed}
                   onChange={handleCheckboxChange}
-                  className="w-4 h-4 mt-0.5 text-[#0055A4] rounded border-[#DDE6DA] focus:ring-[#0055A4] cursor-pointer"
+                  className="w-4 h-4 mt-0.5 text-[#0055A4] rounded border-[#D5DFD2] focus:ring-[#0055A4] cursor-pointer"
                 />
                 <span className="text-xs text-[#1F2B46] leading-relaxed">
                   I solemnly declare that all institutional credentials, registration numbers, and administrative designations provided are true and certified by our governing board. I understand that submitting false or misleading information will result in immediate termination of onboarding.
@@ -298,7 +298,7 @@ export default function Step4ReviewPage() {
                   name="termsAgreed"
                   checked={state.termsAgreed}
                   onChange={handleCheckboxChange}
-                  className="w-4 h-4 mt-0.5 text-[#0055A4] rounded border-[#DDE6DA] focus:ring-[#0055A4] cursor-pointer"
+                  className="w-4 h-4 mt-0.5 text-[#0055A4] rounded border-[#D5DFD2] focus:ring-[#0055A4] cursor-pointer"
                 />
                 <span className="text-xs text-[#1F2B46] leading-relaxed">
                   I agree to the <a href="#" className="font-semibold text-[#0055A4] underline">MedKnot Connected Care Service Terms</a>, <a href="#" className="font-semibold text-[#0055A4] underline">Data Processing Addendum</a>, and compliance protocols governing ABDM, HIPAA, and end-to-end medical records encryption.
@@ -316,10 +316,10 @@ export default function Step4ReviewPage() {
         </div>
 
         {/* Sticky Action Row */}
-        <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
           <Link
             href="/register-hospital/documents"
-            className="px-space-lg py-2.5 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
+            className="px-space-lg py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
           >
             <span className="material-symbols-outlined text-[18px] shrink-0">arrow_back</span>
             <span className="whitespace-nowrap">Back to Documents</span>

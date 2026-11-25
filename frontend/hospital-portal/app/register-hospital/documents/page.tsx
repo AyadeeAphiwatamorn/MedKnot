@@ -121,7 +121,7 @@ export default function Step3DocumentsPage() {
       subtitle="Attach official digital scans of legal licensing, board resolutions, and clinical accreditations."
     >
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-xl">
-        <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
           <div className="flex items-start justify-between gap-space-md">
             <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-space-sm">
@@ -153,12 +153,12 @@ export default function Step3DocumentsPage() {
                   key={doc.key}
                   className={`p-space-lg rounded-2xl border transition-all ${
                     isUploaded
-                      ? "bg-[#F3F6F0] border-[#DDE6DA]"
+                      ? "bg-[#EDF2E9] border-[#D5DFD2]"
                       : activeDragKey === doc.key
-                      ? "border-[#0055A4] bg-[#E8EFE5]"
+                      ? "border-[#0055A4] bg-[#E4EBE0]"
                       : hasError
                       ? "border-error bg-red-50/20"
-                      : "bg-[#F3F6F0]/60 border-[#DDE6DA] hover:border-[#0055A4]"
+                      : "bg-[#EDF2E9]/60 border-[#D5DFD2] hover:border-[#0055A4]"
                   }`}
                   onDragOver={(e) => {
                     e.preventDefault();
@@ -180,7 +180,7 @@ export default function Step3DocumentsPage() {
                         className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-xs ${
                           isUploaded
                             ? "bg-tertiary-fixed text-tertiary"
-                            : "bg-white border border-[#DDE6DA] text-[#0055A4]"
+                            : "bg-white border border-[#D5DFD2] text-[#0055A4]"
                         }`}
                       >
                         <span className="material-symbols-outlined text-[24px]">
@@ -255,7 +255,7 @@ export default function Step3DocumentsPage() {
                               const el = document.getElementById(`file-${doc.key}`) as HTMLInputElement;
                               el?.click();
                             }}
-                            className="px-3 py-1.5 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#E2E8DE] transition-colors cursor-pointer"
+                            className="px-3 py-1.5 rounded-lg bg-white border border-[#D5DFD2] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#E4EBE0] transition-colors cursor-pointer"
                           >
                             Replace
                           </button>
@@ -275,7 +275,7 @@ export default function Step3DocumentsPage() {
                             const el = document.getElementById(`file-${doc.key}`) as HTMLInputElement;
                             el?.click();
                           }}
-                          className="px-4 py-2 rounded-xl bg-white border border-[#DDE6DA] hover:border-[#0055A4] hover:bg-[#F3F6F0] text-[#0055A4] font-button-label text-supporting font-semibold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+                          className="px-4 py-2 rounded-xl bg-white border border-[#D5DFD2] hover:border-[#0055A4] hover:bg-[#EDF2E9] text-[#0055A4] font-button-label text-supporting font-semibold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
                         >
                           <span className="material-symbols-outlined text-[18px]">add</span>
                           <span>Upload File</span>
@@ -289,7 +289,7 @@ export default function Step3DocumentsPage() {
           </div>
 
           {/* Compliance & SLA Disclosure Banner */}
-          <div className="bg-[#EBF3FC] border border-[#DDE6DA] rounded-xl p-space-md flex items-start gap-space-md mt-2">
+          <div className="bg-[#EBF3FC] border border-[#D5DFD2] rounded-xl p-space-md flex items-start gap-space-md mt-2">
             <span className="material-symbols-outlined text-[#0055A4] text-[22px] shrink-0 mt-0.5">
               security
             </span>
@@ -305,10 +305,10 @@ export default function Step3DocumentsPage() {
         </div>
 
         {/* Sticky Action Row */}
-        <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
           <Link
             href="/register-hospital/administrator"
-            className="px-space-lg py-2.5 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
+            className="px-space-lg py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
           >
             <span className="material-symbols-outlined text-[18px] shrink-0">arrow_back</span>
             <span className="whitespace-nowrap">Back to Contact &amp; Administrator</span>
@@ -318,7 +318,7 @@ export default function Step3DocumentsPage() {
             <button
               onClick={() => saveDraft()}
               type="button"
-              className="px-space-lg py-2.5 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
+              className="px-space-lg py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
             >
               Save Draft
             </button>

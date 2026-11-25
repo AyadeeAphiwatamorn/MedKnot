@@ -104,7 +104,7 @@ export default function Step2AdministratorPage() {
     >
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-xl">
         {/* SECTION A: Location & Contact Details */}
-        <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
           <div className="flex items-start justify-between gap-space-md">
             <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-space-sm">
@@ -134,7 +134,7 @@ export default function Step2AdministratorPage() {
                 type="text"
                 readOnly
                 value={state.country}
-                className="w-full px-space-md py-2.5 bg-[#E8EFE5] border border-[#DDE6DA] rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none cursor-not-allowed select-none"
+                className="w-full px-space-md py-2.5 bg-[#E4EBE0] border border-[#D5DFD2] rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none cursor-not-allowed select-none"
               />
             </div>
 
@@ -152,7 +152,7 @@ export default function Step2AdministratorPage() {
                   name="state"
                   value={state.state}
                   onChange={handleChange}
-                  className="w-full appearance-none px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#DDE6DA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
+                  className="w-full appearance-none px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#D5DFD2] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
                 >
                   <option value="Maharashtra">Maharashtra</option>
                   <option value="Karnataka">Karnataka</option>
@@ -184,8 +184,8 @@ export default function Step2AdministratorPage() {
                 value={state.city}
                 onChange={handleChange}
                 placeholder="City"
-                className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                  errors.city ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                  errors.city ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                 }`}
               />
               {errors.city && (
@@ -211,8 +211,8 @@ export default function Step2AdministratorPage() {
                 value={state.pincode}
                 onChange={handleChange}
                 placeholder="PIN Code"
-                className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                  errors.pincode ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                  errors.pincode ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                 }`}
               />
               {errors.pincode && (
@@ -238,8 +238,8 @@ export default function Step2AdministratorPage() {
                 value={state.streetAddress}
                 onChange={handleChange}
                 placeholder="Street name, building numbers, landmark"
-                className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                  errors.streetAddress ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                  errors.streetAddress ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                 }`}
               />
               {errors.streetAddress && (
@@ -269,8 +269,8 @@ export default function Step2AdministratorPage() {
                   value={state.contactDesk}
                   onChange={handleChange}
                   placeholder="+91..."
-                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                    errors.contactDesk ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                    errors.contactDesk ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                   }`}
                 />
               </div>
@@ -301,8 +301,8 @@ export default function Step2AdministratorPage() {
                   value={state.registryEmail}
                   onChange={handleChange}
                   placeholder="admin@hospital.org"
-                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                    errors.registryEmail ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                    errors.registryEmail ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                   }`}
                 />
               </div>
@@ -317,7 +317,7 @@ export default function Step2AdministratorPage() {
         </div>
 
         {/* SECTION B: Authorized Administrator (First Hospital Admin) */}
-        <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
           <div className="flex items-start justify-between gap-space-md">
             <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-space-sm flex-wrap">
@@ -356,8 +356,8 @@ export default function Step2AdministratorPage() {
                 value={state.adminName}
                 onChange={handleChange}
                 placeholder="e.g. Dr. Rajeshwar Kulkarni"
-                className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                  errors.adminName ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                  errors.adminName ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                 }`}
               />
               {errors.adminName && (
@@ -383,8 +383,8 @@ export default function Step2AdministratorPage() {
                 value={state.adminDesignation}
                 onChange={handleChange}
                 placeholder="Designation"
-                className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                  errors.adminDesignation ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                  errors.adminDesignation ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                 }`}
               />
               {errors.adminDesignation && (
@@ -414,8 +414,8 @@ export default function Step2AdministratorPage() {
                   value={state.adminEmail}
                   onChange={handleChange}
                   placeholder="name@hospital.org"
-                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                    errors.adminEmail ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                    errors.adminEmail ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                   }`}
                 />
               </div>
@@ -446,8 +446,8 @@ export default function Step2AdministratorPage() {
                   value={state.adminPhone}
                   onChange={handleChange}
                   placeholder="+91..."
-                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                    errors.adminPhone ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                    errors.adminPhone ? "border-error ring-1 ring-error" : "border-[#D5DFD2] focus:border-[#0055A4]"
                   }`}
                 />
               </div>
@@ -461,14 +461,14 @@ export default function Step2AdministratorPage() {
           </div>
 
           {/* Applicant Identity Distinction Checkbox */}
-          <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col gap-space-sm">
+          <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-space-sm">
             <label className="flex items-start gap-space-sm cursor-pointer select-none">
               <input
                 type="checkbox"
                 name="isApplicantDifferent"
                 checked={state.isApplicantDifferent}
                 onChange={handleChange}
-                className="w-4 h-4 mt-0.5 text-[#0055A4] rounded border-[#DDE6DA] focus:ring-[#0055A4] cursor-pointer"
+                className="w-4 h-4 mt-0.5 text-[#0055A4] rounded border-[#D5DFD2] focus:ring-[#0055A4] cursor-pointer"
               />
               <div className="flex flex-col min-w-0">
                 <span className="font-card-heading text-body-md text-[#1F2B46] font-semibold">
@@ -481,7 +481,7 @@ export default function Step2AdministratorPage() {
             </label>
 
             {state.isApplicantDifferent && (
-              <div className="pt-space-sm border-t border-[#DDE6DA] grid grid-cols-1 md:grid-cols-3 gap-space-md animate-in fade-in">
+              <div className="pt-space-sm border-t border-[#D5DFD2] grid grid-cols-1 md:grid-cols-3 gap-space-md animate-in fade-in">
                 <div className="flex flex-col gap-1">
                   <label className="font-supporting text-supporting text-[#1F2B46] font-semibold">
                     Applicant Full Name <span className="text-error">*</span>
@@ -492,7 +492,7 @@ export default function Step2AdministratorPage() {
                     value={state.applicantName}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full px-3 py-2 bg-white rounded-lg text-sm border border-[#DDE6DA] focus:border-[#0055A4] outline-none"
+                    className="w-full px-3 py-2 bg-white rounded-lg text-sm border border-[#D5DFD2] focus:border-[#0055A4] outline-none"
                   />
                   {errors.applicantName && (
                     <span className="text-error text-xs">{errors.applicantName}</span>
@@ -509,7 +509,7 @@ export default function Step2AdministratorPage() {
                     value={state.applicantEmail}
                     onChange={handleChange}
                     placeholder="your.email@hospital.org"
-                    className="w-full px-3 py-2 bg-white rounded-lg text-sm border border-[#DDE6DA] focus:border-[#0055A4] outline-none"
+                    className="w-full px-3 py-2 bg-white rounded-lg text-sm border border-[#D5DFD2] focus:border-[#0055A4] outline-none"
                   />
                   {errors.applicantEmail && (
                     <span className="text-error text-xs">{errors.applicantEmail}</span>
@@ -526,7 +526,7 @@ export default function Step2AdministratorPage() {
                     value={state.applicantPhone}
                     onChange={handleChange}
                     placeholder="+91..."
-                    className="w-full px-3 py-2 bg-white rounded-lg text-sm border border-[#DDE6DA] focus:border-[#0055A4] outline-none"
+                    className="w-full px-3 py-2 bg-white rounded-lg text-sm border border-[#D5DFD2] focus:border-[#0055A4] outline-none"
                   />
                 </div>
               </div>
@@ -534,7 +534,7 @@ export default function Step2AdministratorPage() {
           </div>
 
           {/* Legal Notice Banner */}
-          <div className="bg-[#EBF3FC] border border-[#DDE6DA] rounded-xl p-space-md flex items-start gap-space-md">
+          <div className="bg-[#EBF3FC] border border-[#D5DFD2] rounded-xl p-space-md flex items-start gap-space-md">
             <span className="material-symbols-outlined text-[#0055A4] text-[22px] shrink-0 mt-0.5">
               policy
             </span>
@@ -550,10 +550,10 @@ export default function Step2AdministratorPage() {
         </div>
 
         {/* Sticky Action Row */}
-        <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
           <Link
             href="/register-hospital/facility"
-            className="px-space-lg py-2.5 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
+            className="px-space-lg py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
           >
             <span className="material-symbols-outlined text-[18px] shrink-0">arrow_back</span>
             <span className="whitespace-nowrap">Back to Facility Information</span>
@@ -563,7 +563,7 @@ export default function Step2AdministratorPage() {
             <button
               onClick={() => saveDraft()}
               type="button"
-              className="px-space-lg py-2.5 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
+              className="px-space-lg py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
             >
               Save Draft
             </button>

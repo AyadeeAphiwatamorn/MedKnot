@@ -51,19 +51,20 @@ export default function DashboardSidebar({
       id: "staff-management",
       label: "Staff Management",
       icon: "badge",
-      href: "#",
+      href: "/dashboard/staff",
+      badgeIcon: "shield_person",
     },
     {
       id: "facility-settings",
       label: "Facility Settings",
       icon: "domain",
-      href: "/dashboard/settings/facility/register",
+      href: "/dashboard/settings/facility",
     },
     {
       id: "my-profile",
       label: "My Profile",
       icon: "account_circle",
-      href: "#",
+      href: "/dashboard/profile",
     },
   ];
 
@@ -110,18 +111,29 @@ export default function DashboardSidebar({
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={`flex items-center gap-space-md px-space-md py-space-sm rounded-xl transition-all ${
+                  className={`flex items-center justify-between px-space-md py-space-sm rounded-xl transition-all ${
                     isActive
                       ? "bg-[#0055A4] text-white font-semibold shadow-sm"
                       : "text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46]"
                   }`}
                 >
-                  <span className="material-symbols-outlined text-xl shrink-0">
-                    {item.icon}
-                  </span>
-                  <span className="font-body-md text-body-md truncate">
-                    {item.label}
-                  </span>
+                  <div className="flex items-center gap-space-md min-w-0">
+                    <span className="material-symbols-outlined text-xl shrink-0">
+                      {item.icon}
+                    </span>
+                    <span className="font-body-md text-body-md truncate">
+                      {item.label}
+                    </span>
+                  </div>
+                  {item.badgeIcon && (
+                    <span
+                      className={`material-symbols-outlined text-sm shrink-0 ${
+                        isActive ? "text-[#afccff]" : "text-[#727783]"
+                      }`}
+                    >
+                      {item.badgeIcon}
+                    </span>
+                  )}
                 </Link>
               );
             })}

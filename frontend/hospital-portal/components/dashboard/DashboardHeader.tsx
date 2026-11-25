@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { type UserSession, DEFAULT_ADMIN } from "@/lib/auth";
 
 interface DashboardHeaderProps {
@@ -48,8 +49,12 @@ export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeade
         </button>
 
         <div className="flex items-center gap-space-md pl-space-md">
-          <div className="flex items-center gap-space-sm bg-white border border-[#DDE6DA] py-1 px-space-md rounded-full shadow-sm hover:bg-[#F3F6F0] transition-colors cursor-pointer">
-            <div className="w-8 h-8 rounded-full bg-white border border-[#DDE6DA] flex items-center justify-center p-0.5 shrink-0 shadow-xs">
+          <Link
+            href="/dashboard/profile"
+            className="flex items-center gap-space-sm bg-white border border-[#D5DFD2] py-1 px-space-md rounded-full shadow-sm hover:bg-[#F3F6F0] transition-colors cursor-pointer"
+            title="View My Profile"
+          >
+            <div className="w-8 h-8 rounded-full bg-white border border-[#D5DFD2] flex items-center justify-center p-0.5 shrink-0 shadow-xs">
               <Image
                 src="/logo.png"
                 alt="Profile"
@@ -66,7 +71,7 @@ export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeade
                 {user.department}
               </span>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </header>

@@ -198,3 +198,17 @@ body {
   --color-outline-variant: #DDE6DA;
 }
 
+/* ── Public Hospital Registration Scoped Theme ───────────────────── */
+.registration-theme {
+  --color-surface: #E4EBE0;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #EDF2E9;
+  --color-surface-container: #E4EBE0;
+  --color-surface-container-high: #D5DFD2;
+  --color-surface-container-highest: #CAD6C6;
+  --color-on-surface: #1F2B46;
+  --color-primary: #0055A4;
+  --color-primary-container: #0055A4;
+  --color-outline-variant: #D5DFD2;
+}
+

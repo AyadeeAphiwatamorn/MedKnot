@@ -51,12 +51,12 @@ function RegistrationPendingContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EDF2E9] text-[#1F2B46] font-body-md antialiased flex flex-col justify-between">
+    <div className="registration-theme min-h-screen bg-[#E4EBE0] text-[#1F2B46] font-body-md antialiased flex flex-col justify-between">
       {/* Top Header */}
-      <header className="w-full bg-[#F3F6F0] border-b border-[#DDE6DA] py-4 px-6 lg:px-8">
+      <header className="w-full bg-[#EDF2E9] border-b border-[#D5DFD2] py-4 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link href="/login" className="flex items-center gap-space-sm">
-            <div className="w-9 h-9 rounded-xl bg-white border border-[#DDE6DA] flex items-center justify-center p-1 shadow-xs">
+            <div className="w-9 h-9 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-center p-1 shadow-xs">
               <Image
                 src="/logo.png"
                 alt="MedKnot Logo"
@@ -88,7 +88,7 @@ function RegistrationPendingContent() {
 
       {/* Main Success & Status Container */}
       <main className="w-full max-w-4xl mx-auto px-6 py-12 flex-1 flex flex-col items-center justify-center">
-        <div className="w-full bg-white border border-[#DDE6DA] rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col items-center text-center">
+        <div className="w-full bg-white border border-[#D5DFD2] rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col items-center text-center">
           {/* Animated Success Badge */}
           <div className="w-20 h-20 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-sm mb-6 animate-in zoom-in-75">
             <span className="material-symbols-outlined text-4xl text-secondary">
@@ -109,8 +109,8 @@ function RegistrationPendingContent() {
           </p>
 
           {/* Reference Card with Strict Status Separation */}
-          <div className="w-full max-w-2xl p-6 rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] mb-8 text-left space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-[#DDE6DA]">
+          <div className="w-full max-w-2xl p-6 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] mb-8 text-left space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-[#D5DFD2]">
               <div>
                 <span className="font-supporting text-supporting text-[#5A6372] uppercase tracking-wider block">
                   Application Reference Number
@@ -133,7 +133,7 @@ function RegistrationPendingContent() {
             {/* Status Separation Panel */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               {/* 1. Hospital Application Status */}
-              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] flex flex-col gap-1.5">
+              <div className="p-4 rounded-xl bg-white border border-[#D5DFD2] flex flex-col gap-1.5">
                 <span className="font-supporting text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold">
                   1. Hospital Application Status
                 </span>
@@ -153,7 +153,7 @@ function RegistrationPendingContent() {
               </div>
 
               {/* 2. Administrator Account Status */}
-              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] flex flex-col gap-1.5">
+              <div className="p-4 rounded-xl bg-white border border-[#D5DFD2] flex flex-col gap-1.5">
                 <span className="font-supporting text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold">
                   2. Administrator Account Status
                 </span>
@@ -174,7 +174,7 @@ function RegistrationPendingContent() {
             </div>
 
             {/* First Hospital Admin Designation Callout */}
-            <div className="p-3.5 rounded-xl bg-[#EBF3FC] border border-[#DDE6DA] flex items-start gap-3">
+            <div className="p-3.5 rounded-xl bg-[#EBF3FC] border border-[#D5DFD2] flex items-start gap-3">
               <span className="material-symbols-outlined text-[#0055A4] text-xl shrink-0 mt-0.5">
                 admin_panel_settings
               </span>
@@ -196,7 +196,7 @@ function RegistrationPendingContent() {
               What Happens Next?
             </h2>
 
-            <div className="relative pl-6 space-y-5 border-l-2 border-[#DDE6DA]">
+            <div className="relative pl-6 space-y-5 border-l-2 border-[#D5DFD2]">
               <div className="relative">
                 <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#0055A4] ring-4 ring-white" />
                 <h3 className="font-card-heading text-body-md font-semibold text-[#1F2B46]">
@@ -208,7 +208,7 @@ function RegistrationPendingContent() {
               </div>
 
               <div className="relative">
-                <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#DDE6DA] ring-4 ring-white" />
+                <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#D5DFD2] ring-4 ring-white" />
                 <h3 className="font-card-heading text-body-md font-semibold text-[#1F2B46]">
                   2. Administrator Verification Call
                 </h3>
@@ -218,7 +218,7 @@ function RegistrationPendingContent() {
               </div>
 
               <div className="relative">
-                <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#DDE6DA] ring-4 ring-white" />
+                <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#D5DFD2] ring-4 ring-white" />
                 <h3 className="font-card-heading text-body-md font-semibold text-[#1F2B46]">
                   3. Account Invitation Dispatch
                 </h3>
@@ -228,7 +228,7 @@ function RegistrationPendingContent() {
               </div>
 
               <div className="relative">
-                <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#DDE6DA] ring-4 ring-white" />
+                <span className="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#D5DFD2] ring-4 ring-white" />
                 <h3 className="font-card-heading text-body-md font-semibold text-[#1F2B46]">
                   4. Hospital Portal Access &amp; Staff Onboarding
                 </h3>
@@ -240,7 +240,7 @@ function RegistrationPendingContent() {
           </div>
 
           {/* Interactive Status Lifecycle Simulator (Frontend Prototype Demonstration) */}
-          <div className="w-full max-w-2xl text-left mb-8 p-4 rounded-2xl bg-slate-50 border border-dashed border-slate-300">
+          <div className="w-full max-w-2xl text-left mb-8 p-4 rounded-2xl bg-white border border-[#D5DFD2]">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
                 <span className="material-symbols-outlined text-[16px] text-[#0055A4]">science</span>
@@ -337,7 +337,7 @@ function RegistrationPendingContent() {
 
             <a
               href="mailto:compliance@medknot.health"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-[18px] text-[#0055A4]">mail</span>
               <span>Contact Compliance Desk</span>
@@ -347,7 +347,7 @@ function RegistrationPendingContent() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-[#DDE6DA] bg-[#F3F6F0] py-4 text-center text-xs text-[#5A6372]">
+      <footer className="w-full border-t border-[#D5DFD2] bg-[#EDF2E9] py-4 text-center text-xs text-[#5A6372]">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>MedKnot Health Informatics Inc. • Dedicated Clinical Institutional Onboarding</span>
           <span className="text-[#0055A4] font-semibold">Toll Free: 1800-419-KNOT</span>
@@ -359,7 +359,7 @@ function RegistrationPendingContent() {
 
 export default function RegistrationPendingPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#EDF2E9]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-[#E4EBE0]" />}>
       <RegistrationPendingContent />
     </Suspense>
   );
