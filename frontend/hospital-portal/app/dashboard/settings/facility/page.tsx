@@ -1,3 +1,4 @@
+
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
@@ -20,6 +21,7 @@ async function FacilityOverviewGuard() {
   }
 
   let session: UserSession | null = null;
+
   try {
     session = JSON.parse(decodeURIComponent(sessionCookie.value));
   } catch {
