@@ -57,8 +57,10 @@ export default function DashboardSidebar({
   activeNav = "dashboard",
   onSignOut,
 }: DashboardSidebarProps) {
-  const { isCollapsed, toggleCollapsed, isMobileOpen, closeMobile } = useSidebar();
-  const [hoveredTooltip, setHoveredTooltip] = useState<HoveredTooltipState | null>(null);
+  const { isCollapsed, toggleCollapsed, isMobileOpen, closeMobile } =
+    useSidebar();
+  const [hoveredTooltip, setHoveredTooltip] =
+    useState<HoveredTooltipState | null>(null);
 
   // On mobile drawer (< 768px), always display expanded navigation labels inside the slide-over drawer
   const showCompactDesktop = isCollapsed && !isMobileOpen;
@@ -184,9 +186,13 @@ export default function DashboardSidebar({
   const renderNavGroup = (
     title: string,
     items: (typeof operationsNav)[0][],
-    showTopDivider = false
+    showTopDivider = false,
   ) => (
-    <div className={showCompactDesktop ? "flex flex-col mb-1.5" : "flex flex-col mb-3"}>
+    <div
+      className={
+        showCompactDesktop ? "flex flex-col mb-1.5" : "flex flex-col mb-3"
+      }
+    >
       {showCompactDesktop ? (
         showTopDivider ? (
           <div className="h-px bg-[#DDE6DA] mx-3.5 my-1.5" aria-hidden="true" />
@@ -199,7 +205,9 @@ export default function DashboardSidebar({
         </div>
       )}
 
-      <div className={showCompactDesktop ? "px-2.5 py-0.5" : "px-space-md py-0.5"}>
+      <div
+        className={showCompactDesktop ? "px-2.5 py-0.5" : "px-space-md py-0.5"}
+      >
         <nav className="flex flex-col gap-0.5" aria-label={title}>
           {items.map((item) => {
             const isActive = activeNav === item.id;
@@ -209,9 +217,13 @@ export default function DashboardSidebar({
                 key={item.id}
                 href={item.href}
                 onClick={closeMobile}
-                onMouseEnter={(e) => showTooltipForTarget(e.currentTarget, item.label)}
+                onMouseEnter={(e) =>
+                  showTooltipForTarget(e.currentTarget, item.label)
+                }
                 onMouseLeave={hideTooltip}
-                onFocus={(e) => showTooltipForTarget(e.currentTarget, item.label)}
+                onFocus={(e) =>
+                  showTooltipForTarget(e.currentTarget, item.label)
+                }
                 onBlur={hideTooltip}
                 aria-label={item.label}
                 aria-current={isActive ? "page" : undefined}
@@ -259,7 +271,7 @@ export default function DashboardSidebar({
 
       <aside
         aria-label="Primary Sidebar Navigation"
-        className={`dashboard-sidebar-aside fixed inset-y-0 left-0 w-[296px] z-50 md:col-start-1 md:row-start-1 md:sticky md:top-0 md:h-screen md:w-full md:translate-x-0 md:z-20 bg-[#F3F6F0] border-r border-[#DDE6DA] shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between overflow-y-auto overflow-x-hidden sidebar-scrollbar ${
+        className={`dashboard-sidebar-aside fixed inset-y-0 left-0 w-[296px] z-50 md:col-start-1 md:row-start-1 md:sticky md:top-0 md:bottom-auto md:left-auto md:h-screen md:w-full md:translate-x-0 md:z-20 bg-[#F3F6F0] border-r border-[#DDE6DA] shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between overflow-y-auto overflow-x-hidden sidebar-scrollbar ${
           isMobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
       >
@@ -351,11 +363,17 @@ export default function DashboardSidebar({
             <Link
               href="/dashboard/profile"
               onMouseEnter={(e) =>
-                showTooltipForTarget(e.currentTarget, `${user.name} (${user.role})`)
+                showTooltipForTarget(
+                  e.currentTarget,
+                  `${user.name} (${user.role})`,
+                )
               }
               onMouseLeave={hideTooltip}
               onFocus={(e) =>
-                showTooltipForTarget(e.currentTarget, `${user.name} (${user.role})`)
+                showTooltipForTarget(
+                  e.currentTarget,
+                  `${user.name} (${user.role})`,
+                )
               }
               onBlur={hideTooltip}
               title={`${user.name} (${user.role}) — View Profile`}
@@ -373,9 +391,13 @@ export default function DashboardSidebar({
             {onSignOut && (
               <button
                 onClick={onSignOut}
-                onMouseEnter={(e) => showTooltipForTarget(e.currentTarget, "Sign Out")}
+                onMouseEnter={(e) =>
+                  showTooltipForTarget(e.currentTarget, "Sign Out")
+                }
                 onMouseLeave={hideTooltip}
-                onFocus={(e) => showTooltipForTarget(e.currentTarget, "Sign Out")}
+                onFocus={(e) =>
+                  showTooltipForTarget(e.currentTarget, "Sign Out")
+                }
                 onBlur={hideTooltip}
                 className="w-8 h-8 text-[#5A6372] hover:text-[#ba1a1a] hover:bg-[#F3F6F0] transition-colors rounded-lg flex items-center justify-center shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
                 title="Sign Out"

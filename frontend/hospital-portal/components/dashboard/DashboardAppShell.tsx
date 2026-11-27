@@ -64,7 +64,7 @@ export function DashboardAppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className="dashboard-layout-grid"
+      className="dashboard-layout-grid medknot-app-bg"
       style={{
         ["--sidebar-width" as string]: isCollapsed
           ? SIDEBAR_COLLAPSED_WIDTH

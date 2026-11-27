@@ -270,7 +270,7 @@ export default function LoginForm() {
                 type="text"
                 value={values.identifier}
                 onChange={handleChange}
-                placeholder="dr.chen@stjudes.medknot.org"
+                placeholder="Enter your work email or staff ID"
                 autoComplete="username"
                 disabled={isLoading}
                 required

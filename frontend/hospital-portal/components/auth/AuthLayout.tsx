@@ -51,7 +51,7 @@ export default function AuthLayout({
      * min-h-screen + relative so the z-10 centering wrapper stacks above z-0 background.
      */
     <div
-      className={`${inter.variable} relative min-h-screen w-full overflow-x-hidden font-[var(--font-inter)] antialiased`}
+      className={`${inter.variable} relative min-h-screen w-full overflow-x-hidden font-sans antialiased`}
     >
       {/* ① Animated gradient background — fixed, full-viewport, z:0 */}
       <AnimatedMedKnotBackground />
@@ -60,19 +60,18 @@ export default function AuthLayout({
       <div
         className={`relative z-10 flex min-h-screen w-full flex-col items-center ${
           headerElement || footerElement
-            ? 'justify-between p-4 sm:p-6 lg:p-8'
-            : 'justify-center p-4 md:p-6 lg:p-8'
+            ? 'justify-between px-4 py-6 sm:px-6 lg:py-8'
+            : 'justify-center px-4 sm:px-6'
         }`}
       >
         {headerElement}
 
         {/*
-          ③ Split-screen layout over the living gradient canvas:
-          Left BrandPanel floats transparently over the animated silk waves;
-          Right login card remains a crisp, stationary solid white rounded surface.
+          ③ Single unified outer frosted-glass card over the living gradient canvas:
+          Contains BOTH Left (BrandPanel) and Right (authentication form) in one container.
         */}
-        <main className="flex w-full max-w-[1320px] flex-col items-center gap-8 lg:min-h-[780px] lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-          {/* Left: BrandPanel — transparent background, animated canvas shows through */}
+        <main className="auth-unified-card backdrop-blur-xl mx-auto my-6 sm:my-8 lg:my-10 grid w-[90%] max-w-[1450px] grid-cols-1 items-stretch gap-10 p-6 sm:p-10 lg:min-h-[760px] lg:grid-cols-[1fr_0.9fr] lg:gap-12 lg:p-12">
+          {/* Left: BrandPanel directly inside Column 1 */}
           <BrandPanel
             headline={headline}
             subCopy={subCopy}
@@ -81,8 +80,8 @@ export default function AuthLayout({
             features={features}
           />
 
-          {/* Right: stationary white rounded login card */}
-          <section className="relative flex w-full flex-col items-center justify-center rounded-[28px] bg-white p-8 shadow-[0_24px_64px_rgba(1,92,169,0.12),0_8px_24px_rgba(15,23,42,0.06)] md:p-12 lg:w-[46%] lg:max-w-[540px] lg:p-14">
+          {/* Right: authentication form directly inside Column 2 (no separate inner card) */}
+          <section className="relative flex w-full flex-col items-center justify-center py-2">
             {children}
           </section>
         </main>

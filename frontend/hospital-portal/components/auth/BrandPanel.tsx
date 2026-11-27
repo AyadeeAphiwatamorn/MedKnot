@@ -97,15 +97,13 @@ export default function BrandPanel({
 
   return (
     <section
-      className="relative flex w-full flex-col justify-between p-4 sm:p-6 lg:w-[50%] lg:py-8 lg:pr-6 lg:pl-2"
+      className="relative flex w-full flex-col justify-between border-b border-[#015CA9]/12 pb-8 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-12"
       aria-label="MedKnot branding panel"
-      /* Fully transparent — animated background shows through */
-      style={{ background: 'transparent' }}
     >
       {/* ── MedKnot logo + brand name ──────────────────────────────── */}
       <div className="relative z-10">
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/60 bg-white/90 p-2 shadow-sm">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/60 bg-white/90 p-2 shadow-sm">
             <Image
               src="/logo.png"
               alt="MedKnot logo"
@@ -115,8 +113,8 @@ export default function BrandPanel({
               priority
             />
           </div>
-          <div>
-            <div className="flex items-center gap-2">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="text-xl font-bold tracking-tight text-[#1F2B46]">
                 Med<span className="text-[#015CA9]">Knot</span>
               </span>
@@ -124,7 +122,7 @@ export default function BrandPanel({
                 Hospital Portal
               </span>
             </div>
-            <p className="mt-0.5 text-[11px] font-medium tracking-wide text-slate-500">
+            <p className="mt-0.5 text-[11px] font-medium tracking-wide text-slate-600">
               Connected care. Brighter lives.
             </p>
           </div>
@@ -132,10 +130,10 @@ export default function BrandPanel({
       </div>
 
       {/* ── Hero content — headline + description + features ───────── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center py-10 lg:py-0 lg:mt-10 lg:mb-8">
+      <div className="relative z-10 flex flex-1 flex-col justify-center py-8 lg:py-9">
 
         {/* Large headline */}
-        <h1 className={`text-[2.6rem] font-extrabold leading-[1.1] tracking-tight lg:text-[3.2rem] ${headlineColor}`}>
+        <h1 className={`text-[2.4rem] font-extrabold leading-[1.1] tracking-tight sm:text-[2.75rem] lg:text-[3.1rem] ${headlineColor}`}>
           {headlineParts.map((part, i) =>
             i === headlineParts.length - 1 ? (
               <span key={i} className="block italic">{part}</span>
@@ -145,25 +143,25 @@ export default function BrandPanel({
           )}
         </h1>
 
-        {/* Decorative underline accent (matches Screenshot 4) */}
+        {/* Decorative underline accent */}
         <div className="mt-3 h-[3px] w-20 rounded-full bg-gradient-to-r from-[#DFEEA9] to-[#A3C8B4]" />
 
         {/* Sub-copy */}
-        <p className="mt-5 max-w-[420px] text-base leading-relaxed text-slate-700">
+        <p className="mt-5 max-w-[440px] text-base leading-relaxed text-slate-700">
           {subCopy}
         </p>
 
         {/* Feature highlights */}
         {features && features.length > 0 && (
-          <ul className="mt-8 space-y-4">
+          <ul className="mt-7 space-y-4">
             {features.map((feature, i) => (
               <li key={i} className="flex items-start gap-4">
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/80 text-[#015CA9] shadow-sm ring-1 ring-white/50">
                   {feature.icon}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-semibold text-[#1F2B46]">{feature.title}</p>
-                  <p className="text-xs text-slate-500 mt-0.5">{feature.description}</p>
+                  <p className="mt-0.5 text-xs text-slate-600">{feature.description}</p>
                 </div>
               </li>
             ))}
@@ -171,14 +169,14 @@ export default function BrandPanel({
         )}
       </div>
 
-      {/* ── Footer bar ─────────────────────────────────────────────── */}
-      <div className="relative z-10 mt-6 flex flex-col items-start justify-between gap-3 border-t border-[#015CA9]/10 pt-5 text-xs text-slate-600 sm:flex-row sm:items-center">
+      {/* ── Footer bar (kept inside the glass card) ────────────────── */}
+      <div className="relative z-10 flex flex-col items-start justify-between gap-3 border-t border-[#015CA9]/12 pt-5 text-xs text-slate-600 sm:flex-row sm:items-center">
         <div className="flex items-center gap-2">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#A3C8B4]" aria-hidden="true" />
-          <span className="font-medium text-slate-600">{footerTagline}</span>
+          <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#A3C8B4]" aria-hidden="true" />
+          <span className="font-medium text-slate-700">{footerTagline}</span>
         </div>
-        <div className="flex items-center gap-3 text-[11px] text-slate-400">
-          <span className="rounded border border-white/60 bg-white/60 px-2 py-0.5">v2.4 Pro</span>
+        <div className="flex flex-wrap items-center gap-2.5 text-[11px] text-slate-500">
+          <span className="rounded border border-white/70 bg-white/65 px-2 py-0.5">v2.4 Pro</span>
           <span aria-hidden="true">•</span>
           <a href="#" className="transition-colors hover:text-[#015CA9] focus:outline-none focus-visible:text-[#015CA9]">
             System Status
