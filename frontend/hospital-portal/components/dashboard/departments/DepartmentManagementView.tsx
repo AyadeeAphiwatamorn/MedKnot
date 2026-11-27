@@ -428,11 +428,11 @@ export default function DepartmentManagementView({
                 >
                   <span>Dashboard</span>
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#5A6372] whitespace-nowrap">
                   Clinical &amp; Facility
                 </span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   Department Management
                 </span>
@@ -471,7 +471,7 @@ export default function DepartmentManagementView({
 
             {/* Statistics Row */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <Building2 className="w-5 h-5" />
@@ -487,7 +487,7 @@ export default function DepartmentManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#DFEEA9] text-[#2d3a08] flex items-center justify-center shrink-0">
                     <Bed className="w-5 h-5" />
@@ -503,7 +503,7 @@ export default function DepartmentManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <Activity className="w-5 h-5" />
@@ -519,7 +519,7 @@ export default function DepartmentManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#FAE193] text-[#5e4300] flex items-center justify-center shrink-0">
                     <ShieldAlert className="w-5 h-5" />
@@ -535,9 +535,9 @@ export default function DepartmentManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#F3F6F0] text-[#5A6372] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#E3EBDD] text-[#5A6372] flex items-center justify-center shrink-0">
                     <Users className="w-5 h-5" />
                   </div>
                   <div>
@@ -553,9 +553,9 @@ export default function DepartmentManagementView({
             </div>
 
             {/* Filter & Search Bar */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-4 shadow-sm mb-6 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-6 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
               <div className="relative flex-1 min-w-[280px]">
-                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#727783]" />
+                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#667085]" />
                 <Input
                   type="text"
                   placeholder="Search by department name, code, head physician, location, or specialty..."
@@ -569,7 +569,7 @@ export default function DepartmentManagementView({
                 <select
                   value={selectedStatusFilter}
                   onChange={(e) => setSelectedStatusFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Statuses</option>
                   <option value="active">Operational</option>
@@ -583,7 +583,7 @@ export default function DepartmentManagementView({
                   className={`h-10 px-3.5 rounded-xl border text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
                     onlyEmergency
                       ? "bg-[#015CA9] text-white border-[#015CA9]"
-                      : "bg-[#F8FAF6] text-[#5A6372] border-[#DDE6DA] hover:bg-[#F3F6F0]"
+                      : "bg-[#E1E9DC] text-[#5A6372] border-[#C8D6C3] hover:bg-[#E6EDE2]"
                   }`}
                 >
                   <ShieldAlert className="w-4 h-4" />
@@ -603,11 +603,11 @@ export default function DepartmentManagementView({
                 return (
                   <Card
                     key={dept.id}
-                    className="hover:shadow-md transition-all border-[#DDE6DA] overflow-hidden flex flex-col justify-between"
+                    className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-all overflow-hidden flex flex-col justify-between"
                   >
                     <div>
                       {/* Card Header */}
-                      <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0] bg-[#FAFDF8]">
+                      <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3] bg-[#E6EDE2]">
                         <div className="flex items-start justify-between gap-3">
                           <div className="flex items-center gap-3 min-w-0">
                             <div className="w-12 h-12 rounded-2xl bg-[#E1F2FD] border border-[#bce0fb] text-[#015CA9] flex items-center justify-center shrink-0 shadow-xs">
@@ -639,9 +639,9 @@ export default function DepartmentManagementView({
                         </p>
 
                         {/* Head Doctor & Location */}
-                        <div className="p-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl space-y-2 text-xs">
+                        <div className="p-3 bg-[#E1E9DC] border border-[#C8D6C3] rounded-xl space-y-2 text-xs">
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783] flex items-center gap-1.5">
+                            <span className="text-[#667085] flex items-center gap-1.5">
                               <Crown className="w-3.5 h-3.5 text-[#015CA9]" />
                               Head of Department:
                             </span>
@@ -651,7 +651,7 @@ export default function DepartmentManagementView({
                           </div>
 
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783] flex items-center gap-1.5">
+                            <span className="text-[#667085] flex items-center gap-1.5">
                               <MapPin className="w-3.5 h-3.5 text-[#015CA9]" />
                               Location:
                             </span>
@@ -661,7 +661,7 @@ export default function DepartmentManagementView({
                           </div>
 
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783] flex items-center gap-1.5">
+                            <span className="text-[#667085] flex items-center gap-1.5">
                               <Phone className="w-3.5 h-3.5 text-[#015CA9]" />
                               Internal Phone:
                             </span>
@@ -696,7 +696,7 @@ export default function DepartmentManagementView({
                               {dept.occupiedBeds} / {dept.totalBeds} beds ({occupancyPercent}%)
                             </span>
                           </div>
-                          <div className="w-full h-2 bg-[#E2E8DE] rounded-full overflow-hidden">
+                          <div className="w-full h-2 bg-[#E1E9DC] rounded-full overflow-hidden">
                             <div
                               className={`h-full rounded-full transition-all duration-300 ${
                                 occupancyPercent > 85
@@ -713,7 +713,7 @@ export default function DepartmentManagementView({
                     </div>
 
                     {/* Card Actions Footer */}
-                    <div className="p-4 pt-3 border-t border-[#F3F6F0] bg-white flex items-center justify-between gap-2">
+                    <div className="p-4 pt-3 border-t border-[#C8D6C3] bg-white flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1 text-xs text-[#5A6372]">
                         <Users className="w-4 h-4 text-[#015CA9]" />
                         <span className="font-bold text-[#1F2B46]">
@@ -789,7 +789,7 @@ export default function DepartmentManagementView({
               </DialogHeader>
 
               <div className="space-y-4 py-2">
-                <div className="p-4 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] text-sm text-[#1F2B46] leading-relaxed">
+                <div className="p-4 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] text-sm text-[#1F2B46] leading-relaxed">
                   <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider block mb-1">
                     Department Mission &amp; Overview
                   </span>
@@ -797,20 +797,20 @@ export default function DepartmentManagementView({
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <div className="p-3 bg-white border border-[#DDE6DA] rounded-xl text-xs">
-                    <span className="text-[#727783] block">Head Doctor</span>
+                  <div className="p-3 bg-white border border-[#C8D6C3] rounded-xl text-xs">
+                    <span className="text-[#667085] block">Head Doctor</span>
                     <span className="font-bold text-[#1F2B46] truncate block mt-0.5">
                       {viewingDepartment.headDoctorName}
                     </span>
                   </div>
-                  <div className="p-3 bg-white border border-[#DDE6DA] rounded-xl text-xs">
-                    <span className="text-[#727783] block">Operating Hours</span>
+                  <div className="p-3 bg-white border border-[#C8D6C3] rounded-xl text-xs">
+                    <span className="text-[#667085] block">Operating Hours</span>
                     <span className="font-bold text-[#1F2B46] truncate block mt-0.5">
                       {viewingDepartment.operatingHours}
                     </span>
                   </div>
-                  <div className="p-3 bg-white border border-[#DDE6DA] rounded-xl text-xs">
-                    <span className="text-[#727783] block">Extension Phone</span>
+                  <div className="p-3 bg-white border border-[#C8D6C3] rounded-xl text-xs">
+                    <span className="text-[#667085] block">Extension Phone</span>
                     <span className="font-bold text-[#015CA9] block mt-0.5">
                       {viewingDepartment.extensionPhone}
                     </span>
@@ -838,7 +838,7 @@ export default function DepartmentManagementView({
                     </Button>
                   </div>
 
-                  <div className="border border-[#DDE6DA] rounded-xl divide-y divide-[#DDE6DA] max-h-56 overflow-y-auto">
+                  <div className="border border-[#C8D6C3] rounded-xl divide-y divide-[#C8D6C3] max-h-56 overflow-y-auto">
                     {getDoctorsForDept(viewingDepartment.id).map((doc) => (
                       <div
                         key={doc.id}
@@ -871,7 +871,7 @@ export default function DepartmentManagementView({
                       </div>
                     ))}
                     {getDoctorsForDept(viewingDepartment.id).length === 0 && (
-                      <p className="p-4 text-center text-xs text-[#727783] italic">
+                      <p className="p-4 text-center text-xs text-[#667085] italic">
                         No physicians currently assigned to this department.
                       </p>
                     )}
@@ -914,7 +914,7 @@ export default function DepartmentManagementView({
               </DialogHeader>
 
               {/* Add Doctor Input */}
-              <div className="p-4 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl space-y-3 mb-4">
+              <div className="p-4 bg-[#E1E9DC] border border-[#C8D6C3] rounded-xl space-y-3 mb-4">
                 <label className="text-xs font-semibold text-[#1F2B46] block">
                   Add Doctor to {assigningDept.name}
                 </label>
@@ -922,7 +922,7 @@ export default function DepartmentManagementView({
                   <select
                     value={selectedDoctorToAdd}
                     onChange={(e) => setSelectedDoctorToAdd(e.target.value)}
-                    className="flex-1 h-10 px-3 bg-white border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                    className="flex-1 h-10 px-3 bg-white border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                   >
                     <option value="">Select a physician to transfer/add...</option>
                     {doctors
@@ -950,7 +950,7 @@ export default function DepartmentManagementView({
                   Currently Assigned Physicians ({getDoctorsForDept(assigningDept.id).length})
                 </span>
 
-                <div className="border border-[#DDE6DA] rounded-xl divide-y divide-[#DDE6DA] max-h-60 overflow-y-auto">
+                <div className="border border-[#C8D6C3] rounded-xl divide-y divide-[#C8D6C3] max-h-60 overflow-y-auto">
                   {getDoctorsForDept(assigningDept.id).map((doc) => {
                     const isHod = doc.id === assigningDept.headDoctorId;
                     return (
@@ -1003,7 +1003,7 @@ export default function DepartmentManagementView({
                     );
                   })}
                   {getDoctorsForDept(assigningDept.id).length === 0 && (
-                    <p className="p-4 text-center text-xs text-[#727783] italic">
+                    <p className="p-4 text-center text-xs text-[#667085] italic">
                       No physicians currently assigned. Use the dropdown above to add doctors.
                     </p>
                   )}
@@ -1098,7 +1098,7 @@ export default function DepartmentManagementView({
                   onChange={(e) =>
                     setDeptForm({ ...deptForm, headDoctorId: e.target.value })
                   }
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   <option value="">Select HOD Physician...</option>
                   {doctors.map((d) => (
@@ -1188,7 +1188,7 @@ export default function DepartmentManagementView({
             </div>
 
             {/* Emergency Toggle */}
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
               <input
                 type="checkbox"
                 id="emergencyCapable"
@@ -1298,7 +1298,7 @@ export default function DepartmentManagementView({
                 onChange={(e) =>
                   setDeptForm({ ...deptForm, description: e.target.value })
                 }
-                className="w-full px-3 py-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
+                className="w-full px-3 py-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
               />
               {deptFormErrors.description && (
                 <span className="text-xs text-[#ba1a1a]">

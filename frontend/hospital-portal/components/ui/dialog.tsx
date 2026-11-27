@@ -37,7 +37,7 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
         onClick={() => onOpenChange(false)}
       />
       {/* Dialog Shell */}
-      <div className="relative z-50 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white border border-[#DDE6DA] shadow-2xl animate-in zoom-in-95 duration-200">
+      <div className="relative z-50 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white border border-[#C5D2C0] shadow-[0_12px_36px_rgba(31,43,70,0.22)] animate-in zoom-in-95 duration-200">
         {children}
       </div>
     </div>
@@ -66,7 +66,7 @@ export function DialogHeader({
   return (
     <div
       className={cn(
-        "flex items-start justify-between border-b border-[#DDE6DA] pb-4 mb-4",
+        "flex items-start justify-between border-b border-[#C8D6C3] pb-4 mb-4",
         className
       )}
     >
@@ -75,7 +75,7 @@ export function DialogHeader({
         <button
           type="button"
           onClick={onClose}
-          className="rounded-lg p-1.5 text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46] transition-colors"
+          className="rounded-lg p-1.5 text-[#667085] hover:bg-[#E1E9DC] hover:text-[#1F2B46] transition-colors"
           aria-label="Close"
         >
           <X className="h-5 w-5" />
@@ -112,7 +112,7 @@ export function DialogDescription({
   className?: string;
 }) {
   return (
-    <p className={cn("text-sm text-[#5A6372]", className)}>{children}</p>
+    <p className={cn("text-sm text-[#667085]", className)}>{children}</p>
   );
 }
 
@@ -126,7 +126,7 @@ export function DialogFooter({
   return (
     <div
       className={cn(
-        "flex flex-col-reverse sm:flex-row sm:justify-end gap-2 border-t border-[#DDE6DA] pt-4 mt-6",
+        "flex flex-col-reverse sm:flex-row sm:justify-end gap-2 border-t border-[#C8D6C3] pt-4 mt-6",
         className
       )}
     >

@@ -787,7 +787,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                 </div>
                 <button
                   onClick={() => setToastMessage(null)}
-                  className="p-1 text-[#727783] hover:text-[#1F2B46] shrink-0"
+                  className="p-1 text-[#667085] hover:text-[#1F2B46] shrink-0"
                   type="button"
                 >
                   <span className="material-symbols-outlined text-sm">close</span>
@@ -810,12 +810,12 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     <span className="material-symbols-outlined text-sm">home</span>
                     <span>Home</span>
                   </Link>
-                  <span className="material-symbols-outlined text-xs text-[#727783]">chevron_right</span>
+                  <span className="material-symbols-outlined text-xs text-[#667085]">chevron_right</span>
                   <span className="font-medium text-[#1F2B46]">Staff Management</span>
                 </nav>
 
                 <div className="flex items-center gap-2 flex-wrap">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E5E9E3] text-[#1F2B46] text-xs font-medium shadow-xs">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E1E9DC] text-[#1F2B46] text-xs font-medium shadow-xs">
                     <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
                     <span>Facility Scope:</span>
                     <strong className="font-semibold text-[#0055A4] ml-0.5">
@@ -846,13 +846,13 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                 </div>
 
                 <div className="flex items-center gap-2.5 shrink-0 self-start md:self-auto">
-                  <div className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#E5E9E3] text-[#5A6372] text-xs whitespace-nowrap">
-                    <span className="material-symbols-outlined text-sm text-[#727783]">lock</span>
+                  <div className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#E1E9DC] text-[#5A6372] text-xs whitespace-nowrap">
+                    <span className="material-symbols-outlined text-sm text-[#667085]">lock</span>
                     <span>North Campus Isolated</span>
                   </div>
                   <button
                     onClick={handleExportCSV}
-                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-[#DDE6DA] text-[#0055A4] font-medium text-sm shadow-xs hover:bg-[#F3F6F0] transition-all whitespace-nowrap cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-[#C8D6C3] text-[#0055A4] font-medium text-sm shadow-xs hover:bg-[#E6EDE2] transition-all whitespace-nowrap cursor-pointer"
                     type="button"
                     title="Export filtered staff roster as CSV"
                   >
@@ -877,12 +877,12 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
             {/* ── 2. Metric / Summary Bento Cards ───────────────────────── */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {/* Card 1: Total Staff */}
-              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] shadow-xs flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+              <div className="p-4 rounded-xl bg-white border border-[#C5D2C0] shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] flex flex-col justify-between transition-all hover:-translate-y-0.5">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold whitespace-nowrap">
                     Total Staff
                   </span>
-                  <div className="w-7 h-7 rounded-lg bg-[#E5E9E3] flex items-center justify-center text-[#0055A4]">
+                  <div className="w-7 h-7 rounded-lg bg-[#E1E9DC] flex items-center justify-center text-[#0055A4]">
                     <span className="material-symbols-outlined text-base">groups</span>
                   </div>
                 </div>
@@ -899,13 +899,13 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     All registered accounts across departments
                   </p>
                 </div>
-                <div className="w-full bg-[#F1F5EF] h-1 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-[#E3EBDD] h-1 rounded-full mt-3 overflow-hidden">
                   <div className="bg-[#0055A4] h-full rounded-full" style={{ width: "100%" }} />
                 </div>
               </div>
 
               {/* Card 2: Active Members */}
-              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] shadow-xs flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+              <div className="p-4 rounded-xl bg-white border border-[#C5D2C0] shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] flex flex-col justify-between transition-all hover:-translate-y-0.5">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold whitespace-nowrap">
                     Active Members
@@ -928,7 +928,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     Currently authorized &amp; in good standing
                   </p>
                 </div>
-                <div className="w-full bg-[#F1F5EF] h-1 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-[#E3EBDD] h-1 rounded-full mt-3 overflow-hidden">
                   <div
                     className="bg-[#526524] h-full rounded-full"
                     style={{ width: `${metrics.activePercentage}%` }}
@@ -937,12 +937,12 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
 
               {/* Card 3: Invitations Pending */}
-              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] shadow-xs flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+              <div className="p-4 rounded-xl bg-white border border-[#C5D2C0] shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] flex flex-col justify-between transition-all hover:-translate-y-0.5">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold whitespace-nowrap">
                     Invitations Pending
                   </span>
-                  <div className="w-7 h-7 rounded-lg bg-[#E5E9E3] flex items-center justify-center text-[#A8C8FF]">
+                  <div className="w-7 h-7 rounded-lg bg-[#E1E9DC] flex items-center justify-center text-[#A8C8FF]">
                     <span className="material-symbols-outlined text-base text-[#0055A4]">
                       mark_email_unread
                     </span>
@@ -961,7 +961,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     Awaiting activation via secure link
                   </p>
                 </div>
-                <div className="w-full bg-[#F1F5EF] h-1 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-[#E3EBDD] h-1 rounded-full mt-3 overflow-hidden">
                   <div
                     className="bg-[#A8C8FF] h-full rounded-full"
                     style={{ width: `${metrics.pendingPercentage}%` }}
@@ -970,7 +970,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
 
               {/* Card 4: Suspended */}
-              <div className="p-4 rounded-xl bg-white border border-[#DDE6DA] shadow-xs flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+              <div className="p-4 rounded-xl bg-white border border-[#C5D2C0] shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] flex flex-col justify-between transition-all hover:-translate-y-0.5">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[11px] text-[#5A6372] uppercase tracking-wider font-semibold whitespace-nowrap">
                     Suspended
@@ -992,7 +992,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     Temporarily deactivated accounts
                   </p>
                 </div>
-                <div className="w-full bg-[#F1F5EF] h-1 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-[#E3EBDD] h-1 rounded-full mt-3 overflow-hidden">
                   <div
                     className="bg-[#BA1A1A] h-full rounded-full"
                     style={{ width: `${metrics.suspendedPercentage}%` }}
@@ -1002,10 +1002,10 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
             </div>
 
             {/* ── 3. Filters & Quick Search Control Bar ──────────────────── */}
-            <div className="p-4 bg-white border border-[#DDE6DA] rounded-xl shadow-xs mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+            <div className="p-4 bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
               {/* Search input with verified icon */}
               <div className="relative flex-1 min-w-[280px]">
-                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#727783] text-base">
+                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#667085] text-base">
                   search
                 </span>
                 <input
@@ -1013,7 +1013,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                   value={searchQuery}
                   onChange={(e) => handleFilterChange(setSearchQuery, e.target.value)}
                   placeholder="Search staff by name, work email, or Staff ID..."
-                  className="w-full pl-9 pr-10 py-2 rounded-lg bg-[#F1F5EF] text-[#1F2B46] text-sm placeholder:text-[#727783] focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] shadow-xs transition-all"
+                  className="w-full pl-9 pr-10 py-2 rounded-lg bg-[#F3F7F2] text-[#1F2B46] text-sm placeholder:text-[#7C8998] focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] shadow-xs transition-all"
                 />
                 <span
                   className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#C2C6D3] text-sm"
@@ -1030,7 +1030,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                   <select
                     value={roleFilter}
                     onChange={(e) => handleFilterChange(setRoleFilter, e.target.value)}
-                    className="appearance-none w-36 pl-3 pr-7 py-2 rounded-lg bg-[#F1F5EF] text-[#1F2B46] text-xs font-medium shadow-xs focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] cursor-pointer"
+                    className="appearance-none w-36 pl-3 pr-7 py-2 rounded-lg bg-[#F3F7F2] text-[#1F2B46] text-xs font-medium shadow-xs focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] cursor-pointer"
                   >
                     <option value="all">Role: All Roles</option>
                     <option value="physician">Physician</option>
@@ -1048,7 +1048,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                   <select
                     value={departmentFilter}
                     onChange={(e) => handleFilterChange(setDepartmentFilter, e.target.value)}
-                    className="appearance-none w-40 pl-3 pr-7 py-2 rounded-lg bg-[#F1F5EF] text-[#1F2B46] text-xs font-medium shadow-xs focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] cursor-pointer"
+                    className="appearance-none w-40 pl-3 pr-7 py-2 rounded-lg bg-[#F3F7F2] text-[#1F2B46] text-xs font-medium shadow-xs focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] cursor-pointer"
                   >
                     <option value="all">Dept: All Departments</option>
                     <option value="internal">Internal Medicine</option>
@@ -1069,7 +1069,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                   <select
                     value={statusFilter}
                     onChange={(e) => handleFilterChange(setStatusFilter, e.target.value)}
-                    className="appearance-none w-36 pl-3 pr-7 py-2 rounded-lg bg-[#F1F5EF] text-[#1F2B46] text-xs font-medium shadow-xs focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] cursor-pointer"
+                    className="appearance-none w-36 pl-3 pr-7 py-2 rounded-lg bg-[#F3F7F2] text-[#1F2B46] text-xs font-medium shadow-xs focus:outline-none focus:bg-white border border-transparent focus:border-[#0055A4] cursor-pointer"
                   >
                     <option value="all">Status: All Statuses</option>
                     <option value="active">Active</option>
@@ -1084,7 +1084,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                 {/* Reset Filters Button */}
                 <button
                   onClick={handleResetFilters}
-                  className="p-2 rounded-lg bg-[#E5E9E3] text-[#424751] hover:text-[#1F2B46] hover:bg-[#DFE4DE] transition-colors flex items-center justify-center cursor-pointer"
+                  className="p-2 rounded-lg bg-[#E1E9DC] text-[#424751] hover:text-[#1F2B46] hover:bg-[#DFE4DE] transition-colors flex items-center justify-center cursor-pointer"
                   title="Reset Filters"
                   type="button"
                 >
@@ -1094,11 +1094,11 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
             </div>
 
             {/* ── 4. Staff Directory Table Container ─────────────────────── */}
-            <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-xs overflow-hidden mb-6">
+            <div className="bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden mb-6">
               <div className="overflow-x-auto">
                 <table className="w-full text-left font-body-md text-body-md">
                   <thead>
-                    <tr className="bg-[#F1F5EF] text-[#424751] font-card-heading text-supporting uppercase tracking-wider border-b border-[#DDE6DA]">
+                    <tr className="bg-[#E3EBDD] text-[#424751] font-card-heading text-supporting uppercase tracking-wider border-b border-[#C8D6C3]">
                       <th className="py-3 px-4 text-xs font-semibold uppercase tracking-wider whitespace-nowrap text-[#424751]">
                         Staff Member
                       </th>
@@ -1120,12 +1120,12 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     </tr>
                   </thead>
 
-                  <tbody className="divide-y divide-[#EBEDE7]">
+                  <tbody className="divide-y divide-[#C8D6C3]">
                     {paginatedStaff.length === 0 ? (
                       <tr>
                         <td colSpan={6} className="py-12 text-center text-[#5A6372]">
                           <div className="flex flex-col items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-4xl text-[#727783]">
+                            <span className="material-symbols-outlined text-4xl text-[#667085]">
                               person_search
                             </span>
                             <span className="font-semibold text-sm text-[#1F2B46]">
@@ -1153,7 +1153,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                         return (
                           <tr
                             key={staff.id}
-                            className="hover:bg-[#F1F5EF]/70 transition-colors"
+                            className="hover:bg-[#E6EDE2] transition-colors"
                           >
                             {/* Staff Member (Avatar/Initials, Name, Email) */}
                             <td className="py-3 px-4">
@@ -1189,7 +1189,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                                   <div className="flex items-center gap-1.5">
                                     <span
                                       className={`text-sm font-semibold text-[#1F2B46] truncate whitespace-nowrap ${
-                                        isSuspended ? "line-through text-[#727783]" : ""
+                                        isSuspended ? "line-through text-[#667085]" : ""
                                       }`}
                                     >
                                       {staff.name}
@@ -1199,8 +1199,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                                         <span className="px-1.5 py-0.2 bg-[#D5E3FF] text-[#001B3C] text-[10px] font-bold rounded">
                                           YOU
                                         </span>
-                                        <span className="inline-flex items-center gap-0.5 px-1 py-0.2 rounded bg-[#E5E9E3] text-[#424751] text-[10px] font-medium">
-                                          <span className="material-symbols-outlined text-[11px] text-[#727783]">
+                                        <span className="inline-flex items-center gap-0.5 px-1 py-0.2 rounded bg-[#E1E9DC] text-[#424751] text-[10px] font-medium">
+                                          <span className="material-symbols-outlined text-[11px] text-[#667085]">
                                             lock
                                           </span>
                                           Self
@@ -1217,7 +1217,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
 
                             {/* Staff ID */}
                             <td className="py-3 px-3.5 whitespace-nowrap">
-                              <span className="font-mono text-xs bg-[#E5E9E3] px-2 py-0.5 rounded text-[#1F2B46] font-semibold">
+                              <span className="font-mono text-xs bg-[#E1E9DC] px-2 py-0.5 rounded text-[#1F2B46] font-semibold">
                                 {staff.staffId}
                               </span>
                             </td>
@@ -1254,7 +1254,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                             <td className="py-3 px-3.5 whitespace-nowrap">
                               <span
                                 className={`text-sm font-medium ${
-                                  isSuspended ? "text-[#727783]" : "text-[#1F2B46]"
+                                  isSuspended ? "text-[#667085]" : "text-[#1F2B46]"
                                 }`}
                               >
                                 {staff.department}
@@ -1276,7 +1276,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                                     Invitation Pending
                                   </span>
                                   {staff.expiresIn && (
-                                    <span className="text-[11px] text-[#727783] font-mono whitespace-nowrap">
+                                    <span className="text-[11px] text-[#667085] font-mono whitespace-nowrap">
                                       Expires in {staff.expiresIn}
                                     </span>
                                   )}
@@ -1296,7 +1296,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                                 {isPending ? (
                                   <button
                                     onClick={() => handleResendInvite(staff)}
-                                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#E5E9E3] text-[#0055A4] hover:bg-[#0055A4] hover:text-white transition-all text-xs font-medium shadow-xs whitespace-nowrap cursor-pointer"
+                                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#E1E9DC] text-[#0055A4] hover:bg-[#0055A4] hover:text-white transition-all text-xs font-medium shadow-xs whitespace-nowrap cursor-pointer"
                                     type="button"
                                   >
                                     <span className="material-symbols-outlined text-xs">send</span>
@@ -1313,7 +1313,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                                 ) : (
                                   <button
                                     onClick={() => openViewDetails(staff)}
-                                    className="px-2.5 py-1 rounded-lg text-[#0055A4] hover:bg-[#E5E9E3] transition-colors text-xs font-semibold cursor-pointer"
+                                    className="px-2.5 py-1 rounded-lg text-[#0055A4] hover:bg-[#D5E0D2] transition-colors text-xs font-semibold cursor-pointer"
                                     type="button"
                                   >
                                     View
@@ -1322,7 +1322,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
 
                                 {isSelf ? (
                                   <div
-                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#F1F5EF] text-[#727783] text-xs select-none"
+                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#E3EBDD] text-[#667085] text-xs select-none"
                                     title="Current authenticated account is protected"
                                   >
                                     <span className="material-symbols-outlined text-xs">lock_clock</span>
@@ -1334,7 +1334,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                                       onClick={() =>
                                         setActiveMenuId(activeMenuId === staff.id ? null : staff.id)
                                       }
-                                      className="p-1 rounded-lg text-[#424751] hover:text-[#1F2B46] hover:bg-[#E5E9E3] transition-colors cursor-pointer"
+                                      className="p-1 rounded-lg text-[#424751] hover:text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors cursor-pointer"
                                       type="button"
                                       title="More Options"
                                     >
@@ -1343,12 +1343,12 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
 
                                     {/* Row Popover Menu */}
                                     {activeMenuId === staff.id && (
-                                      <div className="origin-top-right absolute right-0 mt-1 w-44 rounded-xl shadow-lg bg-white border border-[#DDE6DA] ring-1 ring-black/5 divide-y divide-[#EBEDE7] focus:outline-none z-30 animate-in fade-in zoom-in-95">
+                                      <div className="origin-top-right absolute right-0 mt-1 w-44 rounded-xl shadow-lg bg-white border border-[#C8D6C3] ring-1 ring-black/5 divide-y divide-[#C8D6C3] focus:outline-none z-30 animate-in fade-in zoom-in-95">
                                         <div className="py-1">
                                           <button
                                             type="button"
                                             onClick={() => openViewDetails(staff)}
-                                            className="w-full text-left px-4 py-2 text-xs text-[#1F2B46] hover:bg-[#F1F5EF] flex items-center gap-2"
+                                            className="w-full text-left px-4 py-2 text-xs text-[#1F2B46] hover:bg-[#E6EDE2] flex items-center gap-2"
                                           >
                                             <span className="material-symbols-outlined text-sm text-[#0055A4]">
                                               visibility
@@ -1362,7 +1362,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                                                 handleResendInvite(staff);
                                                 setActiveMenuId(null);
                                               }}
-                                              className="w-full text-left px-4 py-2 text-xs text-[#1F2B46] hover:bg-[#F1F5EF] flex items-center gap-2"
+                                              className="w-full text-left px-4 py-2 text-xs text-[#1F2B46] hover:bg-[#E6EDE2] flex items-center gap-2"
                                             >
                                               <span className="material-symbols-outlined text-sm text-[#0055A4]">
                                                 send
@@ -1412,7 +1412,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
 
               {/* ── 5. Table Pagination & Summary Footer ─────────────────── */}
-              <div className="px-4 py-3 bg-[#F1F5EF] border-t border-[#DDE6DA] flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="px-4 py-3 bg-[#E3EBDD] border-t border-[#C8D6C3] flex flex-col sm:flex-row items-center justify-between gap-3">
                 <span className="font-supporting text-supporting text-[#424751]">
                   Showing <strong className="font-semibold text-[#1F2B46]">{visibleStart} - {visibleEnd}</strong> of{" "}
                   <strong className="font-semibold text-[#1F2B46]">{filteredStaff.length}</strong> staff accounts
@@ -1424,8 +1424,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     disabled={currentPage === 1}
                     className={`px-3 py-1 rounded-lg font-button-label text-supporting transition-colors ${
                       currentPage === 1
-                        ? "bg-[#EBEDE7] text-[#727783] cursor-not-allowed"
-                        : "bg-white text-[#1F2B46] hover:bg-[#E5E9E3] cursor-pointer shadow-xs"
+                        ? "bg-[#E1E9DC] text-[#667085] cursor-not-allowed"
+                        : "bg-white text-[#1F2B46] hover:bg-[#D5E0D2] cursor-pointer shadow-xs"
                     }`}
                     type="button"
                   >
@@ -1441,7 +1441,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                         className={`px-3 py-1 rounded-lg font-button-label text-supporting transition-colors ${
                           isCurrent
                             ? "bg-[#0055A4] text-white shadow-xs font-semibold"
-                            : "bg-white text-[#1F2B46] hover:bg-[#E5E9E3] cursor-pointer shadow-xs"
+                            : "bg-white text-[#1F2B46] hover:bg-[#D5E0D2] cursor-pointer shadow-xs"
                         }`}
                         type="button"
                       >
@@ -1455,8 +1455,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     disabled={currentPage === totalPages}
                     className={`px-3 py-1 rounded-lg font-button-label text-supporting transition-colors ${
                       currentPage === totalPages
-                        ? "bg-[#EBEDE7] text-[#727783] cursor-not-allowed"
-                        : "bg-white text-[#1F2B46] hover:bg-[#E5E9E3] cursor-pointer shadow-xs"
+                        ? "bg-[#E1E9DC] text-[#667085] cursor-not-allowed"
+                        : "bg-white text-[#1F2B46] hover:bg-[#D5E0D2] cursor-pointer shadow-xs"
                     }`}
                     type="button"
                   >
@@ -1471,9 +1471,9 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
       {/* ── MODAL A: INVITE STAFF MODAL ────────────────────────────────────── */}
       {showInviteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#DDE6DA] w-full max-w-xl rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[92vh]">
+          <div className="bg-white border border-[#C8D6C3] w-full max-w-xl rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[92vh]">
             {/* Modal Header with MedKnot Cross Accent */}
-            <div className="px-6 py-4 bg-[#F1F5EF] border-b border-[#DDE6DA] flex items-center justify-between">
+            <div className="px-6 py-4 bg-[#E3EBDD] border-b border-[#C8D6C3] flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#0055A4] flex items-center justify-center text-white">
                   <span className="material-symbols-outlined text-2xl">person_add</span>
@@ -1490,7 +1490,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               <button
                 type="button"
                 onClick={() => setShowInviteModal(false)}
-                className="p-1 rounded-full text-[#5A6372] hover:bg-[#E5E9E3] hover:text-[#1F2B46] transition-colors"
+                className="p-1 rounded-full text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors"
               >
                 <span className="material-symbols-outlined text-xl">close</span>
               </button>
@@ -1512,8 +1512,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     if (inviteErrors.name) setInviteErrors({ ...inviteErrors, name: "" });
                   }}
                   placeholder="e.g. Dr. Elena Rostova"
-                  className={`w-full px-3.5 py-2.5 rounded-xl bg-[#F6FAF4] text-[#1F2B46] font-body-md text-sm border focus:bg-white focus:outline-none shadow-xs transition-all ${
-                    inviteErrors.name ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                  className={`w-full px-3.5 py-2.5 rounded-xl bg-[#F3F7F2] text-[#1F2B46] font-body-md text-sm border focus:bg-white focus:outline-none shadow-xs transition-all ${
+                    inviteErrors.name ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                   }`}
                 />
                 {inviteErrors.name && (
@@ -1535,8 +1535,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     if (inviteErrors.email) setInviteErrors({ ...inviteErrors, email: "" });
                   }}
                   placeholder="e.g. e.rostova@stjudes.medknot.org"
-                  className={`w-full px-3.5 py-2.5 rounded-xl bg-[#F6FAF4] text-[#1F2B46] font-body-md text-sm border focus:bg-white focus:outline-none shadow-xs transition-all ${
-                    inviteErrors.email ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                  className={`w-full px-3.5 py-2.5 rounded-xl bg-[#F3F7F2] text-[#1F2B46] font-body-md text-sm border focus:bg-white focus:outline-none shadow-xs transition-all ${
+                    inviteErrors.email ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                   }`}
                 />
                 {inviteErrors.email ? (
@@ -1559,9 +1559,9 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                       type="text"
                       readOnly
                       value={generatedStaffId}
-                      className="w-full pl-3 pr-8 py-2.5 rounded-xl bg-[#E5E9E3] border border-[#DDE6DA] text-[#1F2B46] font-mono text-sm cursor-not-allowed font-semibold shadow-xs"
+                      className="w-full pl-3 pr-8 py-2.5 rounded-xl bg-[#E5E9E3] border border-[#AEBEAA] text-[#1F2B46] font-mono text-sm cursor-not-allowed font-semibold shadow-xs"
                     />
-                    <span className="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[#727783] text-base">
+                    <span className="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[#667085] text-base">
                       lock
                     </span>
                   </div>
@@ -1578,7 +1578,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                     <select
                       value={inviteRole}
                       onChange={(e) => setInviteRole(e.target.value as StaffRole)}
-                      className="appearance-none w-full pl-3 pr-8 py-2.5 rounded-xl bg-[#F6FAF4] text-[#1F2B46] font-body-md text-sm border border-[#DDE6DA] focus:bg-white focus:border-[#0055A4] focus:outline-none shadow-xs cursor-pointer"
+                      className="appearance-none w-full pl-3 pr-8 py-2.5 rounded-xl bg-[#F3F7F2] text-[#1F2B46] font-body-md text-sm border border-[#AEBEAA] focus:bg-white focus:border-[#0055A4] focus:outline-none shadow-xs cursor-pointer"
                     >
                       <option value="Physician">Physician</option>
                       <option value="Nursing Staff">Nursing Staff</option>
@@ -1601,7 +1601,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                   <select
                     value={inviteDepartment}
                     onChange={(e) => setInviteDepartment(e.target.value)}
-                    className="appearance-none w-full pl-3 pr-8 py-2.5 rounded-xl bg-[#F6FAF4] text-[#1F2B46] font-body-md text-sm border border-[#DDE6DA] focus:bg-white focus:border-[#0055A4] focus:outline-none shadow-xs cursor-pointer"
+                    className="appearance-none w-full pl-3 pr-8 py-2.5 rounded-xl bg-[#F3F7F2] text-[#1F2B46] font-body-md text-sm border border-[#AEBEAA] focus:bg-white focus:border-[#0055A4] focus:outline-none shadow-xs cursor-pointer"
                   >
                     <option value="Internal Medicine">Internal Medicine</option>
                     <option value="Cardiology">Cardiology</option>
@@ -1617,7 +1617,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
 
               {/* Security & Multi-Factor Onboarding Notice */}
-              <div className="p-3.5 rounded-xl bg-[#E5E9E3]/70 border border-[#DDE6DA] flex items-start gap-3 text-[#1F2B46]">
+              <div className="p-3.5 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-start gap-3 text-[#1F2B46]">
                 <span className="material-symbols-outlined text-[#0055A4] text-xl mt-0.5 shrink-0">
                   verified_user
                 </span>
@@ -1632,11 +1632,11 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
 
               {/* Modal Footer */}
-              <div className="pt-4 border-t border-[#DDE6DA] flex items-center justify-end gap-3">
+              <div className="pt-4 border-t border-[#C8D6C3] flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setShowInviteModal(false)}
-                  className="px-4 py-2 rounded-xl text-[#5A6372] hover:bg-[#E5E9E3] font-button-label text-sm transition-colors cursor-pointer"
+                  className="px-4 py-2 rounded-xl text-[#5A6372] hover:bg-[#D5E0D2] font-button-label text-sm transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -1656,8 +1656,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
       {/* ── MODAL B: CONFIRM ACCOUNT SUSPENSION ────────────────────────────── */}
       {showSuspendModal && selectedStaff && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#DDE6DA] w-full max-w-md rounded-2xl shadow-xl overflow-hidden flex flex-col">
-            <div className="px-6 py-4 bg-[#F1F5EF] border-b border-[#DDE6DA] flex items-center justify-between">
+          <div className="bg-white border border-[#C8D6C3] w-full max-w-md rounded-2xl shadow-xl overflow-hidden flex flex-col">
+            <div className="px-6 py-4 bg-[#E3EBDD] border-b border-[#C8D6C3] flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-xl bg-[#FFDAD6] text-[#93000A] flex items-center justify-center shrink-0">
                   <span className="material-symbols-outlined text-xl">warning</span>
@@ -1669,7 +1669,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               <button
                 type="button"
                 onClick={() => setShowSuspendModal(false)}
-                className="p-1 rounded-full text-[#5A6372] hover:bg-[#E5E9E3] transition-colors"
+                className="p-1 rounded-full text-[#5A6372] hover:bg-[#D5E0D2] transition-colors"
               >
                 <span className="material-symbols-outlined text-lg">close</span>
               </button>
@@ -1689,7 +1689,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
                 <select
                   value={suspendReason}
                   onChange={(e) => setSuspendReason(e.target.value)}
-                  className="w-full pl-3 pr-8 py-2.5 rounded-lg bg-[#F6FAF4] text-[#1F2B46] text-xs border border-[#DDE6DA] focus:outline-none focus:border-[#0055A4] cursor-pointer"
+                  className="w-full pl-3 pr-8 py-2.5 rounded-lg bg-[#F3F7F2] text-[#1F2B46] text-xs border border-[#AEBEAA] focus:outline-none focus:border-[#0055A4] cursor-pointer"
                 >
                   <option value="Departmental Leave / Extended Sabbatical">
                     Departmental Leave / Extended Sabbatical
@@ -1705,11 +1705,11 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
             </div>
 
-            <div className="px-6 py-3 bg-[#F1F5EF] border-t border-[#DDE6DA] flex items-center justify-end gap-2.5">
+            <div className="px-6 py-3 bg-[#E3EBDD] border-t border-[#C8D6C3] flex items-center justify-end gap-2.5">
               <button
                 type="button"
                 onClick={() => setShowSuspendModal(false)}
-                className="px-4 py-2 rounded-xl text-[#5A6372] hover:bg-[#E5E9E3] font-button-label text-xs transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-xl text-[#5A6372] hover:bg-[#D5E0D2] font-button-label text-xs transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -1728,8 +1728,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
       {/* ── MODAL C: CONFIRM ACCOUNT REACTIVATION ──────────────────────────── */}
       {showReactivateModal && selectedStaff && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#DDE6DA] w-full max-w-md rounded-2xl shadow-xl overflow-hidden flex flex-col">
-            <div className="px-6 py-4 bg-[#F1F5EF] border-b border-[#DDE6DA] flex items-center justify-between">
+          <div className="bg-white border border-[#C8D6C3] w-full max-w-md rounded-2xl shadow-xl overflow-hidden flex flex-col">
+            <div className="px-6 py-4 bg-[#E3EBDD] border-b border-[#C8D6C3] flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-xl bg-[#D1E998] text-[#566A27] flex items-center justify-center shrink-0">
                   <span className="material-symbols-outlined text-xl">restart_alt</span>
@@ -1741,7 +1741,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               <button
                 type="button"
                 onClick={() => setShowReactivateModal(false)}
-                className="p-1 rounded-full text-[#5A6372] hover:bg-[#E5E9E3] transition-colors"
+                className="p-1 rounded-full text-[#5A6372] hover:bg-[#D5E0D2] transition-colors"
               >
                 <span className="material-symbols-outlined text-lg">close</span>
               </button>
@@ -1764,11 +1764,11 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
             </div>
 
-            <div className="px-6 py-3 bg-[#F1F5EF] border-t border-[#DDE6DA] flex items-center justify-end gap-2.5">
+            <div className="px-6 py-3 bg-[#E3EBDD] border-t border-[#C8D6C3] flex items-center justify-end gap-2.5">
               <button
                 type="button"
                 onClick={() => setShowReactivateModal(false)}
-                className="px-4 py-2 rounded-xl text-[#5A6372] hover:bg-[#E5E9E3] font-button-label text-xs transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-xl text-[#5A6372] hover:bg-[#D5E0D2] font-button-label text-xs transition-colors cursor-pointer"
               >
                 Cancel
               </button>
@@ -1787,8 +1787,8 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
       {/* ── MODAL D: VIEW STAFF DETAILS MODAL ──────────────────────────────── */}
       {showViewModal && selectedStaff && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#DDE6DA] w-full max-w-lg rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]">
-            <div className="px-6 py-4 bg-[#F1F5EF] border-b border-[#DDE6DA] flex items-center justify-between">
+          <div className="bg-white border border-[#C8D6C3] w-full max-w-lg rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div className="px-6 py-4 bg-[#E3EBDD] border-b border-[#C8D6C3] flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#0055A4] text-white flex items-center justify-center font-bold">
                   {selectedStaff.initials || "ST"}
@@ -1803,14 +1803,14 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               <button
                 type="button"
                 onClick={() => setShowViewModal(false)}
-                className="p-1 rounded-full text-[#5A6372] hover:bg-[#E5E9E3] transition-colors"
+                className="p-1 rounded-full text-[#5A6372] hover:bg-[#D5E0D2] transition-colors"
               >
                 <span className="material-symbols-outlined text-lg">close</span>
               </button>
             </div>
 
             <div className="p-6 flex-1 overflow-y-auto flex flex-col gap-4 text-xs">
-              <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-[#F6FAF4] border border-[#DDE6DA]">
+              <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-[#E6EDE2] border border-[#C8D6C3]">
                 <div>
                   <span className="text-[#5A6372] block">Staff ID</span>
                   <span className="font-mono font-bold text-[#1F2B46]">{selectedStaff.staffId}</span>
@@ -1870,7 +1870,7 @@ export default function StaffManagementView({ initialUser }: StaffManagementView
               </div>
             </div>
 
-            <div className="px-6 py-3 bg-[#F1F5EF] border-t border-[#DDE6DA] flex items-center justify-end">
+            <div className="px-6 py-3 bg-[#E3EBDD] border-t border-[#C8D6C3] flex items-center justify-end">
               <button
                 type="button"
                 onClick={() => setShowViewModal(false)}

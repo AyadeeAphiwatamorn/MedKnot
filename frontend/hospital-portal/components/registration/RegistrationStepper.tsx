@@ -33,7 +33,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
 
   return (
     <div className="w-full pb-space-lg">
-      <div className="w-full bg-white border border-[#D5DFD2] rounded-2xl p-space-md shadow-sm">
+      <div className="w-full bg-white border border-[#C5D2C0] rounded-2xl p-space-md shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
         <div className="max-w-5xl mx-auto flex items-center justify-between relative overflow-x-auto py-1">
           {steps.map((step, idx) => {
             const isCompleted = currentStep > step.num;
@@ -47,7 +47,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
                       ? "bg-[#0055A4] text-white font-bold ring-4 ring-[#0055A4]/15"
                       : isCompleted
                       ? "bg-tertiary-fixed text-tertiary font-bold"
-                      : "bg-[#EDF2E9] border border-[#D5DFD2] text-[#727783]"
+                      : "bg-[#E3EBDD] border border-[#C8D6C3] text-[#667085]"
                   }`}
                 >
                   {isCompleted ? (
@@ -63,7 +63,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
                         ? "text-[#0055A4] font-bold"
                         : isCompleted
                         ? "text-[#1F2B46] font-semibold"
-                        : "text-[#727783] font-medium"
+                        : "text-[#667085] font-medium"
                     }`}
                   >
                     {step.title}
@@ -74,7 +74,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
                     ) : isCompleted ? (
                       <span className="text-tertiary font-medium">Completed</span>
                     ) : (
-                      <span className="text-[#727783]">Upcoming</span>
+                      <span className="text-[#667085]">Upcoming</span>
                     )}
                   </span>
                 </div>
@@ -94,7 +94,7 @@ export default function RegistrationStepper({ currentStep }: RegistrationStepper
                 {idx < steps.length - 1 && (
                   <div
                     className={`flex-1 h-0.5 min-w-[20px] transition-colors ${
-                      currentStep > step.num ? "bg-tertiary-fixed" : "bg-[#D5DFD2]"
+                      currentStep > step.num ? "bg-tertiary-fixed" : "bg-[#C8D6C3]"
                     }`}
                   />
                 )}

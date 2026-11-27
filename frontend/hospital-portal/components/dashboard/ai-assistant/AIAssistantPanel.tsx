@@ -39,7 +39,7 @@ export function AIAssistantPanel() {
     <section
       aria-label="MedKnot AI Assistant Chat Panel"
       role="dialog"
-      className="fixed inset-x-3 bottom-20 h-[72dvh] max-h-[calc(100dvh-6.5rem)] sm:inset-x-auto sm:right-6 sm:bottom-24 sm:w-[410px] sm:h-[590px] sm:max-h-[calc(100dvh-7.5rem)] z-50 bg-white rounded-2xl border border-[#D5DFD2] shadow-[0_18px_50px_rgba(31,43,70,0.20)] flex flex-col overflow-hidden"
+      className="fixed inset-x-3 bottom-20 h-[72dvh] max-h-[calc(100dvh-6.5rem)] sm:inset-x-auto sm:right-6 sm:bottom-24 sm:w-[410px] sm:h-[590px] sm:max-h-[calc(100dvh-7.5rem)] z-50 bg-white rounded-2xl border border-[#C5D2C0] shadow-[0_18px_50px_rgba(31,43,70,0.22)] flex flex-col overflow-hidden"
     >
       <AIAssistantHeader
         pageContext={pageContext}
@@ -68,7 +68,7 @@ export function AIAssistantPanel() {
         {/* Loading Indicator */}
         {isLoading && (
           <div className="flex items-start">
-            <div className="px-3.5 py-2.5 rounded-2xl rounded-bl-sm bg-[#F3F6F0] border border-[#DDE6DA] flex items-center gap-2 text-xs text-[#5A6372]">
+            <div className="px-3.5 py-2.5 rounded-2xl rounded-bl-sm bg-[#E3EBDD] border border-[#C8D6C3] flex items-center gap-2 text-xs text-[#5A6372]">
               <div className="flex items-center gap-1" aria-label="Generating response">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0055A4] animate-bounce [animation-delay:-0.2s]" />
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0055A4] animate-bounce [animation-delay:-0.1s]" />

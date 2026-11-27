@@ -117,7 +117,7 @@ export default function Step1FacilityPage() {
     >
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-space-xl">
         {/* Main Card: Basic Facility Information */}
-        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+        <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-lg">
           <div className="flex items-start justify-between gap-space-md">
             <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-space-sm">
@@ -147,7 +147,7 @@ export default function Step1FacilityPage() {
                 <span className="truncate">
                   Official Hospital / Clinic Name <span className="text-error">*</span>
                 </span>
-                <span className="font-supporting text-supporting text-[#727783] font-normal whitespace-nowrap flex-shrink-0">
+                <span className="font-supporting text-supporting text-[#667085] font-normal whitespace-nowrap flex-shrink-0">
                   Must match legal charter
                 </span>
               </label>
@@ -158,10 +158,10 @@ export default function Step1FacilityPage() {
                 value={state.facilityName}
                 onChange={handleChange}
                 placeholder="Enter official facility name"
-                className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
                   errors.facilityName
                     ? "border-error ring-1 ring-error"
-                    : "border-[#D5DFD2] focus:border-[#0055A4]"
+                    : "border-[#AEBEAA] focus:border-[#0055A4]"
                 }`}
               />
               {errors.facilityName && (
@@ -186,7 +186,7 @@ export default function Step1FacilityPage() {
                   name="facilityType"
                   value={state.facilityType}
                   onChange={handleChange}
-                  className="w-full appearance-none px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#D5DFD2] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
+                  className="w-full appearance-none px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#AEBEAA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
                 >
                   <option value="Multispecialty Hospital">Multispecialty Hospital</option>
                   <option value="General Hospital">General Hospital</option>
@@ -195,7 +195,7 @@ export default function Step1FacilityPage() {
                   <option value="Diagnostic Centre">Diagnostic Centre</option>
                   <option value="Other Healthcare Facility">Other Healthcare Facility</option>
                 </select>
-                <span className="material-symbols-outlined absolute right-3 top-3 text-[#727783] pointer-events-none text-[20px] shrink-0">
+                <span className="material-symbols-outlined absolute right-3 top-3 text-[#667085] pointer-events-none text-[20px] shrink-0">
                   expand_more
                 </span>
               </div>
@@ -216,10 +216,10 @@ export default function Step1FacilityPage() {
                 value={state.registrationNumber}
                 onChange={handleChange}
                 placeholder="Enter registration number"
-                className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
                   errors.registrationNumber
                     ? "border-error ring-1 ring-error"
-                    : "border-[#D5DFD2] focus:border-[#0055A4]"
+                    : "border-[#AEBEAA] focus:border-[#0055A4]"
                 }`}
               />
               {errors.registrationNumber && (
@@ -244,7 +244,7 @@ export default function Step1FacilityPage() {
                   name="yearEstablished"
                   value={state.yearEstablished}
                   onChange={handleChange}
-                  className="w-full appearance-none px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#D5DFD2] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
+                  className="w-full appearance-none px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#AEBEAA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
                 >
                   <option value="2025">2025</option>
                   <option value="2024">2024</option>
@@ -258,7 +258,7 @@ export default function Step1FacilityPage() {
                   <option value="2005">2005</option>
                   <option value="2000 or earlier">2000 or earlier</option>
                 </select>
-                <span className="material-symbols-outlined absolute right-3 top-3 text-[#727783] pointer-events-none text-[20px] shrink-0">
+                <span className="material-symbols-outlined absolute right-3 top-3 text-[#667085] pointer-events-none text-[20px] shrink-0">
                   calendar_month
                 </span>
               </div>
@@ -271,12 +271,12 @@ export default function Step1FacilityPage() {
                 className="font-card-heading text-card-heading text-[#1F2B46] font-semibold flex items-center justify-between gap-2"
               >
                 <span className="truncate">Facility Website</span>
-                <span className="font-supporting text-supporting text-[#727783] font-normal whitespace-nowrap flex-shrink-0">
+                <span className="font-supporting text-supporting text-[#667085] font-normal whitespace-nowrap flex-shrink-0">
                   Optional
                 </span>
               </label>
               <div className="relative flex items-center">
-                <span className="material-symbols-outlined absolute left-3 text-[#727783] text-[18px] shrink-0">
+                <span className="material-symbols-outlined absolute left-3 text-[#667085] text-[18px] shrink-0">
                   language
                 </span>
                 <input
@@ -286,10 +286,10 @@ export default function Step1FacilityPage() {
                   value={state.website}
                   onChange={handleChange}
                   placeholder="https://example-hospital.org"
-                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                  className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
                     errors.website
                       ? "border-error ring-1 ring-error"
-                      : "border-[#D5DFD2] focus:border-[#0055A4]"
+                      : "border-[#AEBEAA] focus:border-[#0055A4]"
                   }`}
                 />
               </div>
@@ -306,7 +306,7 @@ export default function Step1FacilityPage() {
           <div className="flex flex-col gap-1.5 pt-space-xs">
             <label className="font-card-heading text-card-heading text-[#1F2B46] font-semibold flex items-center justify-between gap-2">
               <span className="truncate">Official Facility Emblem or Logo</span>
-              <span className="font-supporting text-supporting text-[#727783] font-normal whitespace-nowrap flex-shrink-0">
+              <span className="font-supporting text-supporting text-[#667085] font-normal whitespace-nowrap flex-shrink-0">
                 Supports PNG, JPG, SVG (Max 5MB)
               </span>
             </label>
@@ -320,9 +320,9 @@ export default function Step1FacilityPage() {
             />
 
             {state.logoPreview ? (
-              <div className="w-full p-space-lg bg-[#EDF2E9] border border-[#D5DFD2] rounded-2xl flex items-center justify-between gap-space-md">
+              <div className="w-full p-space-lg bg-[#E3EBDD] border border-[#C8D6C3] rounded-2xl flex items-center justify-between gap-space-md">
                 <div className="flex items-center gap-space-md min-w-0">
-                  <div className="w-16 h-16 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-center p-2 shadow-sm shrink-0 overflow-hidden">
+                  <div className="w-16 h-16 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-center p-2 shadow-sm shrink-0 overflow-hidden">
                     <Image
                       src={state.logoPreview}
                       alt="Facility Emblem Preview"
@@ -349,7 +349,7 @@ export default function Step1FacilityPage() {
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
-                    className="px-3 py-1.5 rounded-lg bg-white border border-[#D5DFD2] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#E4EBE0] transition-colors cursor-pointer"
+                    className="px-3 py-1.5 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#D5E0D2] transition-colors cursor-pointer"
                   >
                     Replace
                   </button>
@@ -369,13 +369,13 @@ export default function Step1FacilityPage() {
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
-                className={`w-full p-space-xl bg-[#F1F5EF] hover:bg-[#E4EBE0] border-2 border-dashed rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer transition-all group ${
+                className={`w-full p-space-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border-2 border-dashed rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer transition-all group ${
                   isDragging
-                    ? "border-[#0055A4] bg-[#E4EBE0]"
-                    : "border-[#D5DFD2] hover:border-[#0055A4]"
+                    ? "border-[#0055A4] bg-[#E1E9DC]"
+                    : "border-[#C8D6C3] hover:border-[#0055A4]"
                 }`}
               >
-                <div className="w-14 h-14 rounded-2xl bg-white border border-[#D5DFD2] group-hover:scale-105 transition-transform flex items-center justify-center text-[#0055A4] shadow-sm mb-space-sm shrink-0">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-[#C8D6C3] group-hover:scale-105 transition-transform flex items-center justify-center text-[#0055A4] shadow-sm mb-space-sm shrink-0">
                   <span className="material-symbols-outlined text-[28px]">
                     add_photo_alternate
                   </span>
@@ -406,7 +406,7 @@ export default function Step1FacilityPage() {
               <span className="truncate">Facility Overview &amp; Infrastructure</span>
               <span
                 className={`font-supporting text-supporting font-normal whitespace-nowrap flex-shrink-0 ${
-                  state.overview.length > 480 ? "text-error font-semibold" : "text-[#727783]"
+                  state.overview.length > 480 ? "text-error font-semibold" : "text-[#667085]"
                 }`}
               >
                 {state.overview.length} / 500 characters
@@ -420,16 +420,16 @@ export default function Step1FacilityPage() {
               value={state.overview}
               onChange={handleChange}
               placeholder="Briefly describe the healthcare services provided, specialty wings, bed capacity, and emergency care facilities."
-              className="w-full p-space-md bg-[#F1F5EF] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#D5DFD2] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md resize-none"
+              className="w-full p-space-md bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#AEBEAA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md resize-none"
             />
           </div>
         </div>
 
         {/* Sticky Action Row */}
-        <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+        <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-md shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-wrap items-center justify-between gap-space-md">
           <Link
             href="/login"
-            className="px-space-lg py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
+            className="px-space-lg py-2.5 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
           >
             <span className="material-symbols-outlined text-[18px] shrink-0">arrow_back</span>
             <span className="whitespace-nowrap">Back to Sign In</span>
@@ -439,7 +439,7 @@ export default function Step1FacilityPage() {
             <button
               onClick={() => saveDraft()}
               type="button"
-              className="px-space-lg py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
+              className="px-space-lg py-2.5 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
             >
               Save Draft
             </button>

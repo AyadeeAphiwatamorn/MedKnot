@@ -17,13 +17,13 @@ export function QueueSubnav({ waitingCount, inConsultationCount }: QueueSubnavPr
   const isHistory = pathname === "/dashboard/queue/history";
 
   return (
-    <div className="border-t border-[#DDE6DA] pt-3 flex items-center gap-2">
+    <div className="border-t border-[#C8D6C3] pt-3 flex items-center gap-2">
       <Link
         href="/dashboard/queue"
         className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
           isOverview
             ? "bg-[#0055A4] text-white shadow-xs"
-            : "text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46]"
+            : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
         }`}
       >
         <span className="material-symbols-outlined text-sm">table_chart</span>
@@ -35,7 +35,7 @@ export function QueueSubnav({ waitingCount, inConsultationCount }: QueueSubnavPr
         className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
           isBoard
             ? "bg-[#0055A4] text-white shadow-xs"
-            : "text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46]"
+            : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
         }`}
       >
         <span className="material-symbols-outlined text-sm">view_kanban</span>
@@ -56,7 +56,7 @@ export function QueueSubnav({ waitingCount, inConsultationCount }: QueueSubnavPr
         className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
           isHistory
             ? "bg-[#0055A4] text-white shadow-xs"
-            : "text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46]"
+            : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
         }`}
       >
         <span className="material-symbols-outlined text-sm">history</span>

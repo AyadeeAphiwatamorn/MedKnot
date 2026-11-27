@@ -322,7 +322,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
             </nav>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
                 <span className="material-symbols-outlined text-xs text-[#0055A4]">hub</span>
                 <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
               </span>
@@ -334,9 +334,9 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
           </div>
 
           {/* Page Heading & Primary Actions */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-[#F3F6F0] border border-[#DDE6DA] p-2 flex items-center justify-center shrink-0 shadow-xs">
+              <div className="w-16 h-16 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] p-2 flex items-center justify-center shrink-0 shadow-xs">
                 <Image
                   src="/logo.png"
                   alt="St. Jude Emblem"
@@ -366,7 +366,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
               <button
                 type="button"
                 onClick={() => setIsLegalModalOpen(true)}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#DDE6DA] bg-[#F3F6F0] hover:bg-[#E8EFE5] text-[#1F2B46] text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] hover:bg-[#D5E0D2] text-[#1F2B46] text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <span className="material-symbols-outlined text-base text-[#5A6372]">lock</span>
                 <span>Request Legal Re-Verification</span>
@@ -386,7 +386,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
           {/* Quick Metrics Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Account & Approval Status */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Account Status</span>
                 <span className="w-8 h-8 rounded-lg bg-[#EAF5E2] text-[#2D6A28] flex items-center justify-center">
@@ -399,12 +399,12 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   <span className="w-2 h-2 rounded-full bg-[#34A853]"></span>
                 </div>
                 <p className="text-xs text-[#5A6372] mt-1">{facilityData.approvalStatus}</p>
-                <p className="text-[11px] font-mono text-[#727783] mt-0.5">Ref: {facilityData.registrationRefNumber}</p>
+                <p className="text-[11px] font-mono text-[#667085] mt-0.5">Ref: {facilityData.registrationRefNumber}</p>
               </div>
             </div>
 
             {/* Facility Classification */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Infrastructure</span>
                 <span className="w-8 h-8 rounded-lg bg-[#E7F0FF] text-[#0055A4] flex items-center justify-center">
@@ -419,7 +419,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
             </div>
 
             {/* Verification Status */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Accreditation</span>
                 <span className="w-8 h-8 rounded-lg bg-[#FFF4E5] text-[#B76E00] flex items-center justify-center">
@@ -434,17 +434,17 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
             </div>
 
             {/* Authorized Administrator */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Authorized Admin</span>
-                <span className="w-8 h-8 rounded-lg bg-[#F3F6F0] text-[#1F2B46] flex items-center justify-center">
+                <span className="w-8 h-8 rounded-lg bg-[#E3EBDD] text-[#1F2B46] flex items-center justify-center">
                   <span className="material-symbols-outlined text-lg">shield_person</span>
                 </span>
               </div>
               <div className="mt-3">
                 <span className="text-lg font-bold text-[#1F2B46] truncate block">{facilityData.authorizedAdminName}</span>
                 <p className="text-xs text-[#5A6372] truncate mt-1">{facilityData.authorizedAdminEmail}</p>
-                <p className="text-[11px] text-[#727783] mt-0.5">Primary Organization Node</p>
+                <p className="text-[11px] text-[#667085] mt-0.5">Primary Organization Node</p>
               </div>
             </div>
           </div>
@@ -454,8 +454,8 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
             {/* Left 2 Columns: Facility Information & Location Details */}
             <div className="lg:col-span-2 space-y-6">
               {/* Section 1: Basic Facility Information */}
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-5">
-                <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-4">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-5">
+                <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
                   <div className="flex items-center gap-2.5">
                     <span className="material-symbols-outlined text-[#0055A4] text-xl">domain</span>
                     <div>
@@ -473,24 +473,24 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   <div>
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1 flex items-center gap-1">
                       <span>Official Hospital / Clinic Name</span>
-                      <span className="material-symbols-outlined text-xs text-[#727783]" title="Legal identity locked">
+                      <span className="material-symbols-outlined text-xs text-[#667085]" title="Legal identity locked">
                         lock
                       </span>
                     </label>
-                    <div className="p-3 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-sm font-semibold text-[#1F2B46]">
+                    <div className="p-3 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-sm font-semibold text-[#1F2B46]">
                       {facilityData.officialName}
                     </div>
-                    <span className="text-[11px] text-[#727783] mt-1 block">Matches institutional charter</span>
+                    <span className="text-[11px] text-[#667085] mt-1 block">Matches institutional charter</span>
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1 flex items-center gap-1">
                       <span>Facility Type</span>
-                      <span className="material-symbols-outlined text-xs text-[#727783]" title="Classified by Health Ministry">
+                      <span className="material-symbols-outlined text-xs text-[#667085]" title="Classified by Health Ministry">
                         lock
                       </span>
                     </label>
-                    <div className="p-3 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-sm text-[#1F2B46]">
+                    <div className="p-3 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-sm text-[#1F2B46]">
                       {facilityData.facilityType}
                     </div>
                   </div>
@@ -498,22 +498,22 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   <div>
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1 flex items-center gap-1">
                       <span>Facility Registration Number</span>
-                      <span className="material-symbols-outlined text-xs text-[#727783]" title="State license number">
+                      <span className="material-symbols-outlined text-xs text-[#667085]" title="State license number">
                         lock
                       </span>
                     </label>
-                    <div className="p-3 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-sm font-mono font-medium text-[#1F2B46]">
+                    <div className="p-3 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-sm font-mono font-medium text-[#1F2B46]">
                       {facilityData.registrationNumber}
                     </div>
-                    <span className="text-[11px] text-[#727783] mt-1 block">State Directorate of Health Services</span>
+                    <span className="text-[11px] text-[#667085] mt-1 block">State Directorate of Health Services</span>
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1 flex items-center gap-1">
                       <span>Year Established</span>
-                      <span className="material-symbols-outlined text-xs text-[#727783]">lock</span>
+                      <span className="material-symbols-outlined text-xs text-[#667085]">lock</span>
                     </label>
-                    <div className="p-3 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-sm text-[#1F2B46]">
+                    <div className="p-3 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-sm text-[#1F2B46]">
                       {facilityData.yearEstablished}
                     </div>
                   </div>
@@ -528,7 +528,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                         <span>Editable</span>
                       </span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-white border border-[#DDE6DA] rounded-xl text-sm hover:border-[#0055A4] transition-colors">
+                    <div className="flex items-center justify-between p-3 bg-white border border-[#C8D6C3] rounded-xl text-sm hover:border-[#0055A4] transition-colors">
                       <a
                         href={facilityData.website}
                         target="_blank"
@@ -559,7 +559,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                         <span>Editable</span>
                       </span>
                     </div>
-                    <div className="p-4 bg-white border border-[#DDE6DA] rounded-xl text-sm text-[#374151] leading-relaxed">
+                    <div className="p-4 bg-white border border-[#C5D2C0] rounded-xl text-sm text-[#374151] leading-relaxed">
                       {facilityData.overview}
                     </div>
                   </div>
@@ -567,8 +567,8 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
               </div>
 
               {/* Section 2: Location & Contact Details */}
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-5">
-                <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-4">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-5">
+                <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
                   <div className="flex items-center gap-2.5">
                     <span className="material-symbols-outlined text-[#0055A4] text-xl">location_on</span>
                     <div>
@@ -590,9 +590,9 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   <div>
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1 flex items-center gap-1">
                       <span>Country</span>
-                      <span className="material-symbols-outlined text-xs text-[#727783]">lock</span>
+                      <span className="material-symbols-outlined text-xs text-[#667085]">lock</span>
                     </label>
-                    <div className="p-3 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-sm text-[#1F2B46]">
+                    <div className="p-3 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-sm text-[#1F2B46]">
                       {facilityData.country}
                     </div>
                   </div>
@@ -600,9 +600,9 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   <div>
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1 flex items-center gap-1">
                       <span>State / Province</span>
-                      <span className="material-symbols-outlined text-xs text-[#727783]">lock</span>
+                      <span className="material-symbols-outlined text-xs text-[#667085]">lock</span>
                     </label>
-                    <div className="p-3 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-sm text-[#1F2B46]">
+                    <div className="p-3 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-sm text-[#1F2B46]">
                       {facilityData.state}
                     </div>
                   </div>
@@ -611,7 +611,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1">
                       City
                     </label>
-                    <div className="p-3 bg-white border border-[#DDE6DA] rounded-xl text-sm font-medium text-[#1F2B46]">
+                    <div className="p-3 bg-white border border-[#C8D6C3] rounded-xl text-sm font-medium text-[#1F2B46]">
                       {facilityData.city}
                     </div>
                   </div>
@@ -620,7 +620,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1">
                       Postal / PIN Code
                     </label>
-                    <div className="p-3 bg-white border border-[#DDE6DA] rounded-xl text-sm font-mono font-medium text-[#1F2B46]">
+                    <div className="p-3 bg-white border border-[#C8D6C3] rounded-xl text-sm font-mono font-medium text-[#1F2B46]">
                       {facilityData.pincode}
                     </div>
                   </div>
@@ -629,7 +629,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1">
                       Complete Street Address
                     </label>
-                    <div className="p-3 bg-white border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46]">
+                    <div className="p-3 bg-white border border-[#C8D6C3] rounded-xl text-sm text-[#1F2B46]">
                       {facilityData.streetAddress}
                     </div>
                   </div>
@@ -638,7 +638,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1">
                       Official Contact Desk
                     </label>
-                    <div className="flex items-center gap-2 p-3 bg-white border border-[#DDE6DA] rounded-xl text-sm font-medium text-[#1F2B46]">
+                    <div className="flex items-center gap-2 p-3 bg-white border border-[#C8D6C3] rounded-xl text-sm font-medium text-[#1F2B46]">
                       <span className="material-symbols-outlined text-[#0055A4] text-base">call</span>
                       <span>{facilityData.contactDesk}</span>
                     </div>
@@ -648,7 +648,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                     <label className="block text-xs font-semibold text-[#5A6372] uppercase tracking-wider mb-1">
                       Official Registry Email
                     </label>
-                    <div className="flex items-center gap-2 p-3 bg-white border border-[#DDE6DA] rounded-xl text-sm font-medium text-[#1F2B46] truncate">
+                    <div className="flex items-center gap-2 p-3 bg-white border border-[#C8D6C3] rounded-xl text-sm font-medium text-[#1F2B46] truncate">
                       <span className="material-symbols-outlined text-[#0055A4] text-base">mail</span>
                       <span className="truncate">{facilityData.registryEmail}</span>
                     </div>
@@ -675,8 +675,8 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
             {/* Right Column: Facility Administration & Verification Documents */}
             <div className="space-y-6">
               {/* Section 3: Facility Administration */}
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-                <div className="flex items-center gap-2.5 border-b border-[#DDE6DA] pb-4">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+                <div className="flex items-center gap-2.5 border-b border-[#C8D6C3] pb-4">
                   <span className="material-symbols-outlined text-[#0055A4] text-xl">admin_panel_settings</span>
                   <div>
                     <h2 className="text-base font-bold text-[#1F2B46]">Facility Administration</h2>
@@ -685,7 +685,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                 </div>
 
                 <div className="space-y-3.5">
-                  <div className="p-3.5 bg-[#F3F6F0] border border-[#DDE6DA] rounded-xl space-y-2">
+                  <div className="p-3.5 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl space-y-2">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-[#0055A4] text-white flex items-center justify-center font-bold text-sm shrink-0">
                         ML
@@ -699,7 +699,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                         </span>
                       </div>
                     </div>
-                    <div className="pt-2 border-t border-[#DDE6DA] text-xs space-y-1 text-[#5A6372]">
+                    <div className="pt-2 border-t border-[#C8D6C3] text-xs space-y-1 text-[#5A6372]">
                       <div className="flex items-center gap-1.5 truncate">
                         <span className="material-symbols-outlined text-xs text-[#0055A4]">mail</span>
                         <span className="truncate">{facilityData.authorizedAdminEmail}</span>
@@ -712,7 +712,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   </div>
 
                   <div className="space-y-2 text-xs">
-                    <div className="flex items-center justify-between py-1.5 border-b border-[#DDE6DA]">
+                    <div className="flex items-center justify-between py-1.5 border-b border-[#C8D6C3]">
                       <span className="text-[#5A6372]">Account Status</span>
                       <span className="inline-flex items-center gap-1 font-semibold text-[#2D6A28]">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#34A853]"></span>
@@ -720,24 +720,24 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                       </span>
                     </div>
 
-                    <div className="flex items-center justify-between py-1.5 border-b border-[#DDE6DA]">
+                    <div className="flex items-center justify-between py-1.5 border-b border-[#C8D6C3]">
                       <span className="text-[#5A6372]">Approval Status</span>
                       <span className="font-semibold text-[#0055A4]">{facilityData.approvalStatus}</span>
                     </div>
 
-                    <div className="flex items-center justify-between py-1.5 border-b border-[#DDE6DA]">
+                    <div className="flex items-center justify-between py-1.5 border-b border-[#C8D6C3]">
                       <span className="text-[#5A6372]">Registration Reference</span>
                       <span className="font-mono text-[#1F2B46] font-medium">{facilityData.registrationRefNumber}</span>
                     </div>
 
-                    <div className="flex items-center justify-between py-1.5 border-b border-[#DDE6DA]">
+                    <div className="flex items-center justify-between py-1.5 border-b border-[#C8D6C3]">
                       <span className="text-[#5A6372]">Central Approval Date</span>
                       <span className="text-[#1F2B46] font-medium">{facilityData.approvalDate}</span>
                     </div>
 
                     <div className="py-1.5">
                       <span className="text-[#5A6372] block mb-1">Central Vetting Authority</span>
-                      <span className="text-[11px] text-[#1F2B46] font-medium block bg-[#F3F6F0] p-2 rounded-lg border border-[#DDE6DA]">
+                      <span className="text-[11px] text-[#1F2B46] font-medium block bg-[#E3EBDD] p-2 rounded-lg border border-[#C8D6C3]">
                         {facilityData.centralVerifier}
                       </span>
                     </div>
@@ -746,8 +746,8 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
               </div>
 
               {/* Section 4: Facility Verification & Documents */}
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-                <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-4">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+                <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
                   <div className="flex items-center gap-2.5">
                     <span className="material-symbols-outlined text-[#0055A4] text-xl">verified_user</span>
                     <div>
@@ -760,7 +760,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
 
                 <div className="space-y-3">
                   {/* Doc 1: Registration Certificate */}
-                  <div className="p-3.5 bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl hover:border-[#0055A4] transition-colors">
+                  <div className="p-3.5 bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl hover:border-[#0055A4] transition-colors">
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-start gap-2.5 min-w-0">
                         <span className="material-symbols-outlined text-red-600 text-2xl shrink-0 mt-0.5">
@@ -798,7 +798,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   </div>
 
                   {/* Doc 2: Board Authorization */}
-                  <div className="p-3.5 bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl hover:border-[#0055A4] transition-colors">
+                  <div className="p-3.5 bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl hover:border-[#0055A4] transition-colors">
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-start gap-2.5 min-w-0">
                         <span className="material-symbols-outlined text-red-600 text-2xl shrink-0 mt-0.5">
@@ -836,7 +836,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   </div>
 
                   {/* Doc 3: Accreditation */}
-                  <div className="p-3.5 bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl hover:border-[#0055A4] transition-colors">
+                  <div className="p-3.5 bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl hover:border-[#0055A4] transition-colors">
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-start gap-2.5 min-w-0">
                         <span className="material-symbols-outlined text-[#B76E00] text-2xl shrink-0 mt-0.5">
@@ -894,9 +894,9 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
       {/* ========================================================================= */}
       {isEditModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
             {/* Modal Header */}
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
               <div className="flex items-center gap-2.5">
                 <span className="material-symbols-outlined text-[#0055A4]">edit_note</span>
                 <div>
@@ -907,7 +907,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
               <button
                 type="button"
                 onClick={() => setIsEditModalOpen(false)}
-                className="text-[#5A6372] hover:text-[#1F2B46] p-1 rounded-lg hover:bg-[#E2E8DE] transition-colors"
+                className="text-[#5A6372] hover:text-[#1F2B46] p-1 rounded-lg hover:bg-[#D5E0D2] transition-colors"
               >
                 <span className="material-symbols-outlined text-xl">close</span>
               </button>
@@ -916,7 +916,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
             {/* Modal Body / Form */}
             <form onSubmit={handleSaveFacilityEdits} className="flex-1 overflow-y-auto p-6 space-y-5">
               {/* Locked Information Notice */}
-              <div className="p-3.5 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl flex items-start gap-3">
+              <div className="p-3.5 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl flex items-start gap-3">
                 <span className="material-symbols-outlined text-[#5A6372] text-lg shrink-0 mt-0.5">lock</span>
                 <div className="text-xs text-[#5A6372] leading-relaxed">
                   <span className="font-semibold text-[#1F2B46]">Protected Legal Identity:</span> Hospital Legal Name,
@@ -950,7 +950,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                     value={editFormData.website}
                     onChange={(e) => setEditFormData({ ...editFormData, website: e.target.value })}
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      editErrors.website ? "border-red-500" : "border-[#DDE6DA]"
+                      editErrors.website ? "border-red-500" : "border-[#AEBEAA]"
                     }`}
                     placeholder="https://www.yourhospital.org"
                   />
@@ -967,7 +967,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                     value={editFormData.overview}
                     onChange={(e) => setEditFormData({ ...editFormData, overview: e.target.value })}
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      editErrors.overview ? "border-red-500" : "border-[#DDE6DA]"
+                      editErrors.overview ? "border-red-500" : "border-[#AEBEAA]"
                     }`}
                     placeholder="Provide facility summary, beds, specialties..."
                   />
@@ -990,7 +990,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                       value={editFormData.contactDesk}
                       onChange={(e) => setEditFormData({ ...editFormData, contactDesk: e.target.value })}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                        editErrors.contactDesk ? "border-red-500" : "border-[#DDE6DA]"
+                        editErrors.contactDesk ? "border-red-500" : "border-[#AEBEAA]"
                       }`}
                       placeholder="+91 22 2840 9100"
                     />
@@ -1007,7 +1007,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                       value={editFormData.registryEmail}
                       onChange={(e) => setEditFormData({ ...editFormData, registryEmail: e.target.value })}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                        editErrors.registryEmail ? "border-red-500" : "border-[#DDE6DA]"
+                        editErrors.registryEmail ? "border-red-500" : "border-[#AEBEAA]"
                       }`}
                       placeholder="registrations@hospital.org"
                     />
@@ -1023,7 +1023,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                       type="text"
                       value={editFormData.emergencyHotline}
                       onChange={(e) => setEditFormData({ ...editFormData, emergencyHotline: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all"
                       placeholder="+91 22 2840 9999"
                     />
                   </div>
@@ -1042,7 +1042,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                       value={editFormData.streetAddress}
                       onChange={(e) => setEditFormData({ ...editFormData, streetAddress: e.target.value })}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                        editErrors.streetAddress ? "border-red-500" : "border-[#DDE6DA]"
+                        editErrors.streetAddress ? "border-red-500" : "border-[#AEBEAA]"
                       }`}
                       placeholder="Plot number, medical park, street..."
                     />
@@ -1059,7 +1059,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                       value={editFormData.city}
                       onChange={(e) => setEditFormData({ ...editFormData, city: e.target.value })}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                        editErrors.city ? "border-red-500" : "border-[#DDE6DA]"
+                        editErrors.city ? "border-red-500" : "border-[#AEBEAA]"
                       }`}
                       placeholder="Mumbai"
                     />
@@ -1076,7 +1076,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                       value={editFormData.pincode}
                       onChange={(e) => setEditFormData({ ...editFormData, pincode: e.target.value })}
                       className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                        editErrors.pincode ? "border-red-500" : "border-[#DDE6DA]"
+                        editErrors.pincode ? "border-red-500" : "border-[#AEBEAA]"
                       }`}
                       placeholder="400050"
                     />
@@ -1086,11 +1086,11 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
               </div>
 
               {/* Modal Footer */}
-              <div className="pt-4 border-t border-[#DDE6DA] flex items-center justify-end gap-3">
+              <div className="pt-4 border-t border-[#C8D6C3] flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setIsEditModalOpen(false)}
-                  className="px-4 py-2.5 rounded-xl border border-[#DDE6DA] text-xs font-semibold text-[#5A6372] hover:bg-[#F3F6F0] transition-colors cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl border border-[#C8D6C3] text-xs font-semibold text-[#5A6372] hover:bg-[#E6EDE2] transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -1111,8 +1111,8 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
       {/* ========================================================================= */}
       {isLegalModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-lg overflow-hidden">
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-lg overflow-hidden">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#B76E00]">gavel</span>
                 <h3 className="text-base font-bold text-[#1F2B46]">Request Legal Re-Verification</h3>
@@ -1137,7 +1137,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                 <select
                   value={legalRequestType}
                   onChange={(e) => setLegalRequestType(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 >
                   <option value="Legal Name Amendment">Hospital Legal Name Amendment</option>
                   <option value="License Number Renewal">State Registration License Renewal / Update</option>
@@ -1156,7 +1156,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   onChange={(e) => setLegalRequestReason(e.target.value)}
                   required
                   placeholder="Detail the rationale, governing board gazette notification number, or amended charter details..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 />
               </div>
 
@@ -1169,15 +1169,15 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                   value={legalRequestDocNote}
                   onChange={(e) => setLegalRequestDocNote(e.target.value)}
                   placeholder="e.g. Gazette Order #MH-2024/8892 or Resolution Docket"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 />
               </div>
 
-              <div className="pt-3 border-t border-[#DDE6DA] flex items-center justify-end gap-3">
+              <div className="pt-3 border-t border-[#C8D6C3] flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setIsLegalModalOpen(false)}
-                  className="px-4 py-2 rounded-xl border border-[#DDE6DA] text-xs font-semibold text-[#5A6372] hover:bg-[#F3F6F0]"
+                  className="px-4 py-2 rounded-xl border border-[#C8D6C3] text-xs font-semibold text-[#5A6372] hover:bg-[#E6EDE2]"
                 >
                   Cancel
                 </button>
@@ -1199,8 +1199,8 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
       {/* ========================================================================= */}
       {previewDoc && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-lg overflow-hidden">
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-lg overflow-hidden">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4]">description</span>
                 <h3 className="text-base font-bold text-[#1F2B46]">Verified Document Record</h3>
@@ -1215,7 +1215,7 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
             </div>
 
             <div className="p-6 space-y-4">
-              <div className="flex items-center gap-3 p-4 bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl">
+              <div className="flex items-center gap-3 p-4 bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl">
                 <span className="material-symbols-outlined text-red-600 text-3xl">picture_as_pdf</span>
                 <div className="min-w-0">
                   <span className="text-sm font-bold text-[#1F2B46] block truncate">{previewDoc.title}</span>
@@ -1225,14 +1225,14 @@ export default function FacilityOverviewView({ initialUser }: FacilityOverviewVi
                 </div>
               </div>
 
-              <div className="space-y-2 text-xs border border-[#DDE6DA] p-4 rounded-xl bg-[#F3F6F0]">
-                <div className="flex items-center justify-between py-1 border-b border-[#DDE6DA]">
+              <div className="space-y-2 text-xs border border-[#C8D6C3] p-4 rounded-xl bg-[#E3EBDD]">
+                <div className="flex items-center justify-between py-1 border-b border-[#C8D6C3]">
                   <span className="text-[#5A6372]">Issuing Authority</span>
                   <span className="font-semibold text-[#1F2B46] text-right truncate max-w-[240px]">
                     {previewDoc.issuingAuthority}
                   </span>
                 </div>
-                <div className="flex items-center justify-between py-1 border-b border-[#DDE6DA]">
+                <div className="flex items-center justify-between py-1 border-b border-[#C8D6C3]">
                   <span className="text-[#5A6372]">Validity Period</span>
                   <span className="font-semibold text-[#2D6A28]">{previewDoc.validity}</span>
                 </div>

@@ -350,11 +350,11 @@ export default function AIReviewWorkspaceView({
                 >
                   <span>Dashboard</span>
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#5A6372] whitespace-nowrap">
                   Clinical &amp; Care
                 </span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   AI Medical Review Workspace
                 </span>
@@ -420,7 +420,7 @@ export default function AIReviewWorkspaceView({
             </div>
 
             {/* ── DOCUMENT QUEUE SELECTOR TABS ─────────────────────────── */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-4 shadow-sm mb-6 space-y-3">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-6 space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-[#015CA9]" />
@@ -433,7 +433,7 @@ export default function AIReviewWorkspaceView({
                   <select
                     value={statusFilter}
                     onChange={(e) => setStatusFilter(e.target.value)}
-                    className="h-8 px-2.5 bg-[#F8FAF6] border border-[#DDE6DA] rounded-lg text-xs font-medium text-[#1F2B46] outline-none"
+                    className="h-8 px-2.5 bg-[#F3F7F2] border border-[#AEBEAA] rounded-lg text-xs font-medium text-[#1F2B46] outline-none"
                   >
                     <option value="all">All Review Statuses</option>
                     <option value="pending-review">Pending Review</option>
@@ -456,7 +456,7 @@ export default function AIReviewWorkspaceView({
                       className={`p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between gap-2.5 ${
                         isSelected
                           ? "bg-[#E1F2FD]/50 border-[#015CA9] shadow-sm ring-1 ring-[#015CA9]"
-                          : "bg-[#F8FAF6] border-[#DDE6DA] hover:bg-white hover:border-[#bce0fb]"
+                          : "bg-[#E1E9DC] border-[#C8D6C3] hover:bg-white hover:border-[#bce0fb]"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-2">
@@ -471,7 +471,7 @@ export default function AIReviewWorkspaceView({
                         {getJobStatusBadge(item.status)}
                       </div>
 
-                      <div className="flex items-center justify-between text-[11px] text-[#727783] pt-1 border-t border-[#DDE6DA]/60">
+                      <div className="flex items-center justify-between text-[11px] text-[#667085] pt-1 border-t border-[#C8D6C3]">
                         <span className="flex items-center gap-1 font-semibold text-[#015CA9]">
                           <Sparkles className="w-3 h-3 text-[#015CA9]" />
                           {(item.overallConfidence * 100).toFixed(0)}% Confidence
@@ -488,8 +488,8 @@ export default function AIReviewWorkspaceView({
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* ── LEFT PANE: ORIGINAL DOCUMENT PREVIEW (5 cols on xl) ── */}
               <div className="lg:col-span-5 xl:col-span-5 space-y-4">
-                <Card className="bg-white border-[#DDE6DA] shadow-sm overflow-hidden sticky top-20">
-                  <CardHeader className="p-4 border-b border-[#DDE6DA] bg-[#FAFDF8] flex flex-row items-center justify-between gap-2">
+                <Card className="overflow-hidden sticky top-20">
+                  <CardHeader className="p-4 border-b border-[#C8D6C3] bg-[#E6EDE2] flex flex-row items-center justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
                       <FileText className="w-4 h-4 text-[#015CA9] shrink-0" />
                       <span className="font-bold text-sm text-[#1F2B46] truncate">
@@ -501,7 +501,7 @@ export default function AIReviewWorkspaceView({
                       <button
                         type="button"
                         onClick={() => setZoomLevel((z) => Math.max(75, z - 15))}
-                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#E2E8DE]"
+                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#D5E0D2]"
                         title="Zoom Out"
                       >
                         <ZoomOut className="w-4 h-4" />
@@ -512,7 +512,7 @@ export default function AIReviewWorkspaceView({
                       <button
                         type="button"
                         onClick={() => setZoomLevel((z) => Math.min(150, z + 15))}
-                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#E2E8DE]"
+                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#D5E0D2]"
                         title="Zoom In"
                       >
                         <ZoomIn className="w-4 h-4" />
@@ -521,7 +521,7 @@ export default function AIReviewWorkspaceView({
                   </CardHeader>
 
                   {/* High-Fidelity Rendered Source Document */}
-                  <div className="p-4 bg-[#EDF2E9] overflow-auto max-h-[720px] flex items-center justify-center">
+                  <div className="p-4 bg-[#E3EBDD] overflow-auto max-h-[720px] flex items-center justify-center">
                     <div
                       style={{
                         transform: `scale(${zoomLevel / 100})`,
@@ -529,7 +529,7 @@ export default function AIReviewWorkspaceView({
                       }}
                       className="transition-transform duration-150 w-full"
                     >
-                      <div className="bg-white rounded-lg shadow-lg border border-[#DDE6DA] p-6 text-xs text-[#1F2B46] relative overflow-hidden min-h-[660px]">
+                      <div className="bg-white rounded-lg shadow-lg border border-[#C8D6C3] p-6 text-xs text-[#1F2B46] relative overflow-hidden min-h-[660px]">
                         {/* Watermark */}
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.035] rotate-[-25deg]">
                           <span className="text-3xl font-black uppercase tracking-widest text-[#001b3c]">
@@ -559,7 +559,7 @@ export default function AIReviewWorkspaceView({
                                 </p>
                               </div>
                             </div>
-                            <div className="text-right text-[9px] text-[#727783]">
+                            <div className="text-right text-[9px] text-[#667085]">
                               <span className="font-mono font-bold text-[#015CA9] block">
                                 {activeItem.documentPreviewData.specimenId}
                               </span>
@@ -569,15 +569,15 @@ export default function AIReviewWorkspaceView({
                         </div>
 
                         {/* Patient Strip */}
-                        <div className="p-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-lg mb-3 text-[10px] grid grid-cols-2 gap-1.5">
+                        <div className="p-2 bg-[#E1E9DC] border border-[#C8D6C3] rounded-lg mb-3 text-[10px] grid grid-cols-2 gap-1.5">
                           <div>
-                            <span className="text-[#727783]">Patient: </span>
+                            <span className="text-[#667085]">Patient: </span>
                             <span className="font-bold text-[#1F2B46]">
                               {activeItem.patientName} ({activeItem.patientId})
                             </span>
                           </div>
                           <div>
-                            <span className="text-[#727783]">Demographics: </span>
+                            <span className="text-[#667085]">Demographics: </span>
                             <span className="font-medium text-[#1F2B46]">
                               {activeItem.patientAge}y / {activeItem.patientGender}
                             </span>
@@ -589,13 +589,13 @@ export default function AIReviewWorkspaceView({
                           {activeItem.documentPreviewData.clinicalSections.map(
                             (section, secIdx) => (
                               <div key={secIdx} className="space-y-1.5">
-                                <h5 className="font-bold text-[10.5px] text-[#015CA9] uppercase tracking-wider bg-[#F3F6F0] px-2 py-0.5 rounded">
+                                <h5 className="font-bold text-[10.5px] text-[#015CA9] uppercase tracking-wider bg-[#E3EBDD] px-2 py-0.5 rounded">
                                   {section.sectionName}
                                 </h5>
 
                                 <table className="w-full text-left text-[10.5px] border-collapse">
                                   <thead>
-                                    <tr className="border-b border-[#DDE6DA] text-[#727783] text-[9.5px]">
+                                    <tr className="border-b border-[#C8D6C3] text-[#667085] text-[9.5px]">
                                       <th className="py-1 px-1.5">Investigation</th>
                                       <th className="py-1 px-1.5">Result</th>
                                       <th className="py-1 px-1.5">Unit</th>
@@ -603,7 +603,7 @@ export default function AIReviewWorkspaceView({
                                       <th className="py-1 px-1.5 text-right">Line Ref</th>
                                     </tr>
                                   </thead>
-                                  <tbody className="divide-y divide-[#F3F6F0]">
+                                  <tbody className="divide-y divide-[#C8D6C3]">
                                     {section.rows.map((row, rowIdx) => {
                                       const isHighlighted =
                                         highlightedSourceRef === row.lineRef;
@@ -613,7 +613,7 @@ export default function AIReviewWorkspaceView({
                                           className={`transition-colors ${
                                             isHighlighted
                                               ? "bg-[#DFEEA9]/50 font-bold ring-2 ring-[#015CA9] rounded"
-                                              : "hover:bg-[#FAFDF8]"
+                                              : "hover:bg-[#E6EDE2]"
                                           }`}
                                         >
                                           <td className="py-1 px-1.5 text-[#1F2B46]">
@@ -633,7 +633,7 @@ export default function AIReviewWorkspaceView({
                                           <td className="py-1 px-1.5 text-[#5A6372]">
                                             {row.unit}
                                           </td>
-                                          <td className="py-1 px-1.5 text-[#727783]">
+                                          <td className="py-1 px-1.5 text-[#667085]">
                                             {row.refRange}
                                           </td>
                                           <td className="py-1 px-1.5 text-right font-mono text-[9px] text-[#015CA9]">
@@ -650,7 +650,7 @@ export default function AIReviewWorkspaceView({
                         </div>
 
                         {/* Document Footer */}
-                        <div className="pt-4 mt-6 border-t border-[#DDE6DA] flex items-center justify-between text-[9px] text-[#727783]">
+                        <div className="pt-4 mt-6 border-t border-[#C8D6C3] flex items-center justify-between text-[9px] text-[#667085]">
                           <span>Generated by Certified Laboratory Analyzer</span>
                           <span className="font-mono text-[#015CA9]">
                             OCR SHA-256 Verified
@@ -665,7 +665,7 @@ export default function AIReviewWorkspaceView({
               {/* ── RIGHT PANE: EDITABLE AI DRAFTS & PRE-CONSULTATION SUMMARY ── */}
               <div className="lg:col-span-7 xl:col-span-7 space-y-4">
                 {/* Mode Switcher Tabs */}
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-2 shadow-xs flex items-center justify-between gap-3">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-2 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex items-center justify-between gap-3">
                   <div className="flex items-center gap-1.5">
                     <button
                       type="button"
@@ -673,7 +673,7 @@ export default function AIReviewWorkspaceView({
                       className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
                         activeTab === "fields"
                           ? "bg-[#015CA9] text-white shadow-sm"
-                          : "text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46]"
+                          : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
                       }`}
                     >
                       <Sliders className="w-3.5 h-3.5" />
@@ -686,7 +686,7 @@ export default function AIReviewWorkspaceView({
                       className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
                         activeTab === "summary"
                           ? "bg-[#015CA9] text-white shadow-sm"
-                          : "text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46]"
+                          : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
                       }`}
                     >
                       <Stethoscope className="w-3.5 h-3.5" />
@@ -731,10 +731,10 @@ export default function AIReviewWorkspaceView({
                           key={param.id}
                           className={`border transition-all ${
                             isSourceHighlighted
-                              ? "border-[#015CA9] ring-2 ring-[#015CA9]/30 bg-[#FAFDF8]"
+                              ? "border-[#015CA9] ring-2 ring-[#015CA9]/30 bg-[#E6EDE2]"
                               : isApproved
-                              ? "border-[#c5dd80] bg-[#FAFDF8]"
-                              : "border-[#DDE6DA] bg-white hover:border-[#bce0fb]"
+                              ? "border-[#c5dd80] bg-[#E6EDE2]"
+                              : "border-[#C8D6C3] bg-white hover:border-[#bce0fb]"
                           }`}
                         >
                           <CardContent className="p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
@@ -763,7 +763,7 @@ export default function AIReviewWorkspaceView({
 
                               <div className="flex items-center gap-3 flex-wrap">
                                 <div className="flex items-baseline gap-1.5">
-                                  <span className="text-xs text-[#727783]">Value:</span>
+                                  <span className="text-xs text-[#667085]">Value:</span>
                                   <span className="text-base font-bold text-[#015CA9]">
                                     {param.cleanedValue}
                                   </span>
@@ -801,7 +801,7 @@ export default function AIReviewWorkspaceView({
                                   <span>{param.sourceRef}</span>
                                   <ChevronRight className="w-3 h-3" />
                                 </button>
-                                <span className="text-[10.5px] text-[#727783]">
+                                <span className="text-[10.5px] text-[#667085]">
                                   Confidence:{" "}
                                   <strong>{(param.confidence * 100).toFixed(0)}%</strong>
                                 </span>
@@ -829,7 +829,7 @@ export default function AIReviewWorkspaceView({
                                 className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
                                   isApproved
                                     ? "bg-[#DFEEA9] text-[#2d3a08] border border-[#c5dd80] shadow-xs"
-                                    : "bg-[#F3F6F0] text-[#5A6372] border border-[#DDE6DA] hover:bg-[#E1F2FD] hover:text-[#015CA9]"
+                                    : "bg-[#E3EBDD] text-[#5A6372] border border-[#C8D6C3] hover:bg-[#E1F2FD] hover:text-[#015CA9]"
                                 }`}
                               >
                                 {isApproved ? (
@@ -853,8 +853,8 @@ export default function AIReviewWorkspaceView({
                 {activeTab === "summary" && (
                   <div className="space-y-4">
                     {/* Clinical Synthesis Headline Card */}
-                    <Card className="bg-white border-[#DDE6DA] shadow-sm">
-                      <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0] bg-[#FAFDF8]">
+                    <Card>
+                      <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3] bg-[#E6EDE2]">
                         <div className="flex items-center gap-2">
                           <Stethoscope className="w-5 h-5 text-[#015CA9]" />
                           <CardTitle className="text-sm">
@@ -877,13 +877,13 @@ export default function AIReviewWorkspaceView({
                               (obs) => (
                                 <div
                                   key={obs.id}
-                                  className="p-3 rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] flex items-start justify-between gap-3"
+                                  className="p-3 rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] flex items-start justify-between gap-3"
                                 >
                                   <div className="space-y-1">
                                     <p className="text-[#1F2B46] font-medium">
                                       {obs.text}
                                     </p>
-                                    <span className="text-[10px] text-[#727783] block">
+                                    <span className="text-[10px] text-[#667085] block">
                                       Source: {obs.sourceRef}
                                     </span>
                                   </div>
@@ -920,7 +920,7 @@ export default function AIReviewWorkspaceView({
                                     <span className="font-bold text-[#ba1a1a]">
                                       {flag.parameter}: {flag.value}
                                     </span>
-                                    <span className="text-[10px] font-bold text-[#727783]">
+                                    <span className="text-[10px] font-bold text-[#667085]">
                                       Ref: {flag.ref}
                                     </span>
                                   </div>
@@ -943,13 +943,13 @@ export default function AIReviewWorkspaceView({
                               (hist) => (
                                 <div
                                   key={hist.id}
-                                  className="p-3 rounded-xl border border-[#DDE6DA] bg-white text-xs space-y-0.5"
+                                  className="p-3 rounded-xl border border-[#C8D6C3] bg-white text-xs space-y-0.5"
                                 >
                                   <div className="flex items-center justify-between">
                                     <span className="font-bold text-[#1F2B46]">
                                       {hist.label}
                                     </span>
-                                    <span className="text-[10px] text-[#727783]">
+                                    <span className="text-[10px] text-[#667085]">
                                       {hist.date}
                                     </span>
                                   </div>
@@ -968,7 +968,7 @@ export default function AIReviewWorkspaceView({
                         </div>
 
                         {/* Draft Impression Box */}
-                        <div className="p-3.5 rounded-xl bg-[#FAFDF8] border-2 border-dashed border-[#A3C8B4] text-xs text-[#1F2B46] leading-relaxed">
+                        <div className="p-3.5 rounded-xl bg-[#E6EDE2] border-2 border-dashed border-[#A3C8B4] text-xs text-[#1F2B46] leading-relaxed">
                           <span className="font-bold text-[#526524] uppercase tracking-wider text-[10.5px] block mb-1">
                             AI-Drafted Clinical Assessment (Subject to Clinician Verification)
                           </span>
@@ -1007,7 +1007,7 @@ export default function AIReviewWorkspaceView({
                   <span className="font-bold text-[#1F2B46] block mb-1">
                     Parameter: {editingField.name}
                   </span>
-                  <span className="text-[#727783] block">
+                  <span className="text-[#667085] block">
                     Source: {editingField.sourceRef} • Unit: {editingField.unit}
                   </span>
                 </div>
@@ -1144,7 +1144,7 @@ export default function AIReviewWorkspaceView({
                 rows={3}
                 value={signOffNotes}
                 onChange={(e) => setSignOffNotes(e.target.value)}
-                className="w-full px-3 py-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
+                className="w-full px-3 py-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
               />
             </div>
           </div>

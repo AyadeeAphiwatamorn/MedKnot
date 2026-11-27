@@ -14,13 +14,13 @@ interface OtpInputProps {
 
 const STATE_STYLES: Record<OtpState, string> = {
   default:
-    'border-slate-300 focus:border-[#0055A4] focus:ring-2 focus:ring-[#0055A4]/20',
+    'border-[#AEBEAA] bg-[#F3F7F2] hover:border-[#8EA389] hover:bg-[#EEF4ED] focus:bg-white focus:border-[#0055A4] focus:ring-[3px] focus:ring-[#0055A4]/15',
   invalid:
-    'border-red-500 ring-2 ring-red-100',
+    'border-red-500 bg-white ring-2 ring-red-100',
   expired:
-    'border-amber-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200',
+    'border-amber-400 bg-white focus:border-amber-500 focus:ring-2 focus:ring-amber-200',
   'rate-limit':
-    'border-slate-200 bg-slate-50 opacity-50 cursor-not-allowed',
+    'border-[#C5D1C2] bg-[#E9EFE7] text-[#556173] opacity-70 cursor-not-allowed',
   success:
     'border-emerald-500 ring-2 ring-emerald-200 bg-emerald-50/30',
 };
@@ -117,8 +117,9 @@ export default function OtpInput({ digits, onChange, state, disabled = false }: 
           onKeyDown={(e) => handleKeyDown(e, idx)}
           onPaste={handlePaste}
           onFocus={(e) => e.target.select()}
-          className={`h-13 w-full rounded-xl border bg-white text-center text-xl font-bold text-[#1F2B46] shadow-sm transition-all focus:outline-none sm:h-14
-            ${idx === 0 && state === 'default' && !digit ? 'border-[#0055A4] ring-2 ring-[#0055A4]/20' : boxStyle}
+          data-otp-input="true"
+          className={`h-13 w-full rounded-xl border-[1.5px] bg-[#F3F7F2] text-center text-xl font-bold text-[#1F2B46] shadow-2xs transition-all focus:outline-none sm:h-14
+            ${idx === 0 && state === 'default' && !digit ? 'border-[#0055A4] bg-white ring-[3px] ring-[#0055A4]/15' : boxStyle}
             ${isDisabled ? 'cursor-not-allowed' : ''}`}
         />
       ))}

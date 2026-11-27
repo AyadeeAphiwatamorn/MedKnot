@@ -26,9 +26,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       secondary:
         "bg-[#E1F2FD] text-[#015CA9] hover:bg-[#cbe7fb] border border-[#b2d9f7]",
       outline:
-        "border border-[#DDE6DA] bg-white text-[#1F2B46] hover:bg-[#F3F6F0] shadow-xs",
+        "border border-[#C5D2C0] bg-white text-[#1F2B46] hover:bg-[#E6EDE2] hover:border-[#AEBEAA] shadow-[0_2px_6px_rgba(31,43,70,0.08)]",
       ghost:
-        "text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46]",
+        "text-[#424751] hover:bg-[#E1E9DC] hover:text-[#1F2B46]",
       destructive:
         "bg-[#ba1a1a] text-white hover:bg-[#93000a] shadow-sm",
       avocado:

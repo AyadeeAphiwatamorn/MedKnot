@@ -18,15 +18,15 @@ export function AppointmentSubnav({ requestsCount }: AppointmentSubnavProps) {
   const isNew = pathname === "/dashboard/appointments/new";
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#D5DFD2] pb-4">
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#C8D6C3] pb-4">
       {/* Tab Switcher */}
-      <div className="flex items-center rounded-xl border border-[#D5DFD2] bg-white p-1 shadow-2xs">
+      <div className="flex items-center rounded-xl border border-[#C8D6C3] bg-white p-1 shadow-2xs">
         <Link
           href="/dashboard/appointments"
           className={`flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
             isOverview
               ? "bg-[#0055A4] text-white shadow-xs"
-              : "text-[#5A6372] hover:bg-[#F1F5EF] hover:text-[#1F2B46]"
+              : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
           }`}
         >
           <span className="material-symbols-outlined text-sm">dashboard</span>
@@ -38,7 +38,7 @@ export function AppointmentSubnav({ requestsCount }: AppointmentSubnavProps) {
           className={`flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
             isCalendar
               ? "bg-[#0055A4] text-white shadow-xs"
-              : "text-[#5A6372] hover:bg-[#F1F5EF] hover:text-[#1F2B46]"
+              : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
           }`}
         >
           <span className="material-symbols-outlined text-sm">calendar_month</span>
@@ -50,7 +50,7 @@ export function AppointmentSubnav({ requestsCount }: AppointmentSubnavProps) {
           className={`flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
             isRequests
               ? "bg-[#0055A4] text-white shadow-xs"
-              : "text-[#5A6372] hover:bg-[#F1F5EF] hover:text-[#1F2B46]"
+              : "text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46]"
           }`}
         >
           <span className="material-symbols-outlined text-sm">inbox</span>

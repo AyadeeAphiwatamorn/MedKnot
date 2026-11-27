@@ -191,13 +191,13 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
       case "Reschedule Requested":
         return "bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100/70";
       case "Completed":
-        return "bg-[#F1F5EF] text-[#1F2B46]/70 border-[#D5DFD2] hover:bg-[#E4EBE0]";
+        return "bg-[#E3EBDD] text-[#1F2B46] border-[#C8D6C3] hover:bg-[#D5E0D2]";
       case "Cancelled":
         return "bg-rose-50 text-rose-800 border-rose-200 hover:bg-rose-100/70";
       case "No Show":
         return "bg-red-50 text-red-800 border-red-200 hover:bg-red-100/70";
       default:
-        return "bg-gray-50 text-gray-700 border-gray-200";
+        return "bg-[#E6EDE2] text-[#5A6372] border-[#C8D6C3]";
     }
   };
 
@@ -255,11 +255,11 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
             <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
             <span>Live Outpatient Schedule</span>
           </span>
@@ -267,7 +267,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
       </div>
 
       {/* Header Banner & Standard Sub-navigation Tabs */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-5">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
@@ -284,7 +284,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
           <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/dashboard/appointments/requests"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#DDE6DA] bg-[#F3F6F0] hover:bg-[#E8EFE5] text-[#1F2B46] text-xs font-semibold transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] hover:bg-[#D5E0D2] text-[#1F2B46] text-xs font-semibold transition-colors"
             >
               <span className="material-symbols-outlined text-base text-[#B76E00]">inbox</span>
               <span>Review Requests ({stats.pendingRequests})</span>
@@ -301,10 +301,10 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
         </div>
 
         {/* Standard Sub-navigation Tabs matching Overview exactly */}
-        <div className="border-t border-[#DDE6DA] pt-3 flex items-center gap-2">
+        <div className="border-t border-[#C8D6C3] pt-3 flex items-center gap-2">
           <Link
             href="/dashboard/appointments"
-            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
           >
             <span className="material-symbols-outlined text-sm">table_chart</span>
             <span>Directory & Schedule</span>
@@ -320,7 +320,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
 
           <Link
             href="/dashboard/appointments/requests"
-            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
           >
             <span className="material-symbols-outlined text-sm">mark_email_unread</span>
             <span>Requests Queue</span>
@@ -334,27 +334,27 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
       </div>
 
       {/* Calendar Controls & Filter Bar */}
-      <div className="rounded-2xl border border-[#D5DFD2] bg-white p-4 shadow-xs">
+      <div className="rounded-2xl border border-[#C5D2C0] bg-white p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           {/* Date Navigator */}
           <div className="flex items-center gap-2.5">
             <button
               onClick={jumpToToday}
-              className="rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] px-3 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors"
+              className="rounded-lg border border-[#C8D6C3] bg-[#E3EBDD] px-3 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors"
             >
               Today
             </button>
-            <div className="flex items-center rounded-lg border border-[#D5DFD2] bg-white">
+            <div className="flex items-center rounded-lg border border-[#C8D6C3] bg-white">
               <button
                 onClick={() => navigateDate(-1)}
-                className="p-1.5 text-[#1F2B46]/70 hover:bg-[#F1F5EF] rounded-l-lg transition-colors"
+                className="p-1.5 text-[#1F2B46]/70 hover:bg-[#E6EDE2] rounded-l-lg transition-colors"
                 title="Previous period"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
               <button
                 onClick={() => navigateDate(1)}
-                className="p-1.5 text-[#1F2B46]/70 hover:bg-[#F1F5EF] rounded-r-lg transition-colors"
+                className="p-1.5 text-[#1F2B46]/70 hover:bg-[#E6EDE2] rounded-r-lg transition-colors"
                 title="Next period"
               >
                 <ChevronRight className="h-4 w-4" />
@@ -372,7 +372,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
           {/* View Mode Toggle & Filters */}
           <div className="flex flex-wrap items-center gap-2">
             {/* View Mode */}
-            <div className="flex rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] p-1">
+            <div className="flex rounded-lg border border-[#C8D6C3] bg-[#E3EBDD] p-1">
               <button
                 onClick={() => setViewMode("day")}
                 className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
@@ -410,7 +410,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
               value={selectedDepartment}
               onChange={(e) => setSelectedDepartment(e.target.value)}
               aria-label="Filter by department"
-              className="rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="rounded-lg border border-[#AEBEAA] bg-[#F3F7F2] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Departments</option>
               {AVAILABLE_DEPARTMENTS.map((dept: string) => (
@@ -425,7 +425,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
               value={selectedDoctor}
               onChange={(e) => setSelectedDoctor(e.target.value)}
               aria-label="Filter by physician"
-              className="rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="rounded-lg border border-[#AEBEAA] bg-[#F3F7F2] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Doctors</option>
               {AVAILABLE_DOCTORS.map((doc: { id: string; name: string }) => (
@@ -440,7 +440,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
               aria-label="Filter by status"
-              className="rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="rounded-lg border border-[#AEBEAA] bg-[#F3F7F2] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Statuses</option>
               <option value="Confirmed">Confirmed</option>
@@ -453,7 +453,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
         </div>
 
         {/* Legend */}
-        <div className="mt-2.5 flex flex-wrap items-center gap-3.5 border-t border-[#D5DFD2]/60 pt-2 text-[11px] text-[#1F2B46]/70">
+        <div className="mt-2.5 flex flex-wrap items-center gap-3.5 border-t border-[#C8D6C3] pt-2 text-[11px] text-[#1F2B46]/70">
           <span className="font-semibold text-[#1F2B46]">Status Legend:</span>
           <div className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -479,12 +479,12 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
       </div>
 
       {/* CALENDAR BODY */}
-      <div className="rounded-2xl border border-[#D5DFD2] bg-white shadow-xs overflow-hidden">
+      <div className="rounded-2xl border border-[#C5D2C0] bg-white shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
         {/* MONTH VIEW */}
         {viewMode === "month" && (
           <div>
             {/* Weekday headers */}
-            <div className="grid grid-cols-7 border-b border-[#D5DFD2] bg-[#F1F5EF] text-center text-xs font-bold text-[#1F2B46] py-2">
+            <div className="grid grid-cols-7 border-b border-[#C8D6C3] bg-[#E3EBDD] text-center text-xs font-bold text-[#1F2B46] py-2">
               <span>Mon</span>
               <span>Tue</span>
               <span>Wed</span>
@@ -495,7 +495,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
             </div>
 
             {/* Compact Days Grid */}
-            <div className="grid grid-cols-7 auto-rows-fr divide-x divide-y divide-[#D5DFD2]/70">
+            <div className="grid grid-cols-7 auto-rows-fr divide-x divide-y divide-[#C8D6C3]">
               {currentMonthDays.map(({ date, isCurrentMonth }, idx) => {
                 const dateKey = formatDateStr(date);
                 const dayApts = filteredAppointments.filter((a) => a.appointmentDate === dateKey);
@@ -505,7 +505,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
                   <div
                     key={idx}
                     className={`min-h-[92px] p-1.5 transition-colors ${
-                      !isCurrentMonth ? "bg-[#F1F5EF]/30 text-gray-400" : "bg-white hover:bg-slate-50/50"
+                      !isCurrentMonth ? "bg-[#E3EBDD] text-[#667085]" : "bg-white hover:bg-[#E6EDE2]"
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
@@ -558,8 +558,8 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
           <div className="overflow-x-auto">
             <div className="min-w-[800px]">
               {/* Day header columns */}
-              <div className="grid grid-cols-8 border-b border-[#D5DFD2] bg-[#F1F5EF]">
-                <div className="p-2.5 text-center text-xs font-bold text-[#1F2B46]/70 border-r border-[#D5DFD2]">
+              <div className="grid grid-cols-8 border-b border-[#C8D6C3] bg-[#E3EBDD]">
+                <div className="p-2.5 text-center text-xs font-bold text-[#1F2B46]/70 border-r border-[#C8D6C3]">
                   Slot
                 </div>
                 {currentWeekDays.map((d, i) => {
@@ -567,7 +567,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
                   return (
                     <div
                       key={i}
-                      className={`p-2 text-center border-r border-[#D5DFD2] last:border-r-0 ${
+                      className={`p-2 text-center border-r border-[#C8D6C3] last:border-r-0 ${
                         isToday ? "bg-[#0055A4]/5" : ""
                       }`}
                     >
@@ -587,11 +587,11 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
               </div>
 
               {/* Time Slots rows */}
-              <div className="divide-y divide-[#D5DFD2]">
+              <div className="divide-y divide-[#C8D6C3]">
                 {operationalSlots.map((slot) => (
                   <div key={slot} className="grid grid-cols-8 min-h-[58px]">
                     {/* Time Label */}
-                    <div className="p-1.5 text-right text-[11px] font-medium text-[#1F2B46]/60 border-r border-[#D5DFD2] bg-[#F1F5EF]/30 flex items-center justify-end">
+                    <div className="p-1.5 text-right text-[11px] font-medium text-[#1F2B46]/60 border-r border-[#C8D6C3] bg-[#E3EBDD] flex items-center justify-end">
                       {slot}
                     </div>
 
@@ -605,7 +605,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
                       return (
                         <div
                           key={i}
-                          className="p-1 border-r border-[#D5DFD2] last:border-r-0 hover:bg-slate-50/60 transition-colors"
+                          className="p-1 border-r border-[#C8D6C3] last:border-r-0 hover:bg-[#E6EDE2] transition-colors"
                         >
                           <div className="flex flex-col gap-1">
                             {matchingApts.map((apt) => (
@@ -640,8 +640,8 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
 
         {/* DAY VIEW */}
         {viewMode === "day" && (
-          <div className="divide-y divide-[#D5DFD2]">
-            <div className="bg-[#F1F5EF] p-3 text-center border-b border-[#D5DFD2]">
+          <div className="divide-y divide-[#C8D6C3]">
+            <div className="bg-[#E3EBDD] p-3 text-center border-b border-[#C8D6C3]">
               <span className="text-xs font-semibold text-[#0055A4]">
                 {currentDate.toLocaleDateString("en-US", { weekday: "long" })}
               </span>
@@ -650,7 +650,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
               </h2>
             </div>
 
-            <div className="divide-y divide-[#D5DFD2]">
+            <div className="divide-y divide-[#C8D6C3]">
               {operationalSlots.map((slot) => {
                 const dateKey = formatDateStr(currentDate);
                 const matchingApts = filteredAppointments.filter(
@@ -659,7 +659,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
 
                 return (
                   <div key={slot} className="flex min-h-[64px]">
-                    <div className="w-24 p-2 text-right text-xs font-semibold text-[#1F2B46]/60 bg-[#F1F5EF]/30 border-r border-[#D5DFD2] flex items-center justify-end">
+                    <div className="w-24 p-2 text-right text-xs font-semibold text-[#1F2B46]/60 bg-[#E3EBDD] border-r border-[#C8D6C3] flex items-center justify-end">
                       {slot}
                     </div>
                     <div className="flex-1 p-2">
@@ -708,8 +708,8 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
       {/* APPOINTMENT DETAIL MODAL */}
       {selectedAppointment && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs animate-in fade-in">
-          <div className="w-full max-w-lg rounded-2xl border border-[#D5DFD2] bg-white p-5 shadow-xl animate-in zoom-in-95">
-            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-3">
+          <div className="w-full max-w-lg rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-xl animate-in zoom-in-95">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-3">
               <div>
                 <span className="text-xs font-mono text-[#0055A4] font-semibold">
                   {selectedAppointment.id}
@@ -720,7 +720,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
               </div>
               <button
                 onClick={() => setSelectedAppointment(null)}
-                className="rounded-lg p-1.5 text-[#1F2B46]/60 hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-lg p-1.5 text-[#1F2B46]/60 hover:bg-[#E6EDE2] transition-colors"
                 title="Close (Esc)"
               >
                 <X className="h-5 w-5" />
@@ -728,7 +728,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
             </div>
 
             <div className="mt-4 space-y-3">
-              <div className="flex items-center justify-between rounded-xl bg-[#F1F5EF] p-3">
+              <div className="flex items-center justify-between rounded-xl bg-[#E3EBDD] p-3">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0055A4] text-white font-bold text-sm">
                     {selectedAppointment.patientName.charAt(0)}
@@ -748,25 +748,25 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
               </div>
 
               <div className="grid grid-cols-2 gap-2 text-xs">
-                <div className="rounded-lg border border-[#D5DFD2] p-2.5">
+                <div className="rounded-lg border border-[#C8D6C3] p-2.5">
                   <span className="text-[#1F2B46]/60 block mb-0.5">Date & Time Slot</span>
                   <span className="font-semibold text-[#1F2B46]">
                     {selectedAppointment.appointmentDate} at {selectedAppointment.timeSlot}
                   </span>
                 </div>
-                <div className="rounded-lg border border-[#D5DFD2] p-2.5">
+                <div className="rounded-lg border border-[#C8D6C3] p-2.5">
                   <span className="text-[#1F2B46]/60 block mb-0.5">Visit Modality</span>
                   <span className="font-semibold text-[#1F2B46]">
                     {selectedAppointment.appointmentType}
                   </span>
                 </div>
-                <div className="rounded-lg border border-[#D5DFD2] p-2.5">
+                <div className="rounded-lg border border-[#C8D6C3] p-2.5">
                   <span className="text-[#1F2B46]/60 block mb-0.5">Assigned Physician</span>
                   <span className="font-semibold text-[#1F2B46]">
                     {selectedAppointment.doctorName}
                   </span>
                 </div>
-                <div className="rounded-lg border border-[#D5DFD2] p-2.5">
+                <div className="rounded-lg border border-[#C8D6C3] p-2.5">
                   <span className="text-[#1F2B46]/60 block mb-0.5">Clinical Department</span>
                   <span className="font-semibold text-[#1F2B46]">
                     {selectedAppointment.department}
@@ -774,7 +774,7 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
                 </div>
               </div>
 
-              <div className="rounded-lg border border-[#D5DFD2] p-3 text-xs">
+              <div className="rounded-lg border border-[#C8D6C3] p-3 text-xs">
                 <span className="font-semibold text-[#1F2B46]/70 block mb-1">
                   Reason for Visit
                 </span>
@@ -782,17 +782,17 @@ export function AppointmentCalendarView({ isGuestMode = false }: AppointmentCale
                   {selectedAppointment.reasonForVisit}
                 </p>
                 {selectedAppointment.staffNotes && (
-                  <p className="text-[#1F2B46]/70 mt-2 italic bg-[#F1F5EF] p-2 rounded">
+                  <p className="text-[#1F2B46]/70 mt-2 italic bg-[#E3EBDD] p-2 rounded">
                     Staff Notes: {selectedAppointment.staffNotes}
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="mt-5 flex items-center justify-between border-t border-[#D5DFD2] pt-3">
+            <div className="mt-5 flex items-center justify-between border-t border-[#C8D6C3] pt-3">
               <button
                 onClick={() => setSelectedAppointment(null)}
-                className="rounded-lg border border-[#D5DFD2] bg-white px-3.5 py-1.5 text-xs font-medium text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-lg border border-[#C8D6C3] bg-white px-3.5 py-1.5 text-xs font-medium text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
               >
                 Close
               </button>

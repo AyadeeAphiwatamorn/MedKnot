@@ -97,20 +97,20 @@ export function FacilitySelector() {
   if (!isLoading && !canSwitchCampus) {
     return (
       <div
-        className="flex items-center gap-2.5 bg-white border border-[#D5DFD2] px-3.5 py-1.5 rounded-xl shadow-xs text-[#1F2B46] min-w-0 max-w-full"
+        className="flex items-center gap-2.5 bg-white border border-[#C5D2C0] px-3.5 py-1.5 rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.08)] text-[#1F2B46] min-w-0 max-w-full"
         title={`Assigned to ${activeFacility.name} — ${activeCampus.name} (Single-campus access)`}
       >
-        <div className="w-7 h-7 rounded-lg bg-[#EDF2E9] flex items-center justify-center shrink-0">
+        <div className="w-7 h-7 rounded-lg bg-[#E1E9DC] border border-[#C8D6C3] flex items-center justify-center shrink-0">
           <span className="material-symbols-outlined text-[#0055A4] text-[18px]">
             local_hospital
           </span>
         </div>
         <div className="flex flex-col text-left min-w-0">
           <div className="flex items-center gap-1.5">
-            <span className="text-[10px] text-[#5A6372] uppercase tracking-wider font-semibold leading-none">
+            <span className="text-[10px] text-[#667085] uppercase tracking-wider font-semibold leading-none">
               Facility
             </span>
-            <span className="text-[10px] text-[#727783] hidden sm:inline">• Single Campus</span>
+            <span className="text-[10px] text-[#667085] hidden sm:inline">• Single Campus</span>
           </div>
           <span className="text-xs sm:text-sm font-semibold text-[#1F2B46] truncate leading-tight mt-0.5">
             {activeFacility.name}
@@ -134,10 +134,10 @@ export function FacilitySelector() {
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={`Switch facility or campus. Current: ${activeFacility.name}, ${activeCampus.name}`}
-        className={`flex items-center gap-2.5 bg-white border px-3.5 py-1.5 rounded-xl shadow-xs text-[#1F2B46] transition-all cursor-pointer min-w-0 max-w-full ${
+        className={`flex items-center gap-2.5 bg-white border px-3.5 py-1.5 rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.08)] text-[#1F2B46] transition-all cursor-pointer min-w-0 max-w-full ${
           isOpen
-            ? "border-[#0055A4] ring-2 ring-[#0055A4]/15 bg-[#F8FAF6]"
-            : "border-[#D5DFD2] hover:bg-[#F3F6F0] hover:border-[#B8C6B4]"
+            ? "border-[#0055A4] ring-2 ring-[#0055A4]/15 bg-[#F3F7F2]"
+            : "border-[#C5D2C0] hover:bg-[#E3EBDD] hover:border-[#AEBEAA]"
         }`}
       >
         <div className="w-7 h-7 rounded-lg bg-[#E1F2FD]/70 flex items-center justify-center shrink-0">
@@ -147,7 +147,7 @@ export function FacilitySelector() {
         </div>
 
         <div className="flex flex-col text-left min-w-0">
-          <span className="text-[10px] text-[#5A6372] uppercase tracking-wider font-semibold leading-none truncate">
+          <span className="text-[10px] text-[#667085] uppercase tracking-wider font-semibold leading-none truncate">
             Facility
           </span>
           <span className="text-xs sm:text-sm font-semibold text-[#1F2B46] truncate leading-tight mt-0.5 max-w-[160px] sm:max-w-[240px]">
@@ -176,10 +176,10 @@ export function FacilitySelector() {
         <div
           role="dialog"
           aria-label="Facility and campus selector"
-          className="absolute left-0 top-full mt-2 w-[340px] sm:w-[400px] max-w-[calc(100vw-2rem)] bg-white border border-[#D5DFD2] rounded-2xl shadow-[0_16px_40px_rgba(31,43,70,0.14)] z-50 overflow-hidden"
+          className="absolute left-0 top-full mt-2 w-[340px] sm:w-[400px] max-w-[calc(100vw-2rem)] bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_16px_40px_rgba(31,43,70,0.16)] z-50 overflow-hidden"
         >
           {/* Header */}
-          <div className="px-4 py-3 bg-[#F8FAF6] border-b border-[#E5EAE2] flex items-center justify-between gap-2">
+          <div className="px-4 py-3 bg-[#E6EDE2] border-b border-[#C5D2C0] flex items-center justify-between gap-2">
             <div>
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#1F2B46]">
                 Switch Facility &amp; Campus
@@ -194,7 +194,7 @@ export function FacilitySelector() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="p-1 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] hover:text-[#1F2B46] transition-colors cursor-pointer"
+              className="p-1 rounded-lg text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors cursor-pointer"
               aria-label="Close facility selector"
             >
               <span className="material-symbols-outlined text-[18px]">close</span>
@@ -203,9 +203,9 @@ export function FacilitySelector() {
 
           {/* Search input when multiple facilities/campuses exist */}
           {showSearch && (
-            <div className="p-3 border-b border-[#EEF2EC] bg-white">
+            <div className="p-3 border-b border-[#C8D6C3] bg-white">
               <div className="relative flex items-center">
-                <span className="material-symbols-outlined text-[#727783] text-[18px] absolute left-3 pointer-events-none">
+                <span className="material-symbols-outlined text-[#667085] text-[18px] absolute left-3 pointer-events-none">
                   search
                 </span>
                 <input
@@ -214,7 +214,7 @@ export function FacilitySelector() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search facility, campus, or city…"
-                  className="w-full pl-9 pr-8 py-1.5 text-xs bg-[#F8FAF6] border border-[#D5DFD2] rounded-lg text-[#1F2B46] placeholder:text-[#727783] focus:outline-none focus:border-[#0055A4] focus:ring-2 focus:ring-[#0055A4]/15"
+                  className="w-full pl-9 pr-8 py-1.5 text-xs bg-[#F3F7F2] border-[1.5px] border-[#AEBEAA] rounded-lg text-[#1F2B46] placeholder:text-[#7C8998] focus:outline-none focus:border-[#0055A4] focus:ring-2 focus:ring-[#0055A4]/15"
                 />
                 {searchQuery && (
                   <button
@@ -276,7 +276,7 @@ export function FacilitySelector() {
                   <button
                     type="button"
                     onClick={refreshFacilities}
-                    className="mt-3 px-3 py-1.5 rounded-lg bg-[#EDF2E9] hover:bg-[#D5DFD2] text-xs font-semibold text-[#1F2B46] transition-colors cursor-pointer"
+                    className="mt-3 px-3 py-1.5 rounded-lg bg-[#E3EBDD] border border-[#C8D6C3] hover:bg-[#D5E0D2] text-xs font-semibold text-[#1F2B46] transition-colors cursor-pointer"
                   >
                     Retry
                   </button>
@@ -290,18 +290,18 @@ export function FacilitySelector() {
                     key={facility.id}
                     className={`rounded-xl border transition-colors ${
                       isActiveFacility
-                        ? "border-[#0055A4]/30 bg-[#F8FAF6]"
-                        : "border-[#E5EAE2] bg-white"
+                        ? "border-[#0055A4]/40 bg-[#E3EBDD]"
+                        : "border-[#C8D6C3] bg-white"
                     }`}
                   >
                     {/* Facility Parent Header */}
-                    <div className="px-3.5 py-2.5 border-b border-[#EEF2EC] flex items-start justify-between gap-2">
+                    <div className="px-3.5 py-2.5 border-b border-[#C8D6C3] flex items-start justify-between gap-2">
                       <div className="flex items-start gap-2.5 min-w-0">
                         <div
                           className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
                             isActiveFacility
                               ? "bg-[#0055A4] text-white"
-                              : "bg-[#EDF2E9] text-[#0055A4]"
+                              : "bg-[#E1E9DC] text-[#0055A4]"
                           }`}
                         >
                           <span className="material-symbols-outlined text-[16px]">
@@ -340,8 +340,8 @@ export function FacilitySelector() {
                             onClick={() => handleSelectCampus(campus.id)}
                             className={`w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-left transition-all cursor-pointer ${
                               isSelected
-                                ? "bg-[#E1F2FD]/70 text-[#003E7A] ring-1 ring-[#0055A4]/30"
-                                : "hover:bg-[#EDF2E9]/70 text-[#1F2B46]"
+                                ? "bg-[#E1F2FD]/90 text-[#003E7A] ring-1 ring-[#0055A4]/35"
+                                : "hover:bg-[#D5E0D2]/75 text-[#1F2B46]"
                             }`}
                           >
                             <div className="flex items-center gap-2.5 min-w-0">
@@ -359,7 +359,7 @@ export function FacilitySelector() {
                                   <span className="text-xs font-semibold truncate">
                                     {campus.name}
                                   </span>
-                                  <span className="text-[10px] font-medium px-1.5 py-0.2 rounded bg-white/80 border border-[#D5DFD2] text-[#5A6372]">
+                                  <span className="text-[10px] font-medium px-1.5 py-0.2 rounded bg-white border border-[#C8D6C3] text-[#5A6372]">
                                     {campus.code}
                                   </span>
                                 </div>
@@ -394,7 +394,7 @@ export function FacilitySelector() {
           </div>
 
           {/* Footer Isolation Note */}
-          <div className="px-4 py-2.5 bg-[#F8FAF6] border-t border-[#E5EAE2] flex items-center justify-between text-[10px] text-[#5A6372]">
+          <div className="px-4 py-2.5 bg-[#E6EDE2] border-t border-[#C5D2C0] flex items-center justify-between text-[10px] text-[#5A6372]">
             <span className="flex items-center gap-1">
               <span className="material-symbols-outlined text-[13px] text-[#0055A4]">
                 verified_user

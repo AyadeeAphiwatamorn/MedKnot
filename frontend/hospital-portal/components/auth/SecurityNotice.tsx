@@ -16,7 +16,7 @@ export default function SecurityNotice({
   message = 'Access is restricted to authorized healthcare professionals.',
 }: SecurityNoticeProps) {
   return (
-    <div className="flex items-center justify-center space-x-2 rounded-lg border border-[#DFEEA9]/70 bg-[#F8FAF6] px-3 py-2.5 text-xs text-slate-600">
+    <div className="flex items-center justify-center space-x-2 rounded-lg border border-[#C8D6C3] bg-[#E6EDE2] px-3 py-2.5 text-xs text-[#5A6372]">
       <svg
         className="h-4 w-4 flex-shrink-0 text-[#015CA9]"
         fill="none"

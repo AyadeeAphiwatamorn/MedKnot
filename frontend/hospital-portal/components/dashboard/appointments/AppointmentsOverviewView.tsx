@@ -251,11 +251,11 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
             </nav>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
                 <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
                 <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
                 <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
                 <span>Live Scheduling Desk</span>
               </span>
@@ -263,7 +263,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
           </div>
 
           {/* Page Heading & Module Navigation Tabs */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-5">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2.5">
@@ -280,7 +280,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               <div className="flex items-center gap-3 shrink-0">
                 <Link
                   href="/dashboard/appointments/requests"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#DDE6DA] bg-[#F3F6F0] hover:bg-[#E8EFE5] text-[#1F2B46] text-xs font-semibold transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] hover:bg-[#D5E0D2] text-[#1F2B46] text-xs font-semibold transition-colors"
                 >
                   <span className="material-symbols-outlined text-base text-[#B76E00]">inbox</span>
                   <span>Review Requests ({stats.pendingRequests})</span>
@@ -297,7 +297,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
             </div>
 
             {/* Sub-navigation Tabs */}
-            <div className="border-t border-[#DDE6DA] pt-3 flex items-center gap-2">
+            <div className="border-t border-[#C8D6C3] pt-3 flex items-center gap-2">
               <Link
                 href="/dashboard/appointments"
                 className="px-4 py-2 rounded-xl text-xs font-bold bg-[#0055A4] text-white shadow-xs flex items-center gap-1.5"
@@ -308,7 +308,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
 
               <Link
                 href="/dashboard/appointments/calendar"
-                className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
               >
                 <span className="material-symbols-outlined text-sm">calendar_month</span>
                 <span>Calendar View</span>
@@ -316,7 +316,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
 
               <Link
                 href="/dashboard/appointments/requests"
-                className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
               >
                 <span className="material-symbols-outlined text-sm">mark_email_unread</span>
                 <span>Requests Queue</span>
@@ -331,7 +331,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
 
           {/* Summary Bento Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Today&apos;s Appointments</span>
                 <span className="w-8 h-8 rounded-lg bg-[#E7F0FF] text-[#0055A4] flex items-center justify-center">
@@ -344,7 +344,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               </div>
             </div>
 
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Pending Requests</span>
                 <span className="w-8 h-8 rounded-lg bg-[#FFF4E5] text-[#B76E00] flex items-center justify-center">
@@ -357,7 +357,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               </div>
             </div>
 
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Confirmed</span>
                 <span className="w-8 h-8 rounded-lg bg-[#EAF5E2] text-[#2D6A28] flex items-center justify-center">
@@ -370,7 +370,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               </div>
             </div>
 
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Completed</span>
                 <span className="w-8 h-8 rounded-lg bg-[#F0FDF4] text-[#166534] flex items-center justify-center">
@@ -383,7 +383,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               </div>
             </div>
 
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Cancelled</span>
                 <span className="w-8 h-8 rounded-lg bg-[#FFF5F5] text-[#BA1A1A] flex items-center justify-center">
@@ -398,7 +398,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
           </div>
 
           {/* Quick Filter Activity Tabs */}
-          <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-2 overflow-x-auto text-xs font-semibold">
+          <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-2 overflow-x-auto text-xs font-semibold">
             <button
               type="button"
               onClick={() => {
@@ -408,7 +408,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               className={`px-3.5 py-2 rounded-xl transition-colors cursor-pointer ${
                 activeTab === "all"
                   ? "bg-[#1F2B46] text-white"
-                  : "bg-white text-[#5A6372] hover:bg-[#F3F6F0] border border-[#DDE6DA]"
+                  : "bg-white text-[#5A6372] hover:bg-[#E6EDE2] border border-[#C8D6C3]"
               }`}
             >
               All Appointments
@@ -423,7 +423,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               className={`px-3.5 py-2 rounded-xl transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeTab === "today"
                   ? "bg-[#0055A4] text-white"
-                  : "bg-white text-[#5A6372] hover:bg-[#F3F6F0] border border-[#DDE6DA]"
+                  : "bg-white text-[#5A6372] hover:bg-[#E6EDE2] border border-[#C8D6C3]"
               }`}
             >
               <span className="material-symbols-outlined text-sm">today</span>
@@ -439,7 +439,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               className={`px-3.5 py-2 rounded-xl transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeTab === "pending"
                   ? "bg-[#B76E00] text-white"
-                  : "bg-white text-[#5A6372] hover:bg-[#F3F6F0] border border-[#DDE6DA]"
+                  : "bg-white text-[#5A6372] hover:bg-[#E6EDE2] border border-[#C8D6C3]"
               }`}
             >
               <span className="material-symbols-outlined text-sm">mark_email_unread</span>
@@ -455,7 +455,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
               className={`px-3.5 py-2 rounded-xl transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeTab === "upcoming"
                   ? "bg-[#0055A4] text-white"
-                  : "bg-white text-[#5A6372] hover:bg-[#F3F6F0] border border-[#DDE6DA]"
+                  : "bg-white text-[#5A6372] hover:bg-[#E6EDE2] border border-[#C8D6C3]"
               }`}
             >
               <span className="material-symbols-outlined text-sm">upcoming</span>
@@ -464,11 +464,11 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
           </div>
 
           {/* Search & Multi-Filter Bar */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs space-y-4">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3">
               {/* Search */}
               <div className="lg:col-span-2 relative">
-                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#727783] text-lg pointer-events-none">
+                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#667085] text-lg pointer-events-none">
                   search
                 </span>
                 <input
@@ -479,7 +479,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                     setCurrentPage(1);
                   }}
                   placeholder="Search by patient name, ID, or appointment code..."
-                  className="w-full pl-9 pr-3 py-2 rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] text-xs text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] focus:bg-white"
+                  className="w-full pl-9 pr-3 py-2 rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] text-xs text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] focus:bg-white"
                 />
               </div>
 
@@ -491,7 +491,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                     setSelectedDoctor(e.target.value);
                     setCurrentPage(1);
                   }}
-                  className="w-full px-2.5 py-2 rounded-xl border border-[#DDE6DA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="w-full px-2.5 py-2 rounded-xl border border-[#AEBEAA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 >
                   <option value="All">All Doctors</option>
                   {AVAILABLE_DOCTORS.map((doc) => (
@@ -510,7 +510,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                     setSelectedDept(e.target.value);
                     setCurrentPage(1);
                   }}
-                  className="w-full px-2.5 py-2 rounded-xl border border-[#DDE6DA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="w-full px-2.5 py-2 rounded-xl border border-[#AEBEAA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 >
                   <option value="All">All Departments</option>
                   {AVAILABLE_DEPARTMENTS.map((dept) => (
@@ -529,7 +529,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                     setSelectedStatus(e.target.value);
                     setCurrentPage(1);
                   }}
-                  className="w-full px-2.5 py-2 rounded-xl border border-[#DDE6DA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="w-full px-2.5 py-2 rounded-xl border border-[#AEBEAA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 >
                   <option value="All">All Statuses</option>
                   <option value="Confirmed">Confirmed</option>
@@ -550,13 +550,13 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                     setSelectedDate(e.target.value);
                     setCurrentPage(1);
                   }}
-                  className="w-full px-2 py-1.5 rounded-xl border border-[#DDE6DA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="w-full px-2 py-1.5 rounded-xl border border-[#AEBEAA] bg-white text-xs font-medium text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 />
                 {hasActiveFilters && (
                   <button
                     type="button"
                     onClick={handleResetFilters}
-                    className="p-2 rounded-xl border border-[#DDE6DA] bg-[#F3F6F0] hover:bg-[#E8EFE5] text-[#5A6372] shrink-0"
+                    className="p-2 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] hover:bg-[#D5E0D2] text-[#5A6372] shrink-0"
                     title="Reset all filters"
                   >
                     <span className="material-symbols-outlined text-base">filter_alt_off</span>
@@ -567,11 +567,11 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
           </div>
 
           {/* Appointment Directory Table */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-xs overflow-hidden">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
                 <thead>
-                  <tr className="bg-[#F3F6F0] border-b border-[#DDE6DA] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
+                  <tr className="bg-[#E3EBDD] border-b border-[#C8D6C3] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
                     <th className="py-3.5 px-5">Appointment ID</th>
                     <th className="py-3.5 px-5">Patient</th>
                     <th className="py-3.5 px-5">Attending Doctor</th>
@@ -582,12 +582,12 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                     <th className="py-3.5 px-5 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#DDE6DA]">
+                <tbody className="divide-y divide-[#C8D6C3]">
                   {paginatedAppointments.length === 0 ? (
                     <tr>
                       <td colSpan={8} className="py-12 text-center">
                         <div className="flex flex-col items-center justify-center max-w-sm mx-auto">
-                          <span className="material-symbols-outlined text-4xl text-[#727783] mb-2">event_busy</span>
+                          <span className="material-symbols-outlined text-4xl text-[#667085] mb-2">event_busy</span>
                           <h3 className="text-base font-bold text-[#1F2B46]">No appointments found</h3>
                           <p className="text-xs text-[#5A6372] mt-1">
                             {hasActiveFilters
@@ -608,7 +608,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                     </tr>
                   ) : (
                     paginatedAppointments.map((apt) => (
-                      <tr key={apt.id} className="hover:bg-[#F9FBF8] transition-colors text-xs">
+                      <tr key={apt.id} className="hover:bg-[#E6EDE2] transition-colors text-xs">
                         {/* ID */}
                         <td className="py-4 px-5">
                           <span className="font-mono font-semibold text-[#0055A4] bg-[#E7F0FF] px-2 py-1 rounded-md border border-[#C7DCFF]">
@@ -687,7 +687,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                                       appointment: apt,
                                     })
                                   }
-                                  className="px-2 py-1 rounded-lg font-semibold bg-[#F3F6F0] text-[#1F2B46] hover:bg-[#E2E8DE] transition-colors text-[11px]"
+                                  className="px-2 py-1 rounded-lg font-semibold bg-[#E3EBDD] text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors text-[11px]"
                                   title="Reschedule appointment"
                                 >
                                   Reschedule
@@ -718,7 +718,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
 
             {/* Pagination Controls */}
             {appointmentsList.length > 0 && (
-              <div className="px-6 py-4 bg-[#F3F6F0] border-t border-[#DDE6DA] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5A6372]">
+              <div className="px-6 py-4 bg-[#E3EBDD] border-t border-[#C8D6C3] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5A6372]">
                 <div>
                   Showing{" "}
                   <span className="font-semibold text-[#1F2B46]">
@@ -732,7 +732,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                   <button
                     disabled={currentPage === 1}
                     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                    className="px-3 py-1.5 rounded-lg border border-[#DDE6DA] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#E8EFE5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    className="px-3 py-1.5 rounded-lg border border-[#C8D6C3] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                   >
                     Previous
                   </button>
@@ -744,7 +744,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                       className={`w-8 h-8 rounded-lg text-xs font-semibold transition-colors ${
                         currentPage === pageNumber
                           ? "bg-[#0055A4] text-white"
-                          : "border border-[#DDE6DA] bg-white text-[#1F2B46] hover:bg-[#E8EFE5]"
+                          : "border border-[#C8D6C3] bg-white text-[#1F2B46] hover:bg-[#D5E0D2]"
                       }`}
                     >
                       {pageNumber}
@@ -754,7 +754,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                   <button
                     disabled={currentPage === totalPages}
                     onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                    className="px-3 py-1.5 rounded-lg border border-[#DDE6DA] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#E8EFE5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    className="px-3 py-1.5 rounded-lg border border-[#C8D6C3] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                   >
                     Next
                   </button>
@@ -770,8 +770,8 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
       {/* ========================================================================= */}
       {actionModal.type === "reschedule" && actionModal.appointment && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-md overflow-hidden text-xs">
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-md overflow-hidden text-xs">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4]">calendar_clock</span>
                 <h3 className="text-base font-bold text-[#1F2B46]">Reschedule Appointment</h3>
@@ -786,7 +786,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
             </div>
 
             <form onSubmit={handleRescheduleSubmit} className="p-6 space-y-4">
-              <div className="p-3 bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl space-y-1">
+              <div className="p-3 bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl space-y-1">
                 <span className="font-bold text-[#1F2B46] block">
                   {actionModal.appointment.patientName} ({actionModal.appointment.id})
                 </span>
@@ -803,7 +803,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                   required
                   value={rescheduleDate}
                   onChange={(e) => setRescheduleDate(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                 />
               </div>
 
@@ -812,7 +812,7 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                 <select
                   value={rescheduleTime}
                   onChange={(e) => setRescheduleTime(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                 >
                   <option value="09:00 AM">09:00 AM</option>
                   <option value="09:30 AM">09:30 AM</option>
@@ -824,11 +824,11 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                 </select>
               </div>
 
-              <div className="pt-2 flex justify-end gap-2 border-t border-[#DDE6DA]">
+              <div className="pt-2 flex justify-end gap-2 border-t border-[#C8D6C3]">
                 <button
                   type="button"
                   onClick={() => setActionModal({ type: null, appointment: null })}
-                  className="px-4 py-2 rounded-xl border border-[#DDE6DA] text-[#5A6372] hover:bg-[#F3F6F0]"
+                  className="px-4 py-2 rounded-xl border border-[#C8D6C3] text-[#5A6372] hover:bg-[#E6EDE2]"
                 >
                   Cancel
                 </button>
@@ -850,8 +850,8 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
       {/* ========================================================================= */}
       {actionModal.type === "cancel" && actionModal.appointment && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-md overflow-hidden text-xs">
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#FFF5F5]">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-md overflow-hidden text-xs">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#FFF5F5]">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#BA1A1A]">cancel</span>
                 <h3 className="text-base font-bold text-[#BA1A1A]">Cancel Appointment</h3>
@@ -883,15 +883,15 @@ export default function AppointmentsOverviewView({ initialUser }: AppointmentsOv
                   value={actionReason}
                   onChange={(e) => setActionReason(e.target.value)}
                   placeholder="e.g. Patient requested cancellation, doctor emergency schedule conflict..."
-                  className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                 />
               </div>
 
-              <div className="pt-2 flex justify-end gap-2 border-t border-[#DDE6DA]">
+              <div className="pt-2 flex justify-end gap-2 border-t border-[#C8D6C3]">
                 <button
                   type="button"
                   onClick={() => setActionModal({ type: null, appointment: null })}
-                  className="px-4 py-2 rounded-xl border border-[#DDE6DA] text-[#5A6372] hover:bg-[#F3F6F0]"
+                  className="px-4 py-2 rounded-xl border border-[#C8D6C3] text-[#5A6372] hover:bg-[#E6EDE2]"
                 >
                   Keep Appointment
                 </button>

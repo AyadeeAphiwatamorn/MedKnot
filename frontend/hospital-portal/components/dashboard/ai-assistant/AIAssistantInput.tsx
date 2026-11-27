@@ -41,8 +41,8 @@ export function AIAssistantInput({
   };
 
   return (
-    <div className="p-3 border-t border-[#DDE6DA] bg-[#F8FAF6] shrink-0">
-      <div className="flex items-end gap-2 bg-white border border-[#D5DFD2] focus-within:border-[#0055A4] rounded-xl px-3 py-2 shadow-2xs transition-colors">
+    <div className="p-3 border-t border-[#C5D2C0] bg-[#E6EDE2] shrink-0">
+      <div className="flex items-end gap-2 bg-[#F3F7F2] hover:bg-[#EEF4ED] border-[1.5px] border-[#AEBEAA] hover:border-[#8EA389] focus-within:bg-white focus-within:border-[#0055A4] focus-within:ring-[3px] focus-within:ring-[#0055A4]/15 rounded-xl px-3 py-2 shadow-2xs transition-all">
         <textarea
           ref={textareaRef}
           rows={1}
@@ -55,7 +55,7 @@ export function AIAssistantInput({
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
           aria-label="Message MedKnot AI Assistant"
-          className="flex-1 resize-none bg-transparent text-[12.5px] text-[#1F2B46] placeholder:text-[#727783] focus:outline-none max-h-[104px] leading-snug disabled:opacity-60"
+          className="flex-1 resize-none bg-transparent text-[12.5px] text-[#1F2B46] placeholder:text-[#7C8998] focus:outline-none max-h-[104px] leading-snug disabled:opacity-60"
         />
         <button
           type="button"

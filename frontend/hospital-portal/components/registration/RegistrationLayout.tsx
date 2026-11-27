@@ -30,7 +30,7 @@ export default function RegistrationLayout({
   };
 
   return (
-    <div className="registration-theme medknot-app-bg min-h-screen text-[#1F2B46] font-body-md antialiased flex flex-col">
+    <div className="registration-theme dashboard-app-bg min-h-screen text-[#1F2B46] font-body-md antialiased flex flex-col overflow-x-clip">
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed top-20 right-8 z-50 bg-[#1F2B46] text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-in fade-in slide-in-from-top-4">
@@ -102,12 +102,12 @@ export default function RegistrationLayout({
           </div>
 
           <div className="flex items-center gap-space-sm self-start md:self-auto shrink-0">
-            <span className="font-supporting text-supporting text-[#727783] whitespace-nowrap">
+            <span className="font-supporting text-supporting text-[#667085] whitespace-nowrap">
               Autosaved at {state.lastSavedTime}
             </span>
             <button
               onClick={handleSaveDraft}
-              className="px-space-md py-1.5 rounded-lg bg-white border border-[#D5DFD2] hover:bg-[#EDF2E9] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
+              className="px-space-md py-1.5 rounded-lg bg-white border border-[#C5D2C0] hover:bg-[#E3EBDD] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-1.5 shadow-[0_2px_6px_rgba(31,43,70,0.08)] cursor-pointer shrink-0"
               type="button"
               title="Save Draft"
             >
@@ -132,7 +132,7 @@ export default function RegistrationLayout({
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-[#D5DFD2] bg-[#EDF2E9] py-6 mt-12 text-center text-xs text-[#5A6372]">
+      <footer className="w-full border-t border-[#C5D2C0] bg-[#E6EDE2] py-6 mt-12 text-center text-xs text-[#667085]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span>© 2026 MedKnot Health Informatics Inc. All clinical rights reserved. Protected under Federal &amp; ABDM Safeguards.</span>
           <div className="flex items-center gap-4 text-[#0055A4] font-medium">

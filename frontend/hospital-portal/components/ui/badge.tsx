@@ -26,9 +26,9 @@ function Badge({
     success: "bg-[#dcf4a2] text-[#2e470b] border border-[#c1e672]",
     warning: "bg-[#FAE193] text-[#5e4300] border border-[#eed072]",
     destructive: "bg-[#ffdad6] text-[#ba1a1a] border border-[#f5b8b2]",
-    outline: "text-[#1F2B46] border border-[#DDE6DA] bg-white",
-    avocado: "bg-[#DFEEA9] text-[#34440c] border border-[#cae486]",
-    sage: "bg-[#A3C8B4]/30 text-[#173e2d] border border-[#A3C8B4]",
+    outline: "text-[#1F2B46] border border-[#C5D2C0] bg-[#E6EDE2]",
+    avocado: "bg-[#DFEEA9] text-[#34440c] border border-[#b2d169]",
+    sage: "bg-[#E3EBDD] text-[#173e2d] border border-[#8EA389]",
     lightblue: "bg-[#E1F2FD] text-[#004689] border border-[#b9dcf7]",
     yellow: "bg-[#FAE193] text-[#5f4604] border border-[#ebd07a]",
   };

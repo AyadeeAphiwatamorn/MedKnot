@@ -43,11 +43,11 @@ export default function AdminHelpModal({ isOpen, onClose }: AdminHelpModalProps)
     >
       {/* Dialog card — stop propagation so clicking inside doesn't close */}
       <div
-        className="w-full max-w-md rounded-2xl border border-slate-100 bg-white p-6 shadow-2xl"
+        className="w-full max-w-md rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_12px_36px_rgba(31,43,70,0.22)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="mb-4 flex items-center justify-between border-b border-slate-100 pb-3">
+        <div className="mb-4 flex items-center justify-between border-b border-[#C8D6C3] pb-3">
           <h3
             id="admin-help-modal-title"
             className="flex items-center space-x-2 text-base font-bold text-[#003669]"
@@ -86,7 +86,7 @@ export default function AdminHelpModal({ isOpen, onClose }: AdminHelpModalProps)
             If you have forgotten your Staff ID or your organization&apos;s credentials have
             expired, reach out to your facility&apos;s MedKnot Lead:
           </p>
-          <div className="space-y-1.5 rounded-xl border border-slate-200 bg-[#F7FBF5] p-3">
+          <div className="space-y-1.5 rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-3">
             <div className="flex justify-between font-medium">
               <span>IT Help Desk:</span>
               <span className="text-[#0055A4]">ext. 4402 (Internal)</span>

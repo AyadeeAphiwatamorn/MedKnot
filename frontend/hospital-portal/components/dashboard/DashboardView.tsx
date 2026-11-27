@@ -306,7 +306,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                     {user.shift}
                   </span>
                 </div>
-                <p className="font-body-md text-body-md text-[#5A6372]">
+                <p className="font-body-md text-body-md text-[#667085]">
                   Here&apos;s what&apos;s happening at {activeFacility.name} — {activeCampus.name} today.
                 </p>
               </div>
@@ -314,7 +314,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
               {/* Header Actions */}
               <div className="flex flex-wrap items-center gap-space-md shrink-0">
                 {/* Date Chip */}
-                <div className="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-white border border-[#DDE6DA] shadow-sm text-[#1F2B46] shrink-0">
+                <div className="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-white border border-[#C5D2C0] shadow-[0_3px_10px_rgba(31,43,70,0.10)] text-[#1F2B46] shrink-0">
                   <span className="material-symbols-outlined text-[#0055A4] text-xl">
                     event
                   </span>
@@ -327,10 +327,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 <div className="relative inline-block text-left shrink-0" ref={filterContainerRef}>
                   <button
                     onClick={handleToggleFilter}
-                    className={`flex items-center gap-space-sm px-space-md py-2 rounded-xl border shadow-sm transition-colors font-card-heading text-card-heading cursor-pointer ${
+                    className={`flex items-center gap-space-sm px-space-md py-2 rounded-xl border shadow-[0_3px_10px_rgba(31,43,70,0.10)] transition-colors font-card-heading text-card-heading cursor-pointer ${
                       isFilterOpen || !isDefaultFilter
-                        ? "bg-[#E7F0FF] border-[#0055A4]/40 text-[#0055A4]"
-                        : "bg-white border-[#DDE6DA] hover:bg-[#F3F6F0] text-[#1F2B46]"
+                        ? "bg-[#E7F0FF] border-[#0055A4]/50 text-[#0055A4]"
+                        : "bg-white border-[#C5D2C0] hover:bg-[#E3EBDD] text-[#1F2B46]"
                     }`}
                     type="button"
                     aria-expanded={isFilterOpen}
@@ -351,11 +351,11 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
 
                   {isFilterOpen && (
                     <div
-                      className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-white rounded-2xl border border-[#D5DFD2] shadow-2xl z-40 overflow-hidden"
+                      className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-white rounded-2xl border border-[#C5D2C0] shadow-[0_14px_36px_rgba(31,43,70,0.20)] z-40 overflow-hidden"
                       role="dialog"
                       aria-label="Date Range and Shift Filter"
                     >
-                      <div className="p-4 border-b border-[#DDE6DA] bg-[#F8FAF6] flex items-center justify-between">
+                      <div className="p-4 border-b border-[#C5D2C0] bg-[#E6EDE2] flex items-center justify-between">
                         <div>
                           <h3 className="text-sm font-bold text-[#1F2B46]">
                             Operational View Filter
@@ -367,7 +367,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                         <button
                           type="button"
                           onClick={() => setIsFilterOpen(false)}
-                          className="p-1 rounded-lg text-[#5A6372] hover:bg-[#E8EFE5] hover:text-[#1F2B46] transition-colors cursor-pointer"
+                          className="p-1 rounded-lg text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors cursor-pointer"
                           aria-label="Close filter dropdown"
                         >
                           <span className="material-symbols-outlined text-lg">close</span>
@@ -377,7 +377,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       <div className="p-4 space-y-4">
                         {/* Section A: Date Range */}
                         <div>
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#5A6372] block mb-2">
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#667085] block mb-2">
                             Date Range
                           </span>
                           <div className="grid grid-cols-2 gap-2">
@@ -398,7 +398,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                                   className={`px-3 py-2 rounded-xl text-xs font-semibold border text-left flex items-center justify-between transition-all cursor-pointer ${
                                     active
                                       ? "bg-[#0055A4] text-white border-[#0055A4] shadow-xs"
-                                      : "bg-[#F3F6F0] text-[#1F2B46] border-[#DDE6DA] hover:bg-[#E8EFE5]"
+                                      : "bg-[#E3EBDD] text-[#1F2B46] border-[#C8D6C3] hover:bg-[#D5E0D2]"
                                   }`}
                                 >
                                   <span>{option.label}</span>
@@ -413,7 +413,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           </div>
 
                           {draftDateRange === "custom" && (
-                            <div className="mt-2.5 p-2.5 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
+                            <div className="mt-2.5 p-2.5 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
                               <label className="block text-[11px] font-semibold text-[#5A6372] mb-1">
                                 Select Date
                               </label>
@@ -421,7 +421,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                                 type="date"
                                 value={draftCustomDate}
                                 onChange={(e) => setDraftCustomDate(e.target.value)}
-                                className="w-full px-3 py-1.5 rounded-lg bg-white border border-[#D5DFD2] text-xs font-medium text-[#1F2B46] focus:outline-none focus:border-[#0055A4]"
+                                className="w-full px-3 py-1.5 rounded-lg bg-[#F3F7F2] border-[1.5px] border-[#AEBEAA] text-xs font-medium text-[#1F2B46] focus:outline-none focus:border-[#0055A4]"
                               />
                             </div>
                           )}
@@ -429,7 +429,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
 
                         {/* Section B: Shift */}
                         <div>
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#5A6372] block mb-2">
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#667085] block mb-2">
                             Hospital Shift
                           </span>
                           <div className="space-y-1.5">
@@ -445,7 +445,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                                     className={`w-full px-3 py-2 rounded-xl text-xs font-semibold border flex items-center justify-between transition-all cursor-pointer ${
                                       active
                                         ? "bg-[#E7F0FF] text-[#0055A4] border-[#0055A4]"
-                                        : "bg-white text-[#1F2B46] border-[#DDE6DA] hover:bg-[#F3F6F0]"
+                                        : "bg-[#E6EDE2] text-[#1F2B46] border-[#C8D6C3] hover:bg-[#D5E0D2]"
                                     }`}
                                   >
                                     <span>{win.label}</span>
@@ -469,11 +469,11 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       </div>
 
                       {/* Actions */}
-                      <div className="p-3 border-t border-[#DDE6DA] bg-[#F8FAF6] flex items-center justify-between gap-2">
+                      <div className="p-3 border-t border-[#C5D2C0] bg-[#E6EDE2] flex items-center justify-between gap-2">
                         <button
                           type="button"
                           onClick={handleResetFilters}
-                          className="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#5A6372] hover:bg-[#E8EFE5] hover:text-[#1F2B46] transition-colors cursor-pointer"
+                          className="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors cursor-pointer"
                         >
                           Reset
                         </button>
@@ -505,10 +505,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
             {/* Section 1: Overview Statistics */}
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-lg mb-space-2xl">
               {/* Stat 1 */}
-              <div className="p-space-xl bg-white border border-[#DDE6DA] rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+              <div className="p-space-xl bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow relative overflow-hidden flex flex-col justify-between">
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#5A6372] font-semibold block">
+                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#667085] font-semibold block">
                       Total Patients
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
@@ -522,7 +522,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   </div>
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
-                  <span className="font-supporting text-supporting text-[#5A6372] truncate">
+                  <span className="font-supporting text-supporting text-[#667085] truncate">
                     Registered at {activeCampus.name}
                   </span>
                   <span className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-tertiary-fixed text-on-tertiary-fixed shrink-0">
@@ -535,10 +535,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
               </div>
 
               {/* Stat 2 */}
-              <div className="p-space-xl bg-white border border-[#DDE6DA] rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+              <div className="p-space-xl bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow relative overflow-hidden flex flex-col justify-between">
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#5A6372] font-semibold block">
+                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#667085] font-semibold block">
                       {dateCardTitle}
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
@@ -552,20 +552,20 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   </div>
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
-                  <span className="font-supporting text-supporting text-[#5A6372] truncate">
+                  <span className="font-supporting text-supporting text-[#667085] truncate">
                     {aptStats.completedAppointments} completed
                   </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#EDF2E9] border border-[#DDE6DA] text-[#0055A4] shrink-0">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#E3EBDD] border border-[#C8D6C3] text-[#0055A4] shrink-0">
                     {aptStats.confirmedAppointments} confirmed
                   </span>
                 </div>
               </div>
 
               {/* Stat 3 */}
-              <div className="p-space-xl bg-white border border-[#DDE6DA] rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+              <div className="p-space-xl bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow relative overflow-hidden flex flex-col justify-between">
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#5A6372] font-semibold block">
+                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#667085] font-semibold block">
                       Patients in Queue
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
@@ -579,34 +579,34 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   </div>
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
-                  <span className="font-supporting text-supporting text-[#5A6372] truncate">
+                  <span className="font-supporting text-supporting text-[#667085] truncate">
                     Avg. wait time: {queueStats.averageWaitMinutes} min
                   </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#E2E8DE] text-[#3B4D0D] shrink-0">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#E1E9DC] border border-[#C8D6C3] text-[#3B4D0D] shrink-0">
                     Optimal throughput
                   </span>
                 </div>
               </div>
 
               {/* Stat 4 */}
-              <div className="p-space-xl bg-white border border-[#DDE6DA] rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+              <div className="p-space-xl bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow relative overflow-hidden flex flex-col justify-between">
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#5A6372] font-semibold block">
+                    <span className="font-supporting text-supporting uppercase tracking-wider text-[#667085] font-semibold block">
                       Pending Requests
                     </span>
                     <div className="font-headline-xl text-headline-xl text-[#1F2B46] mt-1 tracking-tight">
                       {aptStats.pendingRequests}
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-[#5A6372] flex items-center justify-center shadow-sm shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] text-[#5A6372] flex items-center justify-center shadow-sm shrink-0">
                     <span className="material-symbols-outlined text-2xl">
                       assignment_late
                     </span>
                   </div>
                 </div>
                 <div className="mt-space-lg flex items-center justify-between gap-2">
-                  <span className="font-supporting text-supporting text-[#5A6372] truncate">
+                  <span className="font-supporting text-supporting text-[#667085] truncate">
                     {aptStats.pendingRequests} awaiting staff action
                   </span>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-secondary-fixed-dim text-on-secondary-fixed-variant shrink-0">
@@ -617,7 +617,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
             </div>
 
             {/* AI Processing Overview Section */}
-            <div className="bg-white rounded-xl p-space-lg shadow-sm mb-space-2xl border border-[#DDE6DA]">
+            <div className="bg-white rounded-xl p-space-lg shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-space-2xl border border-[#C5D2C0]">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm mb-space-md">
                 <div className="flex items-center gap-space-sm min-w-0">
                   <div className="w-9 h-9 rounded-lg bg-primary-fixed text-[#0055A4] flex items-center justify-center shrink-0">
@@ -630,17 +630,17 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       <h3 className="font-card-heading text-card-heading text-[#1F2B46]">
                         AI Processing Overview
                       </h3>
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#EDF2E9] border border-[#DDE6DA] text-[#0055A4] shrink-0">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#E6EDE2] border border-[#C8D6C3] text-[#0055A4] shrink-0">
                         MedKnot Copilot
                       </span>
                     </div>
-                    <p className="font-supporting text-supporting text-[#5A6372] truncate">
+                    <p className="font-supporting text-supporting text-[#667085] truncate">
                       Smart Triage &amp; Clinical Documentation Assistance
                       (Drafts await clinician sign-off)
                     </p>
                   </div>
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-supporting text-supporting bg-[#F3F6F0] text-[#5A6372] border border-[#DDE6DA] shrink-0">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-supporting text-supporting bg-[#E6EDE2] text-[#5A6372] border border-[#C8D6C3] shrink-0">
                   <span className="material-symbols-outlined text-sm text-secondary shrink-0">
                     verified_user
                   </span>
@@ -653,9 +653,9 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-space-md">
-                <div className="p-space-md rounded-xl bg-[#F3F6F0] flex items-center justify-between border border-[#DDE6DA] gap-2">
+                <div className="p-space-md rounded-xl bg-[#E3EBDD] flex items-center justify-between border border-[#C8D6C3] shadow-[0_2px_6px_rgba(31,43,70,0.06)] gap-2">
                   <div className="flex items-center gap-space-sm min-w-0">
-                    <div className="w-10 h-10 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] flex items-center justify-center shadow-sm shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] flex items-center justify-center shadow-sm shrink-0">
                       <span className="material-symbols-outlined text-xl">
                         document_scanner
                       </span>
@@ -677,9 +677,9 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   </span>
                 </div>
 
-                <div className="p-space-md rounded-xl bg-[#F3F6F0] flex items-center justify-between border border-[#DDE6DA] gap-2">
+                <div className="p-space-md rounded-xl bg-[#E3EBDD] flex items-center justify-between border border-[#C8D6C3] shadow-[0_2px_6px_rgba(31,43,70,0.06)] gap-2">
                   <div className="flex items-center gap-space-sm min-w-0">
-                    <div className="w-10 h-10 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] flex items-center justify-center shadow-sm shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] flex items-center justify-center shadow-sm shrink-0">
                       <span className="material-symbols-outlined text-xl">
                         summarize
                       </span>
@@ -704,9 +704,9 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   </button>
                 </div>
 
-                <div className="p-space-md rounded-xl bg-[#F3F6F0] flex items-center justify-between border border-[#DDE6DA] gap-2">
+                <div className="p-space-md rounded-xl bg-[#E3EBDD] flex items-center justify-between border border-[#C8D6C3] shadow-[0_2px_6px_rgba(31,43,70,0.06)] gap-2">
                   <div className="flex items-center gap-space-sm min-w-0">
-                    <div className="w-10 h-10 rounded-lg bg-white border border-[#DDE6DA] text-error flex items-center justify-center shadow-sm shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-[#C8D6C3] text-error flex items-center justify-center shadow-sm shrink-0">
                       <span className="material-symbols-outlined text-xl">
                         flag
                       </span>
@@ -734,21 +734,21 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
             </div>
 
             {/* Section 2: Quick Action Bar */}
-            <div className="bg-white rounded-xl p-space-lg shadow-sm mb-space-2xl border border-[#DDE6DA]">
+            <div className="bg-white rounded-xl p-space-lg shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-space-2xl border border-[#C5D2C0]">
               <div className="flex items-center justify-between mb-space-md">
-                <span className="font-supporting text-supporting uppercase tracking-wider text-[#5A6372] font-bold">
+                <span className="font-supporting text-supporting uppercase tracking-wider text-[#667085] font-bold">
                   Fast Routing &amp; Hospital Operations
                 </span>
-                <span className="font-supporting text-supporting text-[#5A6372]">
+                <span className="font-supporting text-supporting text-[#667085]">
                   Instant execution shortcuts
                 </span>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md">
                 <Link
                   href="/dashboard/patients/new"
-                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
+                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#E3EBDD] border border-[#C5D2C0] shadow-[0_2px_6px_rgba(31,43,70,0.06)] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
                     <span className="material-symbols-outlined text-lg">
                       person_add
                     </span>
@@ -759,10 +759,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </Link>
 
                 <button
-                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
+                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#E3EBDD] border border-[#C5D2C0] shadow-[0_2px_6px_rgba(31,43,70,0.06)] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
                   type="button"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
                     <span className="material-symbols-outlined text-lg">
                       medical_services
                     </span>
@@ -773,10 +773,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </button>
 
                 <button
-                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
+                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#E3EBDD] border border-[#C5D2C0] shadow-[0_2px_6px_rgba(31,43,70,0.06)] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
                   type="button"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
                     <span className="material-symbols-outlined text-lg">
                       calendar_month
                     </span>
@@ -787,10 +787,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </button>
 
                 <button
-                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
+                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#E3EBDD] border border-[#C5D2C0] shadow-[0_2px_6px_rgba(31,43,70,0.06)] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
                   type="button"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
                     <span className="material-symbols-outlined text-lg">
                       clinical_notes
                     </span>
@@ -801,10 +801,10 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </button>
 
                 <button
-                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
+                  className="group flex items-center gap-space-sm p-space-md rounded-xl bg-[#E3EBDD] border border-[#C5D2C0] shadow-[0_2px_6px_rgba(31,43,70,0.06)] hover:bg-[#0055A4] hover:border-[#0055A4] transition-all text-left cursor-pointer"
                   type="button"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] group-hover:bg-white group-hover:text-[#0055A4] group-hover:border-white flex items-center justify-center shrink-0 shadow-sm transition-colors">
                     <span className="material-symbols-outlined text-lg">
                       view_timeline
                     </span>
@@ -821,7 +821,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
               {/* Left Column (8 of 12 cols) */}
               <div className="lg:col-span-8 flex flex-col gap-space-2xl">
                 {/* A. Today's Appointment Overview */}
-                <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-sm p-space-xl flex flex-col">
+                <div className="bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] p-space-xl flex flex-col">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-space-lg gap-space-md">
                     <div className="flex items-center gap-space-sm">
                       <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
@@ -833,7 +833,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           ? "This Week's Appointment Overview"
                           : `Appointment Overview (${formatShortCustomDate(appliedCustomDate)})`}
                       </h2>
-                      <span className="px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#F3F6F0] border border-[#DDE6DA] text-[#5A6372]">
+                      <span className="px-2.5 py-0.5 rounded-full font-supporting text-supporting font-semibold bg-[#E6EDE2] border border-[#C8D6C3] text-[#5A6372]">
                         {aptStats.totalToday} Scheduled
                       </span>
                     </div>
@@ -866,7 +866,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                         className={`px-space-md py-1.5 rounded-lg font-button-label text-supporting font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                           activeAptFilter === tab.id
                             ? "bg-[#0055A4] text-white shadow-sm"
-                            : "bg-[#F3F6F0] border border-[#DDE6DA] text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46]"
+                            : "bg-[#E3EBDD] border border-[#C8D6C3] text-[#424751] hover:bg-[#D5E0D2] hover:text-[#1F2B46]"
                         }`}
                         type="button"
                       >
@@ -878,7 +878,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   {/* Appointments Table */}
                   <div className="overflow-x-auto">
                     <table className="w-full text-left">
-                      <thead className="bg-[#F3F6F0] text-[#5A6372] font-supporting text-supporting uppercase tracking-wider border-b border-[#DDE6DA]">
+                      <thead className="bg-[#E6EDE2] text-[#5A6372] font-supporting text-supporting uppercase tracking-wider border-b border-[#C5D2C0]">
                         <tr>
                           <th className="py-3 px-space-md rounded-l-lg">
                             Patient Name
@@ -905,7 +905,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           filteredApts.slice(0, 6).map((apt) => (
                             <tr
                               key={apt.appointmentId}
-                              className="hover:bg-[#F3F6F0]/70 transition-colors border-b border-[#DDE6DA]"
+                              className="hover:bg-[#E6EDE2]/80 transition-colors border-b border-[#C8D6C3]"
                             >
                               <td className="py-3.5 px-space-md">
                                 <div className="flex items-center gap-space-sm">
@@ -969,7 +969,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                                   <button
                                     title="Check In"
                                     onClick={() => router.push(`/dashboard/appointments/${apt.appointmentId}`)}
-                                    className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] transition-colors cursor-pointer"
+                                    className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E1E9DC] transition-colors cursor-pointer"
                                     type="button"
                                   >
                                     <span className="material-symbols-outlined text-lg">
@@ -979,7 +979,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                                   <button
                                     title="Reschedule"
                                     onClick={() => router.push(`/dashboard/appointments/${apt.appointmentId}`)}
-                                    className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] transition-colors cursor-pointer"
+                                    className="p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E1E9DC] transition-colors cursor-pointer"
                                     type="button"
                                   >
                                     <span className="material-symbols-outlined text-lg">
@@ -997,7 +997,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
 
                 {/* B. Live Patient Queue Overview */}
-                <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-sm p-space-xl flex flex-col">
+                <div className="bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] p-space-xl flex flex-col">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-space-lg gap-space-md">
                     <div className="flex items-center gap-space-sm">
                       <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
@@ -1019,7 +1019,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                   </div>
 
                   {activeQueueDisplay.length === 0 ? (
-                    <div className="p-8 rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-center text-[#5A6372] font-body-md text-body-md">
+                    <div className="p-8 rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] text-center text-[#5A6372] font-body-md text-body-md">
                       No queue entries recorded for <span className="font-semibold text-[#1F2B46]">{filterButtonLabel}</span> at {activeCampus.name}.
                     </div>
                   ) : (
@@ -1037,7 +1037,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                         return (
                           <div
                             key={entry.id}
-                            className="p-space-lg rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex flex-col justify-between hover:bg-[#E8EFE5] transition-colors"
+                            className="p-space-lg rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] shadow-[0_2px_6px_rgba(31,43,70,0.06)] flex flex-col justify-between hover:bg-[#D5E0D2] transition-colors"
                           >
                             <div className="flex items-start justify-between gap-2">
                               <div className="flex items-center gap-space-md min-w-0">
@@ -1045,7 +1045,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                                   className={`px-3 py-1.5 rounded-xl font-headline-sm text-headline-sm font-mono shadow-sm shrink-0 ${
                                     idx === 0
                                       ? "bg-[#0055A4] text-white"
-                                      : "bg-white border border-[#DDE6DA] text-[#0055A4]"
+                                      : "bg-white border border-[#C8D6C3] text-[#0055A4]"
                                   }`}
                                 >
                                   {entry.queueNumber}
@@ -1068,7 +1068,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                                 {entry.status}
                               </span>
                             </div>
-                            <div className="mt-space-md pt-space-sm border-t border-[#DDE6DA] flex items-center justify-between font-supporting text-supporting text-[#5A6372]">
+                            <div className="mt-space-md pt-space-sm border-t border-[#C8D6C3] flex items-center justify-between font-supporting text-supporting text-[#5A6372]">
                               <span>Department: {entry.department}</span>
                               <span className="flex items-center gap-1 font-semibold text-[#1F2B46] shrink-0">
                                 <span className="material-symbols-outlined text-sm shrink-0">
@@ -1088,7 +1088,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
               {/* Right Column (4 of 12 cols) */}
               <div className="lg:col-span-4 flex flex-col gap-space-2xl">
                 {/* Facility Performance Widget */}
-                <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-sm p-space-xl flex flex-col">
+                <div className="bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] p-space-xl flex flex-col">
                   <div className="flex items-center justify-between pb-space-md">
                     <div className="flex items-center gap-space-xs">
                       <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
@@ -1113,13 +1113,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           16.4 mins
                         </span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-[#F3F6F0] border border-[#DDE6DA] overflow-hidden">
+                      <div className="w-full h-2.5 rounded-full bg-[#E1E9DC] border border-[#C8D6C3] overflow-hidden">
                         <div
                           className="h-full bg-[#0055A4] rounded-full"
                           style={{ width: "82%" }}
                         ></div>
                       </div>
-                      <div className="flex justify-between font-supporting text-supporting text-[#5A6372] mt-1">
+                      <div className="flex justify-between font-supporting text-supporting text-[#667085] mt-1">
                         <span>Target: &lt; 20.0 mins</span>
                         <span className="text-tertiary font-semibold">
                           -3.6 mins under threshold
@@ -1137,13 +1137,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           91.2%
                         </span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-[#F3F6F0] border border-[#DDE6DA] overflow-hidden">
+                      <div className="w-full h-2.5 rounded-full bg-[#E1E9DC] border border-[#C8D6C3] overflow-hidden">
                         <div
                           className="h-full bg-secondary-fixed-dim rounded-full"
                           style={{ width: "91.2%" }}
                         ></div>
                       </div>
-                      <div className="flex justify-between font-supporting text-supporting text-[#5A6372] mt-1">
+                      <div className="flex justify-between font-supporting text-supporting text-[#667085] mt-1">
                         <span>Target: &gt; 88%</span>
                         <span className="text-secondary font-semibold">
                           High Efficiency
@@ -1161,13 +1161,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           4 Files in SLA
                         </span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-[#F3F6F0] border border-[#DDE6DA] overflow-hidden">
+                      <div className="w-full h-2.5 rounded-full bg-[#E1E9DC] border border-[#C8D6C3] overflow-hidden">
                         <div
                           className="h-full bg-error rounded-full"
                           style={{ width: "40%" }}
                         ></div>
                       </div>
-                      <div className="flex justify-between font-supporting text-supporting text-[#5A6372] mt-1">
+                      <div className="flex justify-between font-supporting text-supporting text-[#667085] mt-1">
                         <span>Intake queue processing</span>
                         <span className="text-error font-semibold">
                           Within 15 min SLA
@@ -1178,7 +1178,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
 
                 {/* C. Pending Tasks & Authorizations */}
-                <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-sm p-space-xl flex flex-col">
+                <div className="bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] p-space-xl flex flex-col">
                   <div className="flex items-center justify-between pb-space-md">
                     <div className="flex items-center gap-space-xs">
                       <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
@@ -1191,7 +1191,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                     </span>
                   </div>
                   <div className="flex flex-col gap-space-md">
-                    <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-center justify-between hover:bg-[#E8EFE5] transition-colors gap-2">
+                    <div className="p-space-md rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-center justify-between hover:bg-[#D5E0D2] transition-colors gap-2">
                       <div className="flex items-start gap-space-sm min-w-0">
                         <span className="material-symbols-outlined text-[#0055A4] text-xl mt-0.5 shrink-0">how_to_reg</span>
                         <div className="min-w-0">
@@ -1211,7 +1211,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       </button>
                     </div>
 
-                    <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-center justify-between hover:bg-[#E8EFE5] transition-colors gap-2">
+                    <div className="p-space-md rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-center justify-between hover:bg-[#D5E0D2] transition-colors gap-2">
                       <div className="flex items-start gap-space-sm min-w-0">
                         <span className="material-symbols-outlined text-secondary text-xl mt-0.5 shrink-0">
                           edit_calendar
@@ -1234,7 +1234,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                       </button>
                     </div>
 
-                    <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-center justify-between hover:bg-[#E8EFE5] transition-colors gap-2">
+                    <div className="p-space-md rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-center justify-between hover:bg-[#D5E0D2] transition-colors gap-2">
                       <div className="flex items-start gap-space-sm min-w-0">
                         <span className="material-symbols-outlined text-[#0055A4] text-xl mt-0.5 shrink-0">fact_check</span>
                         <div className="min-w-0">
@@ -1247,14 +1247,14 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                         </div>
                       </div>
                       <button
-                        className="px-space-md py-1 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#F3F6F0] transition-colors cursor-pointer shrink-0"
+                        className="px-space-md py-1 rounded-lg bg-white border border-[#C5D2C0] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#E6EDE2] transition-colors cursor-pointer shrink-0"
                         type="button"
                       >
                         Verify
                       </button>
                     </div>
 
-                    <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-center justify-between hover:bg-[#E8EFE5] transition-colors gap-2">
+                    <div className="p-space-md rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-center justify-between hover:bg-[#D5E0D2] transition-colors gap-2">
                       <div className="flex items-start gap-space-sm min-w-0">
                         <span className="material-symbols-outlined text-error text-xl mt-0.5 shrink-0">
                           report_problem
@@ -1269,7 +1269,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                         </div>
                       </div>
                       <button
-                        className="px-space-md py-1 rounded-lg bg-white border border-[#DDE6DA] text-error font-button-label text-supporting font-semibold hover:bg-error-container transition-colors cursor-pointer shrink-0"
+                        className="px-space-md py-1 rounded-lg bg-white border border-[#C5D2C0] text-error font-button-label text-supporting font-semibold hover:bg-error-container transition-colors cursor-pointer shrink-0"
                         type="button"
                       >
                         Resolve
@@ -1279,13 +1279,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
 
                 {/* D. Department Status & Volume */}
-                <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-sm p-space-xl flex flex-col">
+                <div className="bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] p-space-xl flex flex-col">
                   <div className="flex items-center justify-between pb-space-md">
                     <div>
                       <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
                         Department Status
                       </h2>
-                      <span className="font-supporting text-supporting text-[#5A6372]">
+                      <span className="font-supporting text-supporting text-[#667085]">
                         (Simulated Live Telemetry)
                       </span>
                     </div>
@@ -1301,7 +1301,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           <span className="font-card-heading text-card-heading text-[#1F2B46]">
                             General Medicine
                           </span>
-                          <span className="font-supporting text-supporting text-[#5A6372]">
+                          <span className="font-supporting text-supporting text-[#667085]">
                             • 16 apps
                           </span>
                         </div>
@@ -1309,13 +1309,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           92% load
                         </span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-[#F3F6F0] border border-[#DDE6DA] overflow-hidden">
+                      <div className="w-full h-2.5 rounded-full bg-[#E1E9DC] border border-[#C8D6C3] overflow-hidden">
                         <div
                           className="h-full bg-[#0055A4] rounded-full"
                           style={{ width: "92%" }}
                         ></div>
                       </div>
-                      <div className="flex justify-between font-supporting text-supporting text-[#5A6372] mt-1">
+                      <div className="flex justify-between font-supporting text-supporting text-[#667085] mt-1">
                         <span>OPD Active • Rooms 301-305</span>
                         <span>High Traffic</span>
                       </div>
@@ -1327,7 +1327,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           <span className="font-card-heading text-card-heading text-[#1F2B46]">
                             Cardiology
                           </span>
-                          <span className="font-supporting text-supporting text-[#5A6372]">
+                          <span className="font-supporting text-supporting text-[#667085]">
                             • 10 apps
                           </span>
                         </div>
@@ -1335,13 +1335,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           75% load
                         </span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-[#F3F6F0] border border-[#DDE6DA] overflow-hidden">
+                      <div className="w-full h-2.5 rounded-full bg-[#E1E9DC] border border-[#C8D6C3] overflow-hidden">
                         <div
                           className="h-full bg-secondary-fixed-dim rounded-full"
                           style={{ width: "75%" }}
                         ></div>
                       </div>
-                      <div className="flex justify-between font-supporting text-supporting text-[#5A6372] mt-1">
+                      <div className="flex justify-between font-supporting text-supporting text-[#667085] mt-1">
                         <span>Echo Lab operational • Room 210</span>
                         <span>Stable</span>
                       </div>
@@ -1353,7 +1353,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           <span className="font-card-heading text-card-heading text-[#1F2B46]">
                             Orthopedics
                           </span>
-                          <span className="font-supporting text-supporting text-[#5A6372]">
+                          <span className="font-supporting text-supporting text-[#667085]">
                             • 8 apps
                           </span>
                         </div>
@@ -1361,13 +1361,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           60% load
                         </span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-[#F3F6F0] border border-[#DDE6DA] overflow-hidden">
+                      <div className="w-full h-2.5 rounded-full bg-[#E1E9DC] border border-[#C8D6C3] overflow-hidden">
                         <div
                           className="h-full bg-tertiary-fixed rounded-full"
                           style={{ width: "60%" }}
                         ></div>
                       </div>
-                      <div className="flex justify-between font-supporting text-supporting text-[#5A6372] mt-1">
+                      <div className="flex justify-between font-supporting text-supporting text-[#667085] mt-1">
                         <span>Plaster clinic open • Room 108</span>
                         <span>Nominal</span>
                       </div>
@@ -1379,7 +1379,7 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           <span className="font-card-heading text-card-heading text-[#1F2B46]">
                             Pediatrics
                           </span>
-                          <span className="font-supporting text-supporting text-[#5A6372]">
+                          <span className="font-supporting text-supporting text-[#667085]">
                             • 9 apps
                           </span>
                         </div>
@@ -1387,13 +1387,13 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                           80% load
                         </span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-[#F3F6F0] border border-[#DDE6DA] overflow-hidden">
+                      <div className="w-full h-2.5 rounded-full bg-[#E1E9DC] border border-[#C8D6C3] overflow-hidden">
                         <div
                           className="h-full bg-primary-fixed rounded-full"
                           style={{ width: "80%" }}
                         ></div>
                       </div>
-                      <div className="flex justify-between font-supporting text-supporting text-[#5A6372] mt-1">
+                      <div className="flex justify-between font-supporting text-supporting text-[#667085] mt-1">
                         <span>Well-baby clinic • Room 112</span>
                         <span>Active</span>
                       </div>
@@ -1402,29 +1402,29 @@ export default function DashboardView({ initialUser }: DashboardViewProps) {
                 </div>
 
                 {/* E. Recent Facility Activity */}
-                <div className="bg-white border border-[#DDE6DA] rounded-xl shadow-sm p-space-xl flex flex-col">
+                <div className="bg-white border border-[#C5D2C0] rounded-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] p-space-xl flex flex-col">
                   <div className="flex items-center justify-between pb-space-md">
                     <div>
                       <h2 className="font-headline-sm text-headline-sm text-[#1F2B46]">
                         Recent Facility Activity
                       </h2>
-                      <span className="font-supporting text-supporting text-[#5A6372]">
+                      <span className="font-supporting text-supporting text-[#667085]">
                         {filterButtonLabel} • {activeStaffOnShift.length} staff on shift
                       </span>
                     </div>
-                    <span className="material-symbols-outlined text-[#5A6372] text-lg">
+                    <span className="material-symbols-outlined text-[#667085] text-lg">
                       history
                     </span>
                   </div>
                   {filteredCampusQueue.length === 0 &&
                   filteredCampusAppointments.length === 0 &&
                   activeStaffOnShift.length === 0 ? (
-                    <div className="p-4 rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-supporting text-[#5A6372]">
+                    <div className="p-4 rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] text-supporting text-[#5A6372]">
                       No operational or staff shift activity recorded for {filterButtonLabel}.
                     </div>
                   ) : (
                     <div className="relative pl-6 space-y-space-lg">
-                      <div className="absolute left-2.5 top-2 bottom-2 w-0.5 bg-[#DDE6DA]"></div>
+                      <div className="absolute left-2.5 top-2 bottom-2 w-0.5 bg-[#C8D6C3]"></div>
 
                       {filteredCampusQueue.slice(0, 2).map((q, idx) => (
                         <div key={q.id} className="relative flex items-start gap-space-sm">

@@ -136,10 +136,10 @@ export default function ForgotPasswordForm() {
               Work Email or Staff ID
             </label>
             <div
-              className={`relative rounded-xl border bg-white shadow-sm transition-all
+              className={`relative rounded-xl border-[1.5px] bg-[#F3F7F2] shadow-2xs transition-all
                 ${errors.email
-                  ? 'border-red-400 ring-2 ring-red-200'
-                  : 'border-slate-200 focus-within:border-[#0055A4] focus-within:ring-2 focus-within:ring-[#0055A4]/15'
+                  ? 'border-red-500 ring-2 ring-red-200 focus-within:bg-white'
+                  : 'border-[#AEBEAA] hover:border-[#8EA389] hover:bg-[#EEF4ED] focus-within:bg-white focus-within:border-[#0055A4] focus-within:ring-[3px] focus-within:ring-[#0055A4]/15'
                 }`}
             >
               {/* @ / email icon */}
@@ -162,7 +162,7 @@ export default function ForgotPasswordForm() {
                 required
                 aria-invalid={Boolean(errors.email)}
                 aria-describedby={errors.email ? 'recovery-email-error' : undefined}
-                className="w-full rounded-xl bg-transparent py-3 pl-10 pr-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-xl bg-transparent py-3 pl-10 pr-4 text-sm text-[#1F2B46] placeholder-[#7C8998] focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
               />
             </div>
             {errors.email && (
@@ -209,7 +209,7 @@ export default function ForgotPasswordForm() {
         </form>
 
         {/* ── Security notice ────────────────────────────────────────── */}
-        <div className="mt-6 flex items-center justify-center gap-2 rounded-lg border border-[#DCF4A2]/50 bg-[#F7FBF5] px-3 py-2.5 text-xs text-slate-600">
+        <div className="mt-6 flex items-center justify-center gap-2 rounded-lg border border-[#C8D6C3] bg-[#E6EDE2] px-3 py-2.5 text-xs text-[#5A6372]">
           <svg className="h-4 w-4 flex-shrink-0 text-[#0055A4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"

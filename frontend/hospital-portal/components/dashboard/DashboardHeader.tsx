@@ -72,7 +72,7 @@ export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeade
   }, [isNotificationOpen]);
 
   return (
-    <header className="sticky top-0 z-30 h-16 w-full bg-[#F3F6F0]/90 backdrop-blur-xl border-b border-[#DDE6DA] shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-4 md:px-8 gap-2">
+    <header className="sticky top-0 z-30 h-16 w-full bg-[#E6EDE2]/95 backdrop-blur-xl border-b border-[#C5D2C0] shadow-[0_2px_10px_rgba(31,43,70,0.08)] flex items-center justify-between px-4 md:px-8 gap-2">
       {/* Left: Mobile Drawer Trigger + Functional Facility & Campus Selector */}
       <div className="flex items-center gap-2 min-w-0">
         <button
@@ -80,7 +80,7 @@ export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeade
           onClick={toggleMobile}
           aria-label="Open navigation menu"
           title="Open navigation menu"
-          className="md:hidden p-2 rounded-xl text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46] transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
+          className="md:hidden p-2 rounded-xl text-[#424751] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
         >
           <Menu className="w-5 h-5" />
         </button>
@@ -96,7 +96,7 @@ export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeade
             className={`relative p-2.5 rounded-xl transition-all flex items-center justify-center cursor-pointer ${
               isNotificationOpen
                 ? "bg-[#0055A4] text-white shadow-xs"
-                : "text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46]"
+                : "text-[#424751] hover:bg-[#D5E0D2] hover:text-[#1F2B46]"
             }`}
             type="button"
             aria-label="Notifications"
@@ -128,10 +128,10 @@ export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeade
         <div className="flex items-center gap-space-md pl-space-md">
           <Link
             href="/dashboard/profile"
-            className="flex items-center gap-space-sm bg-white border border-[#D5DFD2] py-1 px-space-md rounded-full shadow-sm hover:bg-[#F3F6F0] transition-colors cursor-pointer"
+            className="flex items-center gap-space-sm bg-white border border-[#C5D2C0] py-1 px-space-md rounded-full shadow-[0_2px_8px_rgba(31,43,70,0.08)] hover:bg-[#E3EBDD] transition-colors cursor-pointer"
             title="View My Profile"
           >
-            <div className="w-8 h-8 rounded-full bg-white border border-[#D5DFD2] flex items-center justify-center p-0.5 shrink-0 shadow-xs">
+            <div className="w-8 h-8 rounded-full bg-white border border-[#C8D6C3] flex items-center justify-center p-0.5 shrink-0 shadow-xs">
               <Image
                 src="/logo.png"
                 alt="Profile"
@@ -144,7 +144,7 @@ export default function DashboardHeader({ user = DEFAULT_ADMIN }: DashboardHeade
               <span className="font-body-md text-body-md text-[#1F2B46] font-semibold leading-tight truncate">
                 {user.name}
               </span>
-              <span className="font-supporting text-supporting text-[#5A6372] truncate">
+              <span className="font-supporting text-supporting text-[#667085] truncate">
                 {user.department}
               </span>
             </div>

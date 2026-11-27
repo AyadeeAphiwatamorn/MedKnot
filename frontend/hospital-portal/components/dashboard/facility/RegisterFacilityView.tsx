@@ -282,13 +282,13 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                   <span className="material-symbols-outlined text-[16px] shrink-0">home</span>
                   <span className="whitespace-nowrap">Home</span>
                 </Link>
-                <span className="material-symbols-outlined text-[14px] text-[#727783] shrink-0">
+                <span className="material-symbols-outlined text-[14px] text-[#667085] shrink-0">
                   chevron_right
                 </span>
                 <span className="hover:text-[#0055A4] transition-colors whitespace-nowrap">
                   Facility Settings
                 </span>
-                <span className="material-symbols-outlined text-[14px] text-[#727783] shrink-0">
+                <span className="material-symbols-outlined text-[14px] text-[#667085] shrink-0">
                   chevron_right
                 </span>
                 <span className="text-[#0055A4] font-semibold whitespace-nowrap">
@@ -314,12 +314,12 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                 </div>
 
                 <div className="flex items-center gap-space-sm self-start md:self-auto shrink-0">
-                  <span className="font-supporting text-supporting text-[#727783] whitespace-nowrap">
+                  <span className="font-supporting text-supporting text-[#667085] whitespace-nowrap">
                     Autosaved at {lastSaved}
                   </span>
                   <button
                     onClick={handleSaveDraft}
-                    className="px-space-md py-1.5 rounded-lg bg-white border border-[#DDE6DA] hover:bg-[#F3F6F0] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
+                    className="px-space-md py-1.5 rounded-lg bg-white border border-[#C8D6C3] hover:bg-[#E6EDE2] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
                     type="button"
                     title="Save Draft"
                   >
@@ -332,7 +332,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
 
             {/* B. Stepper Progress Indicator */}
             <div className="w-full pb-space-lg">
-              <div className="w-full bg-white border border-[#DDE6DA] rounded-xl p-space-md shadow-sm">
+              <div className="w-full bg-white border border-[#C5D2C0] rounded-xl p-space-md shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
                 <div className="max-w-4xl mx-auto flex items-center justify-between relative">
                   {/* Step 1: Facility Information */}
                   <div
@@ -362,7 +362,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                     </div>
                   </div>
 
-                  <div className="flex-1 h-0.5 bg-[#DDE6DA] -mx-2"></div>
+                  <div className="flex-1 h-0.5 bg-[#E1E9DC] -mx-2"></div>
 
                   {/* Step 2: Contact & Administrator */}
                   <div
@@ -386,13 +386,13 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                       >
                         Contact &amp; Administrator
                       </span>
-                      <span className="font-supporting text-supporting text-[#727783] whitespace-nowrap">
+                      <span className="font-supporting text-supporting text-[#667085] whitespace-nowrap">
                         {currentStep === 2 ? "In Progress" : "Upcoming"}
                       </span>
                     </div>
                   </div>
 
-                  <div className="flex-1 h-0.5 bg-[#DDE6DA] -mx-2"></div>
+                  <div className="flex-1 h-0.5 bg-[#E1E9DC] -mx-2"></div>
 
                   {/* Step 3: Review & Submit */}
                   <div
@@ -403,7 +403,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                       className={`w-9 h-9 rounded-full flex items-center justify-center font-card-heading text-card-heading shrink-0 transition-colors ${
                         currentStep === 3
                           ? "bg-[#0055A4] text-white"
-                          : "bg-[#F3F6F0] border border-[#DDE6DA] text-[#727783]"
+                          : "bg-[#E3EBDD] border border-[#C8D6C3] text-[#667085]"
                       }`}
                     >
                       3
@@ -411,12 +411,12 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                     <div className="flex flex-col min-w-0">
                       <span
                         className={`font-card-heading text-card-heading font-medium whitespace-nowrap truncate ${
-                          currentStep === 3 ? "text-[#0055A4] font-bold" : "text-[#727783]"
+                          currentStep === 3 ? "text-[#0055A4] font-bold" : "text-[#667085]"
                         }`}
                       >
                         Review &amp; Submit
                       </span>
-                      <span className="font-supporting text-supporting text-[#727783] whitespace-nowrap">
+                      <span className="font-supporting text-supporting text-[#667085] whitespace-nowrap">
                         {currentStep === 3 ? "Ready" : "Pending"}
                       </span>
                     </div>
@@ -435,7 +435,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                   noValidate
                 >
                   {/* SECTION 1: Basic Facility Information */}
-                  <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+                  <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-lg">
                     <div className="flex items-start justify-between gap-space-md">
                       <div className="flex flex-col min-w-0">
                         <div className="flex items-center gap-space-sm">
@@ -465,7 +465,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           <span className="truncate">
                             Official Hospital / Clinic Name <span className="text-error">*</span>
                           </span>
-                          <span className="font-supporting text-supporting text-[#727783] font-normal whitespace-nowrap flex-shrink-0">
+                          <span className="font-supporting text-supporting text-[#667085] font-normal whitespace-nowrap flex-shrink-0">
                             Must match legal charter
                           </span>
                         </label>
@@ -476,8 +476,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           value={formData.facilityName}
                           onChange={handleInputChange}
                           placeholder="Enter official facility name"
-                          className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                            errors.facilityName ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                          className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                            errors.facilityName ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                           }`}
                         />
                         {errors.facilityName && (
@@ -502,7 +502,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             name="facilityType"
                             value={formData.facilityType}
                             onChange={handleInputChange}
-                            className="w-full appearance-none px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#DDE6DA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
+                            className="w-full appearance-none px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#AEBEAA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
                           >
                             <option value="Multispecialty Hospital">Multispecialty Hospital</option>
                             <option value="General Hospital">General Hospital</option>
@@ -511,7 +511,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             <option value="Diagnostic Centre">Diagnostic Centre</option>
                             <option value="Other Healthcare Facility">Other Healthcare Facility</option>
                           </select>
-                          <span className="material-symbols-outlined absolute right-3 top-3 text-[#727783] pointer-events-none text-[20px] shrink-0">
+                          <span className="material-symbols-outlined absolute right-3 top-3 text-[#667085] pointer-events-none text-[20px] shrink-0">
                             expand_more
                           </span>
                         </div>
@@ -532,8 +532,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           value={formData.registrationNumber}
                           onChange={handleInputChange}
                           placeholder="Enter registration number"
-                          className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                            errors.registrationNumber ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                          className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                            errors.registrationNumber ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                           }`}
                         />
                         {errors.registrationNumber && (
@@ -558,7 +558,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             name="yearEstablished"
                             value={formData.yearEstablished}
                             onChange={handleInputChange}
-                            className="w-full appearance-none px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#DDE6DA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
+                            className="w-full appearance-none px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#AEBEAA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
                           >
                             <option value="2025">2025</option>
                             <option value="2024">2024</option>
@@ -572,7 +572,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             <option value="2005">2005</option>
                             <option value="2000 or earlier">2000 or earlier</option>
                           </select>
-                          <span className="material-symbols-outlined absolute right-3 top-3 text-[#727783] pointer-events-none text-[20px] shrink-0">
+                          <span className="material-symbols-outlined absolute right-3 top-3 text-[#667085] pointer-events-none text-[20px] shrink-0">
                             calendar_month
                           </span>
                         </div>
@@ -585,12 +585,12 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           className="font-card-heading text-card-heading text-[#1F2B46] font-semibold flex items-center justify-between gap-2"
                         >
                           <span className="truncate">Facility Website</span>
-                          <span className="font-supporting text-supporting text-[#727783] font-normal whitespace-nowrap flex-shrink-0">
+                          <span className="font-supporting text-supporting text-[#667085] font-normal whitespace-nowrap flex-shrink-0">
                             Optional
                           </span>
                         </label>
                         <div className="relative flex items-center">
-                          <span className="material-symbols-outlined absolute left-3 text-[#727783] text-[18px] shrink-0">
+                          <span className="material-symbols-outlined absolute left-3 text-[#667085] text-[18px] shrink-0">
                             language
                           </span>
                           <input
@@ -600,8 +600,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             value={formData.website}
                             onChange={handleInputChange}
                             placeholder="https://example-hospital.org"
-                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                              errors.website ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                              errors.website ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                         </div>
@@ -618,7 +618,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                     <div className="flex flex-col gap-1.5 pt-space-xs">
                       <label className="font-card-heading text-card-heading text-[#1F2B46] font-semibold flex items-center justify-between gap-2">
                         <span className="truncate">Official Facility Emblem or Logo</span>
-                        <span className="font-supporting text-supporting text-[#727783] font-normal whitespace-nowrap flex-shrink-0">
+                        <span className="font-supporting text-supporting text-[#667085] font-normal whitespace-nowrap flex-shrink-0">
                           Supports PNG, JPG, SVG (Max 5MB)
                         </span>
                       </label>
@@ -633,9 +633,9 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
 
                       {logoPreview ? (
                         /* Uploaded Logo Preview Box */
-                        <div className="w-full p-space-lg bg-[#F3F6F0] border border-[#DDE6DA] rounded-2xl flex items-center justify-between gap-space-md">
+                        <div className="w-full p-space-lg bg-[#E3EBDD] border border-[#C8D6C3] rounded-2xl flex items-center justify-between gap-space-md">
                           <div className="flex items-center gap-space-md min-w-0">
-                            <div className="w-16 h-16 rounded-xl bg-white border border-[#DDE6DA] flex items-center justify-center p-2 shadow-sm shrink-0 overflow-hidden">
+                            <div className="w-16 h-16 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-center p-2 shadow-sm shrink-0 overflow-hidden">
                               <Image
                                 src={logoPreview}
                                 alt="Facility Emblem Preview"
@@ -662,7 +662,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             <button
                               type="button"
                               onClick={() => fileInputRef.current?.click()}
-                              className="px-3 py-1.5 rounded-lg bg-white border border-[#DDE6DA] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#E2E8DE] transition-colors cursor-pointer"
+                              className="px-3 py-1.5 rounded-lg bg-white border border-[#C8D6C3] text-[#0055A4] font-button-label text-supporting font-semibold hover:bg-[#D5E0D2] transition-colors cursor-pointer"
                             >
                               Replace
                             </button>
@@ -683,13 +683,13 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           onDrop={handleDrop}
                           onDragOver={handleDragOver}
                           onDragLeave={handleDragLeave}
-                          className={`w-full p-space-xl bg-[#F3F6F0] hover:bg-[#E8EFE5] border-2 border-dashed rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer transition-all group ${
+                          className={`w-full p-space-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border-2 border-dashed rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer transition-all group ${
                             isDragging
-                              ? "border-[#0055A4] bg-[#E8EFE5]"
-                              : "border-[#DDE6DA] hover:border-[#0055A4]"
+                              ? "border-[#0055A4] bg-[#E3EBDD]"
+                              : "border-[#C8D6C3] hover:border-[#0055A4]"
                           }`}
                         >
-                          <div className="w-14 h-14 rounded-2xl bg-white border border-[#DDE6DA] group-hover:scale-105 transition-transform flex items-center justify-center text-[#0055A4] shadow-sm mb-space-sm shrink-0">
+                          <div className="w-14 h-14 rounded-2xl bg-white border border-[#C8D6C3] group-hover:scale-105 transition-transform flex items-center justify-center text-[#0055A4] shadow-sm mb-space-sm shrink-0">
                             <span className="material-symbols-outlined text-[28px]">
                               add_photo_alternate
                             </span>
@@ -720,7 +720,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                         <span className="truncate">Facility Overview &amp; Infrastructure</span>
                         <span
                           className={`font-supporting text-supporting font-normal whitespace-nowrap flex-shrink-0 ${
-                            formData.overview.length > 480 ? "text-error font-semibold" : "text-[#727783]"
+                            formData.overview.length > 480 ? "text-error font-semibold" : "text-[#667085]"
                           }`}
                         >
                           {formData.overview.length} / 500 characters
@@ -734,13 +734,13 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                         value={formData.overview}
                         onChange={handleInputChange}
                         placeholder="Briefly describe the healthcare services provided, specialty wings, bed capacity, and emergency care facilities."
-                        className="w-full p-space-md bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#DDE6DA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md resize-none"
+                        className="w-full p-space-md bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#AEBEAA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md resize-none"
                       />
                     </div>
                   </div>
 
                   {/* SECTION 2: Location & Contact Details */}
-                  <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+                  <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-lg">
                     <div className="flex items-start justify-between gap-space-md">
                       <div className="flex flex-col min-w-0">
                         <div className="flex items-center gap-space-sm">
@@ -770,7 +770,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           type="text"
                           readOnly
                           value={formData.country}
-                          className="w-full px-space-md py-2.5 bg-[#E8EFE5] border border-[#DDE6DA] rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none cursor-not-allowed select-none"
+                          className="w-full px-space-md py-2.5 bg-[#E8EFE5] border border-[#AEBEAA] rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none cursor-not-allowed select-none"
                         />
                       </div>
 
@@ -788,7 +788,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             name="state"
                             value={formData.state}
                             onChange={handleInputChange}
-                            className="w-full appearance-none px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#DDE6DA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
+                            className="w-full appearance-none px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border border-[#AEBEAA] focus:border-[#0055A4] transition-all shadow-inner focus:shadow-md pr-10 cursor-pointer"
                           >
                             <option value="Maharashtra">Maharashtra</option>
                             <option value="Karnataka">Karnataka</option>
@@ -799,7 +799,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             <option value="Telangana">Telangana</option>
                             <option value="West Bengal">West Bengal</option>
                           </select>
-                          <span className="material-symbols-outlined absolute right-3 top-3 text-[#727783] pointer-events-none text-[20px] shrink-0">
+                          <span className="material-symbols-outlined absolute right-3 top-3 text-[#667085] pointer-events-none text-[20px] shrink-0">
                             expand_more
                           </span>
                         </div>
@@ -820,8 +820,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           value={formData.city}
                           onChange={handleInputChange}
                           placeholder="City"
-                          className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                            errors.city ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                          className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                            errors.city ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                           }`}
                         />
                         {errors.city && (
@@ -847,8 +847,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           value={formData.pincode}
                           onChange={handleInputChange}
                           placeholder="PIN Code"
-                          className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                            errors.pincode ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                          className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                            errors.pincode ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                           }`}
                         />
                         {errors.pincode && (
@@ -874,8 +874,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           value={formData.streetAddress}
                           onChange={handleInputChange}
                           placeholder="Street name, building numbers, landmark"
-                          className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                            errors.streetAddress ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                          className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                            errors.streetAddress ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                           }`}
                         />
                         {errors.streetAddress && (
@@ -895,7 +895,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           Official Contact Desk <span className="text-error">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <span className="material-symbols-outlined absolute left-3 text-[#727783] text-[18px] shrink-0">
+                          <span className="material-symbols-outlined absolute left-3 text-[#667085] text-[18px] shrink-0">
                             call
                           </span>
                           <input
@@ -905,8 +905,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             value={formData.contactDesk}
                             onChange={handleInputChange}
                             placeholder="+91..."
-                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                              errors.contactDesk ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                              errors.contactDesk ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                         </div>
@@ -927,7 +927,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           Official Registry Email <span className="text-error">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <span className="material-symbols-outlined absolute left-3 text-[#727783] text-[18px] shrink-0">
+                          <span className="material-symbols-outlined absolute left-3 text-[#667085] text-[18px] shrink-0">
                             mail
                           </span>
                           <input
@@ -937,8 +937,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             value={formData.registryEmail}
                             onChange={handleInputChange}
                             placeholder="admin@hospital.org"
-                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                              errors.registryEmail ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                              errors.registryEmail ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                         </div>
@@ -953,7 +953,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                   </div>
 
                   {/* SECTION 3: Authorized Hospital Administrator */}
-                  <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+                  <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-lg">
                     <div className="flex items-start justify-between gap-space-md">
                       <div className="flex flex-col min-w-0">
                         <div className="flex items-center gap-space-sm">
@@ -990,8 +990,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           value={formData.adminName}
                           onChange={handleInputChange}
                           placeholder="e.g. Dr. Rajeshwar Kulkarni"
-                          className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                            errors.adminName ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                          className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                            errors.adminName ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                           }`}
                         />
                         {errors.adminName && (
@@ -1017,8 +1017,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           value={formData.adminDesignation}
                           onChange={handleInputChange}
                           placeholder="Designation"
-                          className={`w-full px-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                            errors.adminDesignation ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                          className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                            errors.adminDesignation ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                           }`}
                         />
                         {errors.adminDesignation && (
@@ -1038,7 +1038,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           Official Work Email <span className="text-error">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <span className="material-symbols-outlined absolute left-3 text-[#727783] text-[18px] shrink-0">
+                          <span className="material-symbols-outlined absolute left-3 text-[#667085] text-[18px] shrink-0">
                             alternate_email
                           </span>
                           <input
@@ -1048,8 +1048,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             value={formData.adminEmail}
                             onChange={handleInputChange}
                             placeholder="name@hospital.org"
-                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                              errors.adminEmail ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                              errors.adminEmail ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                         </div>
@@ -1070,7 +1070,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                           Direct Mobile / Contact <span className="text-error">*</span>
                         </label>
                         <div className="relative flex items-center">
-                          <span className="material-symbols-outlined absolute left-3 text-[#727783] text-[18px] shrink-0">
+                          <span className="material-symbols-outlined absolute left-3 text-[#667085] text-[18px] shrink-0">
                             phone_iphone
                           </span>
                           <input
@@ -1080,8 +1080,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             value={formData.adminPhone}
                             onChange={handleInputChange}
                             placeholder="+91..."
-                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F6F0] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
-                              errors.adminPhone ? "border-error ring-1 ring-error" : "border-[#DDE6DA] focus:border-[#0055A4]"
+                            className={`w-full pl-10 pr-space-md py-2.5 bg-[#F3F7F2] focus:bg-white rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none border transition-all shadow-inner focus:shadow-md ${
+                              errors.adminPhone ? "border-error ring-1 ring-error" : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                         </div>
@@ -1095,7 +1095,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                     </div>
 
                     {/* Legal Notice Banner */}
-                    <div className="bg-[#EBF3FC] border border-[#DDE6DA] rounded-xl p-space-md flex items-start gap-space-md">
+                    <div className="bg-[#EBF3FC] border border-[#C8D6C3] rounded-xl p-space-md flex items-start gap-space-md">
                       <span className="material-symbols-outlined text-[#0055A4] text-[22px] shrink-0 mt-0.5">
                         policy
                       </span>
@@ -1111,10 +1111,10 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                   </div>
 
                   {/* Sticky / Bottom Action Row */}
-                  <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-md shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+                  <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-md shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-wrap items-center justify-between gap-space-md">
                     <Link
                       href="/dashboard"
-                      className="px-space-lg py-2.5 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
+                      className="px-space-lg py-2.5 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] font-button-label text-button-label transition-colors flex items-center gap-2 cursor-pointer shrink-0"
                     >
                       <span className="material-symbols-outlined text-[18px] shrink-0">arrow_back</span>
                       <span className="whitespace-nowrap">Back to Dashboard</span>
@@ -1124,7 +1124,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                       <button
                         onClick={handleSaveDraft}
                         type="button"
-                        className="px-space-lg py-2.5 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
+                        className="px-space-lg py-2.5 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#0055A4] font-button-label text-button-label transition-colors cursor-pointer shrink-0 whitespace-nowrap"
                       >
                         Save Draft
                       </button>
@@ -1142,7 +1142,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                 {/* ── RIGHT COLUMN: Supporting Verification & Guidance (4 of 12 cols) */}
                 <div className="lg:col-span-4 flex flex-col gap-space-lg min-w-0">
                   {/* Card 1: Verification Checklist */}
-                  <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+                  <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-lg shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-md">
                     <div className="flex items-center justify-between gap-space-sm">
                       <span className="font-card-heading text-card-heading text-[#1F2B46] font-bold truncate">
                         Verification Checklist
@@ -1157,7 +1157,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
 
                     <div className="flex flex-col gap-space-sm pt-space-xs">
                       {/* Item 1 */}
-                      <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-start gap-space-sm">
+                      <div className="p-space-md rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-start gap-space-sm">
                         <div className="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
                           <span className="material-symbols-outlined text-[16px]">check</span>
                         </div>
@@ -1175,7 +1175,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                       </div>
 
                       {/* Item 2 */}
-                      <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-start gap-space-sm">
+                      <div className="p-space-md rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-start gap-space-sm">
                         <div className="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
                           <span className="material-symbols-outlined text-[16px]">check</span>
                         </div>
@@ -1193,8 +1193,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                       </div>
 
                       {/* Item 3 */}
-                      <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-start gap-space-sm opacity-90">
-                        <div className="w-6 h-6 rounded-full bg-[#E2E8DE] text-[#727783] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                      <div className="p-space-md rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-start gap-space-sm opacity-90">
+                        <div className="w-6 h-6 rounded-full bg-[#E1E9DC] text-[#667085] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
                           <span className="material-symbols-outlined text-[16px]">hourglass_empty</span>
                         </div>
                         <div className="flex flex-col min-w-0">
@@ -1202,7 +1202,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                             <span className="font-body-md text-body-md text-[#1F2B46] font-semibold truncate">
                               NABH / JCI Accreditation
                             </span>
-                            <span className="font-supporting text-supporting text-[#727783] whitespace-nowrap">
+                            <span className="font-supporting text-supporting text-[#667085] whitespace-nowrap">
                               (Optional)
                             </span>
                           </div>
@@ -1214,7 +1214,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                     </div>
 
                     {/* SLA Note */}
-                    <div className="p-space-md rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] text-[#1F2B46] font-supporting text-supporting flex items-start gap-2">
+                    <div className="p-space-md rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] text-[#1F2B46] font-supporting text-supporting flex items-start gap-2">
                       <span className="material-symbols-outlined text-[#0055A4] text-[18px] shrink-0 mt-0.5">
                         speed
                       </span>
@@ -1225,7 +1225,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                   </div>
 
                   {/* Card 2: Why Register with MedKnot? */}
-                  <div className="bg-white border border-[#DDE6DA] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+                  <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-lg shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-md">
                     <div className="flex items-center gap-space-sm">
                       <span className="material-symbols-outlined text-secondary text-[24px] shrink-0">
                         verified
@@ -1250,7 +1250,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                         </div>
                       </div>
 
-                      <div className="w-full h-px bg-[#DDE6DA]"></div>
+                      <div className="w-full h-px bg-[#C8D6C3]"></div>
 
                       <div className="flex items-start gap-space-sm">
                         <div className="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 shadow-xs">
@@ -1266,7 +1266,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                         </div>
                       </div>
 
-                      <div className="w-full h-px bg-[#DDE6DA]"></div>
+                      <div className="w-full h-px bg-[#C8D6C3]"></div>
 
                       <div className="flex items-start gap-space-sm">
                         <div className="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 shadow-xs">
@@ -1285,7 +1285,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
                   </div>
 
                   {/* Card 3: Need Registration Assistance? */}
-                  <div className="rounded-2xl p-space-lg bg-[#F3F6F0] border border-[#DDE6DA] shadow-sm flex flex-col gap-space-sm">
+                  <div className="rounded-2xl p-space-lg bg-[#E3EBDD] border border-[#C8D6C3] shadow-sm flex flex-col gap-space-sm">
                     <div className="flex items-center gap-space-sm">
                       <span className="material-symbols-outlined text-[#0055A4] text-[20px] shrink-0">
                         support_agent
@@ -1319,8 +1319,8 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
       {/* ── REVIEW & CONFIRMATION MODAL ──────────────────────────────── */}
       {showReviewModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl max-w-2xl w-full p-space-xl shadow-2xl flex flex-col gap-space-lg max-h-[90vh] overflow-y-auto">
-            <div className="flex items-start justify-between border-b border-[#DDE6DA] pb-space-md">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl max-w-2xl w-full p-space-xl shadow-2xl flex flex-col gap-space-lg max-h-[90vh] overflow-y-auto">
+            <div className="flex items-start justify-between border-b border-[#C8D6C3] pb-space-md">
               <div className="flex items-center gap-space-sm">
                 <div className="w-10 h-10 rounded-xl bg-primary-fixed text-[#0055A4] flex items-center justify-center shrink-0">
                   <span className="material-symbols-outlined text-2xl">verified</span>
@@ -1337,7 +1337,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
               <button
                 type="button"
                 onClick={() => setShowReviewModal(false)}
-                className="text-[#727783] hover:text-[#1F2B46] p-1 rounded-lg"
+                className="text-[#667085] hover:text-[#1F2B46] p-1 rounded-lg"
               >
                 <span className="material-symbols-outlined text-xl">close</span>
               </button>
@@ -1345,7 +1345,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
 
             <div className="space-y-space-md text-body-md text-[#1F2B46]">
               {/* Facility Summary */}
-              <div className="p-space-md bg-[#F3F6F0] border border-[#DDE6DA] rounded-xl flex flex-col gap-1.5">
+              <div className="p-space-md bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl flex flex-col gap-1.5">
                 <span className="font-supporting text-supporting uppercase tracking-wider text-[#0055A4] font-bold">
                   Facility Overview
                 </span>
@@ -1368,7 +1368,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
               </div>
 
               {/* Location Summary */}
-              <div className="p-space-md bg-[#F3F6F0] border border-[#DDE6DA] rounded-xl flex flex-col gap-1.5">
+              <div className="p-space-md bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl flex flex-col gap-1.5">
                 <span className="font-supporting text-supporting uppercase tracking-wider text-[#0055A4] font-bold">
                   Location &amp; Dispatch
                 </span>
@@ -1387,7 +1387,7 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
               </div>
 
               {/* Administrator Summary */}
-              <div className="p-space-md bg-[#F3F6F0] border border-[#DDE6DA] rounded-xl flex flex-col gap-1.5">
+              <div className="p-space-md bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl flex flex-col gap-1.5">
                 <span className="font-supporting text-supporting uppercase tracking-wider text-[#0055A4] font-bold">
                   Authorized Administrator
                 </span>
@@ -1410,11 +1410,11 @@ export default function RegisterFacilityView({ initialUser }: RegisterFacilityVi
               </div>
             </div>
 
-            <div className="border-t border-[#DDE6DA] pt-space-md flex items-center justify-between">
+            <div className="border-t border-[#C8D6C3] pt-space-md flex items-center justify-between">
               <button
                 type="button"
                 onClick={() => setShowReviewModal(false)}
-                className="px-space-lg py-2 rounded-xl bg-[#F3F6F0] hover:bg-[#E2E8DE] border border-[#DDE6DA] text-[#1F2B46] font-button-label transition-colors"
+                className="px-space-lg py-2 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] font-button-label transition-colors"
               >
                 Back to Edit
               </button>

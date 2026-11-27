@@ -93,7 +93,7 @@ export default function SettingsHubView({ initialUser }: SettingsHubViewProps) {
                 >
                   Dashboard
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   Settings &amp; Administration Hub
                 </span>
@@ -122,7 +122,7 @@ export default function SettingsHubView({ initialUser }: SettingsHubViewProps) {
                 return (
                   <Card
                     key={index}
-                    className="hover:shadow-md transition-all border-[#DDE6DA] flex flex-col justify-between"
+                    className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-all flex flex-col justify-between"
                   >
                     <div>
                       <CardHeader className="p-6 pb-4">
@@ -149,7 +149,7 @@ export default function SettingsHubView({ initialUser }: SettingsHubViewProps) {
                       </CardContent>
                     </div>
 
-                    <div className="p-6 pt-3 border-t border-[#F3F6F0] bg-[#FAFDF8]">
+                    <div className="p-6 pt-3 border-t border-[#C8D6C3] bg-[#E6EDE2]">
                       <Link href={item.href}>
                         <Button
                           variant="secondary"
@@ -167,28 +167,28 @@ export default function SettingsHubView({ initialUser }: SettingsHubViewProps) {
             </div>
 
             {/* Institutional Information Card */}
-            <Card className="bg-white border-[#DDE6DA] shadow-sm">
-              <CardHeader className="p-6 pb-3 border-b border-[#F3F6F0]">
+            <Card>
+              <CardHeader className="p-6 pb-3 border-b border-[#C8D6C3]">
                 <div className="flex items-center gap-2">
                   <Building className="w-5 h-5 text-[#015CA9]" />
                   <CardTitle className="text-base">Active Facility Workspace</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                <div className="p-3.5 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
-                  <span className="text-[#727783] block">Active Facility</span>
+                <div className="p-3.5 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
+                  <span className="text-[#667085] block">Active Facility</span>
                   <span className="font-bold text-[#1F2B46] block text-sm mt-0.5">
                     {user.facility}
                   </span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
-                  <span className="text-[#727783] block">Current Administrator</span>
+                <div className="p-3.5 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
+                  <span className="text-[#667085] block">Current Administrator</span>
                   <span className="font-bold text-[#1F2B46] block text-sm mt-0.5">
                     {user.name} ({user.role})
                   </span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
-                  <span className="text-[#727783] block">Active Shift / Context</span>
+                <div className="p-3.5 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
+                  <span className="text-[#667085] block">Active Shift / Context</span>
                   <span className="font-bold text-[#015CA9] block text-sm mt-0.5">
                     {user.shift}
                   </span>

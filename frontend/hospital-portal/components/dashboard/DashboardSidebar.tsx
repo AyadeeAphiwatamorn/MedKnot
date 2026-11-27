@@ -195,11 +195,11 @@ export default function DashboardSidebar({
     >
       {showCompactDesktop ? (
         showTopDivider ? (
-          <div className="h-px bg-[#DDE6DA] mx-3.5 my-1.5" aria-hidden="true" />
+          <div className="h-px bg-[#C5D2C0] mx-3.5 my-1.5" aria-hidden="true" />
         ) : null
       ) : (
         <div className="px-space-xl pt-2 pb-1.5 flex items-center justify-between">
-          <span className="font-supporting text-[11px] text-[#727783] uppercase tracking-wider font-semibold">
+          <span className="font-supporting text-[11px] text-[#667085] uppercase tracking-wider font-semibold">
             {title}
           </span>
         </div>
@@ -235,7 +235,7 @@ export default function DashboardSidebar({
                 } ${
                   isActive
                     ? "bg-[#015CA9] text-white font-semibold shadow-sm"
-                    : "text-[#424751] hover:bg-[#E2E8DE] hover:text-[#1F2B46]"
+                    : "text-[#424751] hover:bg-[#D5E0D2] hover:text-[#1F2B46]"
                 }`}
               >
                 <div
@@ -271,14 +271,14 @@ export default function DashboardSidebar({
 
       <aside
         aria-label="Primary Sidebar Navigation"
-        className={`dashboard-sidebar-aside fixed inset-y-0 left-0 w-[296px] z-50 md:col-start-1 md:row-start-1 md:sticky md:top-0 md:bottom-auto md:left-auto md:h-screen md:w-full md:translate-x-0 md:z-20 bg-[#F3F6F0] border-r border-[#DDE6DA] shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between overflow-y-auto overflow-x-hidden sidebar-scrollbar ${
+        className={`dashboard-sidebar-aside fixed inset-y-0 left-0 w-[296px] z-50 md:col-start-1 md:row-start-1 md:sticky md:top-0 md:bottom-auto md:left-auto md:h-screen md:w-full md:translate-x-0 md:z-20 bg-[#E6EDE2] border-r border-[#C5D2C0] shadow-[2px_0_12px_rgba(31,43,70,0.06)] flex flex-col justify-between overflow-y-auto overflow-x-hidden sidebar-scrollbar ${
           isMobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
       >
         <div className="flex flex-col">
           {/* Brand Logo & Sidebar Toggle Header */}
           <div
-            className={`h-16 flex items-center border-b border-[#DDE6DA] shrink-0 sticky top-0 bg-[#F3F6F0]/95 backdrop-blur-sm z-10 ${
+            className={`h-16 flex items-center border-b border-[#C5D2C0] shrink-0 sticky top-0 bg-[#E6EDE2]/95 backdrop-blur-sm z-10 ${
               showCompactDesktop
                 ? "px-2 justify-between gap-1"
                 : "px-space-xl justify-between gap-space-sm"
@@ -291,7 +291,7 @@ export default function DashboardSidebar({
               className="flex items-center gap-space-sm min-w-0"
             >
               <div
-                className={`rounded-xl bg-white border border-[#DDE6DA] flex items-center justify-center shadow-sm shrink-0 ${
+                className={`rounded-xl bg-white border border-[#C5D2C0] flex items-center justify-center shadow-sm shrink-0 ${
                   showCompactDesktop ? "w-8 h-8 p-1" : "w-10 h-10 p-1.5"
                 }`}
               >
@@ -309,7 +309,7 @@ export default function DashboardSidebar({
                   <span className="font-headline-sm text-headline-sm text-[#015CA9] tracking-tight leading-none truncate font-bold">
                     MedKnot
                   </span>
-                  <span className="font-supporting text-supporting text-[#5A6372] font-semibold tracking-wider uppercase mt-0.5 truncate">
+                  <span className="font-supporting text-supporting text-[#667085] font-semibold tracking-wider uppercase mt-0.5 truncate">
                     Hospital Portal
                   </span>
                 </div>
@@ -326,7 +326,7 @@ export default function DashboardSidebar({
               aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
               aria-expanded={!isCollapsed}
               title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-              className={`hidden md:inline-flex items-center justify-center rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] hover:text-[#1F2B46] transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4] ${
+              className={`hidden md:inline-flex items-center justify-center rounded-lg text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4] ${
                 showCompactDesktop ? "w-7 h-7" : "p-1.5"
               }`}
             >
@@ -343,7 +343,7 @@ export default function DashboardSidebar({
               onClick={closeMobile}
               aria-label="Close navigation menu"
               title="Close navigation menu"
-              className="md:hidden inline-flex items-center justify-center p-1.5 rounded-lg text-[#5A6372] hover:bg-[#E2E8DE] hover:text-[#1F2B46] transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
+              className="md:hidden inline-flex items-center justify-center p-1.5 rounded-lg text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
             >
               <X className="w-[18px] h-[18px]" />
             </button>
@@ -359,7 +359,7 @@ export default function DashboardSidebar({
 
         {/* Sidebar Bottom Profile Card */}
         {showCompactDesktop ? (
-          <div className="p-2 mx-2.5 my-3 bg-white border border-[#DDE6DA] rounded-xl flex flex-col items-center gap-2 shadow-sm shrink-0">
+          <div className="p-2 mx-2.5 my-3 bg-white border border-[#C5D2C0] rounded-xl flex flex-col items-center gap-2 shadow-[0_3px_10px_rgba(31,43,70,0.10)] shrink-0">
             <Link
               href="/dashboard/profile"
               onMouseEnter={(e) =>
@@ -378,7 +378,7 @@ export default function DashboardSidebar({
               onBlur={hideTooltip}
               title={`${user.name} (${user.role}) — View Profile`}
               aria-label={`${user.name} (${user.role}) — View Profile`}
-              className="w-9 h-9 rounded-full bg-white border border-[#DDE6DA] hover:border-[#0055A4] flex items-center justify-center p-1 shrink-0 shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
+              className="w-9 h-9 rounded-full bg-white border border-[#C8D6C3] hover:border-[#0055A4] flex items-center justify-center p-1 shrink-0 shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
             >
               <Image
                 src="/logo.png"
@@ -399,7 +399,7 @@ export default function DashboardSidebar({
                   showTooltipForTarget(e.currentTarget, "Sign Out")
                 }
                 onBlur={hideTooltip}
-                className="w-8 h-8 text-[#5A6372] hover:text-[#ba1a1a] hover:bg-[#F3F6F0] transition-colors rounded-lg flex items-center justify-center shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
+                className="w-8 h-8 text-[#667085] hover:text-[#ba1a1a] hover:bg-[#E1E9DC] transition-colors rounded-lg flex items-center justify-center shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0055A4]"
                 title="Sign Out"
                 aria-label="Sign Out"
                 type="button"
@@ -409,13 +409,13 @@ export default function DashboardSidebar({
             )}
           </div>
         ) : (
-          <div className="p-space-md m-space-md bg-white border border-[#DDE6DA] rounded-xl flex items-center justify-between shadow-sm shrink-0">
+          <div className="p-space-md m-space-md bg-white border border-[#C5D2C0] rounded-xl flex items-center justify-between shadow-[0_3px_10px_rgba(31,43,70,0.10)] shrink-0">
             <Link
               href="/dashboard/profile"
               onClick={closeMobile}
               className="flex items-center gap-space-sm min-w-0 hover:opacity-90 transition-opacity"
             >
-              <div className="w-9 h-9 rounded-full bg-white border border-[#DDE6DA] flex items-center justify-center p-1 shrink-0 shadow-xs">
+              <div className="w-9 h-9 rounded-full bg-white border border-[#C8D6C3] flex items-center justify-center p-1 shrink-0 shadow-xs">
                 <Image
                   src="/logo.png"
                   alt="Profile"
@@ -428,7 +428,7 @@ export default function DashboardSidebar({
                 <span className="font-card-heading text-card-heading text-[#1F2B46] truncate leading-tight font-semibold">
                   {user.name}
                 </span>
-                <span className="font-supporting text-supporting text-[#5A6372] truncate">
+                <span className="font-supporting text-supporting text-[#667085] truncate">
                   {user.role}
                 </span>
               </div>
@@ -436,7 +436,7 @@ export default function DashboardSidebar({
             {onSignOut && (
               <button
                 onClick={onSignOut}
-                className="p-space-xs text-[#5A6372] hover:text-[#ba1a1a] transition-colors rounded-lg flex items-center justify-center shrink-0 cursor-pointer"
+                className="p-space-xs text-[#667085] hover:text-[#ba1a1a] transition-colors rounded-lg flex items-center justify-center shrink-0 cursor-pointer"
                 title="Sign Out"
                 aria-label="Sign Out"
                 type="button"

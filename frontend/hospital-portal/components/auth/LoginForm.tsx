@@ -241,10 +241,10 @@ export default function LoginForm() {
               Work email or Staff ID
             </label>
             <div
-              className={`relative rounded-xl border bg-white shadow-sm transition-all
+              className={`relative rounded-xl border-[1.5px] bg-[#F3F7F2] shadow-2xs transition-all
                 ${errors.identifier
-                  ? 'border-red-400 ring-2 ring-red-200'
-                  : 'border-slate-200 focus-within:border-[#015CA9] focus-within:ring-2 focus-within:ring-[#015CA9]/15'
+                  ? 'border-red-500 ring-2 ring-red-200 focus-within:bg-white'
+                  : 'border-[#AEBEAA] hover:border-[#8EA389] hover:bg-[#EEF4ED] focus-within:bg-white focus-within:border-[#0055A4] focus-within:ring-[3px] focus-within:ring-[#0055A4]/15'
                 }`}
             >
               {/* Person icon */}
@@ -276,7 +276,7 @@ export default function LoginForm() {
                 required
                 aria-invalid={Boolean(errors.identifier)}
                 aria-describedby={errors.identifier ? 'identifier-error' : undefined}
-                className="w-full rounded-xl bg-transparent py-3 pl-10 pr-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-xl bg-transparent py-3 pl-10 pr-4 text-sm text-[#1F2B46] placeholder-[#7C8998] focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
               />
             </div>
             {errors.identifier && (
@@ -352,7 +352,7 @@ export default function LoginForm() {
         </div>
 
         {/* ── New Hospital Registration Entry Point ─────────────────── */}
-        <div className="mt-6 rounded-2xl border border-[#DDE6DA] bg-[#F7F3EC]/80 p-4 text-center">
+        <div className="mt-6 rounded-2xl border border-[#C5D2C0] bg-[#F7F3EC]/85 p-4 text-center">
           <span className="block text-xs font-semibold uppercase tracking-wider text-[#1F2B46]">
             New to MedKnot?
           </span>
@@ -366,13 +366,13 @@ export default function LoginForm() {
           <p className="mt-1 text-xs text-[#5A6372] leading-relaxed">
             Join MedKnot&apos;s connected healthcare network and manage your hospital through one unified platform.
           </p>
-          <div className="mt-3 border-t border-[#DDE6DA] pt-2 text-[11px] text-[#727783]">
+          <div className="mt-3 border-t border-[#C8D6C3] pt-2 text-[11px] text-[#667085]">
             Already part of a hospital? Contact your Hospital Administrator to receive an invitation.
           </div>
         </div>
 
         {/* ── Administrator help ─────────────────────────────────────── */}
-        <div className="mt-8 border-t border-slate-100 pt-6 text-center text-xs text-slate-500">
+        <div className="mt-8 border-t border-[#C8D6C3] pt-6 text-center text-xs text-[#667085]">
           <p>Need help accessing your account?</p>
           <button
             type="button"

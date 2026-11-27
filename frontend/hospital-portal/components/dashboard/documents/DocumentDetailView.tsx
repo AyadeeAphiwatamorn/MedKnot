@@ -136,8 +136,8 @@ export default function DocumentDetailView({
         );
       case "patient-reported":
         return (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#F3F6F0] text-[#5A6372] border border-[#DDE6DA] shadow-xs">
-            <Clock className="w-3.5 h-3.5 text-[#727783]" />
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#5A6372] border border-[#C8D6C3] shadow-xs">
+            <Clock className="w-3.5 h-3.5 text-[#667085]" />
             Patient-Reported Intake
           </span>
         );
@@ -238,14 +238,14 @@ export default function DocumentDetailView({
                   >
                     Dashboard
                   </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                   <Link
                     href="/dashboard/documents"
                     className="hover:text-[#015CA9] transition-colors"
                   >
                     Medical Records
                   </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                   <span className="text-[#015CA9] font-semibold truncate max-w-xs">
                     {doc.id}
                   </span>
@@ -330,8 +330,8 @@ export default function DocumentDetailView({
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* ── LEFT COLUMN: ORIGINAL DOCUMENT PREVIEW (5 cols on xl, 6 on lg) ── */}
               <div className="lg:col-span-5 xl:col-span-5 space-y-4">
-                <Card className="bg-white border-[#DDE6DA] shadow-sm overflow-hidden sticky top-20">
-                  <CardHeader className="p-4 border-b border-[#DDE6DA] bg-[#FAFDF8] flex flex-row items-center justify-between gap-2">
+                <Card className="overflow-hidden sticky top-20">
+                  <CardHeader className="p-4 border-b border-[#C8D6C3] bg-[#E6EDE2] flex flex-row items-center justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
                       <FileText className="w-4 h-4 text-[#015CA9] shrink-0" />
                       <span className="font-bold text-sm text-[#1F2B46] truncate">
@@ -343,7 +343,7 @@ export default function DocumentDetailView({
                       <button
                         type="button"
                         onClick={() => setZoomLevel((z) => Math.max(75, z - 15))}
-                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#E2E8DE]"
+                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#D5E0D2]"
                         title="Zoom Out"
                       >
                         <ZoomOut className="w-4 h-4" />
@@ -354,7 +354,7 @@ export default function DocumentDetailView({
                       <button
                         type="button"
                         onClick={() => setZoomLevel((z) => Math.min(150, z + 15))}
-                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#E2E8DE]"
+                        className="p-1 text-[#5A6372] hover:text-[#1F2B46] rounded hover:bg-[#D5E0D2]"
                         title="Zoom In"
                       >
                         <ZoomIn className="w-4 h-4" />
@@ -363,13 +363,13 @@ export default function DocumentDetailView({
                   </CardHeader>
 
                   {/* Document Render Surface */}
-                  <div className="p-4 bg-[#EDF2E9] overflow-auto max-h-[750px] flex items-center justify-center">
+                  <div className="p-4 bg-[#E3EBDD] overflow-auto max-h-[750px] flex items-center justify-center">
                     <div
                       style={{ transform: `scale(${zoomLevel / 100})`, transformOrigin: "top center" }}
                       className="transition-transform duration-150 w-full"
                     >
                       {/* Document Sheet Simulation */}
-                      <div className="bg-white rounded-lg shadow-lg border border-[#DDE6DA] p-6 text-xs text-[#1F2B46] relative overflow-hidden min-h-[680px]">
+                      <div className="bg-white rounded-lg shadow-lg border border-[#C8D6C3] p-6 text-xs text-[#1F2B46] relative overflow-hidden min-h-[680px]">
                         {/* Confidential Watermark */}
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04] rotate-[-30deg]">
                           <span className="text-4xl font-black uppercase tracking-widest text-[#001b3c]">
@@ -403,7 +403,7 @@ export default function DocumentDetailView({
                               <span className="font-mono text-[10px] text-[#015CA9] font-bold block">
                                 {doc.id}
                               </span>
-                              <span className="text-[9px] text-[#727783] block">
+                              <span className="text-[9px] text-[#667085] block">
                                 BARCODE: *{doc.patientId}*
                               </span>
                             </div>
@@ -411,27 +411,27 @@ export default function DocumentDetailView({
                         </div>
 
                         {/* Patient Demographics Table in Document */}
-                        <div className="grid grid-cols-2 gap-2 p-2.5 bg-[#F8FAF6] border border-[#DDE6DA] rounded-lg mb-4 text-[11px]">
+                        <div className="grid grid-cols-2 gap-2 p-2.5 bg-[#E1E9DC] border border-[#C8D6C3] rounded-lg mb-4 text-[11px]">
                           <div>
-                            <span className="text-[#727783] block">Patient Name:</span>
+                            <span className="text-[#667085] block">Patient Name:</span>
                             <span className="font-bold text-[#1F2B46]">
                               {doc.patientName}
                             </span>
                           </div>
                           <div>
-                            <span className="text-[#727783] block">Patient ID:</span>
+                            <span className="text-[#667085] block">Patient ID:</span>
                             <span className="font-mono font-bold text-[#1F2B46]">
                               {doc.patientId}
                             </span>
                           </div>
                           <div>
-                            <span className="text-[#727783] block">Age / Gender / Blood:</span>
+                            <span className="text-[#667085] block">Age / Gender / Blood:</span>
                             <span className="font-medium text-[#1F2B46]">
                               {doc.patient.age} Yrs / {doc.patient.gender} / {doc.patient.bloodGroup}
                             </span>
                           </div>
                           <div>
-                            <span className="text-[#727783] block">Attending Physician:</span>
+                            <span className="text-[#667085] block">Attending Physician:</span>
                             <span className="font-medium text-[#1F2B46]">
                               {doc.attendingDoctorName}
                             </span>
@@ -446,16 +446,16 @@ export default function DocumentDetailView({
                             </h4>
                             <table className="w-full text-left border-collapse text-[11px] mb-4">
                               <thead>
-                                <tr className="border-b border-[#DDE6DA] bg-[#FAFDF8] text-[#5A6372]">
+                                <tr className="border-b border-[#C8D6C3] bg-[#E6EDE2] text-[#5A6372]">
                                   <th className="py-1.5 px-2">Investigation</th>
                                   <th className="py-1.5 px-2">Result</th>
                                   <th className="py-1.5 px-2">Unit</th>
                                   <th className="py-1.5 px-2">Biological Reference</th>
                                 </tr>
                               </thead>
-                              <tbody className="divide-y divide-[#F3F6F0]">
+                              <tbody className="divide-y divide-[#C8D6C3]">
                                 {doc.extractedFields.map((field) => (
-                                  <tr key={field.id} className="hover:bg-[#FAFDF8]">
+                                  <tr key={field.id} className="hover:bg-[#E6EDE2]">
                                     <td className="py-1.5 px-2 font-medium text-[#1F2B46]">
                                       {field.fieldName}
                                     </td>
@@ -475,7 +475,7 @@ export default function DocumentDetailView({
                                     <td className="py-1.5 px-2 text-[#5A6372]">
                                       {field.unit || "—"}
                                     </td>
-                                    <td className="py-1.5 px-2 text-[#727783]">
+                                    <td className="py-1.5 px-2 text-[#667085]">
                                       {field.referenceRange || "Standard"}
                                     </td>
                                   </tr>
@@ -483,7 +483,7 @@ export default function DocumentDetailView({
                               </tbody>
                             </table>
 
-                            <div className="p-2.5 rounded bg-[#FAFDF8] border border-[#DDE6DA] text-[10px] space-y-1 mb-4">
+                            <div className="p-2.5 rounded bg-[#E6EDE2] border border-[#C8D6C3] text-[10px] space-y-1 mb-4">
                               <span className="font-bold text-[#1F2B46] block uppercase tracking-wider">
                                 Laboratory Impression &amp; Methodology:
                               </span>
@@ -500,7 +500,7 @@ export default function DocumentDetailView({
                               Outpatient Registration &amp; Triage Questionnaire
                             </h4>
 
-                            <div className="space-y-2 border border-[#DDE6DA] p-3 rounded-lg bg-[#FAFDF8]">
+                            <div className="space-y-2 border border-[#C8D6C3] p-3 rounded-lg bg-[#E6EDE2]">
                               <span className="font-bold text-[11px] text-[#1F2B46] block">
                                 Chief Presenting Symptoms:
                               </span>
@@ -509,7 +509,7 @@ export default function DocumentDetailView({
                               </p>
                             </div>
 
-                            <div className="space-y-2 border border-[#DDE6DA] p-3 rounded-lg bg-[#FAFDF8]">
+                            <div className="space-y-2 border border-[#C8D6C3] p-3 rounded-lg bg-[#E6EDE2]">
                               <span className="font-bold text-[11px] text-[#1F2B46] block">
                                 Triage Physical Examination &amp; Notes:
                               </span>
@@ -521,7 +521,7 @@ export default function DocumentDetailView({
                         )}
 
                         {/* Signatures & Accreditation Footer on Sheet */}
-                        <div className="pt-6 mt-6 border-t border-[#DDE6DA] flex items-end justify-between text-[10px] text-[#727783]">
+                        <div className="pt-6 mt-6 border-t border-[#C8D6C3] flex items-end justify-between text-[10px] text-[#667085]">
                           <div>
                             <span className="font-bold text-[#1F2B46] block">
                               Verified by Pathology Technologist
@@ -543,7 +543,7 @@ export default function DocumentDetailView({
                   </div>
 
                   {/* Preview Footer */}
-                  <div className="p-3 bg-[#FAFDF8] border-t border-[#DDE6DA] flex items-center justify-between text-xs text-[#5A6372]">
+                  <div className="p-3 bg-[#E6EDE2] border-t border-[#C8D6C3] flex items-center justify-between text-xs text-[#5A6372]">
                     <span className="flex items-center gap-1.5">
                       <Lock className="w-3.5 h-3.5 text-[#015CA9]" />
                       Original File: {doc.fileType} ({doc.fileSize})
@@ -556,8 +556,8 @@ export default function DocumentDetailView({
               {/* ── RIGHT COLUMN: PATIENT INFO & 4 DISTINCT RECORD LAYERS (7 cols) ── */}
               <div className="lg:col-span-7 xl:col-span-7 space-y-6">
                 {/* 1. Patient Health Info Card */}
-                <Card className="bg-white border-[#DDE6DA] shadow-sm">
-                  <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0]">
+                <Card>
+                  <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3]">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
                         <div className="w-10 h-10 rounded-full bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center font-bold text-sm shrink-0">
@@ -571,7 +571,7 @@ export default function DocumentDetailView({
                             <h3 className="font-bold text-base text-[#1F2B46]">
                               {doc.patient.name}
                             </h3>
-                            <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#F3F6F0] text-[#015CA9] border border-[#DDE6DA]">
+                            <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[#E3EBDD] text-[#015CA9] border border-[#C8D6C3]">
                               {doc.patient.id}
                             </span>
                           </div>
@@ -588,14 +588,14 @@ export default function DocumentDetailView({
 
                   <CardContent className="p-5 space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                      <div className="p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
-                        <span className="text-[#727783] block">Patient Direct Phone</span>
+                      <div className="p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
+                        <span className="text-[#667085] block">Patient Direct Phone</span>
                         <span className="font-semibold text-[#1F2B46] block mt-0.5">
                           {doc.patient.phone}
                         </span>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
-                        <span className="text-[#727783] block">Emergency Contact</span>
+                      <div className="p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
+                        <span className="text-[#667085] block">Emergency Contact</span>
                         <span className="font-semibold text-[#1F2B46] block mt-0.5">
                           {doc.patient.emergencyContact}
                         </span>
@@ -644,8 +644,8 @@ export default function DocumentDetailView({
                 {/* ── 4 DISTINCT RECORD STATUS LAYERS ───────────────────────── */}
                 <div className="space-y-4">
                   {/* LAYER 1: PATIENT-REPORTED INFORMATION */}
-                  <Card className="bg-white border-[#DDE6DA] shadow-sm">
-                    <CardHeader className="p-4 border-b border-[#F3F6F0] bg-[#FAFDF8] flex flex-row items-center justify-between">
+                  <Card>
+                    <CardHeader className="p-4 border-b border-[#C8D6C3] bg-[#E6EDE2] flex flex-row items-center justify-between">
                       <div className="flex items-center gap-2">
                         <User className="w-4 h-4 text-[#5A6372]" />
                         <CardTitle className="text-sm">
@@ -667,23 +667,23 @@ export default function DocumentDetailView({
                           ))}
                         </ul>
                       </div>
-                      <div className="p-2.5 rounded-lg bg-[#F8FAF6] border border-[#DDE6DA]">
-                        <span className="font-semibold text-[#727783] block">
+                      <div className="p-2.5 rounded-lg bg-[#E1E9DC] border border-[#C8D6C3]">
+                        <span className="font-semibold text-[#667085] block">
                           Intake Notes:
                         </span>
                         <p className="text-[#1F2B46] mt-0.5">
                           {doc.patientReportedData.intakeNotes}
                         </p>
                       </div>
-                      <span className="text-[10px] text-[#727783] block">
+                      <span className="text-[10px] text-[#667085] block">
                         Recorded on: {doc.patientReportedData.reportedOn}
                       </span>
                     </CardContent>
                   </Card>
 
                   {/* LAYER 2: AI-EXTRACTED DRAFT */}
-                  <Card className="bg-white border-[#DDE6DA] shadow-sm">
-                    <CardHeader className="p-4 border-b border-[#F3F6F0] bg-[#FAFDF8] flex flex-row items-center justify-between">
+                  <Card>
+                    <CardHeader className="p-4 border-b border-[#C8D6C3] bg-[#E6EDE2] flex flex-row items-center justify-between">
                       <div className="flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-[#946200]" />
                         <CardTitle className="text-sm">
@@ -707,23 +707,23 @@ export default function DocumentDetailView({
                       </div>
 
                       {/* AI Summary */}
-                      <div className="p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] space-y-1">
+                      <div className="p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] space-y-1">
                         <span className="font-semibold text-[#5A6372] block">
                           Automated OCR Interpretation:
                         </span>
                         <p className="text-[#1F2B46] leading-relaxed">
                           {doc.aiExtractedData.summary}
                         </p>
-                        <span className="text-[10px] text-[#727783] block pt-1">
+                        <span className="text-[10px] text-[#667085] block pt-1">
                           Processed by: {doc.aiExtractedData.ocrModel} • Confidence:{" "}
                           <strong>{(doc.confidenceOverall * 100).toFixed(0)}%</strong>
                         </span>
                       </div>
 
                       {/* Extracted Fields Table */}
-                      <div className="border border-[#DDE6DA] rounded-xl overflow-hidden">
+                      <div className="border border-[#C8D6C3] rounded-xl overflow-hidden">
                         <table className="w-full text-left text-xs">
-                          <thead className="bg-[#FAFDF8] border-b border-[#DDE6DA] text-[#5A6372] font-semibold">
+                          <thead className="bg-[#E6EDE2] border-b border-[#C5D2C0] text-[#5A6372] font-semibold">
                             <tr>
                               <th className="py-2 px-3">Field</th>
                               <th className="py-2 px-3">Extracted Value</th>
@@ -731,9 +731,9 @@ export default function DocumentDetailView({
                               <th className="py-2 px-3">Confidence</th>
                             </tr>
                           </thead>
-                          <tbody className="divide-y divide-[#DDE6DA]">
+                          <tbody className="divide-y divide-[#C8D6C3]">
                             {doc.extractedFields.map((field) => (
-                              <tr key={field.id} className="hover:bg-[#FAFDF8]">
+                              <tr key={field.id} className="hover:bg-[#E6EDE2]">
                                 <td className="py-2 px-3 font-medium text-[#1F2B46]">
                                   {field.fieldName}
                                 </td>
@@ -765,8 +765,8 @@ export default function DocumentDetailView({
                   </Card>
 
                   {/* LAYER 3: STAFF-REVIEWED RECORDS */}
-                  <Card className="bg-white border-[#DDE6DA] shadow-sm">
-                    <CardHeader className="p-4 border-b border-[#F3F6F0] bg-[#FAFDF8] flex flex-row items-center justify-between">
+                  <Card>
+                    <CardHeader className="p-4 border-b border-[#C8D6C3] bg-[#E6EDE2] flex flex-row items-center justify-between">
                       <div className="flex items-center gap-2">
                         <ShieldCheck className="w-4 h-4 text-[#015CA9]" />
                         <CardTitle className="text-sm">
@@ -779,7 +779,7 @@ export default function DocumentDetailView({
                           Staff Review Completed
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full font-bold bg-[#F3F6F0] text-[#727783] border border-[#DDE6DA]">
+                        <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full font-bold bg-[#E3EBDD] text-[#667085] border border-[#C8D6C3]">
                           Pending Staff Check
                         </span>
                       )}
@@ -788,18 +788,18 @@ export default function DocumentDetailView({
                       {doc.staffReview.isApproved ? (
                         <div className="space-y-1.5">
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783]">Reviewed By:</span>
+                            <span className="text-[#667085]">Reviewed By:</span>
                             <span className="font-bold text-[#1F2B46]">
                               {doc.staffReview.reviewedBy}
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783]">Timestamp:</span>
+                            <span className="text-[#667085]">Timestamp:</span>
                             <span className="text-[#5A6372]">
                               {doc.staffReview.reviewedAt}
                             </span>
                           </div>
-                          <div className="p-2.5 rounded-lg bg-[#F8FAF6] border border-[#DDE6DA]">
+                          <div className="p-2.5 rounded-lg bg-[#E1E9DC] border border-[#C8D6C3]">
                             <span className="font-semibold text-[#5A6372] block">
                               Staff Observations:
                             </span>
@@ -810,7 +810,7 @@ export default function DocumentDetailView({
                         </div>
                       ) : (
                         <div className="flex items-center justify-between">
-                          <p className="text-[#727783] italic">
+                          <p className="text-[#667085] italic">
                             Specimen and patient ID validation pending from nursing staff.
                           </p>
                           <Button
@@ -826,8 +826,8 @@ export default function DocumentDetailView({
                   </Card>
 
                   {/* LAYER 4: CLINICIAN-VERIFIED RECORDS */}
-                  <Card className="bg-white border-[#DDE6DA] shadow-sm">
-                    <CardHeader className="p-4 border-b border-[#F3F6F0] bg-[#FAFDF8] flex flex-row items-center justify-between">
+                  <Card>
+                    <CardHeader className="p-4 border-b border-[#C8D6C3] bg-[#E6EDE2] flex flex-row items-center justify-between">
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[#526524]" />
                         <CardTitle className="text-sm">
@@ -849,19 +849,19 @@ export default function DocumentDetailView({
                       {doc.clinicianVerification.isVerified ? (
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783]">Attending Doctor:</span>
+                            <span className="text-[#667085]">Attending Doctor:</span>
                             <span className="font-bold text-[#015CA9]">
                               {doc.clinicianVerification.verifiedByDoctor}
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783]">Verified At:</span>
+                            <span className="text-[#667085]">Verified At:</span>
                             <span className="text-[#5A6372]">
                               {doc.clinicianVerification.verifiedAt}
                             </span>
                           </div>
 
-                          <div className="p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] space-y-1">
+                          <div className="p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] space-y-1">
                             <span className="font-semibold text-[#5A6372] block">
                               Doctor&apos;s Verified Diagnostic Assessment:
                             </span>
@@ -882,12 +882,12 @@ export default function DocumentDetailView({
                           )}
                         </div>
                       ) : (
-                        <div className="flex items-center justify-between p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA]">
+                        <div className="flex items-center justify-between p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3]">
                           <div>
                             <span className="font-bold text-[#1F2B46] block">
                               Pending Doctor Sign-off
                             </span>
-                            <span className="text-[11px] text-[#727783]">
+                            <span className="text-[11px] text-[#667085]">
                               Review the original document on the left and sign off on verified findings.
                             </span>
                           </div>
@@ -904,26 +904,26 @@ export default function DocumentDetailView({
                 </div>
 
                 {/* ── MEDICAL HISTORY TIMELINE ──────────────────────────────── */}
-                <Card className="bg-white border-[#DDE6DA] shadow-sm">
-                  <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0]">
+                <Card>
+                  <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3]">
                     <div className="flex items-center gap-2">
                       <History className="w-5 h-5 text-[#015CA9]" />
                       <CardTitle>Medical History &amp; Encounter Timeline</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="p-5">
-                    <div className="relative pl-6 space-y-6 before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-[#DDE6DA]">
+                    <div className="relative pl-6 space-y-6 before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-[#C8D6C3]">
                       {doc.medicalHistory.map((item) => (
                         <div key={item.id} className="relative">
                           {/* Timeline dot */}
                           <div className="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-[#015CA9] ring-4 ring-[#E1F2FD]" />
 
-                          <div className="p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] text-xs space-y-1">
+                          <div className="p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] text-xs space-y-1">
                             <div className="flex items-center justify-between">
                               <span className="font-bold text-sm text-[#1F2B46]">
                                 {item.title}
                               </span>
-                              <span className="text-[11px] font-bold text-[#727783]">
+                              <span className="text-[11px] font-bold text-[#667085]">
                                 {item.date}
                               </span>
                             </div>
@@ -979,7 +979,7 @@ export default function DocumentDetailView({
                 rows={3}
                 value={clinicianNotes}
                 onChange={(e) => setClinicianNotes(e.target.value)}
-                className="w-full px-3 py-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
+                className="w-full px-3 py-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
               />
             </div>
 
@@ -1032,7 +1032,7 @@ export default function DocumentDetailView({
                 rows={3}
                 value={staffNotes}
                 onChange={(e) => setStaffNotes(e.target.value)}
-                className="w-full px-3 py-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
+                className="w-full px-3 py-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
               />
             </div>
           </div>
@@ -1065,14 +1065,14 @@ export default function DocumentDetailView({
             </DialogDescription>
           </DialogHeader>
 
-          <div className="border border-[#DDE6DA] rounded-xl divide-y divide-[#DDE6DA] max-h-72 overflow-y-auto text-xs">
+          <div className="border border-[#C8D6C3] rounded-xl divide-y divide-[#C8D6C3] max-h-72 overflow-y-auto text-xs">
             {doc.auditEvents.map((aud) => (
               <div key={aud.id} className="p-3 bg-white space-y-0.5">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-[#1F2B46]">
                     {aud.user} ({aud.role})
                   </span>
-                  <span className="text-[#727783] text-[11px]">
+                  <span className="text-[#667085] text-[11px]">
                     {aud.timestamp}
                   </span>
                 </div>

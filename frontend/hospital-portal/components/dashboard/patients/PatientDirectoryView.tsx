@@ -138,11 +138,11 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
             </nav>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
                 <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
                 <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
                 <span className="material-symbols-outlined text-xs text-[#0055A4]">verified_user</span>
                 <span>HIPAA Secured Node</span>
               </span>
@@ -150,7 +150,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
           </div>
 
           {/* Page Title & Primary Actions */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
             <div>
               <div className="flex items-center gap-2.5">
                 <h1 className="text-2xl font-bold tracking-tight text-[#1F2B46]">Patients</h1>
@@ -177,7 +177,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
           {/* Summary Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Total Patients */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Total Patients</span>
                 <span className="w-8 h-8 rounded-lg bg-[#E7F0FF] text-[#0055A4] flex items-center justify-center">
@@ -191,7 +191,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
             </div>
 
             {/* Active Patients */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Active Patients</span>
                 <span className="w-8 h-8 rounded-lg bg-[#EAF5E2] text-[#2D6A28] flex items-center justify-center">
@@ -207,7 +207,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
             </div>
 
             {/* Pending Registrations */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Pending Registrations</span>
                 <span className="w-8 h-8 rounded-lg bg-[#FFF4E5] text-[#B76E00] flex items-center justify-center">
@@ -221,10 +221,10 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
             </div>
 
             {/* New Patients This Month */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">New This Month</span>
-                <span className="w-8 h-8 rounded-lg bg-[#F3F6F0] text-[#1F2B46] flex items-center justify-center">
+                <span className="w-8 h-8 rounded-lg bg-[#E3EBDD] text-[#1F2B46] flex items-center justify-center">
                   <span className="material-symbols-outlined text-lg">calendar_month</span>
                 </span>
               </div>
@@ -236,11 +236,11 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
           </div>
 
           {/* Search & Filter Controls */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs space-y-4">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
             <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
               {/* Search input */}
               <div className="relative flex-1">
-                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#727783] text-xl pointer-events-none">
+                <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#667085] text-xl pointer-events-none">
                   search
                 </span>
                 <input
@@ -248,12 +248,12 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                   value={searchQuery}
                   onChange={(e) => handleSearchChange(e.target.value)}
                   placeholder="Search by patient name, Patient ID (MK-PT-...), or phone number..."
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] text-sm text-[#1F2B46] placeholder-[#727783] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] focus:bg-white transition-all"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] text-sm text-[#1F2B46] placeholder-[#727783] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] focus:bg-white transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => handleSearchChange("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#727783] hover:text-[#1F2B46] text-xs"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#667085] hover:text-[#1F2B46] text-xs"
                     title="Clear search"
                   >
                     <span className="material-symbols-outlined text-base">close</span>
@@ -267,7 +267,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                 <select
                   value={statusFilter}
                   onChange={(e) => handleStatusChange(e.target.value)}
-                  className="px-3 py-2.5 rounded-xl border border-[#DDE6DA] bg-white text-xs font-semibold text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="px-3 py-2.5 rounded-xl border border-[#AEBEAA] bg-white text-xs font-semibold text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 >
                   <option value="All">Status: All Statuses</option>
                   <option value="Active">Active</option>
@@ -279,7 +279,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                 <select
                   value={genderFilter}
                   onChange={(e) => handleGenderChange(e.target.value)}
-                  className="px-3 py-2.5 rounded-xl border border-[#DDE6DA] bg-white text-xs font-semibold text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="px-3 py-2.5 rounded-xl border border-[#AEBEAA] bg-white text-xs font-semibold text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 >
                   <option value="All">Gender: All</option>
                   <option value="Male">Male</option>
@@ -291,7 +291,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                 <select
                   value={sortBy}
                   onChange={(e) => handleSortChange(e.target.value as "newest" | "oldest" | "name" | "lastVisit")}
-                  className="px-3 py-2.5 rounded-xl border border-[#DDE6DA] bg-white text-xs font-semibold text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                  className="px-3 py-2.5 rounded-xl border border-[#AEBEAA] bg-white text-xs font-semibold text-[#1F2B46] focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                 >
                   <option value="newest">Sort: Newest First</option>
                   <option value="oldest">Sort: Oldest First</option>
@@ -303,7 +303,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                 {hasActiveFilters && (
                   <button
                     onClick={handleClearFilters}
-                    className="inline-flex items-center gap-1 px-3 py-2.5 rounded-xl border border-[#DDE6DA] bg-[#F3F6F0] hover:bg-[#E2E8DE] text-xs font-semibold text-[#5A6372] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1 px-3 py-2.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] hover:bg-[#D5E0D2] text-xs font-semibold text-[#5A6372] transition-colors cursor-pointer"
                   >
                     <span className="material-symbols-outlined text-sm">filter_alt_off</span>
                     <span>Reset</span>
@@ -314,11 +314,11 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
           </div>
 
           {/* Patient Directory Table */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-xs overflow-hidden">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
                 <thead>
-                  <tr className="bg-[#F3F6F0] border-b border-[#DDE6DA] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
+                  <tr className="bg-[#E3EBDD] border-b border-[#C8D6C3] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
                     <th className="py-3.5 px-5 whitespace-nowrap">Patient ID</th>
                     <th className="py-3.5 px-5">Patient Name</th>
                     <th className="py-3.5 px-4">Age / Gender</th>
@@ -329,12 +329,12 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                     <th className="py-3.5 px-5 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#DDE6DA]">
+                <tbody className="divide-y divide-[#C8D6C3]">
                   {paginatedPatients.length === 0 ? (
                     <tr>
                       <td colSpan={8} className="py-12 text-center">
                         <div className="flex flex-col items-center justify-center max-w-sm mx-auto">
-                          <span className="material-symbols-outlined text-4xl text-[#727783] mb-2">person_search</span>
+                          <span className="material-symbols-outlined text-4xl text-[#667085] mb-2">person_search</span>
                           <h3 className="text-base font-bold text-[#1F2B46]">No patients found</h3>
                           <p className="text-xs text-[#5A6372] mt-1">
                             {hasActiveFilters
@@ -360,7 +360,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                       return (
                         <tr
                           key={facilityRecord.facilityPatientId}
-                          className="hover:bg-[#F9FBF8] transition-colors"
+                          className="hover:bg-[#E6EDE2] transition-colors"
                         >
                           {/* Patient ID */}
                           <td className="py-4 px-5 whitespace-nowrap">
@@ -394,7 +394,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                             <span className="font-medium">{age} yrs</span>
                             <span className="text-[#5A6372]"> • {patient.gender}</span>
                             {patient.bloodGroup && (
-                              <span className="ml-1 text-[11px] font-mono text-[#727783]">({patient.bloodGroup})</span>
+                              <span className="ml-1 text-[11px] font-mono text-[#667085]">({patient.bloodGroup})</span>
                             )}
                           </td>
 
@@ -413,7 +413,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                             {facilityRecord.lastVisit ? (
                               <span className="font-medium">{facilityRecord.lastVisit}</span>
                             ) : (
-                              <span className="text-[#727783] italic">No visit yet</span>
+                              <span className="text-[#667085] italic">No visit yet</span>
                             )}
                           </td>
 
@@ -442,7 +442,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                                         : facilityRecord.facilityPatientId
                                     )
                                   }
-                                  className="p-1 rounded-lg hover:bg-[#E2E8DE] text-[#5A6372] transition-colors"
+                                  className="p-1 rounded-lg hover:bg-[#D5E0D2] text-[#5A6372] transition-colors"
                                   aria-label="More actions"
                                 >
                                   <span className="material-symbols-outlined text-lg">more_vert</span>
@@ -450,18 +450,18 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
 
                                 {activeMenuId === facilityRecord.facilityPatientId && (
                                   <div
-                                    className="absolute right-0 mt-1 w-44 bg-white border border-[#DDE6DA] rounded-xl shadow-lg z-30 py-1 text-left text-xs"
+                                    className="absolute right-0 mt-1 w-44 bg-white border border-[#C8D6C3] rounded-xl shadow-lg z-30 py-1 text-left text-xs"
                                     onMouseLeave={() => setActiveMenuId(null)}
                                   >
                                     <Link
                                       href={`/dashboard/patients/${facilityRecord.facilityPatientId}`}
-                                      className="block px-3 py-2 text-[#1F2B46] hover:bg-[#F3F6F0]"
+                                      className="block px-3 py-2 text-[#1F2B46] hover:bg-[#E6EDE2]"
                                     >
                                       Open Profile Workspace
                                     </Link>
                                     <Link
                                       href={`/dashboard/patients/${facilityRecord.facilityPatientId}#appointments`}
-                                      className="block px-3 py-2 text-[#1F2B46] hover:bg-[#F3F6F0]"
+                                      className="block px-3 py-2 text-[#1F2B46] hover:bg-[#E6EDE2]"
                                     >
                                       Schedule Appointment
                                     </Link>
@@ -495,7 +495,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
 
             {/* Pagination & Results Counter */}
             {patientsList.length > 0 && (
-              <div className="px-6 py-4 bg-[#F3F6F0] border-t border-[#DDE6DA] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5A6372]">
+              <div className="px-6 py-4 bg-[#E3EBDD] border-t border-[#C8D6C3] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5A6372]">
                 <div>
                   Showing{" "}
                   <span className="font-semibold text-[#1F2B46]">
@@ -509,7 +509,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                   <button
                     disabled={currentPage === 1}
                     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                    className="px-3 py-1.5 rounded-lg border border-[#DDE6DA] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#E8EFE5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    className="px-3 py-1.5 rounded-lg border border-[#C8D6C3] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                   >
                     Previous
                   </button>
@@ -521,7 +521,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                       className={`w-8 h-8 rounded-lg text-xs font-semibold transition-colors ${
                         currentPage === pageNumber
                           ? "bg-[#0055A4] text-white"
-                          : "border border-[#DDE6DA] bg-white text-[#1F2B46] hover:bg-[#E8EFE5]"
+                          : "border border-[#C8D6C3] bg-white text-[#1F2B46] hover:bg-[#D5E0D2]"
                       }`}
                     >
                       {pageNumber}
@@ -531,7 +531,7 @@ export default function PatientDirectoryView({ initialUser }: PatientDirectoryVi
                   <button
                     disabled={currentPage === totalPages}
                     onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                    className="px-3 py-1.5 rounded-lg border border-[#DDE6DA] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#E8EFE5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    className="px-3 py-1.5 rounded-lg border border-[#C8D6C3] bg-white text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                   >
                     Next
                   </button>

@@ -435,7 +435,7 @@ export default function DoctorManagementView({
         );
       case "off-duty":
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F3F6F0] text-[#5A6372] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#5A6372] border border-[#C8D6C3]">
             <span className="w-2 h-2 rounded-full bg-[#727783]" />
             Off Duty
           </span>
@@ -476,11 +476,11 @@ export default function DoctorManagementView({
                 >
                   <span>Dashboard</span>
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#5A6372] whitespace-nowrap">
                   Clinical &amp; Facility
                 </span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   Doctors Directory
                 </span>
@@ -518,7 +518,7 @@ export default function DoctorManagementView({
 
             {/* Statistics Row */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <Stethoscope className="w-5 h-5" />
@@ -534,7 +534,7 @@ export default function DoctorManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#DFEEA9] text-[#2d3a08] flex items-center justify-center shrink-0">
                     <UserCheck className="w-5 h-5" />
@@ -550,7 +550,7 @@ export default function DoctorManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#FAE193] text-[#5e4300] flex items-center justify-center shrink-0">
                     <Activity className="w-5 h-5" />
@@ -566,7 +566,7 @@ export default function DoctorManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <Shield className="w-5 h-5" />
@@ -582,9 +582,9 @@ export default function DoctorManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#F3F6F0] text-[#5A6372] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#E3EBDD] text-[#5A6372] flex items-center justify-center shrink-0">
                     <Building2 className="w-5 h-5" />
                   </div>
                   <div>
@@ -600,10 +600,10 @@ export default function DoctorManagementView({
             </div>
 
             {/* Filter & Search Bar */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-4 shadow-sm mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
               {/* Search */}
               <div className="relative flex-1 min-w-[280px]">
-                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#727783]" />
+                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#667085]" />
                 <Input
                   type="text"
                   placeholder="Search by doctor name, specialty, department, license or room..."
@@ -619,7 +619,7 @@ export default function DoctorManagementView({
                 <select
                   value={selectedDeptFilter}
                   onChange={(e) => setSelectedDeptFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Departments</option>
                   {departments.map((d) => (
@@ -633,7 +633,7 @@ export default function DoctorManagementView({
                 <select
                   value={selectedStatusFilter}
                   onChange={(e) => setSelectedStatusFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Statuses</option>
                   <option value="active">Active Duty</option>
@@ -649,7 +649,7 @@ export default function DoctorManagementView({
                   className={`h-10 px-3.5 rounded-xl border text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
                     onlyOnCall
                       ? "bg-[#015CA9] text-white border-[#015CA9]"
-                      : "bg-[#F8FAF6] text-[#5A6372] border-[#DDE6DA] hover:bg-[#F3F6F0]"
+                      : "bg-[#E1E9DC] text-[#5A6372] border-[#C8D6C3] hover:bg-[#E6EDE2]"
                   }`}
                 >
                   <Shield className="w-4 h-4" />
@@ -657,14 +657,14 @@ export default function DoctorManagementView({
                 </button>
 
                 {/* Grid / List switch */}
-                <div className="flex items-center rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-1">
+                <div className="flex items-center rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-1">
                   <button
                     type="button"
                     onClick={() => setViewMode("grid")}
                     className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                       viewMode === "grid"
                         ? "bg-white text-[#015CA9] shadow-xs"
-                        : "text-[#727783] hover:text-[#1F2B46]"
+                        : "text-[#667085] hover:text-[#1F2B46]"
                     }`}
                     title="Grid View"
                   >
@@ -676,7 +676,7 @@ export default function DoctorManagementView({
                     className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                       viewMode === "table"
                         ? "bg-white text-[#015CA9] shadow-xs"
-                        : "text-[#727783] hover:text-[#1F2B46]"
+                        : "text-[#667085] hover:text-[#1F2B46]"
                     }`}
                     title="Table View"
                   >
@@ -688,7 +688,7 @@ export default function DoctorManagementView({
 
             {/* Doctors Grid / Table Content */}
             {filteredDoctors.length === 0 ? (
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl p-12 text-center flex flex-col items-center justify-center">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl p-12 shadow-[0_3px_10px_rgba(31,43,70,0.10)] text-center flex flex-col items-center justify-center">
                 <div className="w-16 h-16 rounded-full bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center mb-4">
                   <Stethoscope className="w-8 h-8" />
                 </div>
@@ -716,9 +716,9 @@ export default function DoctorManagementView({
                 {filteredDoctors.map((doc) => (
                   <Card
                     key={doc.id}
-                    className="hover:shadow-md transition-all border-[#DDE6DA] overflow-hidden flex flex-col"
+                    className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-all overflow-hidden flex flex-col"
                   >
-                    <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0] bg-[#FAFDF8]">
+                    <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3] bg-[#E6EDE2]">
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex items-center gap-3 min-w-0">
                           <div className="w-13 h-13 rounded-2xl bg-[#E1F2FD] border border-[#bce0fb] flex items-center justify-center overflow-hidden shrink-0 shadow-xs relative">
@@ -783,13 +783,13 @@ export default function DoctorManagementView({
                           {doc.secondarySpecialties.slice(0, 2).map((s) => (
                             <span
                               key={s}
-                              className="text-[11px] px-2 py-0.5 rounded-full bg-[#F3F6F0] text-[#5A6372] border border-[#DDE6DA]"
+                              className="text-[11px] px-2 py-0.5 rounded-full bg-[#E3EBDD] text-[#5A6372] border border-[#C8D6C3]"
                             >
                               {s}
                             </span>
                           ))}
                           {doc.secondarySpecialties.length > 2 && (
-                            <span className="text-[11px] text-[#727783]">
+                            <span className="text-[11px] text-[#667085]">
                               +{doc.secondarySpecialties.length - 2} more
                             </span>
                           )}
@@ -797,15 +797,15 @@ export default function DoctorManagementView({
                       </div>
 
                       {/* Consultation Room & Experience */}
-                      <div className="grid grid-cols-2 gap-2 p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] text-xs">
+                      <div className="grid grid-cols-2 gap-2 p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] text-xs">
                         <div>
-                          <span className="text-[#727783] block">OPD Suite</span>
+                          <span className="text-[#667085] block">OPD Suite</span>
                           <span className="font-semibold text-[#1F2B46] truncate block">
                             {doc.roomNumber}
                           </span>
                         </div>
                         <div>
-                          <span className="text-[#727783] block">Consultation</span>
+                          <span className="text-[#667085] block">Consultation</span>
                           <span className="font-semibold text-[#015CA9] block">
                             ₹{doc.consultationFee.toLocaleString()}
                           </span>
@@ -813,13 +813,13 @@ export default function DoctorManagementView({
                       </div>
 
                       {/* Weekly Availability Summary */}
-                      <div className="border-t border-[#F3F6F0] pt-3">
+                      <div className="border-t border-[#C8D6C3] pt-3">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-semibold text-[#5A6372] flex items-center gap-1.5">
                             <CalendarClock className="w-3.5 h-3.5 text-[#015CA9]" />
                             Weekly Availability
                           </span>
-                          <span className="text-[11px] text-[#727783]">
+                          <span className="text-[11px] text-[#667085]">
                             {
                               Object.values(doc.availabilitySchedule).filter(
                                 (s) => s.available
@@ -838,7 +838,7 @@ export default function DoctorManagementView({
                                 className={`flex-1 text-center py-1 rounded text-[11px] font-bold ${
                                   isAvail
                                     ? "bg-[#DFEEA9] text-[#2d3a08] border border-[#c5dd80]"
-                                    : "bg-[#F3F6F0] text-[#a0a5ad]"
+                                    : "bg-[#E3EBDD] text-[#667085]"
                                 }`}
                                 title={`${day}: ${
                                   isAvail
@@ -854,7 +854,7 @@ export default function DoctorManagementView({
                       </div>
 
                       {/* Card Actions */}
-                      <div className="flex items-center gap-2 pt-2 border-t border-[#F3F6F0]">
+                      <div className="flex items-center gap-2 pt-2 border-t border-[#C8D6C3]">
                         <Button
                           variant="outline"
                           size="sm"
@@ -888,10 +888,10 @@ export default function DoctorManagementView({
               </div>
             ) : (
               /* Table View */
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-sm overflow-hidden">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm">
-                    <thead className="bg-[#FAFDF8] border-b border-[#DDE6DA] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
+                    <thead className="bg-[#E6EDE2] border-b border-[#C5D2C0] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                       <tr>
                         <th className="py-3.5 px-4">Doctor</th>
                         <th className="py-3.5 px-4">Department &amp; Specialty</th>
@@ -902,11 +902,11 @@ export default function DoctorManagementView({
                         <th className="py-3.5 px-4 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#DDE6DA]">
+                    <tbody className="divide-y divide-[#C8D6C3]">
                       {filteredDoctors.map((doc) => (
                         <tr
                           key={doc.id}
-                          className="hover:bg-[#F8FAF6] transition-colors"
+                          className="hover:bg-[#E6EDE2] transition-colors"
                         >
                           <td className="py-3.5 px-4">
                             <div className="flex items-center gap-3">
@@ -1042,7 +1042,7 @@ export default function DoctorManagementView({
 
                 {/* Tab 1: Profile & Bio */}
                 <TabsContent value="overview" className="space-y-4">
-                  <div className="p-4 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] text-sm leading-relaxed text-[#1F2B46]">
+                  <div className="p-4 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] text-sm leading-relaxed text-[#1F2B46]">
                     <span className="font-semibold text-xs text-[#5A6372] uppercase tracking-wider block mb-1">
                       Professional Overview
                     </span>
@@ -1050,12 +1050,12 @@ export default function DoctorManagementView({
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-3.5 rounded-xl border border-[#DDE6DA] space-y-2">
+                    <div className="p-3.5 rounded-xl border border-[#C8D6C3] space-y-2">
                       <span className="text-xs text-[#5A6372] font-semibold uppercase tracking-wider block">
                         Credentials &amp; Licensing
                       </span>
                       <div className="text-sm">
-                        <span className="text-[#727783] block text-xs">
+                        <span className="text-[#667085] block text-xs">
                           Medical Qualifications
                         </span>
                         <span className="font-medium text-[#1F2B46]">
@@ -1063,7 +1063,7 @@ export default function DoctorManagementView({
                         </span>
                       </div>
                       <div className="text-sm">
-                        <span className="text-[#727783] block text-xs">
+                        <span className="text-[#667085] block text-xs">
                           Registration / License #
                         </span>
                         <span className="font-medium text-[#015CA9]">
@@ -1071,7 +1071,7 @@ export default function DoctorManagementView({
                         </span>
                       </div>
                       <div className="text-sm">
-                        <span className="text-[#727783] block text-xs">
+                        <span className="text-[#667085] block text-xs">
                           Clinical Experience
                         </span>
                         <span className="font-medium text-[#1F2B46]">
@@ -1080,7 +1080,7 @@ export default function DoctorManagementView({
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl border border-[#DDE6DA] space-y-2">
+                    <div className="p-3.5 rounded-xl border border-[#C8D6C3] space-y-2">
                       <span className="text-xs text-[#5A6372] font-semibold uppercase tracking-wider block">
                         Contact &amp; Administrative
                       </span>
@@ -1108,9 +1108,9 @@ export default function DoctorManagementView({
 
                 {/* Tab 2: Department & Specialties */}
                 <TabsContent value="department" className="space-y-4">
-                  <div className="p-4 rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] space-y-3">
+                  <div className="p-4 rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] space-y-3">
                     <div>
-                      <span className="text-xs text-[#727783] uppercase tracking-wider block">
+                      <span className="text-xs text-[#667085] uppercase tracking-wider block">
                         Primary Department
                       </span>
                       <h4 className="text-base font-bold text-[#1F2B46] mt-0.5">
@@ -1119,7 +1119,7 @@ export default function DoctorManagementView({
                     </div>
 
                     <div>
-                      <span className="text-xs text-[#727783] uppercase tracking-wider block mb-1">
+                      <span className="text-xs text-[#667085] uppercase tracking-wider block mb-1">
                         Primary Specialty
                       </span>
                       <Badge variant="default" className="text-xs">
@@ -1128,7 +1128,7 @@ export default function DoctorManagementView({
                     </div>
 
                     <div>
-                      <span className="text-xs text-[#727783] uppercase tracking-wider block mb-1">
+                      <span className="text-xs text-[#667085] uppercase tracking-wider block mb-1">
                         Secondary Specialties &amp; Clinical Sub-interests
                       </span>
                       <div className="flex flex-wrap gap-1.5">
@@ -1141,9 +1141,9 @@ export default function DoctorManagementView({
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 rounded-xl bg-white border border-[#DDE6DA]">
+                  <div className="flex items-center justify-between p-4 rounded-xl bg-white border border-[#C5D2C0]">
                     <div>
-                      <span className="text-xs text-[#727783] block">
+                      <span className="text-xs text-[#667085] block">
                         Standard Consultation Fee
                       </span>
                       <span className="text-lg font-bold text-[#015CA9]">
@@ -1166,7 +1166,7 @@ export default function DoctorManagementView({
 
                 {/* Tab 3: Schedule */}
                 <TabsContent value="schedule" className="space-y-3">
-                  <div className="border border-[#DDE6DA] rounded-xl overflow-hidden divide-y divide-[#DDE6DA]">
+                  <div className="border border-[#C8D6C3] rounded-xl overflow-hidden divide-y divide-[#C8D6C3]">
                     {DAYS_OF_WEEK.map((day) => {
                       const daySched = viewingDoctor.availabilitySchedule[day];
                       return (
@@ -1184,7 +1184,7 @@ export default function DoctorManagementView({
                                 {daySched.slots.length !== 1 ? "s" : ""})
                               </span>
                             ) : (
-                              <span className="text-xs px-2 py-0.5 rounded-full bg-[#F3F6F0] text-[#727783]">
+                              <span className="text-xs px-2 py-0.5 rounded-full bg-[#E3EBDD] text-[#667085]">
                                 Not Available
                               </span>
                             )}
@@ -1204,7 +1204,7 @@ export default function DoctorManagementView({
                                 ))}
                               </div>
                             ) : (
-                              <span className="text-xs text-[#727783] italic">
+                              <span className="text-xs text-[#667085] italic">
                                 Clinic Closed
                               </span>
                             )}
@@ -1267,7 +1267,7 @@ export default function DoctorManagementView({
               </DialogHeader>
 
               {/* Day selection tabs */}
-              <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-[#F3F6F0] rounded-xl border border-[#DDE6DA] mb-4">
+              <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-[#E3EBDD] rounded-xl border border-[#C8D6C3] mb-4">
                 {DAYS_OF_WEEK.map((day) => {
                   const isAvail = scheduleState[day]?.available;
                   const isSelected = activeScheduleDay === day;
@@ -1281,7 +1281,7 @@ export default function DoctorManagementView({
                           ? "bg-[#015CA9] text-white shadow-sm"
                           : isAvail
                           ? "bg-white text-[#1F2B46] hover:bg-[#E1F2FD]"
-                          : "text-[#727783] hover:bg-white/60"
+                          : "text-[#667085] hover:bg-[#E6EDE2]"
                       }`}
                     >
                       <span>{day.slice(0, 3)}</span>
@@ -1291,7 +1291,7 @@ export default function DoctorManagementView({
                             ? "bg-white/20 text-white"
                             : isAvail
                             ? "bg-[#DFEEA9] text-[#2d3a08]"
-                            : "bg-[#DDE6DA] text-[#5A6372]"
+                            : "bg-[#E1E9DC] text-[#5A6372]"
                         }`}
                       >
                         {isAvail ? `${scheduleState[day].slots.length}s` : "Off"}
@@ -1302,7 +1302,7 @@ export default function DoctorManagementView({
               </div>
 
               {/* Active Day Configuration */}
-              <div className="p-4 rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] mb-4 space-y-4">
+              <div className="p-4 rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] mb-4 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <h4 className="font-bold text-base text-[#1F2B46]">
@@ -1312,7 +1312,7 @@ export default function DoctorManagementView({
                       className={`text-xs px-2.5 py-0.5 rounded-full font-semibold ${
                         scheduleState[activeScheduleDay]?.available
                           ? "bg-[#DFEEA9] text-[#2d3a08] border border-[#c5dd80]"
-                          : "bg-[#F3F6F0] text-[#727783] border border-[#DDE6DA]"
+                          : "bg-[#E3EBDD] text-[#667085] border border-[#C8D6C3]"
                       }`}
                     >
                       {scheduleState[activeScheduleDay]?.available
@@ -1360,10 +1360,10 @@ export default function DoctorManagementView({
                       (slot, idx) => (
                         <div
                           key={slot.id}
-                          className="p-3 bg-white border border-[#DDE6DA] rounded-xl flex flex-col md:flex-row items-stretch md:items-center gap-3"
+                          className="p-3 bg-white border border-[#C8D6C3] rounded-xl flex flex-col md:flex-row items-stretch md:items-center gap-3"
                         >
                           <div className="flex-1">
-                            <label className="text-[11px] text-[#727783] font-semibold block mb-1">
+                            <label className="text-[11px] text-[#667085] font-semibold block mb-1">
                               Shift Label
                             </label>
                             <Input
@@ -1383,7 +1383,7 @@ export default function DoctorManagementView({
                           </div>
 
                           <div className="w-28">
-                            <label className="text-[11px] text-[#727783] font-semibold block mb-1">
+                            <label className="text-[11px] text-[#667085] font-semibold block mb-1">
                               Start Time
                             </label>
                             <Input
@@ -1402,7 +1402,7 @@ export default function DoctorManagementView({
                           </div>
 
                           <div className="w-28">
-                            <label className="text-[11px] text-[#727783] font-semibold block mb-1">
+                            <label className="text-[11px] text-[#667085] font-semibold block mb-1">
                               End Time
                             </label>
                             <Input
@@ -1421,7 +1421,7 @@ export default function DoctorManagementView({
                           </div>
 
                           <div className="w-24">
-                            <label className="text-[11px] text-[#727783] font-semibold block mb-1">
+                            <label className="text-[11px] text-[#667085] font-semibold block mb-1">
                               Max Patients
                             </label>
                             <Input
@@ -1458,7 +1458,7 @@ export default function DoctorManagementView({
                     )}
 
                     {scheduleState[activeScheduleDay].slots.length === 0 && (
-                      <p className="text-xs text-[#727783] italic text-center py-4 bg-white rounded-xl border border-[#DDE6DA]">
+                      <p className="text-xs text-[#667085] italic text-center py-4 bg-white rounded-xl border border-[#C8D6C3]">
                         No shifts configured for this day yet. Click &quot;Add Shift Slot&quot; to define OPD consultation hours.
                       </p>
                     )}
@@ -1517,7 +1517,7 @@ export default function DoctorManagementView({
                         setAssignmentPrimarySpec(dept.specialties[0]);
                       }
                     }}
-                    className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                    className="w-full h-10 px-3 bg-[#E1E9DC] border border-[#C8D6C3] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                   >
                     {departments.map((d) => (
                       <option key={d.id} value={d.id}>
@@ -1541,7 +1541,7 @@ export default function DoctorManagementView({
                       <select
                         value={assignmentPrimarySpec}
                         onChange={(e) => setAssignmentPrimarySpec(e.target.value)}
-                        className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                        className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                       >
                         {specs.map((s) => (
                           <option key={s} value={s}>
@@ -1822,7 +1822,7 @@ export default function DoctorManagementView({
                         dept?.specialties[0] || "General Practice",
                     });
                   }}
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   {departments.map((d) => (
                     <option key={d.id} value={d.id}>
@@ -1851,7 +1851,7 @@ export default function DoctorManagementView({
                           primarySpecialty: e.target.value,
                         })
                       }
-                      className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                      className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                     >
                       {specs.map((s) => (
                         <option key={s} value={s}>
@@ -1915,7 +1915,7 @@ export default function DoctorManagementView({
                     bio: e.target.value,
                   })
                 }
-                className="w-full px-3 py-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
+                className="w-full px-3 py-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
               />
             </div>
 

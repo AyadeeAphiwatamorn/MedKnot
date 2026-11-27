@@ -57,10 +57,10 @@ export default function PasswordInput({
 
       {/* Input wrapper */}
       <div
-        className={`relative rounded-xl border bg-white shadow-sm transition-all
+        className={`relative rounded-xl border-[1.5px] bg-[#F3F7F2] shadow-2xs transition-all
           ${hasError
-            ? 'border-red-400 ring-2 ring-red-200'
-            : 'border-slate-200 focus-within:border-[#015CA9] focus-within:ring-2 focus-within:ring-[#015CA9]/15'
+            ? 'border-red-500 ring-2 ring-red-200 focus-within:bg-white'
+            : 'border-[#AEBEAA] hover:border-[#8EA389] hover:bg-[#EEF4ED] focus-within:bg-white focus-within:border-[#0055A4] focus-within:ring-[3px] focus-within:ring-[#0055A4]/15'
           }`}
       >
         {/* Lock icon */}
@@ -94,7 +94,7 @@ export default function PasswordInput({
           required
           aria-invalid={hasError}
           aria-describedby={hasError ? `${id}-error` : undefined}
-          className="w-full rounded-xl bg-transparent py-3 pl-10 pr-11 text-sm text-slate-800 placeholder-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-xl bg-transparent py-3 pl-10 pr-11 text-sm text-[#1F2B46] placeholder-[#7C8998] focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
         />
 
         {/* Show / Hide toggle */}

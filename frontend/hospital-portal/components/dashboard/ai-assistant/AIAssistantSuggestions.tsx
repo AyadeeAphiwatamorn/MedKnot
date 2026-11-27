@@ -29,7 +29,7 @@ export function AIAssistantSuggestions({
             type="button"
             disabled={disabled}
             onClick={() => onSelect(prompt)}
-            className="text-left px-2.5 py-1.5 rounded-xl bg-white border border-[#D5DFD2] hover:border-[#0055A4] hover:bg-[#DCE7F1]/50 text-[11.5px] font-medium text-[#1F2B46] hover:text-[#0055A4] transition-all shadow-2xs disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+            className="text-left px-2.5 py-1.5 rounded-xl bg-[#E6EDE2] border border-[#C8D6C3] hover:border-[#0055A4] hover:bg-[#DCE7F1] text-[11.5px] font-medium text-[#1F2B46] hover:text-[#0055A4] transition-all shadow-2xs disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             {prompt}
           </button>

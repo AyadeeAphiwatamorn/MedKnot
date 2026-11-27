@@ -107,8 +107,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
     return (
       <div className="w-full min-w-0 flex-1 bg-transparent text-[#1F2B46] font-sans antialiased flex flex-col">
         <main className="w-full min-w-0 p-4 md:p-8 flex-1 flex items-center justify-center">
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl p-8 max-w-md text-center shadow-xs">
-            <span className="material-symbols-outlined text-4xl text-[#727783] mb-3">person_off</span>
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl p-8 max-w-md text-center shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <span className="material-symbols-outlined text-4xl text-[#667085] mb-3">person_off</span>
             <h2 className="text-lg font-bold text-[#1F2B46]">Patient Record Not Found</h2>
             <p className="text-xs text-[#5A6372] mt-1 mb-4">
               The requested patient ID &quot;{patientId}&quot; is not registered under St. Jude Medical Center (North Campus).
@@ -266,7 +266,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
           </nav>
 
           {/* Section A: Patient Header Bar */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 rounded-2xl bg-[#EAF5E2] text-[#2D6A28] border border-[#C5E4BA] font-bold text-xl flex items-center justify-center shrink-0 shadow-xs">
                 {initials}
@@ -302,7 +302,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               <button
                 type="button"
                 onClick={() => setIsScheduleModalOpen(true)}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#DDE6DA] bg-[#F3F6F0] hover:bg-[#E8EFE5] text-[#1F2B46] text-xs font-semibold shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] hover:bg-[#D5E0D2] text-[#1F2B46] text-xs font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 <span className="material-symbols-outlined text-base text-[#0055A4]">calendar_today</span>
                 <span>Schedule Appointment</span>
@@ -319,7 +319,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
 
               <Link
                 href="/dashboard/patients"
-                className="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-xl border border-[#DDE6DA] bg-white hover:bg-[#F3F6F0] text-[#5A6372] text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-xl border border-[#C8D6C3] bg-white hover:bg-[#E6EDE2] text-[#5A6372] text-xs font-semibold transition-colors"
                 title="Back to directory"
               >
                 <span className="material-symbols-outlined text-base">arrow_back</span>
@@ -330,7 +330,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
 
           {/* Section C: Care Overview Bento Metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Total Appointments</span>
                 <span className="w-8 h-8 rounded-lg bg-[#E7F0FF] text-[#0055A4] flex items-center justify-center">
@@ -343,7 +343,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               </div>
             </div>
 
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Completed Visits</span>
                 <span className="w-8 h-8 rounded-lg bg-[#EAF5E2] text-[#2D6A28] flex items-center justify-center">
@@ -356,7 +356,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               </div>
             </div>
 
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Upcoming Appointments</span>
                 <span className="w-8 h-8 rounded-lg bg-[#FFF4E5] text-[#B76E00] flex items-center justify-center">
@@ -369,10 +369,10 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               </div>
             </div>
 
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-5 shadow-xs">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#5A6372]">Last Visit</span>
-                <span className="w-8 h-8 rounded-lg bg-[#F3F6F0] text-[#1F2B46] flex items-center justify-center">
+                <span className="w-8 h-8 rounded-lg bg-[#E3EBDD] text-[#1F2B46] flex items-center justify-center">
                   <span className="material-symbols-outlined text-lg">history</span>
                 </span>
               </div>
@@ -384,7 +384,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
           </div>
 
           {/* Navigation Tabs */}
-          <div className="border-b border-[#DDE6DA] flex items-center gap-2 overflow-x-auto">
+          <div className="border-b border-[#C8D6C3] flex items-center gap-2 overflow-x-auto">
             <button
               onClick={() => setActiveTab("overview")}
               className={`px-4 py-3 text-xs font-bold transition-all border-b-2 flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
@@ -454,8 +454,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               {/* Left 2 Cols: Personal & Contact */}
               <div className="lg:col-span-2 space-y-6">
                 {/* Personal & Demographics */}
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-                  <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-3">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+                  <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-3">
                     <div className="flex items-center gap-2">
                       <span className="material-symbols-outlined text-[#0055A4]">badge</span>
                       <h2 className="text-sm font-bold text-[#1F2B46]">Personal & Demographic Information</h2>
@@ -492,8 +492,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                 </div>
 
                 {/* Contact & Address */}
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-                  <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-3">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+                  <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-3">
                     <div className="flex items-center gap-2">
                       <span className="material-symbols-outlined text-[#0055A4]">location_on</span>
                       <h2 className="text-sm font-bold text-[#1F2B46]">Contact & Location Details</h2>
@@ -519,8 +519,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                 </div>
 
                 {/* Emergency Contact */}
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-                  <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-3">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+                  <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-3">
                     <span className="material-symbols-outlined text-[#BA1A1A]">emergency</span>
                     <h2 className="text-sm font-bold text-[#1F2B46]">Emergency Contact Information</h2>
                   </div>
@@ -545,8 +545,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               {/* Right Column: Clinical Profile, Allergies, Notes */}
               <div className="space-y-6">
                 {/* Allergies & Conditions */}
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-                  <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-3">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+                  <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-3">
                     <span className="material-symbols-outlined text-[#B76E00]">warning</span>
                     <h2 className="text-sm font-bold text-[#1F2B46]">Clinical Alerts & Allergies</h2>
                   </div>
@@ -581,31 +581,31 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                         {facilityRecord.medicalConditions.map((cond, i) => (
                           <span
                             key={i}
-                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-[#F1F5EF] text-[#1F2B46] border border-[#D5DFD2]"
+                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-[#E3EBDD] text-[#1F2B46] border border-[#C8D6C3]"
                           >
                             {cond}
                           </span>
                         ))}
                       </div>
                     ) : (
-                      <span className="text-xs text-[#727783] italic">No active chronic conditions noted.</span>
+                      <span className="text-xs text-[#667085] italic">No active chronic conditions noted.</span>
                     )}
                   </div>
                 </div>
 
                 {/* Primary Care Details */}
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-3 text-xs">
-                  <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-3">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-3 text-xs">
+                  <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-3">
                     <span className="material-symbols-outlined text-[#0055A4]">medical_services</span>
                     <h2 className="text-sm font-bold text-[#1F2B46]">Primary Care Team</h2>
                   </div>
 
-                  <div className="flex justify-between py-1 border-b border-[#DDE6DA]">
+                  <div className="flex justify-between py-1 border-b border-[#C8D6C3]">
                     <span className="text-[#5A6372]">Primary Department:</span>
                     <span className="font-semibold text-[#1F2B46]">{facilityRecord.primaryDepartment || "General OPD"}</span>
                   </div>
 
-                  <div className="flex justify-between py-1 border-b border-[#DDE6DA]">
+                  <div className="flex justify-between py-1 border-b border-[#C8D6C3]">
                     <span className="text-[#5A6372]">Attending Physician:</span>
                     <span className="font-semibold text-[#0055A4]">{facilityRecord.primaryDoctor || "Rotating Physician"}</span>
                   </div>
@@ -617,8 +617,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                 </div>
 
                 {/* Administrative Notes */}
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-2">
-                  <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-2">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-2">
+                  <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-2">
                     <span className="material-symbols-outlined text-[#5A6372]">notes</span>
                     <h2 className="text-xs font-bold uppercase tracking-wider text-[#5A6372]">Registration Notes</h2>
                   </div>
@@ -632,8 +632,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
 
           {/* TAB 2: APPOINTMENTS */}
           {activeTab === "appointments" && (
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-xs overflow-hidden">
-              <div className="p-5 border-b border-[#DDE6DA] flex items-center justify-between">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
+              <div className="p-5 border-b border-[#C8D6C3] flex items-center justify-between">
                 <div>
                   <h3 className="text-sm font-bold text-[#1F2B46]">Patient Appointments</h3>
                   <p className="text-xs text-[#5A6372]">Scheduled and historical clinic bookings</p>
@@ -655,7 +655,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               ) : (
                 <table className="w-full text-left text-sm">
                   <thead>
-                    <tr className="bg-[#F3F6F0] border-b border-[#DDE6DA] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
+                    <tr className="bg-[#E3EBDD] border-b border-[#C8D6C3] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
                       <th className="py-3 px-5">Date & Time</th>
                       <th className="py-3 px-5">Attending Doctor</th>
                       <th className="py-3 px-4">Department</th>
@@ -664,9 +664,9 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                       <th className="py-3 px-5">Clinical Instructions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#DDE6DA] text-xs">
+                  <tbody className="divide-y divide-[#C8D6C3] text-xs">
                     {appointments.map((apt) => (
-                      <tr key={apt.id} className="hover:bg-[#F9FBF8]">
+                      <tr key={apt.id} className="hover:bg-[#E6EDE2]">
                         <td className="py-3.5 px-5 font-semibold text-[#1F2B46]">
                           {apt.appointmentDate} • <span className="font-normal text-[#5A6372]">{apt.time}</span>
                         </td>
@@ -699,13 +699,13 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
           {activeTab === "visits" && (
             <div className="space-y-4">
               {visits.length === 0 ? (
-                <div className="bg-white border border-[#DDE6DA] rounded-2xl p-12 text-center text-xs text-[#5A6372]">
+                <div className="bg-white border border-[#C5D2C0] rounded-2xl p-12 text-center text-xs text-[#5A6372]">
                   No historical visits recorded at this facility.
                 </div>
               ) : (
                 visits.map((vis) => (
-                  <div key={vis.id} className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-3">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#DDE6DA] pb-3">
+                  <div key={vis.id} className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#C8D6C3] pb-3">
                       <div>
                         <span className="text-xs font-bold text-[#0055A4] uppercase tracking-wider block">
                           Encounter Date: {vis.visitDate}
@@ -721,7 +721,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
 
                     {/* Vitals Grid */}
                     {vis.vitals && (
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#F1F5EF] p-3 rounded-xl text-xs">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#E3EBDD] p-3 rounded-xl text-xs">
                         <div>
                           <span className="text-[#5A6372] block">Blood Pressure</span>
                           <span className="font-semibold text-[#1F2B46]">{vis.vitals.bloodPressure || "—"}</span>
@@ -744,7 +744,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     {/* Visit Summary */}
                     <div>
                       <span className="text-xs font-semibold text-[#5A6372] block mb-1">Clinical Encounter Summary:</span>
-                      <p className="text-xs text-[#374151] leading-relaxed bg-[#F9FBF8] p-3.5 rounded-xl border border-[#DDE6DA]">
+                      <p className="text-xs text-[#374151] leading-relaxed bg-[#E6EDE2] p-3.5 rounded-xl border border-[#C8D6C3]">
                         {vis.visitSummary}
                       </p>
                     </div>
@@ -756,8 +756,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
 
           {/* TAB 4: MEDICAL DOCUMENTS */}
           {activeTab === "documents" && (
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-xs overflow-hidden space-y-0">
-              <div className="p-5 border-b border-[#DDE6DA] flex items-center justify-between">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden space-y-0">
+              <div className="p-5 border-b border-[#C8D6C3] flex items-center justify-between">
                 <div>
                   <h3 className="text-sm font-bold text-[#1F2B46]">Authorized Medical Documents</h3>
                   <p className="text-xs text-[#5A6372]">Clinical files, diagnostic scans, and verified prescriptions</p>
@@ -773,7 +773,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               </div>
 
               {/* AI Verification Notice */}
-              <div className="px-5 py-3 bg-[#F1F5EF] border-b border-[#DDE6DA] text-xs text-[#5A6372] flex items-center gap-2">
+              <div className="px-5 py-3 bg-[#E3EBDD] border-b border-[#C8D6C3] text-xs text-[#5A6372] flex items-center gap-2">
                 <span className="material-symbols-outlined text-xs text-[#0055A4]">info</span>
                 <span>
                   <strong>Clinical Policy:</strong> AI-extracted document metadata is preliminary and requires clinician
@@ -788,7 +788,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
               ) : (
                 <table className="w-full text-left text-sm">
                   <thead>
-                    <tr className="bg-[#F3F6F0] border-b border-[#DDE6DA] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
+                    <tr className="bg-[#E3EBDD] border-b border-[#C8D6C3] text-[11px] font-bold uppercase tracking-wider text-[#5A6372]">
                       <th className="py-3 px-5">Document Name</th>
                       <th className="py-3 px-4">Document Type</th>
                       <th className="py-3 px-4">Uploaded Date</th>
@@ -797,15 +797,15 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                       <th className="py-3 px-5 text-right">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#DDE6DA] text-xs">
+                  <tbody className="divide-y divide-[#C8D6C3] text-xs">
                     {documents.map((doc) => (
-                      <tr key={doc.id} className="hover:bg-[#F9FBF8]">
+                      <tr key={doc.id} className="hover:bg-[#E6EDE2]">
                         <td className="py-3.5 px-5">
                           <div className="flex items-center gap-2.5">
                             <span className="material-symbols-outlined text-red-600 text-xl">picture_as_pdf</span>
                             <div>
                               <span className="font-semibold text-[#1F2B46] block">{doc.documentName}</span>
-                              <span className="text-[11px] text-[#727783]">{doc.fileSize}</span>
+                              <span className="text-[11px] text-[#667085]">{doc.fileSize}</span>
                             </div>
                           </div>
                         </td>
@@ -832,29 +832,29 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
 
           {/* TAB 5: HEALTH TIMELINE */}
           {activeTab === "timeline" && (
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-6">
-              <div className="border-b border-[#DDE6DA] pb-3">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-6">
+              <div className="border-b border-[#C8D6C3] pb-3">
                 <h3 className="text-sm font-bold text-[#1F2B46]">Patient Health Timeline</h3>
                 <p className="text-xs text-[#5A6372]">
                   Chronological progression of registrations, visits, and clinical milestones
                 </p>
               </div>
 
-              <div className="relative pl-6 space-y-8 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-[#DDE6DA]">
+              <div className="relative pl-6 space-y-8 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-[#C8D6C3]">
                 {timeline.map((event) => (
                   <div key={event.id} className="relative group">
                     {/* Event Circle Dot */}
-                    <div className="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-[#0055A4] text-white flex items-center justify-center ring-4 ring-[#EDF2E9]">
+                    <div className="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-[#0055A4] text-white flex items-center justify-center ring-4 ring-[#E3EBDD]">
                       <span className="material-symbols-outlined text-[12px]">{event.icon}</span>
                     </div>
 
-                    <div className="bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl p-4 shadow-2xs space-y-1">
+                    <div className="bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl p-4 shadow-2xs space-y-1">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                         <h4 className="text-xs font-bold text-[#1F2B46]">{event.title}</h4>
                         <span className="text-[11px] font-mono text-[#5A6372]">{event.timestamp}</span>
                       </div>
                       <p className="text-xs text-[#374151] leading-relaxed">{event.description}</p>
-                      <div className="pt-1 text-[11px] text-[#727783] flex items-center gap-1">
+                      <div className="pt-1 text-[11px] text-[#667085] flex items-center gap-1">
                         <span className="material-symbols-outlined text-xs text-[#0055A4]">account_circle</span>
                         <span>Logged by: {event.actor}</span>
                       </div>
@@ -872,8 +872,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
       {/* ========================================================================= */}
       {isEditModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4]">edit_note</span>
                 <h3 className="text-base font-bold text-[#1F2B46]">Edit Patient Record</h3>
@@ -895,7 +895,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     type="text"
                     value={editFormData.firstName}
                     onChange={(e) => setEditFormData({ ...editFormData, firstName: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                     required
                   />
                 </div>
@@ -905,7 +905,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     type="text"
                     value={editFormData.lastName}
                     onChange={(e) => setEditFormData({ ...editFormData, lastName: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                     required
                   />
                 </div>
@@ -915,7 +915,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     type="tel"
                     value={editFormData.phoneNumber}
                     onChange={(e) => setEditFormData({ ...editFormData, phoneNumber: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                     required
                   />
                 </div>
@@ -925,7 +925,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     type="email"
                     value={editFormData.email}
                     onChange={(e) => setEditFormData({ ...editFormData, email: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                   />
                 </div>
                 <div>
@@ -933,7 +933,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                   <select
                     value={editFormData.bloodGroup}
                     onChange={(e) => setEditFormData({ ...editFormData, bloodGroup: e.target.value as BloodGroup })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                   >
                     <option value="Unknown">Unknown</option>
                     <option value="A+">A+</option>
@@ -952,7 +952,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     type="text"
                     value={editFormData.city}
                     onChange={(e) => setEditFormData({ ...editFormData, city: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                   />
                 </div>
                 <div className="sm:col-span-2">
@@ -961,7 +961,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     type="text"
                     value={editFormData.address}
                     onChange={(e) => setEditFormData({ ...editFormData, address: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                   />
                 </div>
                 <div className="sm:col-span-2">
@@ -970,16 +970,16 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     type="text"
                     value={editFormData.knownAllergies}
                     onChange={(e) => setEditFormData({ ...editFormData, knownAllergies: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                   />
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-[#DDE6DA] flex justify-end gap-2">
+              <div className="pt-3 border-t border-[#C8D6C3] flex justify-end gap-2">
                 <button
                   type="button"
                   onClick={() => setIsEditModalOpen(false)}
-                  className="px-4 py-2 rounded-xl border border-[#DDE6DA] text-[#5A6372] hover:bg-[#F3F6F0]"
+                  className="px-4 py-2 rounded-xl border border-[#C8D6C3] text-[#5A6372] hover:bg-[#E6EDE2]"
                 >
                   Cancel
                 </button>
@@ -1000,8 +1000,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
       {/* ========================================================================= */}
       {isScheduleModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-md overflow-hidden text-xs">
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-md overflow-hidden text-xs">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4]">calendar_today</span>
                 <h3 className="text-base font-bold text-[#1F2B46]">Schedule Appointment</h3>
@@ -1026,7 +1026,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                 <select
                   value={appointmentFormData.doctor}
                   onChange={(e) => setAppointmentFormData({ ...appointmentFormData, doctor: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                 >
                   <option value="Dr. Chen Wei">Dr. Chen Wei (Internal Medicine)</option>
                   <option value="Dr. Sarah Thomas">Dr. Sarah Thomas (Cardiology)</option>
@@ -1043,7 +1043,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                     value={appointmentFormData.date}
                     onChange={(e) => setAppointmentFormData({ ...appointmentFormData, date: e.target.value })}
                     required
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                   />
                 </div>
                 <div>
@@ -1051,7 +1051,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                   <select
                     value={appointmentFormData.time}
                     onChange={(e) => setAppointmentFormData({ ...appointmentFormData, time: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                    className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                   >
                     <option value="09:00 AM">09:00 AM</option>
                     <option value="10:00 AM">10:00 AM</option>
@@ -1069,15 +1069,15 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                   value={appointmentFormData.notes}
                   onChange={(e) => setAppointmentFormData({ ...appointmentFormData, notes: e.target.value })}
                   placeholder="Routine follow-up, lab review..."
-                  className="w-full px-3 py-2 rounded-xl border border-[#DDE6DA] text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-[#AEBEAA] text-sm"
                 />
               </div>
 
-              <div className="pt-2 flex justify-end gap-2 border-t border-[#DDE6DA]">
+              <div className="pt-2 flex justify-end gap-2 border-t border-[#C8D6C3]">
                 <button
                   type="button"
                   onClick={() => setIsScheduleModalOpen(false)}
-                  className="px-4 py-2 rounded-xl border border-[#DDE6DA] text-[#5A6372] hover:bg-[#F3F6F0]"
+                  className="px-4 py-2 rounded-xl border border-[#C8D6C3] text-[#5A6372] hover:bg-[#E6EDE2]"
                 >
                   Cancel
                 </button>
@@ -1098,8 +1098,8 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
       {/* ========================================================================= */}
       {previewDoc && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-          <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-lg overflow-hidden text-xs">
-            <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+          <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-lg overflow-hidden text-xs">
+            <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4]">description</span>
                 <h3 className="text-base font-bold text-[#1F2B46]">Document Record</h3>
@@ -1114,7 +1114,7 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
             </div>
 
             <div className="p-6 space-y-4">
-              <div className="flex items-center gap-3 p-3 bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl">
+              <div className="flex items-center gap-3 p-3 bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl">
                 <span className="material-symbols-outlined text-red-600 text-3xl">picture_as_pdf</span>
                 <div>
                   <span className="font-bold text-[#1F2B46] block text-sm">{previewDoc.documentName}</span>
@@ -1122,12 +1122,12 @@ export default function PatientDetailView({ patientId, initialUser }: PatientDet
                 </div>
               </div>
 
-              <div className="space-y-2 border border-[#DDE6DA] p-3 rounded-xl bg-[#F3F6F0]">
-                <div className="flex justify-between py-1 border-b border-[#DDE6DA]">
+              <div className="space-y-2 border border-[#C8D6C3] p-3 rounded-xl bg-[#E3EBDD]">
+                <div className="flex justify-between py-1 border-b border-[#C8D6C3]">
                   <span className="text-[#5A6372]">Uploaded Date:</span>
                   <span className="font-medium text-[#1F2B46]">{previewDoc.uploadedDate}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-[#DDE6DA]">
+                <div className="flex justify-between py-1 border-b border-[#C8D6C3]">
                   <span className="text-[#5A6372]">Uploaded By:</span>
                   <span className="font-medium text-[#1F2B46]">{previewDoc.uploadedBy}</span>
                 </div>

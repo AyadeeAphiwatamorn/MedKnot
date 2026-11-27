@@ -124,12 +124,12 @@ export function NotificationPanel({
 
   return (
     <div
-      className="absolute right-0 top-full mt-2 w-96 max-w-[calc(100vw-2rem)] sm:w-[420px] bg-white rounded-2xl border border-[#D5DFD2] shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95"
+      className="absolute right-0 top-full mt-2 w-96 max-w-[calc(100vw-2rem)] sm:w-[420px] bg-white rounded-2xl border border-[#C5D2C0] shadow-[0_12px_36px_rgba(31,43,70,0.20)] z-50 overflow-hidden animate-in fade-in zoom-in-95"
       role="region"
       aria-label="Notification Center"
     >
       {/* Header */}
-      <div className="p-4 border-b border-[#DDE6DA] bg-[#F8FAF6]">
+      <div className="p-4 border-b border-[#C5D2C0] bg-[#E6EDE2]">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h2 className="text-base font-bold text-[#1F2B46] tracking-tight">Notifications</h2>
@@ -138,7 +138,7 @@ export function NotificationPanel({
                 {unreadCount} New
               </span>
             ) : (
-              <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#E8EFE5] text-[#5A6372]">
+              <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#D5E0D2] text-[#1F2B46] border border-[#C8D6C3]">
                 All Caught Up
               </span>
             )}
@@ -157,7 +157,7 @@ export function NotificationPanel({
             )}
             <button
               onClick={onClose}
-              className="p-1 rounded-lg text-[#5A6372] hover:bg-[#E8EFE5] hover:text-[#1F2B46] transition-colors cursor-pointer"
+              className="p-1 rounded-lg text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46] transition-colors cursor-pointer"
               aria-label="Close notification panel"
             >
               <X className="w-4 h-4" />
@@ -166,13 +166,13 @@ export function NotificationPanel({
         </div>
 
         {/* Filter Tabs */}
-        <div className="mt-3 flex items-center gap-2 border-t border-[#DDE6DA]/70 pt-2.5">
+        <div className="mt-3 flex items-center gap-2 border-t border-[#C8D6C3] pt-2.5">
           <button
             onClick={() => setActiveTab("all")}
             className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
               activeTab === "all"
                 ? "bg-[#0055A4] text-white shadow-2xs"
-                : "text-[#5A6372] hover:bg-[#E8EFE5] hover:text-[#1F2B46]"
+                : "text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46]"
             }`}
           >
             All ({notifications.length})
@@ -182,7 +182,7 @@ export function NotificationPanel({
             className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
               activeTab === "unread"
                 ? "bg-[#0055A4] text-white shadow-2xs"
-                : "text-[#5A6372] hover:bg-[#E8EFE5] hover:text-[#1F2B46]"
+                : "text-[#5A6372] hover:bg-[#D5E0D2] hover:text-[#1F2B46]"
             }`}
           >
             <span>Unread</span>
@@ -200,14 +200,14 @@ export function NotificationPanel({
       </div>
 
       {/* Notifications List */}
-      <div className="max-h-[420px] overflow-y-auto divide-y divide-[#DDE6DA]/60">
+      <div className="max-h-[420px] overflow-y-auto divide-y divide-[#C8D6C3]">
         {filteredNotifications.length === 0 ? (
           <div className="p-8 text-center flex flex-col items-center justify-center">
-            <div className="w-12 h-12 rounded-2xl bg-[#F1F5EF] flex items-center justify-center text-[#5A6372] mb-3">
+            <div className="w-12 h-12 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-center justify-center text-[#5A6372] mb-3">
               <Bell className="w-6 h-6" />
             </div>
             <h3 className="text-sm font-bold text-[#1F2B46]">No notifications found</h3>
-            <p className="text-xs text-[#5A6372] mt-1 max-w-xs">
+            <p className="text-xs text-[#667085] mt-1 max-w-xs">
               {activeTab === "unread"
                 ? "You have addressed all pending clinical and operational alerts."
                 : "There are currently no notifications logged for this hospital portal."}
@@ -219,11 +219,11 @@ export function NotificationPanel({
               key={item.id}
               onClick={() => handleNotificationClick(item)}
               className={`p-3.5 transition-colors cursor-pointer group flex items-start gap-3 relative ${
-                item.read ? "bg-white hover:bg-[#F8FAF6]" : "bg-[#F3F6F0]/70 hover:bg-[#EBF1E8]"
+                item.read ? "bg-white hover:bg-[#E6EDE2]" : "bg-[#E3EBDD] hover:bg-[#D5E0D2]"
               }`}
             >
               {/* Category Icon */}
-              <div className="mt-0.5 w-8 h-8 rounded-xl bg-white border border-[#DDE6DA] flex items-center justify-center shrink-0 shadow-2xs">
+              <div className="mt-0.5 w-8 h-8 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-center shrink-0 shadow-2xs">
                 {getCategoryIcon(item.category)}
               </div>
 
@@ -263,7 +263,7 @@ export function NotificationPanel({
                 ) : (
                   <button
                     onClick={(e) => handleDismiss(e, item.id)}
-                    className="opacity-0 group-hover:opacity-100 p-1 text-[#5A6372] hover:text-[#BA1A1A] hover:bg-[#F1F5EF] rounded-md transition-all"
+                    className="opacity-0 group-hover:opacity-100 p-1 text-[#667085] hover:text-[#BA1A1A] hover:bg-[#D5E0D2] rounded-md transition-all"
                     title="Dismiss notification"
                   >
                     <X className="w-3.5 h-3.5" />
@@ -276,7 +276,7 @@ export function NotificationPanel({
       </div>
 
       {/* Footer */}
-      <div className="p-3 border-t border-[#DDE6DA] bg-[#F8FAF6] flex items-center justify-between text-xs">
+      <div className="p-3 border-t border-[#C5D2C0] bg-[#E6EDE2] flex items-center justify-between text-xs">
         <Link
           href="/dashboard/tasks"
           onClick={onClose}

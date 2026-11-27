@@ -127,9 +127,9 @@ export default function OperationalReportsView({
                 >
                   <span>Dashboard</span>
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#5A6372] whitespace-nowrap">Operations</span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   Operational Analytics &amp; Reports
                 </span>
@@ -156,7 +156,7 @@ export default function OperationalReportsView({
                   <select
                     value={dateRange}
                     onChange={(e) => setDateRange(e.target.value)}
-                    className="h-10 px-3 bg-white border border-[#DDE6DA] rounded-xl text-xs font-semibold text-[#1F2B46] outline-none shadow-xs"
+                    className="h-10 px-3 bg-white border border-[#AEBEAA] rounded-xl text-xs font-semibold text-[#1F2B46] outline-none shadow-xs"
                   >
                     <option value="last-7-days">Last 7 Days (Oct 18–24)</option>
                     <option value="month-to-date">Month to Date (October 2025)</option>
@@ -181,7 +181,7 @@ export default function OperationalReportsView({
 
             {/* KPI Metrics Row */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <Calendar className="w-5 h-5" />
@@ -197,7 +197,7 @@ export default function OperationalReportsView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#DFEEA9] text-[#2d3a08] flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
@@ -213,7 +213,7 @@ export default function OperationalReportsView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#FAE193] text-[#5e4300] flex items-center justify-center shrink-0">
                     <Activity className="w-5 h-5" />
@@ -229,7 +229,7 @@ export default function OperationalReportsView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#A3C8B4]/40 text-[#173e2d] flex items-center justify-center shrink-0">
                     <Users className="w-5 h-5 text-[#214539]" />
@@ -248,8 +248,8 @@ export default function OperationalReportsView({
 
             {/* ── CHART SECTION 1: APPOINTMENT VOLUME TRENDS ──────────── */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
-              <Card className="lg:col-span-8 bg-white border-[#DDE6DA] shadow-sm">
-                <CardHeader className="p-5 pb-2 border-b border-[#F3F6F0]">
+              <Card className="lg:col-span-8">
+                <CardHeader className="p-5 pb-2 border-b border-[#C8D6C3]">
                   <div className="flex items-center justify-between">
                     <div>
                       <CardTitle className="text-base text-[#1F2B46] flex items-center gap-2">
@@ -325,8 +325,8 @@ export default function OperationalReportsView({
               </Card>
 
               {/* Weekly Highlights Card */}
-              <Card className="lg:col-span-4 bg-white border-[#DDE6DA] shadow-sm flex flex-col justify-between">
-                <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0]">
+              <Card className="lg:col-span-4 flex flex-col justify-between">
+                <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3]">
                   <CardTitle className="text-base text-[#1F2B46]">
                     Throughput Key Highlights
                   </CardTitle>
@@ -353,7 +353,7 @@ export default function OperationalReportsView({
                     </p>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] space-y-1">
+                  <div className="p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] space-y-1">
                     <span className="font-bold text-[#1F2B46] block">
                       Weekend Schedule Optimization
                     </span>
@@ -368,8 +368,8 @@ export default function OperationalReportsView({
             {/* ── CHART SECTION 2 & 3: QUEUE WAIT TIMES & WORKLOAD ──────── */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               {/* Queue Wait Times Chart */}
-              <Card className="lg:col-span-6 bg-white border-[#DDE6DA] shadow-sm">
-                <CardHeader className="p-5 pb-2 border-b border-[#F3F6F0]">
+              <Card className="lg:col-span-6">
+                <CardHeader className="p-5 pb-2 border-b border-[#C8D6C3]">
                   <div className="flex items-center justify-between">
                     <div>
                       <CardTitle className="text-base text-[#1F2B46] flex items-center gap-2">
@@ -426,8 +426,8 @@ export default function OperationalReportsView({
               </Card>
 
               {/* Department Workload Distribution */}
-              <Card className="lg:col-span-6 bg-white border-[#DDE6DA] shadow-sm">
-                <CardHeader className="p-5 pb-2 border-b border-[#F3F6F0]">
+              <Card className="lg:col-span-6">
+                <CardHeader className="p-5 pb-2 border-b border-[#C8D6C3]">
                   <div className="flex items-center justify-between">
                     <div>
                       <CardTitle className="text-base text-[#1F2B46] flex items-center gap-2">
@@ -454,7 +454,7 @@ export default function OperationalReportsView({
                             <span className="font-bold text-[#1F2B46]">
                               {dept.name} ({dept.departmentCode})
                             </span>
-                            <span className="text-[#727783]">
+                            <span className="text-[#667085]">
                               • {dept.physiciansOnDuty} Doctors on Duty
                             </span>
                           </div>
@@ -464,7 +464,7 @@ export default function OperationalReportsView({
                           </span>
                         </div>
 
-                        <div className="w-full h-2 bg-[#E2E8DE] rounded-full overflow-hidden">
+                        <div className="w-full h-2 bg-[#E1E9DC] rounded-full overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all duration-300"
                             style={{

@@ -167,11 +167,11 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
             <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
             <span>Intake Booking</span>
           </span>
@@ -179,7 +179,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
       </div>
 
       {/* Header Banner matching Overview */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
@@ -195,7 +195,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
 
           <Link
             href="/dashboard/appointments"
-            className="flex items-center gap-1.5 rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors shadow-2xs"
+            className="flex items-center gap-1.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors shadow-2xs"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>Back to Appointments</span>
@@ -206,8 +206,8 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
       {/* Main Form Container */}
       <form onSubmit={handleValidateAndOpenConfirm} className="space-y-6">
         {/* SECTION A: Patient Identification */}
-        <div className="rounded-2xl border border-[#D5DFD2] bg-white p-6 shadow-xs">
-          <div className="flex items-center gap-2.5 border-b border-[#D5DFD2] pb-4">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+          <div className="flex items-center gap-2.5 border-b border-[#C8D6C3] pb-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0055A4]/10 text-[#0055A4]">
               <UserSearch className="h-4 w-4" />
             </div>
@@ -239,19 +239,19 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
                       setSelectedPatient(null);
                     }
                   }}
-                  className="w-full rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] py-2.5 pl-10 pr-4 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                  className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] py-2.5 pl-10 pr-4 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
                 />
               </div>
 
               {/* Suggestions */}
               {!selectedPatient && searchedPatients.length > 0 && (
-                <div className="mt-2 divide-y divide-[#D5DFD2] rounded-xl border border-[#D5DFD2] bg-white shadow-xs overflow-hidden">
+                <div className="mt-2 divide-y divide-[#C8D6C3] rounded-xl border border-[#C8D6C3] bg-white shadow-xs overflow-hidden">
                   {searchedPatients.map((item) => (
                     <button
                       type="button"
                       key={item.facilityRecord.facilityPatientId}
                       onClick={() => handleSelectPatient(item)}
-                      className="flex w-full items-center justify-between p-3 text-left hover:bg-[#F1F5EF] transition-colors"
+                      className="flex w-full items-center justify-between p-3 text-left hover:bg-[#E6EDE2] transition-colors"
                     >
                       <div className="flex items-center gap-3">
                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0055A4]/10 font-bold text-xs text-[#0055A4]">
@@ -266,7 +266,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
                           </div>
                         </div>
                       </div>
-                      <span className="rounded-md bg-white border border-[#D5DFD2] px-2 py-1 text-[11px] font-semibold text-[#0055A4]">
+                      <span className="rounded-md bg-white border border-[#C8D6C3] px-2 py-1 text-[11px] font-semibold text-[#0055A4]">
                         Select
                       </span>
                     </button>
@@ -307,8 +307,8 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
         </div>
 
         {/* SECTION B: Appointment Logistics */}
-        <div className="rounded-2xl border border-[#D5DFD2] bg-white p-6 shadow-xs">
-          <div className="flex items-center gap-2.5 border-b border-[#D5DFD2] pb-4">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+          <div className="flex items-center gap-2.5 border-b border-[#C8D6C3] pb-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0055A4]/10 text-[#0055A4]">
               <Calendar className="h-4 w-4" />
             </div>
@@ -331,7 +331,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
               <select
                 value={appointmentType}
                 onChange={(e) => setAppointmentType(e.target.value as AppointmentType)}
-                className="w-full rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
               >
                 <option value="New Consultation">New Consultation</option>
                 <option value="Follow-up">Follow-up</option>
@@ -349,7 +349,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
               <select
                 value={department}
                 onChange={(e) => handleDepartmentChange(e.target.value)}
-                className="w-full rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
               >
                 {AVAILABLE_DEPARTMENTS.map((dept: string) => (
                   <option key={dept} value={dept}>
@@ -367,7 +367,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
               <select
                 value={doctorId}
                 onChange={(e) => setDoctorId(e.target.value)}
-                className="w-full rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
               >
                 {filteredDoctors.map((doc: { id: string; name: string }) => (
                   <option key={doc.id} value={doc.id}>
@@ -393,7 +393,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
                 type="date"
                 value={appointmentDate}
                 onChange={(e) => setAppointmentDate(e.target.value)}
-                className="w-full rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
               />
             </div>
 
@@ -418,10 +418,10 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
                       onClick={() => setTimeSlot(slot)}
                       className={`rounded-xl border p-2 text-xs font-medium text-center transition-all ${
                         isConflict
-                          ? "border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed line-through"
+                          ? "border-[#C8D6C3] bg-gray-100 text-gray-400 cursor-not-allowed line-through"
                           : timeSlot === slot
                           ? "border-[#0055A4] bg-[#0055A4] text-white font-bold shadow-2xs"
-                          : "border-[#D5DFD2] bg-[#F1F5EF] text-[#1F2B46] hover:bg-[#E4EBE0]"
+                          : "border-[#C8D6C3] bg-[#E3EBDD] text-[#1F2B46] hover:bg-[#D5E0D2]"
                       }`}
                     >
                       {slot}
@@ -441,7 +441,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
                 value={reasonForVisit}
                 onChange={(e) => setReasonForVisit(e.target.value)}
                 placeholder="e.g. Routine hypertension review and medication refill..."
-                className="w-full rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] placeholder-[#1F2B46]/40 focus:border-[#0055A4] focus:outline-none"
+                className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] placeholder:text-[#7C8998] focus:border-[#0055A4] focus:outline-none"
               />
             </div>
 
@@ -455,7 +455,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
                 value={staffNotes}
                 onChange={(e) => setStaffNotes(e.target.value)}
                 placeholder="Add special instructions, preparatory fasting notes, or triage observations..."
-                className="w-full rounded-xl border border-[#D5DFD2] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] placeholder-[#1F2B46]/40 focus:border-[#0055A4] focus:outline-none"
+                className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] placeholder:text-[#7C8998] focus:border-[#0055A4] focus:outline-none"
               />
             </div>
           </div>
@@ -480,7 +480,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
         <div className="flex items-center justify-end gap-3">
           <Link
             href="/dashboard/appointments"
-            className="rounded-xl border border-[#D5DFD2] bg-white px-5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+            className="rounded-xl border border-[#C8D6C3] bg-white px-5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
           >
             Cancel
           </Link>
@@ -497,8 +497,8 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
       {/* CONFIRMATION SUMMARY MODAL */}
       {showConfirmModal && selectedPatient && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-lg rounded-2xl border border-[#D5DFD2] bg-white p-6 shadow-xl animate-in fade-in zoom-in-95">
-            <div className="flex items-center gap-2 border-b border-[#D5DFD2] pb-3">
+          <div className="w-full max-w-lg rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-xl animate-in fade-in zoom-in-95">
+            <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-3">
               <CheckCircle2 className="h-5 w-5 text-emerald-600" />
               <h3 className="text-lg font-bold text-[#1F2B46]">
                 Confirm Appointment Booking
@@ -509,34 +509,34 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
               Please verify the appointment details before committing this booking to the facility schedule.
             </p>
 
-            <div className="mt-4 space-y-3 rounded-xl bg-[#F1F5EF] p-4 text-xs">
-              <div className="flex justify-between border-b border-[#D5DFD2]/60 pb-2">
+            <div className="mt-4 space-y-3 rounded-xl bg-[#E3EBDD] p-4 text-xs">
+              <div className="flex justify-between border-b border-[#C8D6C3] pb-2">
                 <span className="text-[#1F2B46]/60">Patient Name:</span>
                 <span className="font-bold text-[#1F2B46]">
                   {selectedPatient.patient.firstName} {selectedPatient.patient.lastName}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#D5DFD2]/60 pb-2">
+              <div className="flex justify-between border-b border-[#C8D6C3] pb-2">
                 <span className="text-[#1F2B46]/60">Patient MRN:</span>
                 <span className="font-mono font-semibold text-[#0055A4]">
                   {selectedPatient.facilityRecord.facilityPatientId}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#D5DFD2]/60 pb-2">
+              <div className="flex justify-between border-b border-[#C8D6C3] pb-2">
                 <span className="text-[#1F2B46]/60">Modality:</span>
                 <span className="font-semibold text-[#1F2B46]">{appointmentType}</span>
               </div>
-              <div className="flex justify-between border-b border-[#D5DFD2]/60 pb-2">
+              <div className="flex justify-between border-b border-[#C8D6C3] pb-2">
                 <span className="text-[#1F2B46]/60">Department:</span>
                 <span className="font-semibold text-[#1F2B46]">{department}</span>
               </div>
-              <div className="flex justify-between border-b border-[#D5DFD2]/60 pb-2">
+              <div className="flex justify-between border-b border-[#C8D6C3] pb-2">
                 <span className="text-[#1F2B46]/60">Physician:</span>
                 <span className="font-semibold text-[#1F2B46]">
                   {AVAILABLE_DOCTORS.find((d: { id: string; name: string }) => d.id === doctorId)?.name}
                 </span>
               </div>
-              <div className="flex justify-between border-b border-[#D5DFD2]/60 pb-2">
+              <div className="flex justify-between border-b border-[#C8D6C3] pb-2">
                 <span className="text-[#1F2B46]/60">Scheduled Date & Time:</span>
                 <span className="font-bold text-[#0055A4]">
                   {appointmentDate} at {timeSlot}
@@ -552,7 +552,7 @@ export function CreateAppointmentForm({ isGuestMode = false }: CreateAppointment
               <button
                 type="button"
                 onClick={() => setShowConfirmModal(false)}
-                className="rounded-xl border border-[#D5DFD2] bg-white px-4 py-2 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF]"
+                className="rounded-xl border border-[#C8D6C3] bg-white px-4 py-2 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2]"
               >
                 Make Changes
               </button>

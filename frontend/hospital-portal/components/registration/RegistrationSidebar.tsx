@@ -6,7 +6,7 @@ export default function RegistrationSidebar() {
   return (
     <div className="lg:col-span-4 flex flex-col gap-space-lg min-w-0">
       {/* ── Card 1: Verification Checklist ─────────────────────────── */}
-      <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-lg shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-md">
         <div className="flex items-center justify-between gap-space-sm">
           <span className="font-card-heading text-card-heading text-[#1F2B46] font-bold truncate">
             Verification Checklist
@@ -15,13 +15,13 @@ export default function RegistrationSidebar() {
             STAGE 1
           </span>
         </div>
-        <p className="font-supporting text-supporting text-[#5A6372]">
+        <p className="font-supporting text-supporting text-[#667085]">
           Prepare digital scans of these institutional credentials. You will submit them in Step 3.
         </p>
 
         <div className="flex flex-col gap-space-sm pt-space-xs">
           {/* Item 1 */}
-          <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-start gap-space-sm">
+          <div className="p-space-md rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-start gap-space-sm">
             <div className="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
               <span className="material-symbols-outlined text-[16px]">check</span>
             </div>
@@ -39,7 +39,7 @@ export default function RegistrationSidebar() {
           </div>
 
           {/* Item 2 */}
-          <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-start gap-space-sm">
+          <div className="p-space-md rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-start gap-space-sm">
             <div className="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
               <span className="material-symbols-outlined text-[16px]">check</span>
             </div>
@@ -57,8 +57,8 @@ export default function RegistrationSidebar() {
           </div>
 
           {/* Item 3 */}
-          <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-start gap-space-sm opacity-90">
-            <div className="w-6 h-6 rounded-full bg-[#D5DFD2] text-[#727783] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+          <div className="p-space-md rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] flex items-start gap-space-sm">
+            <div className="w-6 h-6 rounded-full bg-[#C8D6C3] text-[#5A6372] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
               <span className="material-symbols-outlined text-[16px]">hourglass_empty</span>
             </div>
             <div className="flex flex-col min-w-0">
@@ -66,7 +66,7 @@ export default function RegistrationSidebar() {
                 <span className="font-body-md text-body-md text-[#1F2B46] font-semibold truncate">
                   NABH / JCI Accreditation
                 </span>
-                <span className="font-supporting text-supporting text-[#727783] whitespace-nowrap">
+                <span className="font-supporting text-supporting text-[#667085] whitespace-nowrap">
                   (Optional)
                 </span>
               </div>
@@ -78,7 +78,7 @@ export default function RegistrationSidebar() {
         </div>
 
         {/* SLA Note */}
-        <div className="p-space-md rounded-xl bg-[#EDF2E9] border border-[#D5DFD2] text-[#1F2B46] font-supporting text-supporting flex items-start gap-2">
+        <div className="p-space-md rounded-xl bg-[#E6EDE2] border border-[#C8D6C3] text-[#1F2B46] font-supporting text-supporting flex items-start gap-2">
           <span className="material-symbols-outlined text-[#0055A4] text-[18px] shrink-0 mt-0.5">
             speed
           </span>
@@ -89,7 +89,7 @@ export default function RegistrationSidebar() {
       </div>
 
       {/* ── Card 2: Initial Admin Policy ────────────────────────────── */}
-      <div className="bg-[#EBF3FC] border border-[#D5DFD2] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+      <div className="bg-[#DCE8F6] border border-[#B5CBE3] rounded-2xl p-space-lg shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-sm">
         <div className="flex items-center gap-space-sm">
           <span className="material-symbols-outlined text-[#0055A4] text-[22px] shrink-0">
             admin_panel_settings
@@ -104,7 +104,7 @@ export default function RegistrationSidebar() {
       </div>
 
       {/* ── Card 3: Why Register with MedKnot? ──────────────────────── */}
-      <div className="bg-white border border-[#D5DFD2] rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-space-lg shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-md">
         <div className="flex items-center gap-space-sm">
           <span className="material-symbols-outlined text-secondary text-[24px] shrink-0">
             verified
@@ -123,13 +123,13 @@ export default function RegistrationSidebar() {
               <span className="font-body-md text-body-md text-[#1F2B46] font-semibold truncate">
                 Federated EHR Network
               </span>
-              <span className="font-supporting text-supporting text-[#5A6372]">
+              <span className="font-supporting text-supporting text-[#667085]">
                 Direct access to cross-institutional patient history and records.
               </span>
             </div>
           </div>
 
-          <div className="w-full h-px bg-[#D5DFD2]"></div>
+          <div className="w-full h-px bg-[#C8D6C3]"></div>
 
           <div className="flex items-start gap-space-sm">
             <div className="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 shadow-xs">
@@ -139,13 +139,13 @@ export default function RegistrationSidebar() {
               <span className="font-body-md text-body-md text-[#1F2B46] font-semibold truncate">
                 Live Queue Optimization
               </span>
-              <span className="font-supporting text-supporting text-[#5A6372]">
+              <span className="font-supporting text-supporting text-[#667085]">
                 Automated OPD tokens, triage routing, and bed allocations.
               </span>
             </div>
           </div>
 
-          <div className="w-full h-px bg-[#D5DFD2]"></div>
+          <div className="w-full h-px bg-[#C8D6C3]"></div>
 
           <div className="flex items-start gap-space-sm">
             <div className="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 shadow-xs">
@@ -155,7 +155,7 @@ export default function RegistrationSidebar() {
               <span className="font-body-md text-body-md text-[#1F2B46] font-semibold truncate">
                 HIPAA &amp; ABDM Compliant
               </span>
-              <span className="font-supporting text-supporting text-[#5A6372]">
+              <span className="font-supporting text-supporting text-[#667085]">
                 End-to-end encrypted medical transmissions and audits.
               </span>
             </div>
@@ -164,7 +164,7 @@ export default function RegistrationSidebar() {
       </div>
 
       {/* ── Card 4: Need Registration Assistance? ──────────────────── */}
-      <div className="rounded-2xl p-space-lg bg-[#EDF2E9] border border-[#D5DFD2] shadow-sm flex flex-col gap-space-sm">
+      <div className="rounded-2xl p-space-lg bg-[#E3EBDD] border border-[#C5D2C0] shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-sm">
         <div className="flex items-center gap-space-sm">
           <span className="material-symbols-outlined text-[#0055A4] text-[20px] shrink-0">
             support_agent

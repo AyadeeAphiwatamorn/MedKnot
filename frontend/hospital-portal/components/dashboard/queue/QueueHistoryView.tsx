@@ -119,11 +119,11 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
             <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
             <span>Official Clinical Log</span>
           </span>
@@ -131,7 +131,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
       </div>
 
       {/* Header Banner & Standard Sub-navigation Tabs matching Overview */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-5">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
@@ -151,7 +151,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
       </div>
 
       {/* FILTER & SEARCH BAR */}
-      <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-5">
           {/* Search */}
           <div className="relative lg:col-span-2">
@@ -164,7 +164,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
                 setSearchQuery(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] py-2 pl-9 pr-3 text-xs text-[#1F2B46] placeholder-[#5A6372] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] py-2 pl-9 pr-3 text-xs text-[#1F2B46] placeholder-[#5A6372] focus:border-[#0055A4] focus:outline-none"
             />
           </div>
 
@@ -177,7 +177,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
                 setCurrentPage(1);
               }}
               aria-label="Filter history by department"
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Departments</option>
               {AVAILABLE_DEPARTMENTS.map((dept: string) => (
@@ -197,7 +197,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
                 setCurrentPage(1);
               }}
               aria-label="Filter history by physician"
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Doctors</option>
               {AVAILABLE_DOCTORS.map((doc: { id: string; name: string }) => (
@@ -217,7 +217,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
                 setCurrentPage(1);
               }}
               aria-label="Filter history by status"
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Statuses</option>
               <option value="Completed">Completed</option>
@@ -230,7 +230,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#DDE6DA] pt-3 text-xs text-[#5A6372]">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#C8D6C3] pt-3 text-xs text-[#5A6372]">
           <div>
             Showing <strong className="text-[#1F2B46]">{filteredEntries.length}</strong> total historical visits
           </div>
@@ -246,7 +246,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
       </div>
 
       {/* HISTORICAL TABLE */}
-      <div className="rounded-2xl border border-[#DDE6DA] bg-white shadow-xs overflow-hidden">
+      <div className="rounded-2xl border border-[#C5D2C0] bg-white shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
         {paginatedEntries.length === 0 ? (
           <div className="flex flex-col items-center justify-center p-12 text-center">
             <History className="h-12 w-12 text-[#5A6372]/40 mb-3" />
@@ -258,7 +258,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="border-b border-[#DDE6DA] bg-[#F8FAF6] text-xs font-semibold text-[#1F2B46]">
+              <thead className="border-b border-[#C5D2C0] bg-[#E1E9DC] text-xs font-semibold text-[#1F2B46]">
                 <tr>
                   <th className="py-3.5 px-4">Token & Patient</th>
                   <th className="py-3.5 px-4">Date & Slot</th>
@@ -270,9 +270,9 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
                   <th className="py-3.5 px-4 text-right">Dossier</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#DDE6DA]">
+              <tbody className="divide-y divide-[#C8D6C3]">
                 {paginatedEntries.map((item) => (
-                  <tr key={item.id} className="hover:bg-[#F8FAF6] transition-colors">
+                  <tr key={item.id} className="hover:bg-[#E6EDE2] transition-colors">
                     {/* Token & Patient */}
                     <td className="py-3.5 px-4">
                       <div className="flex items-center gap-2">
@@ -337,7 +337,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
                     <td className="py-3.5 px-4 text-right">
                       <Link
                         href={`/dashboard/queue/${item.id}`}
-                        className="inline-flex items-center gap-1 rounded-xl border border-[#DDE6DA] bg-white px-3 py-1.5 text-[11px] font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] hover:text-[#0055A4] transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1 rounded-xl border border-[#C8D6C3] bg-white px-3 py-1.5 text-[11px] font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] hover:text-[#0055A4] transition-colors shadow-2xs"
                       >
                         <FileText className="h-3.5 w-3.5" />
                         <span>View</span>
@@ -352,7 +352,7 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
 
         {/* PAGINATION */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-between border-t border-[#DDE6DA] bg-white px-5 py-3.5 text-xs">
+          <div className="flex items-center justify-between border-t border-[#C8D6C3] bg-white px-5 py-3.5 text-xs">
             <span className="text-[#5A6372]">
               Page {currentPage} of {totalPages} &bull; Total {filteredEntries.length} records
             </span>
@@ -360,14 +360,14 @@ export function QueueHistoryView({ isGuestMode = false }: QueueHistoryViewProps)
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="rounded-xl border border-[#DDE6DA] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] disabled:opacity-40 transition-colors"
+                className="rounded-xl border border-[#C8D6C3] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] disabled:opacity-40 transition-colors"
               >
                 Previous
               </button>
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="rounded-xl border border-[#DDE6DA] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] disabled:opacity-40 transition-colors"
+                className="rounded-xl border border-[#C8D6C3] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] disabled:opacity-40 transition-colors"
               >
                 Next
               </button>

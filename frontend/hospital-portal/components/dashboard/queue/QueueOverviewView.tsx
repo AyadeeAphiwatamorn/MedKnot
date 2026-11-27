@@ -219,11 +219,11 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
             <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
             <span>Live Facility Flow</span>
           </span>
@@ -231,7 +231,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
       </div>
 
       {/* Header Banner & Sub-navigation Tabs matching Appointment Overview */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-5">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
@@ -274,7 +274,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
       {/* 4 SUMMARY METRIC CARDS */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Total Patients Today */}
-        <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-[#5A6372]">Total Checked In Today</span>
             <div className="rounded-xl bg-[#E7F0FF] p-2 text-[#0055A4]">
@@ -286,7 +286,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
         </div>
 
         {/* Waiting */}
-        <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-[#5A6372]">Waiting in Lounge</span>
             <div className="rounded-xl bg-amber-50 p-2 text-amber-600 border border-amber-200">
@@ -298,7 +298,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
         </div>
 
         {/* In Consultation */}
-        <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-[#5A6372]">In Consultation</span>
             <div className="rounded-xl bg-emerald-50 p-2 text-emerald-600 border border-emerald-200">
@@ -310,10 +310,10 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
         </div>
 
         {/* Completed */}
-        <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-[#5A6372]">Completed Visits</span>
-            <div className="rounded-xl bg-[#F1F5EF] p-2 text-[#5A6372] border border-[#DDE6DA]">
+            <div className="rounded-xl bg-[#E3EBDD] p-2 text-[#5A6372] border border-[#C8D6C3]">
               <CheckCircle2 className="h-4 w-4" />
             </div>
           </div>
@@ -323,7 +323,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
       </div>
 
       {/* Operational Policy & Wait Time Advisory Banner */}
-      <div className="flex items-start gap-3 rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs text-xs text-[#1F2B46]">
+      <div className="flex items-start gap-3 rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] text-xs text-[#1F2B46]">
         <div className="rounded-xl bg-[#E7F0FF] p-2 text-[#0055A4] shrink-0 mt-0.5">
           <Info className="h-4 w-4" />
         </div>
@@ -338,7 +338,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
       </div>
 
       {/* CONTROLS & FILTER BAR */}
-      <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs space-y-4">
+      <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-6">
           {/* Search */}
           <div className="relative lg:col-span-2">
@@ -351,7 +351,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                 setSearchQuery(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] py-2 pl-9 pr-3 text-xs text-[#1F2B46] placeholder-[#5A6372] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] py-2 pl-9 pr-3 text-xs text-[#1F2B46] placeholder-[#5A6372] focus:border-[#0055A4] focus:outline-none"
             />
           </div>
 
@@ -364,7 +364,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                 setCurrentPage(1);
               }}
               aria-label="Filter by department"
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Departments</option>
               {AVAILABLE_DEPARTMENTS.map((dept: string) => (
@@ -384,7 +384,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                 setCurrentPage(1);
               }}
               aria-label="Filter by physician"
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Doctors</option>
               {AVAILABLE_DOCTORS.map((doc: { id: string; name: string }) => (
@@ -404,7 +404,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                 setCurrentPage(1);
               }}
               aria-label="Filter by status"
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="All">All Statuses</option>
               <option value="Checked In">Checked In</option>
@@ -426,13 +426,13 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                 setCurrentPage(1);
               }}
               aria-label="Filter by date"
-              className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             />
           </div>
         </div>
 
         {/* Quick Active Filters & Sorting */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#DDE6DA] pt-3 text-xs text-[#5A6372]">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#C8D6C3] pt-3 text-xs text-[#5A6372]">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-[#1F2B46]">Showing:</span>
             <span>{queueEntries.length} patient entries</span>
@@ -448,7 +448,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] px-2.5 py-1 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+              className="rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] px-2.5 py-1 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
             >
               <option value="queueNumber">Queue Number</option>
               <option value="checkInTime">Check-In Time</option>
@@ -460,7 +460,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
       </div>
 
       {/* QUEUE TABLE */}
-      <div className="rounded-2xl border border-[#DDE6DA] bg-white shadow-xs overflow-hidden">
+      <div className="rounded-2xl border border-[#C5D2C0] bg-white shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
         {paginatedEntries.length === 0 ? (
           <div className="flex flex-col items-center justify-center p-12 text-center">
             <Layers className="h-12 w-12 text-[#5A6372]/40 mb-3" />
@@ -480,7 +480,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="border-b border-[#DDE6DA] bg-[#F8FAF6] text-xs font-semibold text-[#1F2B46]">
+              <thead className="border-b border-[#C5D2C0] bg-[#E1E9DC] text-xs font-semibold text-[#1F2B46]">
                 <tr>
                   <th className="py-3.5 px-4">Queue No</th>
                   <th className="py-3.5 px-4">Patient Information</th>
@@ -492,9 +492,9 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                   <th className="py-3.5 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#DDE6DA]">
+              <tbody className="divide-y divide-[#C8D6C3]">
                 {paginatedEntries.map((item) => (
-                  <tr key={item.id} className="hover:bg-[#F8FAF6] transition-colors">
+                  <tr key={item.id} className="hover:bg-[#E6EDE2] transition-colors">
                     {/* Queue Number */}
                     <td className="py-3.5 px-4">
                       <div className="flex items-center gap-1.5">
@@ -611,7 +611,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
 
                         <Link
                           href={`/dashboard/queue/${item.id}`}
-                          className="rounded-lg border border-[#DDE6DA] bg-white p-1.5 text-[#5A6372] hover:bg-[#F1F5EF] hover:text-[#0055A4] transition-colors"
+                          className="rounded-lg border border-[#C8D6C3] bg-white p-1.5 text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#0055A4] transition-colors"
                           title="View Visit Dossier"
                         >
                           <FileText className="h-3.5 w-3.5" />
@@ -627,7 +627,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
 
         {/* PAGINATION BAR */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-between border-t border-[#DDE6DA] bg-white px-5 py-3.5 text-xs">
+          <div className="flex items-center justify-between border-t border-[#C8D6C3] bg-white px-5 py-3.5 text-xs">
             <span className="text-[#5A6372]">
               Page {currentPage} of {totalPages} &bull; Total {queueEntries.length} records
             </span>
@@ -635,14 +635,14 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="rounded-xl border border-[#DDE6DA] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] disabled:opacity-40 transition-colors"
+                className="rounded-xl border border-[#C8D6C3] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] disabled:opacity-40 transition-colors"
               >
                 Previous
               </button>
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="rounded-xl border border-[#DDE6DA] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] disabled:opacity-40 transition-colors"
+                className="rounded-xl border border-[#C8D6C3] bg-white px-3.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] disabled:opacity-40 transition-colors"
               >
                 Next
               </button>
@@ -654,8 +654,8 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
       {/* CHECK-IN MODAL */}
       {showCheckInModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-lg rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xl animate-in fade-in zoom-in-95">
-            <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-3">
+          <div className="w-full max-w-lg rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-xl animate-in fade-in zoom-in-95">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-3">
               <div>
                 <h3 className="text-lg font-bold text-[#1F2B46]">Check In Patient</h3>
                 <p className="text-xs text-[#5A6372]">
@@ -664,7 +664,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
               </div>
               <button
                 onClick={() => setShowCheckInModal(false)}
-                className="rounded-lg p-1.5 text-[#5A6372] hover:bg-[#F1F5EF]"
+                className="rounded-lg p-1.5 text-[#5A6372] hover:bg-[#E6EDE2]"
               >
                 <XCircle className="h-5 w-5" />
               </button>
@@ -677,14 +677,14 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                   Confirmed Appointment <span className="text-rose-500">*</span>
                 </label>
                 {eligibleAppointments.length === 0 ? (
-                  <div className="rounded-xl border border-dashed border-[#DDE6DA] bg-[#F1F5EF] p-4 text-center text-xs text-[#5A6372]">
+                  <div className="rounded-xl border border-dashed border-[#C8D6C3] bg-[#E3EBDD] p-4 text-center text-xs text-[#5A6372]">
                     No confirmed appointments awaiting check-in for today. All booked patients have already checked in.
                   </div>
                 ) : (
                   <select
                     value={selectedAptId}
                     onChange={(e) => setSelectedAptId(e.target.value)}
-                    className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                    className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
                   >
                     <option value="">-- Select Patient Appointment --</option>
                     {eligibleAppointments.map((apt) => (
@@ -710,7 +710,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                       className={`rounded-xl border p-2 text-xs font-semibold transition-colors ${
                         checkInPriority === p
                           ? "border-[#0055A4] bg-[#0055A4] text-white"
-                          : "border-[#DDE6DA] bg-[#F1F5EF] text-[#1F2B46]"
+                          : "border-[#C8D6C3] bg-[#E3EBDD] text-[#1F2B46]"
                       }`}
                     >
                       {p}
@@ -730,7 +730,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                     value={checkInReason}
                     onChange={(e) => setCheckInReason(e.target.value)}
                     placeholder="e.g. Senior citizen, high triage vitals, severe acute pain..."
-                    className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46]"
+                    className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46]"
                   />
                 </div>
               )}
@@ -745,7 +745,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                   value={checkInNotes}
                   onChange={(e) => setCheckInNotes(e.target.value)}
                   placeholder="e.g. Wheelchair assistance provided, patient brought external imaging..."
-                  className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46]"
+                  className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46]"
                 />
               </div>
 
@@ -756,11 +756,11 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                 </div>
               )}
 
-              <div className="mt-6 flex items-center justify-end gap-2 border-t border-[#DDE6DA] pt-4">
+              <div className="mt-6 flex items-center justify-end gap-2 border-t border-[#C8D6C3] pt-4">
                 <button
                   type="button"
                   onClick={() => setShowCheckInModal(false)}
-                  className="rounded-xl border border-[#DDE6DA] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                  className="rounded-xl border border-[#C8D6C3] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
                 >
                   Cancel
                 </button>
@@ -780,7 +780,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
       {/* CONFIRM STATUS CHANGE MODAL */}
       {actionModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-md rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xl animate-in fade-in">
+          <div className="w-full max-w-md rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-xl animate-in fade-in">
             <h3 className="text-lg font-bold text-[#1F2B46]">
               Confirm Queue Status Transition
             </h3>
@@ -798,7 +798,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
                   value={actionReason}
                   onChange={(e) => setActionReason(e.target.value)}
                   placeholder="Provide clinical or operational rationale..."
-                  className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46]"
+                  className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46]"
                 />
               </div>
             )}
@@ -810,7 +810,7 @@ export function QueueOverviewView({ isGuestMode = false }: QueueOverviewViewProp
             <div className="mt-6 flex items-center justify-end gap-2">
               <button
                 onClick={() => setActionModal(null)}
-                className="rounded-xl border border-[#DDE6DA] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-xl border border-[#C8D6C3] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
               >
                 Cancel
               </button>

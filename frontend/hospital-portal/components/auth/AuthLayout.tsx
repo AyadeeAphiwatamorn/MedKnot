@@ -68,10 +68,11 @@ export default function AuthLayout({
 
         {/*
           ③ Single unified outer frosted-glass card over the living gradient canvas:
-          Contains BOTH Left (BrandPanel) and Right (authentication form) in one container.
+          Left BrandPanel shares the transparent frosted outer glass (`rgba(235, 245, 241, 0.38)`),
+          while the Right form panel inside it uses a less transparent glass surface (`rgba(238, 246, 239, 0.84)`).
         */}
-        <main className="auth-unified-card backdrop-blur-xl mx-auto my-6 sm:my-8 lg:my-10 grid w-[90%] max-w-[1450px] grid-cols-1 items-stretch gap-10 p-6 sm:p-10 lg:min-h-[760px] lg:grid-cols-[1fr_0.9fr] lg:gap-12 lg:p-12">
-          {/* Left: BrandPanel directly inside Column 1 */}
+        <main className="auth-unified-card backdrop-blur-xl mx-auto my-6 sm:my-8 lg:my-10 grid w-[90%] max-w-[1450px] grid-cols-1 items-stretch gap-4 overflow-hidden p-3 sm:p-4 lg:min-h-[760px] lg:grid-cols-[1.04fr_0.96fr] lg:gap-4 lg:p-4">
+          {/* Left: BrandPanel — more transparent frosted glass letting the gradient show through */}
           <BrandPanel
             headline={headline}
             subCopy={subCopy}
@@ -80,8 +81,8 @@ export default function AuthLayout({
             features={features}
           />
 
-          {/* Right: authentication form directly inside Column 2 (no separate inner card) */}
-          <section className="relative flex w-full flex-col items-center justify-center py-2">
+          {/* Right: more opaque frosted glass form panel inside the same unified outer card */}
+          <section className="auth-form-panel backdrop-blur-md relative flex w-full flex-col items-center justify-center p-7 sm:p-10 lg:p-12">
             {children}
           </section>
         </main>

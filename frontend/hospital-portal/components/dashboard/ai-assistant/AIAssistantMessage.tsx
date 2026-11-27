@@ -21,7 +21,7 @@ function renderInlineFormatting(text: string): React.ReactNode[] {
       return (
         <code
           key={idx}
-          className="px-1 py-0.5 rounded bg-white border border-[#D5DFD2] font-mono text-[11px] text-[#0055A4]"
+          className="px-1 py-0.5 rounded bg-white border border-[#C8D6C3] font-mono text-[11px] text-[#0055A4]"
         >
           {part.slice(1, -1)}
         </code>
@@ -91,12 +91,12 @@ export function AIAssistantMessage({ message }: AIAssistantMessageProps) {
         className={`max-w-[92%] rounded-2xl rounded-bl-sm px-3.5 py-3 shadow-2xs border ${
           message.isRefusal
             ? "bg-[#FFF8EB] border-[#F0D9A7]"
-            : "bg-[#F3F6F0] border-[#DDE6DA]"
+            : "bg-[#E3EBDD] border-[#C8D6C3]"
         }`}
       >
         {/* Provenance / Safety Header */}
         {(message.hasClinicalDisclaimer || message.isDraftNotice || message.isRefusal) && (
-          <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-[#DDE6DA]/80">
+          <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-[#C8D6C3]">
             <span
               className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                 message.isRefusal
@@ -121,7 +121,7 @@ export function AIAssistantMessage({ message }: AIAssistantMessageProps) {
         <FormattedAssistantBody content={message.content} />
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between gap-2 mt-2.5 pt-2 border-t border-[#DDE6DA]/60">
+        <div className="flex items-center justify-between gap-2 mt-2.5 pt-2 border-t border-[#C8D6C3]">
           <span className="text-[10px] text-[#5A6372]">
             {message.modeLabel || "MedKnot Assist"} • {message.timestamp}
           </span>

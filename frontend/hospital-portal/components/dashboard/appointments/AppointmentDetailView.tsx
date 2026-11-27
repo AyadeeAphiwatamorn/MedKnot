@@ -184,11 +184,11 @@ export function AppointmentDetailView({
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
             <span>Facility Scope: St. Jude Medical Center</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
             <span>Official Clinical Dossier</span>
           </span>
@@ -196,11 +196,11 @@ export function AppointmentDetailView({
       </div>
 
       {/* Header Banner with Back Button & Actions */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <Link
             href="/dashboard/appointments"
-            className="p-2.5 rounded-xl border border-[#DDE6DA] text-[#5A6372] hover:text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors shrink-0"
+            className="p-2.5 rounded-xl border border-[#C8D6C3] text-[#5A6372] hover:text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors shrink-0"
             title="Back to Appointments Overview"
           >
             <ArrowLeft className="h-5 w-5" />
@@ -225,7 +225,7 @@ export function AppointmentDetailView({
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 rounded-xl border border-[#DDE6DA] bg-white px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors shadow-2xs"
+            className="flex items-center gap-1.5 rounded-xl border border-[#C8D6C3] bg-white px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors shadow-2xs"
           >
             <Printer className="h-4 w-4" />
             Print Summary
@@ -245,7 +245,7 @@ export function AppointmentDetailView({
             <>
               <button
                 onClick={() => setModalType("reschedule")}
-                className="flex items-center gap-1.5 rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors shadow-2xs"
+                className="flex items-center gap-1.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors shadow-2xs"
               >
                 <RotateCcw className="h-4 w-4 text-[#0055A4]" />
                 Reschedule
@@ -284,8 +284,8 @@ export function AppointmentDetailView({
         {/* LEFT COLUMN: Main Consultation Details (2 cols) */}
         <div className="space-y-6 lg:col-span-2">
           {/* Appointment Header Card */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xs">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-[#DDE6DA] pb-5">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-[#C8D6C3] pb-5">
               <div>
                 <span className="font-mono text-xs font-bold text-[#0055A4]">
                   REFERENCE: {appointment.id}
@@ -304,7 +304,7 @@ export function AppointmentDetailView({
 
               <div className="flex flex-col items-start sm:items-end gap-1">
                 <span className="text-xs text-[#5A6372]">Workflow Mode</span>
-                <span className="rounded-lg bg-[#EDF2E9] px-2.5 py-1 text-xs font-semibold text-[#1F2B46] border border-[#DDE6DA]">
+                <span className="rounded-lg bg-[#E3EBDD] px-2.5 py-1 text-xs font-semibold text-[#1F2B46] border border-[#C8D6C3]">
                   {appointment.workflow === "facility_assigned" ? "Facility Assigned (Workflow A)" : "Patient Chosen (Workflow B)"}
                 </span>
               </div>
@@ -315,7 +315,7 @@ export function AppointmentDetailView({
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372]">
                 Reason for Visit / Chief Complaint
               </h3>
-              <p className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4 text-xs font-medium text-[#1F2B46] leading-relaxed">
+              <p className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4 text-xs font-medium text-[#1F2B46] leading-relaxed">
                 {appointment.reasonForVisit}
               </p>
             </div>
@@ -326,7 +326,7 @@ export function AppointmentDetailView({
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372]">
                   Patient Notes & Special Requests
                 </h3>
-                <p className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4 text-xs text-[#1F2B46]/80 leading-relaxed italic">
+                <p className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4 text-xs text-[#1F2B46]/80 leading-relaxed italic">
                   &ldquo;{appointment.patientNotes}&rdquo;
                 </p>
               </div>
@@ -337,15 +337,15 @@ export function AppointmentDetailView({
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372]">
                 Staff & Clinical Care Notes
               </h3>
-              <p className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4 text-xs text-[#1F2B46]/80 leading-relaxed">
+              <p className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4 text-xs text-[#1F2B46]/80 leading-relaxed">
                 {appointment.staffNotes || "No preliminary clinical instructions recorded."}
               </p>
             </div>
           </div>
 
           {/* Patient Card Linked to /dashboard/patients/[patientId] */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xs">
-            <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-4">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
               <div className="flex items-center gap-2">
                 <User className="h-5 w-5 text-[#0055A4]" />
                 <h3 className="text-base font-bold text-[#1F2B46]">Patient Profile</h3>
@@ -383,7 +383,7 @@ export function AppointmentDetailView({
 
               <Link
                 href={`/dashboard/patients/${appointment.facilityPatientId}`}
-                className="rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors text-center"
+                className="rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors text-center"
               >
                 View Medical History
               </Link>
@@ -391,8 +391,8 @@ export function AppointmentDetailView({
           </div>
 
           {/* Assigned Physician & Department */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xs">
-            <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-4">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-4">
               <Stethoscope className="h-5 w-5 text-[#0055A4]" />
               <h3 className="text-base font-bold text-[#1F2B46]">
                 Assigned Clinical Provider
@@ -400,7 +400,7 @@ export function AppointmentDetailView({
             </div>
 
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0055A4]/10 text-[#0055A4] font-bold">
                     Dr
@@ -415,7 +415,7 @@ export function AppointmentDetailView({
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0055A4]/10 text-[#0055A4]">
                     <Building2 className="h-5 w-5" />
@@ -436,8 +436,8 @@ export function AppointmentDetailView({
         {/* RIGHT COLUMN: Audit Timeline & Metadata (1 col) */}
         <div className="space-y-6">
           {/* Metadata Card */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372] border-b border-[#DDE6DA] pb-3">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372] border-b border-[#C8D6C3] pb-3">
               Appointment Summary
             </h3>
             <div className="mt-4 space-y-3 text-xs">
@@ -461,8 +461,8 @@ export function AppointmentDetailView({
           </div>
 
           {/* Audit Trail Timeline */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
-            <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-3">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-3">
               <ShieldCheck className="h-4 w-4 text-[#0055A4]" />
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#1F2B46]">
                 Audit Trail & History
@@ -475,7 +475,7 @@ export function AppointmentDetailView({
                   {/* Timeline bullet & line */}
                   <div className="absolute left-0 top-1 h-3 w-3 rounded-full border-2 border-white bg-[#0055A4] shadow-xs" />
                   {idx !== appointment.timeline.length - 1 && (
-                    <div className="absolute left-[5px] top-4 h-full w-[2px] bg-[#DDE6DA]" />
+                    <div className="absolute left-[5px] top-4 h-full w-[2px] bg-[#E1E9DC]" />
                   )}
 
                   <div>
@@ -501,7 +501,7 @@ export function AppointmentDetailView({
       {/* MODAL: Confirm */}
       {modalType === "confirm" && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-md rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xl animate-in fade-in">
+          <div className="w-full max-w-md rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-xl animate-in fade-in">
             <h3 className="text-lg font-bold text-[#1F2B46]">Confirm Appointment</h3>
             <p className="mt-1 text-xs text-[#5A6372]">
               Are you sure you want to confirm this booking for <strong>{appointment.patientName}</strong> on <strong>{appointment.appointmentDate}</strong> at <strong>{appointment.timeSlot}</strong>?
@@ -509,7 +509,7 @@ export function AppointmentDetailView({
             <div className="mt-6 flex items-center justify-end gap-2">
               <button
                 onClick={() => setModalType(null)}
-                className="rounded-xl border border-[#DDE6DA] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-xl border border-[#C8D6C3] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
               >
                 Dismiss
               </button>
@@ -527,7 +527,7 @@ export function AppointmentDetailView({
       {/* MODAL: Reschedule */}
       {modalType === "reschedule" && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-md rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xl animate-in fade-in">
+          <div className="w-full max-w-md rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-xl animate-in fade-in">
             <h3 className="text-lg font-bold text-[#1F2B46]">Reschedule Appointment</h3>
             <p className="mt-1 text-xs text-[#5A6372]">
               Select a new date and time slot for Dr. {appointment.doctorName}.
@@ -540,7 +540,7 @@ export function AppointmentDetailView({
                   type="date"
                   value={rescheduleDate}
                   onChange={(e) => setRescheduleDate(e.target.value)}
-                  className="mt-1 w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                  className="mt-1 w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
                 />
               </div>
 
@@ -549,7 +549,7 @@ export function AppointmentDetailView({
                 <select
                   value={rescheduleSlot}
                   onChange={(e) => setRescheduleSlot(e.target.value)}
-                  className="mt-1 w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                  className="mt-1 w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
                 >
                   {AVAILABLE_TIME_SLOTS.map((slot) => (
                     <option key={slot} value={slot}>
@@ -569,7 +569,7 @@ export function AppointmentDetailView({
             <div className="mt-6 flex items-center justify-end gap-2">
               <button
                 onClick={() => setModalType(null)}
-                className="rounded-xl border border-[#DDE6DA] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-xl border border-[#C8D6C3] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
               >
                 Cancel
               </button>
@@ -605,7 +605,7 @@ export function AppointmentDetailView({
                   if (errorMessage) setErrorMessage("");
                 }}
                 placeholder="e.g. Patient requested cancellation due to scheduling conflict..."
-                className="mt-1 w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46] focus:border-rose-500 focus:outline-none"
+                className="mt-1 w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46] focus:border-rose-500 focus:outline-none"
               />
               {errorMessage && (
                 <p className="mt-1 text-xs text-rose-600 font-semibold">{errorMessage}</p>
@@ -615,7 +615,7 @@ export function AppointmentDetailView({
             <div className="mt-6 flex items-center justify-end gap-2">
               <button
                 onClick={() => setModalType(null)}
-                className="rounded-xl border border-[#DDE6DA] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-xl border border-[#C8D6C3] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
               >
                 Keep Appointment
               </button>
@@ -633,7 +633,7 @@ export function AppointmentDetailView({
       {/* MODAL: Mark Completed */}
       {modalType === "complete" && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-md rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xl animate-in fade-in">
+          <div className="w-full max-w-md rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-xl animate-in fade-in">
             <h3 className="text-lg font-bold text-[#1F2B46]">Conclude Consultation</h3>
             <p className="mt-1 text-xs text-[#5A6372]">
               Mark this consultation appointment as Completed for <strong>{appointment.patientName}</strong>.
@@ -642,7 +642,7 @@ export function AppointmentDetailView({
             <div className="mt-6 flex items-center justify-end gap-2">
               <button
                 onClick={() => setModalType(null)}
-                className="rounded-xl border border-[#DDE6DA] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-xl border border-[#C8D6C3] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
               >
                 Cancel
               </button>

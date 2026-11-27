@@ -132,11 +132,11 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
             <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
             <span>Active Outpatient Flow</span>
           </span>
@@ -144,11 +144,11 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
       </div>
 
       {/* Header Banner with Back Button & Actions */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <Link
             href="/dashboard/queue"
-            className="p-2.5 rounded-xl border border-[#DDE6DA] text-[#5A6372] hover:text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors shrink-0"
+            className="p-2.5 rounded-xl border border-[#C8D6C3] text-[#5A6372] hover:text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors shrink-0"
             title="Back to Queue Overview"
           >
             <ArrowLeft className="h-5 w-5" />
@@ -173,7 +173,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 rounded-xl border border-[#DDE6DA] bg-white px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors shadow-2xs"
+            className="flex items-center gap-1.5 rounded-xl border border-[#C8D6C3] bg-white px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors shadow-2xs"
           >
             <Printer className="h-4 w-4" />
             Print Token
@@ -213,7 +213,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
             <>
               <button
                 onClick={() => setActionModal("No Show")}
-                className="flex items-center gap-1.5 rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors shadow-2xs"
+                className="flex items-center gap-1.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] px-3.5 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors shadow-2xs"
               >
                 Mark No-Show
               </button>
@@ -242,8 +242,8 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
         {/* LEFT COLUMN: Main Visit Details (2 cols) */}
         <div className="space-y-6 lg:col-span-2">
           {/* Header Card */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xs">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-[#DDE6DA] pb-5">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-[#C8D6C3] pb-5">
               <div>
                 <span className="font-mono text-xs font-bold text-[#0055A4]">
                   QUEUE ENTRY REF: {entry.id}
@@ -262,7 +262,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
 
               <div className="flex flex-col items-start sm:items-end gap-1">
                 <span className="text-xs text-[#5A6372]">Assigned Suite</span>
-                <span className="rounded-xl bg-[#EDF2E9] px-3.5 py-1.5 text-xs font-bold text-[#1F2B46] border border-[#DDE6DA]">
+                <span className="rounded-xl bg-[#E3EBDD] px-3.5 py-1.5 text-xs font-bold text-[#1F2B46] border border-[#C8D6C3]">
                   {entry.roomNumber || "Pending Room Allocation"}
                 </span>
               </div>
@@ -270,7 +270,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
 
             {/* Waiting Time Metrics */}
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-3.5 text-xs">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-3.5 text-xs">
                 <span className="text-[#5A6372] block mb-0.5">Estimated Wait Time</span>
                 <span className="text-sm font-bold text-[#1F2B46]">
                   {entry.estimatedWaitMinutes !== undefined ? `~${entry.estimatedWaitMinutes} minutes (est.)` : "Not available"}
@@ -278,7 +278,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
                 <p className="text-[10px] text-[#5A6372] mt-0.5 italic">Approximate only &bull; Non-guaranteed</p>
               </div>
 
-              <div className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-3.5 text-xs">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-3.5 text-xs">
                 <span className="text-[#5A6372] block mb-0.5">Recorded Wait Duration</span>
                 <span className="text-sm font-bold text-[#1F2B46]">
                   {entry.actualWaitMinutes !== undefined ? `${entry.actualWaitMinutes} minutes` : "In active queue"}
@@ -286,7 +286,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
                 <p className="text-[10px] text-[#5A6372] mt-0.5">Check-in to consult start</p>
               </div>
 
-              <div className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-3.5 text-xs">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-3.5 text-xs">
                 <span className="text-[#5A6372] block mb-0.5">Triage Priority</span>
                 <span className="text-sm font-bold text-purple-700">
                   {entry.priority}
@@ -300,7 +300,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372]">
                 Reason for Visit / Chief Complaint
               </h3>
-              <p className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4 text-xs font-medium text-[#1F2B46] leading-relaxed">
+              <p className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4 text-xs font-medium text-[#1F2B46] leading-relaxed">
                 {entry.chiefComplaint}
               </p>
             </div>
@@ -310,15 +310,15 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372]">
                 Staff Intake & Triage Notes
               </h3>
-              <p className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4 text-xs text-[#1F2B46]/80 leading-relaxed">
+              <p className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4 text-xs text-[#1F2B46]/80 leading-relaxed">
                 {entry.staffNotes || "No intake observations recorded."}
               </p>
             </div>
           </div>
 
           {/* Patient Card linked to /dashboard/patients/[patientId] */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xs">
-            <div className="flex items-center justify-between border-b border-[#DDE6DA] pb-4">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
               <div className="flex items-center gap-2">
                 <User className="h-5 w-5 text-[#0055A4]" />
                 <h3 className="text-base font-bold text-[#1F2B46]">Patient Profile</h3>
@@ -356,7 +356,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
 
               <Link
                 href={`/dashboard/patients/${entry.facilityPatientId}`}
-                className="rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors text-center"
+                className="rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors text-center"
               >
                 View Patient History
               </Link>
@@ -364,8 +364,8 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
           </div>
 
           {/* Assigned Provider & Department */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xs">
-            <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-4">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-4">
               <Stethoscope className="h-5 w-5 text-[#0055A4]" />
               <h3 className="text-base font-bold text-[#1F2B46]">
                 Assigned Clinical Provider
@@ -373,7 +373,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
             </div>
 
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0055A4]/10 text-[#0055A4] font-bold">
                     Dr
@@ -388,7 +388,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-4">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0055A4]/10 text-[#0055A4]">
                     <Building2 className="h-5 w-5" />
@@ -409,8 +409,8 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
         {/* RIGHT COLUMN: Linked Appointment & Audit Trail (1 col) */}
         <div className="space-y-6">
           {/* Linked Appointment Card */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372] border-b border-[#DDE6DA] pb-3">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6372] border-b border-[#C8D6C3] pb-3">
               Originating Appointment
             </h3>
             <div className="mt-4 space-y-3 text-xs">
@@ -437,10 +437,10 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
               </div>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-[#DDE6DA]">
+            <div className="mt-4 pt-3 border-t border-[#C8D6C3]">
               <Link
                 href={`/dashboard/appointments/${entry.appointmentId}`}
-                className="flex items-center justify-center gap-1.5 rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors"
+                className="flex items-center justify-center gap-1.5 rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] p-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors"
               >
                 <FileText className="h-3.5 w-3.5 text-[#0055A4]" />
                 <span>Open Appointment Dossier</span>
@@ -449,8 +449,8 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
           </div>
 
           {/* Activity Timeline */}
-          <div className="rounded-2xl border border-[#DDE6DA] bg-white p-5 shadow-xs">
-            <div className="flex items-center gap-2 border-b border-[#DDE6DA] pb-3">
+          <div className="rounded-2xl border border-[#C5D2C0] bg-white p-5 shadow-[0_3px_10px_rgba(31,43,70,0.10)]">
+            <div className="flex items-center gap-2 border-b border-[#C8D6C3] pb-3">
               <ShieldCheck className="h-4 w-4 text-[#0055A4]" />
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#1F2B46]">
                 Visit Activity Timeline
@@ -463,7 +463,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
                   {/* Timeline bullet & line */}
                   <div className="absolute left-0 top-1 h-3 w-3 rounded-full border-2 border-white bg-[#0055A4] shadow-xs" />
                   {idx !== entry.timeline.length - 1 && (
-                    <div className="absolute left-[5px] top-4 h-full w-[2px] bg-[#DDE6DA]" />
+                    <div className="absolute left-[5px] top-4 h-full w-[2px] bg-[#E1E9DC]" />
                   )}
 
                   <div>
@@ -489,7 +489,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
       {/* CONFIRM STATUS MODAL */}
       {actionModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-md rounded-2xl border border-[#DDE6DA] bg-white p-6 shadow-xl animate-in fade-in">
+          <div className="w-full max-w-md rounded-2xl border border-[#C5D2C0] bg-white p-6 shadow-xl animate-in fade-in">
             <h3 className="text-lg font-bold text-[#1F2B46]">Confirm Queue Transition</h3>
             <p className="mt-1 text-xs text-[#5A6372] leading-relaxed">
               Transition <strong>{entry.patientName}</strong> ({entry.queueNumber}) from &ldquo;{entry.status}&rdquo; to &ldquo;<strong>{actionModal}</strong>&rdquo;?
@@ -505,7 +505,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
                   value={roomInput}
                   onChange={(e) => setRoomInput(e.target.value)}
                   placeholder="e.g. Room 302, Suite B..."
-                  className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46]"
+                  className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46]"
                 />
               </div>
             )}
@@ -520,7 +520,7 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
                   value={actionReason}
                   onChange={(e) => setActionReason(e.target.value)}
                   placeholder="Provide clinical or operational rationale..."
-                  className="w-full rounded-xl border border-[#DDE6DA] bg-[#F1F5EF] p-2.5 text-xs text-[#1F2B46]"
+                  className="w-full rounded-xl border border-[#AEBEAA] bg-[#F3F7F2] p-2.5 text-xs text-[#1F2B46]"
                 />
               </div>
             )}
@@ -529,10 +529,10 @@ export function QueueDetailView({ initialEntry, isGuestMode = false }: QueueDeta
               <p className="mt-2 text-xs font-semibold text-rose-600">{actionError}</p>
             )}
 
-            <div className="mt-6 flex items-center justify-end gap-2 border-t border-[#DDE6DA] pt-4">
+            <div className="mt-6 flex items-center justify-end gap-2 border-t border-[#C8D6C3] pt-4">
               <button
                 onClick={() => setActionModal(null)}
-                className="rounded-xl border border-[#DDE6DA] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                className="rounded-xl border border-[#C8D6C3] px-4 py-2.5 text-xs font-semibold text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
               >
                 Cancel
               </button>

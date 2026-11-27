@@ -90,20 +90,20 @@ export default function BrandPanel({
   variant = 'blue',
   features = DEFAULT_FEATURES,
 }: BrandPanelProps) {
-  const headlineColor = variant === 'green' ? 'text-[#003669]' : 'text-[#003669]';
+  const headlineColor = variant === 'green' ? 'text-[#0C426D]' : 'text-[#0C426D]';
 
   /* Split headline on \n so "connected." can be italicised */
   const headlineParts = headline.split('\n');
 
   return (
     <section
-      className="relative flex w-full flex-col justify-between border-b border-[#015CA9]/12 pb-8 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-12"
+      className="relative flex w-full flex-col justify-between p-5 sm:p-7 lg:p-9"
       aria-label="MedKnot branding panel"
     >
       {/* ── MedKnot logo + brand name ──────────────────────────────── */}
       <div className="relative z-10">
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/60 bg-white/90 p-2 shadow-sm">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/65 bg-white/92 p-2 shadow-sm">
             <Image
               src="/logo.png"
               alt="MedKnot logo"
@@ -115,14 +115,14 @@ export default function BrandPanel({
           </div>
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xl font-bold tracking-tight text-[#1F2B46]">
+              <span className="text-xl font-bold tracking-tight text-[#122943]">
                 Med<span className="text-[#015CA9]">Knot</span>
               </span>
-              <span className="inline-flex items-center rounded border border-[#015CA9]/20 bg-white/70 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#015CA9]">
+              <span className="inline-flex items-center rounded border border-[#015CA9]/20 bg-white/75 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#015CA9]">
                 Hospital Portal
               </span>
             </div>
-            <p className="mt-0.5 text-[11px] font-medium tracking-wide text-slate-600">
+            <p className="mt-0.5 text-[11px] font-medium tracking-wide text-[#354E68]">
               Connected care. Brighter lives.
             </p>
           </div>
@@ -132,11 +132,11 @@ export default function BrandPanel({
       {/* ── Hero content — headline + description + features ───────── */}
       <div className="relative z-10 flex flex-1 flex-col justify-center py-8 lg:py-9">
 
-        {/* Large headline */}
+        {/* Large headline (softened italic emphasis while preserving clarity) */}
         <h1 className={`text-[2.4rem] font-extrabold leading-[1.1] tracking-tight sm:text-[2.75rem] lg:text-[3.1rem] ${headlineColor}`}>
           {headlineParts.map((part, i) =>
             i === headlineParts.length - 1 ? (
-              <span key={i} className="block italic">{part}</span>
+              <span key={i} className="block italic text-[#0C426D]/75">{part}</span>
             ) : (
               <span key={i} className="block">{part}</span>
             )
@@ -147,7 +147,7 @@ export default function BrandPanel({
         <div className="mt-3 h-[3px] w-20 rounded-full bg-gradient-to-r from-[#DFEEA9] to-[#A3C8B4]" />
 
         {/* Sub-copy */}
-        <p className="mt-5 max-w-[440px] text-base leading-relaxed text-slate-700">
+        <p className="mt-5 max-w-[440px] text-base leading-relaxed text-[#1E354D]">
           {subCopy}
         </p>
 
@@ -156,12 +156,12 @@ export default function BrandPanel({
           <ul className="mt-7 space-y-4">
             {features.map((feature, i) => (
               <li key={i} className="flex items-start gap-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/80 text-[#015CA9] shadow-sm ring-1 ring-white/50">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/85 text-[#015CA9] shadow-sm ring-1 ring-white/60">
                   {feature.icon}
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold text-[#1F2B46]">{feature.title}</p>
-                  <p className="mt-0.5 text-xs text-slate-600">{feature.description}</p>
+                  <p className="text-sm font-semibold text-[#132940]">{feature.title}</p>
+                  <p className="mt-0.5 text-xs text-[#2D455E]">{feature.description}</p>
                 </div>
               </li>
             ))}
@@ -169,20 +169,20 @@ export default function BrandPanel({
         )}
       </div>
 
-      {/* ── Footer bar (kept inside the glass card) ────────────────── */}
-      <div className="relative z-10 flex flex-col items-start justify-between gap-3 border-t border-[#015CA9]/12 pt-5 text-xs text-slate-600 sm:flex-row sm:items-center">
+      {/* ── Footer bar (kept inside the transparent left frosted panel) ────────────────── */}
+      <div className="relative z-10 flex flex-col items-start justify-between gap-3 border-t border-white/30 pt-5 text-xs sm:flex-row sm:items-center">
         <div className="flex items-center gap-2">
-          <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#A3C8B4]" aria-hidden="true" />
-          <span className="font-medium text-slate-700">{footerTagline}</span>
+          <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#C9DFC5]" aria-hidden="true" />
+          <span className="font-medium text-white/95 drop-shadow-[0_1px_2px_rgba(12,66,109,0.45)]">{footerTagline}</span>
         </div>
-        <div className="flex flex-wrap items-center gap-2.5 text-[11px] text-slate-500">
-          <span className="rounded border border-white/70 bg-white/65 px-2 py-0.5">v2.4 Pro</span>
-          <span aria-hidden="true">•</span>
-          <a href="#" className="transition-colors hover:text-[#015CA9] focus:outline-none focus-visible:text-[#015CA9]">
+        <div className="flex flex-wrap items-center gap-2.5 text-[11px] text-[#132940]">
+          <span className="rounded border border-white/75 bg-white/85 px-2 py-0.5 font-medium text-[#1F2B46] shadow-2xs">v2.4 Pro</span>
+          <span aria-hidden="true" className="text-white/75">•</span>
+          <a href="#" className="font-medium text-[#122943] transition-colors hover:text-[#015CA9] focus:outline-none focus-visible:text-[#015CA9]">
             System Status
           </a>
-          <span aria-hidden="true">•</span>
-          <a href="#" className="transition-colors hover:text-[#015CA9] focus:outline-none focus-visible:text-[#015CA9]">
+          <span aria-hidden="true" className="text-white/75">•</span>
+          <a href="#" className="font-medium text-[#122943] transition-colors hover:text-[#015CA9] focus:outline-none focus-visible:text-[#015CA9]">
             Security Policy
           </a>
         </div>

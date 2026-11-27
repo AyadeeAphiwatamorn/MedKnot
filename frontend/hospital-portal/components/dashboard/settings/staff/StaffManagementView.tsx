@@ -236,14 +236,14 @@ export default function StaffManagementView({
                 >
                   Dashboard
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <Link
                   href="/dashboard/settings"
                   className="hover:text-[#015CA9] transition-colors"
                 >
                   Settings
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   Staff Account Management
                 </span>
@@ -279,8 +279,8 @@ export default function StaffManagementView({
             </div>
 
             {/* Section 6 Roles & Permissions Overview Card */}
-            <Card className="bg-white border-[#DDE6DA] shadow-xs mb-6">
-              <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0]">
+            <Card className="mb-6">
+              <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3]">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-[#015CA9]" />
                   <CardTitle className="text-sm">
@@ -332,9 +332,9 @@ export default function StaffManagementView({
             </Card>
 
             {/* Filter & Search Bar */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-4 shadow-sm mb-6 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-6 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
               <div className="relative flex-1 min-w-[280px]">
-                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#727783]" />
+                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#667085]" />
                 <Input
                   type="text"
                   placeholder="Search staff by name, email, department, or staff ID..."
@@ -348,7 +348,7 @@ export default function StaffManagementView({
                 <select
                   value={roleFilter}
                   onChange={(e) => setRoleFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Roles</option>
                   <option value="Hospital Administrator">Administrator</option>
@@ -360,7 +360,7 @@ export default function StaffManagementView({
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Statuses</option>
                   <option value="active">Active Only</option>
@@ -371,10 +371,10 @@ export default function StaffManagementView({
             </div>
 
             {/* Staff Directory Table */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-sm overflow-hidden">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm">
-                  <thead className="bg-[#FAFDF8] border-b border-[#DDE6DA] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
+                  <thead className="bg-[#E6EDE2] border-b border-[#C5D2C0] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                     <tr>
                       <th className="py-3.5 px-4">Staff Member</th>
                       <th className="py-3.5 px-4">Assigned Role</th>
@@ -385,11 +385,11 @@ export default function StaffManagementView({
                       <th className="py-3.5 px-4 text-right">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#DDE6DA]">
+                  <tbody className="divide-y divide-[#C8D6C3]">
                     {filteredStaff.map((staff) => (
                       <tr
                         key={staff.id}
-                        className="hover:bg-[#F8FAF6] transition-colors"
+                        className="hover:bg-[#E6EDE2] transition-colors"
                       >
                         <td className="py-3.5 px-4">
                           <div className="flex items-center gap-3">
@@ -430,7 +430,7 @@ export default function StaffManagementView({
                                 ? "bg-[#DFEEA9] text-[#2d3a08] border border-[#c5dd80]"
                                 : staff.status === "on_leave"
                                 ? "bg-[#FAE193] text-[#5e4300] border border-[#eed072]"
-                                : "bg-[#F3F6F0] text-[#727783] border border-[#DDE6DA]"
+                                : "bg-[#E3EBDD] text-[#667085] border border-[#C8D6C3]"
                             }`}
                           >
                             <span
@@ -455,7 +455,7 @@ export default function StaffManagementView({
                             onChange={(e) =>
                               handleChangeRole(staff.id, e.target.value as UserRole)
                             }
-                            className="h-8 px-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-lg text-xs font-medium text-[#1F2B46] outline-none cursor-pointer"
+                            className="h-8 px-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-lg text-xs font-medium text-[#1F2B46] outline-none cursor-pointer"
                           >
                             <option value="Hospital Administrator">Administrator</option>
                             <option value="Doctor">Doctor</option>
@@ -562,7 +562,7 @@ export default function StaffManagementView({
                       role: e.target.value as UserRole,
                     })
                   }
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   <option value="Nursing Staff">Nursing Staff</option>
                   <option value="Doctor">Doctor</option>

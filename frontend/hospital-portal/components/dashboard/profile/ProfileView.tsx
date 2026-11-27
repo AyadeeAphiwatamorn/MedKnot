@@ -391,13 +391,13 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   <span className="material-symbols-outlined text-[16px] shrink-0">home</span>
                   <span className="whitespace-nowrap">Home</span>
                 </Link>
-                <span className="material-symbols-outlined text-[14px] text-[#727783] shrink-0">
+                <span className="material-symbols-outlined text-[14px] text-[#667085] shrink-0">
                   chevron_right
                 </span>
                 <span className="text-[#5A6372] whitespace-nowrap">
                   Operations
                 </span>
-                <span className="material-symbols-outlined text-[14px] text-[#727783] shrink-0">
+                <span className="material-symbols-outlined text-[14px] text-[#667085] shrink-0">
                   chevron_right
                 </span>
                 <span className="text-[#0055A4] font-semibold whitespace-nowrap">
@@ -425,7 +425,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                 <div className="flex items-center gap-space-sm self-start md:self-auto shrink-0">
                   <button
                     onClick={handleCopyStaffId}
-                    className="px-space-md py-2 rounded-xl bg-white border border-[#D5DFD2] hover:bg-[#EDF2E9] text-[#1F2B46] font-button-label text-supporting transition-all shadow-xs flex items-center gap-2 cursor-pointer"
+                    className="px-space-md py-2 rounded-xl bg-white border border-[#C8D6C3] hover:bg-[#D5E0D2] text-[#1F2B46] font-button-label text-supporting transition-all shadow-xs flex items-center gap-2 cursor-pointer"
                     type="button"
                     title="Copy Staff ID"
                   >
@@ -442,8 +442,8 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
             </div>
 
             {/* ── SECTION A: PROFILE OVERVIEW (HERO IDENTITY CARD) ───────── */}
-            <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 lg:p-8 shadow-sm mb-space-xl">
-              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-[#D5DFD2]">
+            <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 lg:p-8 shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-space-xl">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-[#C8D6C3]">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 min-w-0">
                   {/* Avatar with status badge */}
                   <div className="relative shrink-0">
@@ -512,7 +512,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={handleCancelEditing}
-                        className="px-4 py-2.5 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] font-button-label text-button-label transition-colors cursor-pointer"
+                        className="px-4 py-2.5 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] font-button-label text-button-label transition-colors cursor-pointer"
                         type="button"
                       >
                         Cancel
@@ -544,7 +544,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
 
               {/* 4 Identity Badges Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
-                <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                   <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                     Official Staff ID
                   </span>
@@ -561,7 +561,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   </span>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                   <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                     Institutional Role
                   </span>
@@ -579,7 +579,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   </span>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                   <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                     Medical Council License
                   </span>
@@ -597,7 +597,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   </span>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                   <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                     Account Security Status
                   </span>
@@ -622,10 +622,10 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               {/* Left Column (7 cols): Personal Info & Affiliation */}
               <div className="lg:col-span-7 flex flex-col gap-space-xl min-w-0">
                 {/* ── SECTION B: PERSONAL INFORMATION ─────────────────────── */}
-                <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 lg:p-8 shadow-sm flex flex-col gap-space-lg">
-                  <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-4">
+                <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 lg:p-8 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-lg">
+                  <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-10 h-10 rounded-xl bg-[#EDF2E9] text-[#0055A4] flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-[#E3EBDD] text-[#0055A4] flex items-center justify-center shrink-0">
                         <span className="material-symbols-outlined text-[22px]">person</span>
                       </div>
                       <div className="flex flex-col">
@@ -652,9 +652,9 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
 
                   {/* Photo Edit Row when editing */}
                   {isEditing && (
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col sm:flex-row items-center justify-between gap-4">
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 rounded-xl bg-white border border-[#D5DFD2] overflow-hidden flex items-center justify-center shrink-0 shadow-xs">
+                        <div className="w-16 h-16 rounded-xl bg-white border border-[#C8D6C3] overflow-hidden flex items-center justify-center shrink-0 shadow-xs">
                           {pendingPhotoPreview || profile.photoUrl ? (
                             <Image
                               src={pendingPhotoPreview || (profile.photoUrl as string)}
@@ -694,7 +694,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                         <button
                           type="button"
                           onClick={() => fileInputRef.current?.click()}
-                          className="px-3.5 py-1.5 rounded-lg bg-white border border-[#D5DFD2] hover:bg-[#E4EBE0] text-[#0055A4] font-button-label text-xs font-semibold transition-colors cursor-pointer"
+                          className="px-3.5 py-1.5 rounded-lg bg-white border border-[#C8D6C3] hover:bg-[#D5E0D2] text-[#0055A4] font-button-label text-xs font-semibold transition-colors cursor-pointer"
                         >
                           Change Photo
                         </button>
@@ -730,9 +730,9 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                       <div className="flex items-center justify-between">
                         <label className="font-card-heading text-xs font-semibold text-[#1F2B46] uppercase tracking-wider flex items-center gap-1">
                           Full Legal Name
-                          <span className="material-symbols-outlined text-[14px] text-[#727783]">lock</span>
+                          <span className="material-symbols-outlined text-[14px] text-[#667085]">lock</span>
                         </label>
-                        <span className="text-[11px] text-[#727783] bg-[#EDF2E9] px-2 py-0.5 rounded-md">
+                        <span className="text-[11px] text-[#667085] bg-[#E3EBDD] px-2 py-0.5 rounded-md">
                           Read-Only • Requires HR Authorization
                         </span>
                       </div>
@@ -740,7 +740,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                         type="text"
                         readOnly
                         value={profile.legalName}
-                        className="w-full px-space-md py-2.5 bg-[#E4EBE0] border border-[#D5DFD2] rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none cursor-not-allowed select-none opacity-90"
+                        className="w-full px-space-md py-2.5 bg-[#E1E9DC] border border-[#AEBEAA] rounded-xl text-[#1F2B46] font-body-md text-body-md outline-none cursor-not-allowed select-none opacity-90"
                       />
                       <span className="text-[11px] text-[#5A6372]">
                         Legal name is locked against institutional charter license and state medical registry records.
@@ -763,10 +763,10 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                                 setFormErrors({ ...formErrors, displayName: "" });
                               }
                             }}
-                            className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white border rounded-xl text-[#1F2B46] font-body-md outline-none transition-all ${
+                            className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white border rounded-xl text-[#1F2B46] font-body-md outline-none transition-all ${
                               formErrors.displayName
                                 ? "border-error ring-1 ring-error"
-                                : "border-[#D5DFD2] focus:border-[#0055A4]"
+                                : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                           {formErrors.displayName && (
@@ -774,7 +774,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                           )}
                         </>
                       ) : (
-                        <div className="w-full px-space-md py-2.5 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-[#1F2B46] font-semibold text-body-md">
+                        <div className="w-full px-space-md py-2.5 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-[#1F2B46] font-semibold text-body-md">
                           {profile.displayName}
                         </div>
                       )}
@@ -788,9 +788,9 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                       <div className="flex items-center justify-between">
                         <label className="font-card-heading text-xs font-semibold text-[#1F2B46] uppercase tracking-wider flex items-center gap-1">
                           Staff ID
-                          <span className="material-symbols-outlined text-[14px] text-[#727783]">lock</span>
+                          <span className="material-symbols-outlined text-[14px] text-[#667085]">lock</span>
                         </label>
-                        <span className="text-[11px] text-[#727783] bg-[#EDF2E9] px-2 py-0.5 rounded-md">
+                        <span className="text-[11px] text-[#667085] bg-[#E3EBDD] px-2 py-0.5 rounded-md">
                           System Assigned
                         </span>
                       </div>
@@ -798,7 +798,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                         type="text"
                         readOnly
                         value={profile.staffId}
-                        className="w-full px-space-md py-2.5 bg-[#E4EBE0] border border-[#D5DFD2] rounded-xl text-[#1F2B46] font-mono font-bold text-body-md outline-none cursor-not-allowed select-none opacity-90"
+                        className="w-full px-space-md py-2.5 bg-[#E1E9DC] border border-[#AEBEAA] rounded-xl text-[#1F2B46] font-mono font-bold text-body-md outline-none cursor-not-allowed select-none opacity-90"
                       />
                       <span className="text-[11px] text-[#5A6372]">
                         Permanent identifier for institutional audit logs.
@@ -834,10 +834,10 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                                 setFormErrors({ ...formErrors, workEmail: "" });
                               }
                             }}
-                            className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white border rounded-xl text-[#1F2B46] font-body-md outline-none transition-all ${
+                            className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white border rounded-xl text-[#1F2B46] font-body-md outline-none transition-all ${
                               formErrors.workEmail
                                 ? "border-error ring-1 ring-error"
-                                : "border-[#D5DFD2] focus:border-[#0055A4]"
+                                : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                           {formErrors.workEmail && (
@@ -845,7 +845,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                           )}
                         </>
                       ) : (
-                        <div className="w-full px-space-md py-2.5 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-[#1F2B46] font-semibold text-body-md truncate">
+                        <div className="w-full px-space-md py-2.5 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-[#1F2B46] font-semibold text-body-md truncate">
                           {profile.workEmail}
                         </div>
                       )}
@@ -883,10 +883,10 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                                 setFormErrors({ ...formErrors, mobileNumber: "" });
                               }
                             }}
-                            className={`w-full px-space-md py-2.5 bg-[#F1F5EF] focus:bg-white border rounded-xl text-[#1F2B46] font-body-md outline-none transition-all ${
+                            className={`w-full px-space-md py-2.5 bg-[#F3F7F2] focus:bg-white border rounded-xl text-[#1F2B46] font-body-md outline-none transition-all ${
                               formErrors.mobileNumber
                                 ? "border-error ring-1 ring-error"
-                                : "border-[#D5DFD2] focus:border-[#0055A4]"
+                                : "border-[#AEBEAA] focus:border-[#0055A4]"
                             }`}
                           />
                           {formErrors.mobileNumber && (
@@ -894,7 +894,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                           )}
                         </>
                       ) : (
-                        <div className="w-full px-space-md py-2.5 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-[#1F2B46] font-semibold text-body-md">
+                        <div className="w-full px-space-md py-2.5 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-[#1F2B46] font-semibold text-body-md">
                           {profile.mobileNumber}
                         </div>
                       )}
@@ -904,7 +904,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     </div>
 
                     {/* Security Notice Callout */}
-                    <div className="md:col-span-2 p-4 rounded-2xl bg-[#EBF3FC] border border-[#D5DFD2] flex items-start gap-3 mt-2">
+                    <div className="md:col-span-2 p-4 rounded-2xl bg-[#EBF3FC] border border-[#C8D6C3] flex items-start gap-3 mt-2">
                       <span className="material-symbols-outlined text-[#0055A4] text-xl shrink-0 mt-0.5">
                         info
                       </span>
@@ -920,11 +920,11 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
 
                     {/* Bottom Save bar if in editing mode */}
                     {isEditing && (
-                      <div className="md:col-span-2 flex items-center justify-end gap-3 pt-3 border-t border-[#D5DFD2]">
+                      <div className="md:col-span-2 flex items-center justify-end gap-3 pt-3 border-t border-[#C8D6C3]">
                         <button
                           type="button"
                           onClick={handleCancelEditing}
-                          className="px-5 py-2 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] font-button-label text-sm transition-colors cursor-pointer"
+                          className="px-5 py-2 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] font-button-label text-sm transition-colors cursor-pointer"
                         >
                           Cancel
                         </button>
@@ -941,10 +941,10 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                 </div>
 
                 {/* ── SECTION D: HOSPITAL AFFILIATION & ACCESS ────────────── */}
-                <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 lg:p-8 shadow-sm flex flex-col gap-space-lg">
-                  <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-4">
+                <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 lg:p-8 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-lg">
+                  <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-10 h-10 rounded-xl bg-[#EDF2E9] text-[#0055A4] flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-[#E3EBDD] text-[#0055A4] flex items-center justify-center shrink-0">
                         <span className="material-symbols-outlined text-[22px]">domain</span>
                       </div>
                       <div className="flex flex-col">
@@ -960,7 +960,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     <button
                       type="button"
                       onClick={() => setShowContactAdminModal(true)}
-                      className="px-3.5 py-1.5 rounded-lg bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#0055A4] font-button-label text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+                      className="px-3.5 py-1.5 rounded-lg bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#0055A4] font-button-label text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
                     >
                       <span className="material-symbols-outlined text-[16px]">contact_support</span>
                       <span>Request Change</span>
@@ -969,7 +969,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
 
                   {/* Affiliation Details Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                       <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                         Primary Facility
                       </span>
@@ -981,7 +981,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                       <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                         Assigned Department
                       </span>
@@ -993,7 +993,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                       <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                         Clinical Ward &amp; Station
                       </span>
@@ -1005,7 +1005,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex flex-col gap-1">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex flex-col gap-1">
                       <span className="text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                         Clinical Specialty
                       </span>
@@ -1025,7 +1025,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     </span>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                      <div className="p-3 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-between text-xs">
+                      <div className="p-3 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-between text-xs">
                         <div className="flex items-center gap-2 min-w-0">
                           <span className="material-symbols-outlined text-emerald-700 text-lg">check_circle</span>
                           <span className="font-semibold text-[#1F2B46] truncate">EHR Patient Records</span>
@@ -1035,7 +1035,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                         </span>
                       </div>
 
-                      <div className="p-3 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-between text-xs">
+                      <div className="p-3 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-between text-xs">
                         <div className="flex items-center gap-2 min-w-0">
                           <span className="material-symbols-outlined text-emerald-700 text-lg">check_circle</span>
                           <span className="font-semibold text-[#1F2B46] truncate">OPD Queue &amp; Bed Alloc</span>
@@ -1045,7 +1045,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                         </span>
                       </div>
 
-                      <div className="p-3 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-between text-xs">
+                      <div className="p-3 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-between text-xs">
                         <div className="flex items-center gap-2 min-w-0">
                           <span className="material-symbols-outlined text-emerald-700 text-lg">check_circle</span>
                           <span className="font-semibold text-[#1F2B46] truncate">Staff Rosters &amp; Shifts</span>
@@ -1055,7 +1055,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                         </span>
                       </div>
 
-                      <div className="p-3 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-between text-xs">
+                      <div className="p-3 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-between text-xs">
                         <div className="flex items-center gap-2 min-w-0">
                           <span className="material-symbols-outlined text-emerald-700 text-lg">check_circle</span>
                           <span className="font-semibold text-[#1F2B46] truncate">Tele-Triage &amp; AI Routing</span>
@@ -1065,7 +1065,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                         </span>
                       </div>
 
-                      <div className="p-3 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-between text-xs sm:col-span-2">
+                      <div className="p-3 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-between text-xs sm:col-span-2">
                         <div className="flex items-center gap-2 min-w-0">
                           <span className="material-symbols-outlined text-emerald-700 text-lg">check_circle</span>
                           <span className="font-semibold text-[#1F2B46] truncate">HIPAA Security &amp; Access Audit Logs</span>
@@ -1078,7 +1078,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   </div>
 
                   {/* Read-only Governance Policy Banner */}
-                  <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] text-xs text-[#5A6372] flex items-start gap-2.5">
+                  <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] text-xs text-[#5A6372] flex items-start gap-2.5">
                     <span className="material-symbols-outlined text-[#0055A4] text-lg shrink-0 mt-0.5">
                       gavel
                     </span>
@@ -1092,10 +1092,10 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               {/* Right Column (5 cols): Security, Active Sessions, Audit Trail */}
               <div className="lg:col-span-5 flex flex-col gap-space-xl min-w-0">
                 {/* ── SECTION C: ACCOUNT & SECURITY ───────────────────────── */}
-                <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 lg:p-8 shadow-sm flex flex-col gap-space-lg">
-                  <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-4">
+                <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 lg:p-8 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col gap-space-lg">
+                  <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-4">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-10 h-10 rounded-xl bg-[#EDF2E9] text-[#0055A4] flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-[#E3EBDD] text-[#0055A4] flex items-center justify-center shrink-0">
                         <span className="material-symbols-outlined text-[22px]">security</span>
                       </div>
                       <div className="flex flex-col">
@@ -1112,9 +1112,9 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   {/* Security Status Rows */}
                   <div className="flex flex-col gap-3">
                     {/* Two-Factor Authentication */}
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-center justify-between">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-center justify-between">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-9 h-9 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-center text-[#0055A4] shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-center text-[#0055A4] shrink-0">
                           <span className="material-symbols-outlined text-lg">phonelink_lock</span>
                         </div>
                         <div className="flex flex-col min-w-0">
@@ -1132,9 +1132,9 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     </div>
 
                     {/* Workstation Info */}
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-center justify-between">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-center justify-between">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-9 h-9 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-center text-[#0055A4] shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-center text-[#0055A4] shrink-0">
                           <span className="material-symbols-outlined text-lg">computer</span>
                         </div>
                         <div className="flex flex-col min-w-0">
@@ -1152,9 +1152,9 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     </div>
 
                     {/* Last Sign-in Timestamp */}
-                    <div className="p-4 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-center justify-between">
+                    <div className="p-4 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-center justify-between">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-9 h-9 rounded-xl bg-white border border-[#D5DFD2] flex items-center justify-center text-[#0055A4] shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-white border border-[#C8D6C3] flex items-center justify-center text-[#0055A4] shrink-0">
                           <span className="material-symbols-outlined text-lg">schedule</span>
                         </div>
                         <div className="flex flex-col min-w-0">
@@ -1178,19 +1178,19 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     <button
                       type="button"
                       onClick={() => setShowPasswordModal(true)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D5DFD2] hover:bg-[#EDF2E9] text-[#1F2B46] font-button-label text-sm font-semibold transition-colors flex items-center justify-between shadow-xs cursor-pointer"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#C8D6C3] hover:bg-[#D5E0D2] text-[#1F2B46] font-button-label text-sm font-semibold transition-colors flex items-center justify-between shadow-xs cursor-pointer"
                     >
                       <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-[#0055A4] text-lg">key</span>
                         <span>Change Account Password</span>
                       </div>
-                      <span className="material-symbols-outlined text-[#727783] text-lg">chevron_right</span>
+                      <span className="material-symbols-outlined text-[#667085] text-lg">chevron_right</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => setShowSignOutOthersModal(true)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D5DFD2] hover:bg-[#EDF2E9] text-[#1F2B46] font-button-label text-sm font-semibold transition-colors flex items-center justify-between shadow-xs cursor-pointer"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#C8D6C3] hover:bg-[#D5E0D2] text-[#1F2B46] font-button-label text-sm font-semibold transition-colors flex items-center justify-between shadow-xs cursor-pointer"
                     >
                       <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-amber-700 text-lg">devices</span>
@@ -1204,19 +1204,19 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     <button
                       type="button"
                       onClick={() => setShowAuditModal(true)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D5DFD2] hover:bg-[#EDF2E9] text-[#1F2B46] font-button-label text-sm font-semibold transition-colors flex items-center justify-between shadow-xs cursor-pointer"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#C8D6C3] hover:bg-[#D5E0D2] text-[#1F2B46] font-button-label text-sm font-semibold transition-colors flex items-center justify-between shadow-xs cursor-pointer"
                     >
                       <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-[#0055A4] text-lg">history</span>
                         <span>View Access Audit Trail</span>
                       </div>
-                      <span className="material-symbols-outlined text-[#727783] text-lg">chevron_right</span>
+                      <span className="material-symbols-outlined text-[#667085] text-lg">chevron_right</span>
                     </button>
                   </div>
                 </div>
 
                 {/* ── CARD: QUICK ASSISTANCE / EMERGENCY HR HELPLINE ─────── */}
-                <div className="p-6 rounded-3xl bg-[#EDF2E9] border border-[#D5DFD2] shadow-sm flex flex-col gap-3">
+                <div className="p-6 rounded-3xl bg-[#E3EBDD] border border-[#C8D6C3] shadow-sm flex flex-col gap-3">
                   <div className="flex items-center gap-2.5">
                     <span className="material-symbols-outlined text-[#0055A4] text-2xl">
                       support_agent
@@ -1228,7 +1228,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   <p className="text-xs text-[#5A6372] leading-relaxed">
                     Need emergency privilege escalation or reporting lost access tokens? Reach the Central Hospital Onboarding Desk 24/7.
                   </p>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-1 border-t border-[#D5DFD2]">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-1 border-t border-[#C8D6C3]">
                     <a
                       href="mailto:compliance@medknot.health"
                       className="text-xs font-bold text-[#0055A4] hover:underline flex items-center gap-1"
@@ -1249,8 +1249,8 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
       {/* ── MODAL 1: CHANGE PASSWORD ──────────────────────────────────────── */}
       {showPasswordModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl flex flex-col gap-space-md">
-            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-3">
+          <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl flex flex-col gap-space-md">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-3">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4] text-2xl">lock_reset</span>
                 <h3 className="font-card-heading text-lg font-bold text-[#1F2B46]">
@@ -1266,7 +1266,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   setNewPassword("");
                   setConfirmPassword("");
                 }}
-                className="text-[#727783] hover:text-[#1F2B46] p-1 rounded-lg"
+                className="text-[#667085] hover:text-[#1F2B46] p-1 rounded-lg"
               >
                 <span className="material-symbols-outlined text-xl">close</span>
               </button>
@@ -1284,7 +1284,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
                   placeholder="Enter current password"
-                  className="w-full px-3.5 py-2.5 bg-[#F1F5EF] focus:bg-white border border-[#D5DFD2] focus:border-[#0055A4] rounded-xl text-sm outline-none"
+                  className="w-full px-3.5 py-2.5 bg-[#F3F7F2] focus:bg-white border border-[#AEBEAA] focus:border-[#0055A4] rounded-xl text-sm outline-none"
                 />
               </div>
 
@@ -1295,7 +1295,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="At least 8 chars with uppercase, number & symbol"
-                  className="w-full px-3.5 py-2.5 bg-[#F1F5EF] focus:bg-white border border-[#D5DFD2] focus:border-[#0055A4] rounded-xl text-sm outline-none"
+                  className="w-full px-3.5 py-2.5 bg-[#F3F7F2] focus:bg-white border border-[#AEBEAA] focus:border-[#0055A4] rounded-xl text-sm outline-none"
                 />
               </div>
 
@@ -1306,7 +1306,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Re-enter new password"
-                  className="w-full px-3.5 py-2.5 bg-[#F1F5EF] focus:bg-white border border-[#D5DFD2] focus:border-[#0055A4] rounded-xl text-sm outline-none"
+                  className="w-full px-3.5 py-2.5 bg-[#F3F7F2] focus:bg-white border border-[#AEBEAA] focus:border-[#0055A4] rounded-xl text-sm outline-none"
                 />
               </div>
 
@@ -1329,11 +1329,11 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                 </div>
               )}
 
-              <div className="flex items-center justify-end gap-2 pt-3 border-t border-[#D5DFD2]">
+              <div className="flex items-center justify-end gap-2 pt-3 border-t border-[#C8D6C3]">
                 <button
                   type="button"
                   onClick={() => setShowPasswordModal(false)}
-                  className="px-4 py-2 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] text-xs font-semibold"
+                  className="px-4 py-2 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] text-xs font-semibold"
                 >
                   Cancel
                 </button>
@@ -1353,7 +1353,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
       {/* ── MODAL 2: SIGN OUT ALL OTHER SESSIONS ──────────────────────────── */}
       {showSignOutOthersModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl flex flex-col gap-4">
+          <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl flex flex-col gap-4">
             <div className="flex items-center gap-3 text-amber-700">
               <span className="material-symbols-outlined text-3xl">warning</span>
               <h3 className="font-card-heading text-lg font-bold text-[#1F2B46]">
@@ -1365,7 +1365,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               This will immediately revoke active access tokens on all other computers and mobile tablets. You will remain signed in strictly on this current workstation (WS-ICU-04).
             </p>
 
-            <div className="p-3 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] space-y-2 text-xs">
+            <div className="p-3 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] space-y-2 text-xs">
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-[#1F2B46]">WS-TRAUMA-02 (Desktop)</span>
                 <span className="text-[#5A6372]">Signed in 3 hrs ago</span>
@@ -1376,11 +1376,11 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-2 pt-2 border-t border-[#D5DFD2]">
+            <div className="flex items-center justify-end gap-2 pt-2 border-t border-[#C8D6C3]">
               <button
                 type="button"
                 onClick={() => setShowSignOutOthersModal(false)}
-                className="px-4 py-2 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] text-xs font-semibold"
+                className="px-4 py-2 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] text-xs font-semibold"
               >
                 Keep Sessions
               </button>
@@ -1399,8 +1399,8 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
       {/* ── MODAL 3: AUDIT TRAIL ─────────────────────────────────────────── */}
       {showAuditModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl flex flex-col gap-4">
-            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-3">
+          <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl flex flex-col gap-4">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-3">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4] text-2xl">history_edu</span>
                 <h3 className="font-card-heading text-lg font-bold text-[#1F2B46]">
@@ -1410,7 +1410,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               <button
                 type="button"
                 onClick={() => setShowAuditModal(false)}
-                className="text-[#727783] hover:text-[#1F2B46] p-1 rounded-lg"
+                className="text-[#667085] hover:text-[#1F2B46] p-1 rounded-lg"
               >
                 <span className="material-symbols-outlined text-xl">close</span>
               </button>
@@ -1424,7 +1424,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               {auditLogs.map((log) => (
                 <div
                   key={log.id}
-                  className="p-3 rounded-2xl bg-[#EDF2E9] border border-[#D5DFD2] flex items-center justify-between text-xs"
+                  className="p-3 rounded-2xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-center justify-between text-xs"
                 >
                   <div className="flex items-start gap-2.5 min-w-0">
                     <span
@@ -1458,7 +1458,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
               ))}
             </div>
 
-            <div className="flex items-center justify-between pt-2 border-t border-[#D5DFD2] text-xs">
+            <div className="flex items-center justify-between pt-2 border-t border-[#C8D6C3] text-xs">
               <span className="text-[#5A6372]">Showing last 5 security events</span>
               <button
                 type="button"
@@ -1475,8 +1475,8 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
       {/* ── MODAL 4: CONTACT HOSPITAL ADMINISTRATOR / CREDENTIALING ──────── */}
       {showContactAdminModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white border border-[#D5DFD2] rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl flex flex-col gap-4">
-            <div className="flex items-center justify-between border-b border-[#D5DFD2] pb-3">
+          <div className="bg-white border border-[#C5D2C0] rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl flex flex-col gap-4">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] pb-3">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#0055A4] text-2xl">support_agent</span>
                 <h3 className="font-card-heading text-lg font-bold text-[#1F2B46]">
@@ -1490,7 +1490,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                   setAdminRequestError(null);
                   setAdminRequestJustification("");
                 }}
-                className="text-[#727783] hover:text-[#1F2B46] p-1 rounded-lg"
+                className="text-[#667085] hover:text-[#1F2B46] p-1 rounded-lg"
               >
                 <span className="material-symbols-outlined text-xl">close</span>
               </button>
@@ -1506,7 +1506,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                 <select
                   value={adminRequestType}
                   onChange={(e) => setAdminRequestType(e.target.value)}
-                  className="w-full px-3 py-2 bg-[#F1F5EF] focus:bg-white border border-[#D5DFD2] rounded-xl text-xs outline-none cursor-pointer"
+                  className="w-full px-3 py-2 bg-[#F3F7F2] focus:bg-white border border-[#AEBEAA] rounded-xl text-xs outline-none cursor-pointer"
                 >
                   <option value="Access Tier Modification">Access Tier Modification</option>
                   <option value="Department or Ward Transfer">Department or Ward Transfer</option>
@@ -1526,7 +1526,7 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                     if (adminRequestError) setAdminRequestError(null);
                   }}
                   placeholder="Detail the clinical necessity, board approval, or departmental transfer details…"
-                  className="w-full p-3 bg-[#F1F5EF] focus:bg-white border border-[#D5DFD2] rounded-xl text-xs outline-none resize-none"
+                  className="w-full p-3 bg-[#F3F7F2] focus:bg-white border border-[#AEBEAA] rounded-xl text-xs outline-none resize-none"
                 />
               </div>
 
@@ -1537,11 +1537,11 @@ export default function ProfileView({ initialUser }: ProfileViewProps) {
                 </div>
               )}
 
-              <div className="flex items-center justify-end gap-2 pt-2 border-t border-[#D5DFD2]">
+              <div className="flex items-center justify-end gap-2 pt-2 border-t border-[#C8D6C3]">
                 <button
                   type="button"
                   onClick={() => setShowContactAdminModal(false)}
-                  className="px-4 py-2 rounded-xl bg-[#EDF2E9] hover:bg-[#E4EBE0] border border-[#D5DFD2] text-[#1F2B46] text-xs font-semibold"
+                  className="px-4 py-2 rounded-xl bg-[#E3EBDD] hover:bg-[#D5E0D2] border border-[#C8D6C3] text-[#1F2B46] text-xs font-semibold"
                 >
                   Cancel
                 </button>

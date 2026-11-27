@@ -248,11 +248,11 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
             <span>Facility Scope: St. Jude Medical Center (North Campus)</span>
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#1F2B46] border border-[#C8D6C3]">
             <span className="material-symbols-outlined text-xs text-[#34A853]">verified</span>
             <span>Live Intake Desk</span>
           </span>
@@ -260,7 +260,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
       </div>
 
       {/* Header Banner & Standard Sub-navigation Tabs matching Overview */}
-      <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-5">
+      <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
@@ -286,10 +286,10 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
         </div>
 
         {/* Standard Sub-navigation Tabs */}
-        <div className="border-t border-[#DDE6DA] pt-3 flex items-center gap-2">
+        <div className="border-t border-[#C8D6C3] pt-3 flex items-center gap-2">
           <Link
             href="/dashboard/appointments"
-            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
           >
             <span className="material-symbols-outlined text-sm">table_chart</span>
             <span>Directory & Schedule</span>
@@ -297,7 +297,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
 
           <Link
             href="/dashboard/appointments/calendar"
-            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#F3F6F0] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl text-xs font-bold text-[#5A6372] hover:bg-[#E6EDE2] hover:text-[#1F2B46] transition-colors flex items-center gap-1.5"
           >
             <span className="material-symbols-outlined text-sm">calendar_month</span>
             <span>Calendar View</span>
@@ -328,7 +328,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
 
       {/* 4 COMPACT METRIC CARDS */}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <div className="rounded-2xl border border-[#D5DFD2] bg-white p-4 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-[#1F2B46]/70">Pending Requests</span>
             <div className="rounded-md bg-orange-100 p-1.5 text-orange-600">
@@ -339,7 +339,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
           <p className="text-[11px] text-[#1F2B46]/60">Require staff intake triage</p>
         </div>
 
-        <div className="rounded-2xl border border-[#D5DFD2] bg-white p-4 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-[#1F2B46]/70">Under Review</span>
             <div className="rounded-md bg-blue-100 p-1.5 text-blue-600">
@@ -350,7 +350,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
           <p className="text-[11px] text-[#1F2B46]/60">Verification in progress</p>
         </div>
 
-        <div className="rounded-2xl border border-[#D5DFD2] bg-white p-4 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-[#1F2B46]/70">Facility Assigned (A)</span>
             <div className="rounded-md bg-purple-100 p-1.5 text-purple-600">
@@ -361,7 +361,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
           <p className="text-[11px] text-[#1F2B46]/60">Doctor & slot unassigned</p>
         </div>
 
-        <div className="rounded-2xl border border-[#D5DFD2] bg-white p-4 shadow-xs">
+        <div className="rounded-2xl border border-[#C5D2C0] bg-white p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-shadow">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-[#1F2B46]/70">Patient Selected (B)</span>
             <div className="rounded-md bg-emerald-100 p-1.5 text-emerald-600">
@@ -374,8 +374,8 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
       </div>
 
       {/* FILTER & WORKFLOW SELECTOR */}
-      <div className="flex flex-col gap-3 rounded-2xl border border-[#D5DFD2] bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] p-1">
+      <div className="flex flex-col gap-3 rounded-2xl border border-[#C5D2C0] bg-white p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex rounded-lg border border-[#C8D6C3] bg-[#E3EBDD] p-1">
           <button
             onClick={() => setActiveTab("all")}
             className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
@@ -416,7 +416,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
               placeholder="Search request or patient..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-52 rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] py-1.5 pl-8 pr-3 text-xs text-[#1F2B46] placeholder-[#1F2B46]/40 focus:border-[#0055A4] focus:outline-none"
+              className="w-52 rounded-lg border border-[#AEBEAA] bg-[#F3F7F2] py-1.5 pl-8 pr-3 text-xs text-[#1F2B46] placeholder:text-[#7C8998] focus:border-[#0055A4] focus:outline-none"
             />
           </div>
 
@@ -424,7 +424,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
             value={filterDepartment}
             onChange={(e) => setFilterDepartment(e.target.value)}
             aria-label="Filter requests by department"
-            className="rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+            className="rounded-lg border border-[#AEBEAA] bg-[#F3F7F2] px-2.5 py-1.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
           >
             <option value="All">All Departments</option>
             {AVAILABLE_DEPARTMENTS.map((dept: string) => (
@@ -439,7 +439,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
       {/* COMPACT REQUESTS LIST */}
       <div className="space-y-3">
         {filteredRequests.length === 0 ? (
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-[#D5DFD2] bg-white p-12 text-center">
+          <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-[#C5D2C0] bg-white p-12 text-center">
             <Inbox className="h-10 w-10 text-[#1F2B46]/30 mb-2" />
             <h3 className="text-sm font-bold text-[#1F2B46]">No Pending Requests</h3>
             <p className="text-xs text-[#1F2B46]/60 max-w-sm mt-0.5">
@@ -450,13 +450,13 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
           filteredRequests.map((req) => (
             <div
               key={req.id}
-              className="group rounded-2xl border border-[#D5DFD2] bg-white p-4 shadow-xs transition-all hover:border-[#0055A4]/50 hover:shadow-sm"
+              className="group rounded-2xl border border-[#C5D2C0] bg-white p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] transition-all hover:border-[#0055A4]/50 hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]"
             >
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 {/* Left Section: Information Hierarchy */}
                 <div className="flex items-start gap-3.5 min-w-0 flex-1">
                   {/* Patient Avatar */}
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EDF2E9] text-sm font-bold text-[#0055A4] border border-[#D5DFD2]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E3EBDD] text-sm font-bold text-[#0055A4] border border-[#C8D6C3]">
                     {req.patientName.charAt(0)}
                   </div>
 
@@ -478,7 +478,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                       >
                         {req.workflow === "facility_assigned" ? "Facility Assigned (A)" : "Patient Selected (B)"}
                       </span>
-                      <span className="text-[10px] font-medium text-[#1F2B46]/50 bg-[#F1F5EF] px-1.5 py-0.5 rounded">
+                      <span className="text-[10px] font-medium text-[#1F2B46]/50 bg-[#E3EBDD] px-1.5 py-0.5 rounded">
                         Submitted: {req.requestSubmissionDate}
                       </span>
                     </div>
@@ -508,7 +508,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
 
                     {/* Patient note pill if available */}
                     {req.patientNotes && (
-                      <div className="mt-1.5 inline-block text-[11px] text-[#1F2B46]/80 italic bg-[#F1F5EF] px-2 py-0.5 rounded">
+                      <div className="mt-1.5 inline-block text-[11px] text-[#1F2B46]/80 italic bg-[#E3EBDD] px-2 py-0.5 rounded">
                         Note: &ldquo;{req.patientNotes}&rdquo;
                       </div>
                     )}
@@ -516,7 +516,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                 </div>
 
                 {/* Right Section: Compact Co-located Actions */}
-                <div className="flex flex-wrap items-center gap-1.5 shrink-0 border-t border-[#D5DFD2]/60 pt-2 lg:border-t-0 lg:pt-0">
+                <div className="flex flex-wrap items-center gap-1.5 shrink-0 border-t border-[#C8D6C3] pt-2 lg:border-t-0 lg:pt-0">
                   {/* Primary Action Button */}
                   {req.workflow === "patient_selected" ? (
                     <button
@@ -539,7 +539,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                   {/* Secondary Actions */}
                   <button
                     onClick={() => openReviewDrawer(req, "propose")}
-                    className="flex items-center gap-1 rounded-lg border border-[#D5DFD2] bg-white px-2.5 py-1.5 text-xs font-medium text-[#1F2B46] hover:bg-[#F1F5EF] transition-colors"
+                    className="flex items-center gap-1 rounded-lg border border-[#C8D6C3] bg-white px-2.5 py-1.5 text-xs font-medium text-[#1F2B46] hover:bg-[#E6EDE2] transition-colors"
                   >
                     <RotateCcw className="h-3.5 w-3.5 text-[#1F2B46]/70" />
                     Propose Slot
@@ -556,7 +556,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                   {/* Comprehensive Review Drawer Trigger */}
                   <button
                     onClick={() => openReviewDrawer(req, "view")}
-                    className="flex items-center gap-1 rounded-lg border border-[#D5DFD2] bg-[#F1F5EF] px-2.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-white hover:text-[#0055A4] transition-colors"
+                    className="flex items-center gap-1 rounded-lg border border-[#C8D6C3] bg-[#E3EBDD] px-2.5 py-1.5 text-xs font-semibold text-[#1F2B46] hover:bg-white hover:text-[#0055A4] transition-colors"
                     title="Open Full Review Panel"
                   >
                     <span>Review</span>
@@ -576,9 +576,9 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
           <div className="absolute inset-0" onClick={closeReviewDrawer} />
 
           {/* Right-side Sliding Drawer */}
-          <div className="relative z-10 flex h-full w-full max-w-xl flex-col border-l border-[#D5DFD2] bg-white shadow-2xl animate-in slide-in-from-right duration-200">
+          <div className="relative z-10 flex h-full w-full max-w-xl flex-col border-l border-[#C8D6C3] bg-white shadow-2xl animate-in slide-in-from-right duration-200">
             {/* Drawer Header */}
-            <div className="flex items-center justify-between border-b border-[#D5DFD2] px-6 py-4 bg-[#F1F5EF]">
+            <div className="flex items-center justify-between border-b border-[#C8D6C3] px-6 py-4 bg-[#E3EBDD]">
               <div>
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-xs font-bold text-[#0055A4] bg-white px-2 py-0.5 rounded border border-blue-200">
@@ -610,7 +610,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
             {/* Scrollable Drawer Body */}
             <div className="flex-1 overflow-y-auto p-6 space-y-5 text-xs">
               {/* Patient Profile Snapshot */}
-              <div className="rounded-xl border border-[#D5DFD2] bg-[#F1F5EF]/60 p-4">
+              <div className="rounded-xl border border-[#C8D6C3] bg-[#E3EBDD] p-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0055A4] text-white font-bold text-base">
                     {reviewRequest.patientName.charAt(0)}
@@ -627,7 +627,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                   </div>
                   <Link
                     href={`/dashboard/patients/${reviewRequest.facilityPatientId}`}
-                    className="rounded-md border border-[#D5DFD2] bg-white px-2.5 py-1 text-[11px] font-semibold text-[#0055A4] hover:bg-[#F1F5EF]"
+                    className="rounded-md border border-[#C8D6C3] bg-white px-2.5 py-1 text-[11px] font-semibold text-[#0055A4] hover:bg-[#E6EDE2]"
                   >
                     EHR Dossier
                   </Link>
@@ -635,8 +635,8 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
               </div>
 
               {/* Consultation Request Details */}
-              <div className="rounded-xl border border-[#D5DFD2] p-4 space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#1F2B46]/70 border-b border-[#D5DFD2]/60 pb-1.5">
+              <div className="rounded-xl border border-[#C8D6C3] p-4 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#1F2B46]/70 border-b border-[#C8D6C3] pb-1.5">
                   Request Specifications
                 </h4>
 
@@ -661,7 +661,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
 
                 <div>
                   <span className="text-[#1F2B46]/60 block mb-0.5">Chief Complaint / Reason for Visit</span>
-                  <p className="rounded-lg bg-[#F1F5EF] p-2.5 font-medium text-[#1F2B46] leading-relaxed">
+                  <p className="rounded-lg bg-[#E3EBDD] p-2.5 font-medium text-[#1F2B46] leading-relaxed">
                     {reviewRequest.reasonForVisit}
                   </p>
                 </div>
@@ -669,7 +669,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                 {reviewRequest.patientNotes && (
                   <div>
                     <span className="text-[#1F2B46]/60 block mb-0.5">Patient Notes</span>
-                    <p className="rounded-lg bg-[#F1F5EF] p-2.5 text-[#1F2B46]/80 italic">
+                    <p className="rounded-lg bg-[#E3EBDD] p-2.5 text-[#1F2B46]/80 italic">
                       &ldquo;{reviewRequest.patientNotes}&rdquo;
                     </p>
                   </div>
@@ -691,7 +691,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                     <select
                       value={assignDepartment}
                       onChange={(e) => setAssignDepartment(e.target.value)}
-                      className="w-full rounded-lg border border-[#D5DFD2] bg-white p-2 text-xs text-[#1F2B46]"
+                      className="w-full rounded-lg border border-[#AEBEAA] bg-white p-2 text-xs text-[#1F2B46]"
                     >
                       {AVAILABLE_DEPARTMENTS.map((dept: string) => (
                         <option key={dept} value={dept}>{dept}</option>
@@ -704,7 +704,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                     <select
                       value={assignDoctorId}
                       onChange={(e) => setAssignDoctorId(e.target.value)}
-                      className="w-full rounded-lg border border-[#D5DFD2] bg-white p-2 text-xs text-[#1F2B46]"
+                      className="w-full rounded-lg border border-[#AEBEAA] bg-white p-2 text-xs text-[#1F2B46]"
                     >
                       {AVAILABLE_DOCTORS.filter((doc: { department: string }) => doc.department === assignDepartment).map((doc: { id: string; name: string }) => (
                         <option key={doc.id} value={doc.id}>{doc.name}</option>
@@ -724,7 +724,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                         type="date"
                         value={assignDate}
                         onChange={(e) => setAssignDate(e.target.value)}
-                        className="w-full rounded-lg border border-[#D5DFD2] bg-white p-2 text-xs text-[#1F2B46]"
+                        className="w-full rounded-lg border border-[#AEBEAA] bg-white p-2 text-xs text-[#1F2B46]"
                       />
                     </div>
                     <div>
@@ -732,7 +732,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                       <select
                         value={assignTimeSlot}
                         onChange={(e) => setAssignTimeSlot(e.target.value)}
-                        className="w-full rounded-lg border border-[#D5DFD2] bg-white p-2 text-xs text-[#1F2B46]"
+                        className="w-full rounded-lg border border-[#AEBEAA] bg-white p-2 text-xs text-[#1F2B46]"
                       >
                         {AVAILABLE_TIME_SLOTS.map((slot: string) => (
                           <option key={slot} value={slot}>{slot}</option>
@@ -769,7 +769,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                         type="date"
                         value={assignDate}
                         onChange={(e) => setAssignDate(e.target.value)}
-                        className="w-full rounded-lg border border-[#D5DFD2] bg-white p-2 text-xs text-[#1F2B46]"
+                        className="w-full rounded-lg border border-[#AEBEAA] bg-white p-2 text-xs text-[#1F2B46]"
                       />
                     </div>
                     <div>
@@ -777,7 +777,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                       <select
                         value={assignTimeSlot}
                         onChange={(e) => setAssignTimeSlot(e.target.value)}
-                        className="w-full rounded-lg border border-[#D5DFD2] bg-white p-2 text-xs text-[#1F2B46]"
+                        className="w-full rounded-lg border border-[#AEBEAA] bg-white p-2 text-xs text-[#1F2B46]"
                       >
                         {AVAILABLE_TIME_SLOTS.map((slot: string) => (
                           <option key={slot} value={slot}>{slot}</option>
@@ -808,7 +808,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                     value={infoRequestText}
                     onChange={(e) => setInfoRequestText(e.target.value)}
                     placeholder="Specify necessary lab reports, previous scan copies, or clinical clarity required from the patient..."
-                    className="w-full rounded-lg border border-[#D5DFD2] bg-white p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
+                    className="w-full rounded-lg border border-[#AEBEAA] bg-white p-2.5 text-xs text-[#1F2B46] focus:border-[#0055A4] focus:outline-none"
                   />
                   <button
                     onClick={handleRequestMoreInfo}
@@ -857,8 +857,8 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
               )}
 
               {/* Request Audit History */}
-              <div className="rounded-xl border border-[#D5DFD2] p-4 space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#1F2B46]/70 border-b border-[#D5DFD2]/60 pb-1.5">
+              <div className="rounded-xl border border-[#C8D6C3] p-4 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#1F2B46]/70 border-b border-[#C8D6C3] pb-1.5">
                   Request Activity History
                 </h4>
                 <div className="space-y-3">
@@ -866,7 +866,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
                     <div key={idx} className="relative pl-5 text-xs">
                       <div className="absolute left-0 top-1 h-2.5 w-2.5 rounded-full bg-[#0055A4]" />
                       {idx !== reviewRequest.timeline.length - 1 && (
-                        <div className="absolute left-[4px] top-3.5 h-full w-[1.5px] bg-[#D5DFD2]" />
+                        <div className="absolute left-[4px] top-3.5 h-full w-[1.5px] bg-[#D5E0D2]" />
                       )}
                       <div className="font-bold text-[#1F2B46]">{event.title}</div>
                       <p className="text-[11px] text-[#1F2B46]/70 leading-relaxed mt-0.5">{event.description}</p>
@@ -880,7 +880,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
             </div>
 
             {/* Drawer Footer with Co-located Action Triggers */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#D5DFD2] bg-[#F1F5EF] px-6 py-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#C8D6C3] bg-[#E3EBDD] px-6 py-4">
               <div className="flex items-center gap-2">
                 {reviewRequest.workflow === "patient_selected" ? (
                   <button
@@ -902,14 +902,14 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
 
                 <button
                   onClick={() => setDrawerMode("propose")}
-                  className="rounded-lg border border-[#D5DFD2] bg-white px-3 py-2 text-xs font-medium text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors"
+                  className="rounded-lg border border-[#C8D6C3] bg-white px-3 py-2 text-xs font-medium text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors"
                 >
                   Propose Slot
                 </button>
 
                 <button
                   onClick={() => setDrawerMode("info")}
-                  className="rounded-lg border border-[#D5DFD2] bg-white px-3 py-2 text-xs font-medium text-[#1F2B46] hover:bg-[#E4EBE0] transition-colors"
+                  className="rounded-lg border border-[#C8D6C3] bg-white px-3 py-2 text-xs font-medium text-[#1F2B46] hover:bg-[#D5E0D2] transition-colors"
                 >
                   Request Info
                 </button>
@@ -925,7 +925,7 @@ export function AppointmentRequestsView({ isGuestMode = false }: AppointmentRequ
 
                 <Link
                   href={`/dashboard/appointments/${reviewRequest.id}`}
-                  className="rounded-lg border border-[#D5DFD2] bg-white p-2 text-[#1F2B46]/70 hover:text-[#0055A4] transition-colors"
+                  className="rounded-lg border border-[#C8D6C3] bg-white p-2 text-[#1F2B46]/70 hover:text-[#0055A4] transition-colors"
                   title="Open Full Appointment Page"
                 >
                   <FileText className="h-4 w-4" />

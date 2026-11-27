@@ -166,8 +166,8 @@ export default function DocumentsDirectoryView({
         );
       case "patient-reported":
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F3F6F0] text-[#5A6372] border border-[#DDE6DA]">
-            <Clock className="w-3.5 h-3.5 text-[#727783]" />
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#5A6372] border border-[#C8D6C3]">
+            <Clock className="w-3.5 h-3.5 text-[#667085]" />
             Patient-Reported
           </span>
         );
@@ -382,11 +382,11 @@ export default function DocumentsDirectoryView({
                 >
                   <span>Dashboard</span>
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#5A6372] whitespace-nowrap">
                   Clinical &amp; Care
                 </span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   Medical Records Directory
                 </span>
@@ -424,7 +424,7 @@ export default function DocumentsDirectoryView({
 
             {/* Statistics Row */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <FileText className="w-5 h-5" />
@@ -440,7 +440,7 @@ export default function DocumentsDirectoryView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#DFEEA9] text-[#2d3a08] flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-5 h-5" />
@@ -456,7 +456,7 @@ export default function DocumentsDirectoryView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <ShieldCheck className="w-5 h-5" />
@@ -472,7 +472,7 @@ export default function DocumentsDirectoryView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#FAE193] text-[#5e4300] flex items-center justify-center shrink-0">
                     <Sparkles className="w-5 h-5" />
@@ -488,9 +488,9 @@ export default function DocumentsDirectoryView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#F3F6F0] text-[#5A6372] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#E3EBDD] text-[#5A6372] flex items-center justify-center shrink-0">
                     <FileSpreadsheet className="w-5 h-5" />
                   </div>
                   <div>
@@ -506,9 +506,9 @@ export default function DocumentsDirectoryView({
             </div>
 
             {/* Filter & Search Bar */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-4 shadow-sm mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
               <div className="relative flex-1 min-w-[280px]">
-                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#727783]" />
+                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#667085]" />
                 <Input
                   type="text"
                   placeholder="Search by document title, document ID, patient name, doctor, or department..."
@@ -523,7 +523,7 @@ export default function DocumentsDirectoryView({
                 <select
                   value={selectedTypeFilter}
                   onChange={(e) => setSelectedTypeFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Document Types</option>
                   <option value="typed-lab-report">Typed Laboratory Report</option>
@@ -539,7 +539,7 @@ export default function DocumentsDirectoryView({
                 <select
                   value={selectedStatusFilter}
                   onChange={(e) => setSelectedStatusFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Review States</option>
                   <option value="clinician-verified">Clinician-Verified</option>
@@ -549,14 +549,14 @@ export default function DocumentsDirectoryView({
                 </select>
 
                 {/* View Switcher */}
-                <div className="flex items-center rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-1">
+                <div className="flex items-center rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-1">
                   <button
                     type="button"
                     onClick={() => setViewMode("table")}
                     className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                       viewMode === "table"
                         ? "bg-white text-[#015CA9] shadow-xs"
-                        : "text-[#727783] hover:text-[#1F2B46]"
+                        : "text-[#667085] hover:text-[#1F2B46]"
                     }`}
                     title="Table View"
                   >
@@ -568,7 +568,7 @@ export default function DocumentsDirectoryView({
                     className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                       viewMode === "grid"
                         ? "bg-white text-[#015CA9] shadow-xs"
-                        : "text-[#727783] hover:text-[#1F2B46]"
+                        : "text-[#667085] hover:text-[#1F2B46]"
                     }`}
                     title="Grid View"
                   >
@@ -580,7 +580,7 @@ export default function DocumentsDirectoryView({
 
             {/* Document Content List */}
             {filteredDocuments.length === 0 ? (
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl p-12 text-center flex flex-col items-center justify-center">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl p-12 shadow-[0_3px_10px_rgba(31,43,70,0.10)] text-center flex flex-col items-center justify-center">
                 <div className="w-16 h-16 rounded-full bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center mb-4">
                   <FileText className="w-8 h-8" />
                 </div>
@@ -603,10 +603,10 @@ export default function DocumentsDirectoryView({
                 </Button>
               </div>
             ) : viewMode === "table" ? (
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-sm overflow-hidden">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm">
-                    <thead className="bg-[#FAFDF8] border-b border-[#DDE6DA] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
+                    <thead className="bg-[#E6EDE2] border-b border-[#C5D2C0] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                       <tr>
                         <th className="py-3.5 px-4">Document Details</th>
                         <th className="py-3.5 px-4">Patient</th>
@@ -617,11 +617,11 @@ export default function DocumentsDirectoryView({
                         <th className="py-3.5 px-4 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#DDE6DA]">
+                    <tbody className="divide-y divide-[#C8D6C3]">
                       {filteredDocuments.map((doc) => (
                         <tr
                           key={doc.id}
-                          className="hover:bg-[#F8FAF6] transition-colors"
+                          className="hover:bg-[#E6EDE2] transition-colors"
                         >
                           <td className="py-3.5 px-4">
                             <div className="flex items-start gap-3">
@@ -635,7 +635,7 @@ export default function DocumentsDirectoryView({
                                 >
                                   {doc.title}
                                 </Link>
-                                <span className="text-xs text-[#727783] block">
+                                <span className="text-xs text-[#667085] block">
                                   {doc.id} • {doc.fileSize}
                                 </span>
                               </div>
@@ -696,10 +696,10 @@ export default function DocumentsDirectoryView({
                 {filteredDocuments.map((doc) => (
                   <Card
                     key={doc.id}
-                    className="hover:shadow-md transition-all border-[#DDE6DA] overflow-hidden flex flex-col justify-between"
+                    className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-all overflow-hidden flex flex-col justify-between"
                   >
                     <div>
-                      <CardHeader className="p-5 pb-3 border-b border-[#F3F6F0] bg-[#FAFDF8]">
+                      <CardHeader className="p-5 pb-3 border-b border-[#C8D6C3] bg-[#E6EDE2]">
                         <div className="flex items-start justify-between gap-3">
                           <div className="flex items-center gap-3 min-w-0">
                             <div className="w-11 h-11 rounded-xl bg-[#E1F2FD] border border-[#bce0fb] text-[#015CA9] flex items-center justify-center shrink-0 shadow-xs">
@@ -709,7 +709,7 @@ export default function DocumentsDirectoryView({
                               <h3 className="font-bold text-sm text-[#1F2B46] truncate">
                                 {doc.title}
                               </h3>
-                              <span className="text-xs text-[#727783] block">
+                              <span className="text-xs text-[#667085] block">
                                 {doc.id} • {doc.fileSize}
                               </span>
                             </div>
@@ -719,21 +719,21 @@ export default function DocumentsDirectoryView({
                       </CardHeader>
 
                       <CardContent className="p-5 space-y-3.5">
-                        <div className="p-3 rounded-xl bg-[#F8FAF6] border border-[#DDE6DA] space-y-1.5 text-xs">
+                        <div className="p-3 rounded-xl bg-[#E1E9DC] border border-[#C8D6C3] space-y-1.5 text-xs">
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783]">Patient:</span>
+                            <span className="text-[#667085]">Patient:</span>
                             <span className="font-bold text-[#1F2B46]">
                               {doc.patientName} ({doc.patientId})
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783]">Doctor:</span>
+                            <span className="text-[#667085]">Doctor:</span>
                             <span className="font-medium text-[#1F2B46]">
                               {doc.attendingDoctorName}
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-[#727783]">Department:</span>
+                            <span className="text-[#667085]">Department:</span>
                             <span className="font-medium text-[#015CA9] truncate max-w-[170px]">
                               {doc.departmentName}
                             </span>
@@ -751,8 +751,8 @@ export default function DocumentsDirectoryView({
                       </CardContent>
                     </div>
 
-                    <div className="p-4 pt-3 border-t border-[#F3F6F0] bg-white flex items-center justify-between">
-                      <span className="text-[11px] text-[#727783]">
+                    <div className="p-4 pt-3 border-t border-[#C8D6C3] bg-white flex items-center justify-between">
+                      <span className="text-[11px] text-[#667085]">
                         {doc.uploadDate}
                       </span>
                       <Link href={`/dashboard/documents/${doc.id}`}>
@@ -792,7 +792,7 @@ export default function DocumentsDirectoryView({
               className={`p-6 border-2 border-dashed rounded-2xl text-center cursor-pointer transition-all ${
                 selectedFile
                   ? "border-[#015CA9] bg-[#E1F2FD]/30"
-                  : "border-[#DDE6DA] hover:border-[#015CA9] bg-[#F8FAF6]"
+                  : "border-[#C8D6C3] hover:border-[#015CA9] bg-[#E1E9DC]"
               }`}
             >
               <input
@@ -884,7 +884,7 @@ export default function DocumentsDirectoryView({
                       type: e.target.value as DocumentType,
                     })
                   }
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   <option value="typed-lab-report">
                     Typed Laboratory Report
@@ -916,7 +916,7 @@ export default function DocumentsDirectoryView({
                       patientName: docMatch ? docMatch.patientName : "Patient",
                     });
                   }}
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   <option value="PT-89402">Eleanor Vance (PT-89402)</option>
                   <option value="PT-89415">Marcus Chen (PT-89415)</option>
@@ -937,7 +937,7 @@ export default function DocumentsDirectoryView({
                       attendingDoctor: e.target.value,
                     })
                   }
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   <option value="Dr. Chen Wei">Dr. Chen Wei (Cardiology)</option>
                   <option value="Dr. Rajeshwar Kulkarni">
@@ -964,7 +964,7 @@ export default function DocumentsDirectoryView({
                 onChange={(e) =>
                   setUploadForm({ ...uploadForm, notes: e.target.value })
                 }
-                className="w-full px-3 py-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
+                className="w-full px-3 py-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
               />
             </div>
 

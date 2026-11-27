@@ -232,7 +232,7 @@ export default function TasksManagementView({
         );
       case "low":
         return (
-          <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F3F6F0] text-[#727783] border border-[#DDE6DA]">
+          <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#E3EBDD] text-[#667085] border border-[#C8D6C3]">
             Low
           </span>
         );
@@ -304,9 +304,9 @@ export default function TasksManagementView({
                 >
                   <span>Dashboard</span>
                 </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#5A6372] whitespace-nowrap">Operations</span>
-                <ChevronRight className="w-3.5 h-3.5 text-[#727783] shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#667085] shrink-0" />
                 <span className="text-[#015CA9] font-semibold whitespace-nowrap">
                   Staff Task Management
                 </span>
@@ -343,7 +343,7 @@ export default function TasksManagementView({
 
             {/* Statistics KPI Row */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#E1F2FD] text-[#015CA9] flex items-center justify-center shrink-0">
                     <CheckSquare className="w-5 h-5" />
@@ -359,7 +359,7 @@ export default function TasksManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#FAE193] text-[#5e4300] flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
@@ -375,7 +375,7 @@ export default function TasksManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#ffdad6] text-[#ba1a1a] flex items-center justify-center shrink-0">
                     <AlertTriangle className="w-5 h-5" />
@@ -391,7 +391,7 @@ export default function TasksManagementView({
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border-[#DDE6DA] shadow-xs">
+              <Card className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)]">
                 <CardContent className="p-4 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#DFEEA9] text-[#2d3a08] flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-5 h-5" />
@@ -409,9 +409,9 @@ export default function TasksManagementView({
             </div>
 
             {/* Filter & Search Bar */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-4 shadow-sm mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-4 shadow-[0_3px_10px_rgba(31,43,70,0.10)] mb-6 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
               <div className="relative flex-1 min-w-[280px]">
-                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#727783]" />
+                <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#667085]" />
                 <Input
                   type="text"
                   placeholder="Search tasks by title, patient, assignee, or task ID..."
@@ -425,7 +425,7 @@ export default function TasksManagementView({
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Statuses</option>
                   <option value="pending">Pending</option>
@@ -436,7 +436,7 @@ export default function TasksManagementView({
                 <select
                   value={priorityFilter}
                   onChange={(e) => setPriorityFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -448,7 +448,7 @@ export default function TasksManagementView({
                 <select
                   value={roleFilter}
                   onChange={(e) => setRoleFilter(e.target.value)}
-                  className="h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
+                  className="h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-sm text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none cursor-pointer"
                 >
                   <option value="all">All Roles</option>
                   <option value="Doctor">Doctor</option>
@@ -458,14 +458,14 @@ export default function TasksManagementView({
                 </select>
 
                 {/* View Mode Toggle */}
-                <div className="flex items-center rounded-xl border border-[#DDE6DA] bg-[#F8FAF6] p-1">
+                <div className="flex items-center rounded-xl border border-[#C8D6C3] bg-[#E1E9DC] p-1">
                   <button
                     type="button"
                     onClick={() => setViewMode("board")}
                     className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                       viewMode === "board"
                         ? "bg-white text-[#015CA9] shadow-xs"
-                        : "text-[#727783] hover:text-[#1F2B46]"
+                        : "text-[#667085] hover:text-[#1F2B46]"
                     }`}
                     title="Kanban Board View"
                   >
@@ -477,7 +477,7 @@ export default function TasksManagementView({
                     className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                       viewMode === "list"
                         ? "bg-white text-[#015CA9] shadow-xs"
-                        : "text-[#727783] hover:text-[#1F2B46]"
+                        : "text-[#667085] hover:text-[#1F2B46]"
                     }`}
                     title="List View"
                   >
@@ -489,7 +489,7 @@ export default function TasksManagementView({
 
             {/* Task Content: Board vs List */}
             {filteredTasks.length === 0 ? (
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl p-12 text-center flex flex-col items-center justify-center">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl p-12 shadow-[0_3px_10px_rgba(31,43,70,0.10)] text-center flex flex-col items-center justify-center">
                 <CheckSquare className="w-12 h-12 text-[#015CA9] mb-3" />
                 <h3 className="font-bold text-base text-[#1F2B46]">No tasks found</h3>
                 <p className="text-xs text-[#5A6372] max-w-sm mt-1 mb-4">
@@ -513,14 +513,14 @@ export default function TasksManagementView({
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Column 1: PENDING */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-white border border-[#DDE6DA] rounded-xl shadow-xs">
+                  <div className="flex items-center justify-between p-3 bg-white border border-[#C8D6C3] rounded-xl shadow-xs">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#FAE193]" />
                       <span className="font-bold text-sm text-[#1F2B46]">
                         Pending Action
                       </span>
                     </div>
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#F3F6F0] text-[#5A6372]">
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#E3EBDD] text-[#5A6372]">
                       {filteredTasks.filter((t) => t.status === "pending").length}
                     </span>
                   </div>
@@ -531,7 +531,7 @@ export default function TasksManagementView({
                       .map((task) => (
                         <Card
                           key={task.id}
-                          className="hover:shadow-md transition-all border-[#DDE6DA]"
+                          className="hover:shadow-[0_6px_16px_rgba(31,43,70,0.14)] transition-all"
                         >
                           <CardContent className="p-4 space-y-3 text-xs">
                             <div className="flex items-start justify-between gap-2">
@@ -550,15 +550,15 @@ export default function TasksManagementView({
                             </p>
 
                             {task.patientName && (
-                              <div className="p-2 rounded-lg bg-[#F8FAF6] border border-[#DDE6DA] flex items-center justify-between text-[11px]">
-                                <span className="text-[#727783]">Patient:</span>
+                              <div className="p-2 rounded-lg bg-[#E1E9DC] border border-[#C8D6C3] flex items-center justify-between text-[11px]">
+                                <span className="text-[#667085]">Patient:</span>
                                 <span className="font-bold text-[#1F2B46]">
                                   {task.patientName} ({task.patientId})
                                 </span>
                               </div>
                             )}
 
-                            <div className="pt-2 border-t border-[#F3F6F0] flex items-center justify-between text-[11px] text-[#5A6372]">
+                            <div className="pt-2 border-t border-[#C8D6C3] flex items-center justify-between text-[11px] text-[#5A6372]">
                               <div className="flex items-center gap-1.5">
                                 <User className="w-3.5 h-3.5 text-[#015CA9]" />
                                 <span className="font-medium text-[#1F2B46]">
@@ -596,14 +596,14 @@ export default function TasksManagementView({
 
                 {/* Column 2: IN PROGRESS */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-white border border-[#DDE6DA] rounded-xl shadow-xs">
+                  <div className="flex items-center justify-between p-3 bg-white border border-[#C8D6C3] rounded-xl shadow-xs">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#015CA9]" />
                       <span className="font-bold text-sm text-[#1F2B46]">
                         In Progress
                       </span>
                     </div>
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#F3F6F0] text-[#5A6372]">
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#E3EBDD] text-[#5A6372]">
                       {filteredTasks.filter((t) => t.status === "in_progress").length}
                     </span>
                   </div>
@@ -614,7 +614,7 @@ export default function TasksManagementView({
                       .map((task) => (
                         <Card
                           key={task.id}
-                          className="hover:shadow-md transition-all border-[#015CA9]/40 bg-[#FAFDF8]"
+                          className="hover:shadow-md transition-all border-[#015CA9]/40 bg-[#E6EDE2]"
                         >
                           <CardContent className="p-4 space-y-3 text-xs">
                             <div className="flex items-start justify-between gap-2">
@@ -633,15 +633,15 @@ export default function TasksManagementView({
                             </p>
 
                             {task.patientName && (
-                              <div className="p-2 rounded-lg bg-white border border-[#DDE6DA] flex items-center justify-between text-[11px]">
-                                <span className="text-[#727783]">Patient:</span>
+                              <div className="p-2 rounded-lg bg-white border border-[#C8D6C3] flex items-center justify-between text-[11px]">
+                                <span className="text-[#667085]">Patient:</span>
                                 <span className="font-bold text-[#1F2B46]">
                                   {task.patientName} ({task.patientId})
                                 </span>
                               </div>
                             )}
 
-                            <div className="pt-2 border-t border-[#DDE6DA]/60 flex items-center justify-between text-[11px] text-[#5A6372]">
+                            <div className="pt-2 border-t border-[#C8D6C3] flex items-center justify-between text-[11px] text-[#5A6372]">
                               <div className="flex items-center gap-1.5">
                                 <User className="w-3.5 h-3.5 text-[#015CA9]" />
                                 <span className="font-medium text-[#1F2B46]">
@@ -670,14 +670,14 @@ export default function TasksManagementView({
 
                 {/* Column 3: COMPLETED */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-white border border-[#DDE6DA] rounded-xl shadow-xs">
+                  <div className="flex items-center justify-between p-3 bg-white border border-[#C8D6C3] rounded-xl shadow-xs">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#526524]" />
                       <span className="font-bold text-sm text-[#1F2B46]">
                         Completed Today
                       </span>
                     </div>
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#F3F6F0] text-[#5A6372]">
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#E3EBDD] text-[#5A6372]">
                       {filteredTasks.filter((t) => t.status === "completed").length}
                     </span>
                   </div>
@@ -688,7 +688,7 @@ export default function TasksManagementView({
                       .map((task) => (
                         <Card
                           key={task.id}
-                          className="border-[#c5dd80] bg-[#FAFDF8] opacity-85"
+                          className="border-[#c5dd80] bg-[#E6EDE2] opacity-85"
                         >
                           <CardContent className="p-4 space-y-3 text-xs">
                             <div className="flex items-start justify-between gap-2">
@@ -702,11 +702,11 @@ export default function TasksManagementView({
                               {task.title}
                             </h4>
 
-                            <p className="text-[#727783] line-clamp-1">
+                            <p className="text-[#667085] line-clamp-1">
                               {task.description}
                             </p>
 
-                            <div className="pt-2 border-t border-[#DDE6DA] flex items-center justify-between text-[11px] text-[#5A6372]">
+                            <div className="pt-2 border-t border-[#C8D6C3] flex items-center justify-between text-[11px] text-[#5A6372]">
                               <span>Done by {task.assignedToName}</span>
                               <span className="font-bold text-[#526524]">
                                 {task.completedAt || "Finished"}
@@ -720,10 +720,10 @@ export default function TasksManagementView({
               </div>
             ) : (
               /* LIST / TABLE VIEW */
-              <div className="bg-white border border-[#DDE6DA] rounded-2xl shadow-sm overflow-hidden">
+              <div className="bg-white border border-[#C5D2C0] rounded-2xl shadow-[0_3px_10px_rgba(31,43,70,0.10)] overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm">
-                    <thead className="bg-[#FAFDF8] border-b border-[#DDE6DA] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
+                    <thead className="bg-[#E6EDE2] border-b border-[#C5D2C0] text-xs font-semibold text-[#5A6372] uppercase tracking-wider">
                       <tr>
                         <th className="py-3.5 px-4">Task Details</th>
                         <th className="py-3.5 px-4">Category</th>
@@ -734,11 +734,11 @@ export default function TasksManagementView({
                         <th className="py-3.5 px-4 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#DDE6DA]">
+                    <tbody className="divide-y divide-[#C8D6C3]">
                       {filteredTasks.map((task) => (
                         <tr
                           key={task.id}
-                          className="hover:bg-[#F8FAF6] transition-colors"
+                          className="hover:bg-[#E6EDE2] transition-colors"
                         >
                           <td className="py-3.5 px-4">
                             <div className="min-w-0">
@@ -853,7 +853,7 @@ export default function TasksManagementView({
                 onChange={(e) =>
                   setTaskForm({ ...taskForm, description: e.target.value })
                 }
-                className="w-full px-3 py-2 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
+                className="w-full px-3 py-2 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] focus:ring-2 focus:ring-[#015CA9] outline-none"
               />
               {formErrors.description && (
                 <span className="text-[#ba1a1a]">{formErrors.description}</span>
@@ -871,7 +871,7 @@ export default function TasksManagementView({
                       category: e.target.value as StaffTask["category"],
                     })
                   }
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   <option value="Patient Follow-up">Patient Follow-up</option>
                   <option value="Clinical Review">Clinical Review</option>
@@ -891,7 +891,7 @@ export default function TasksManagementView({
                       priority: e.target.value as TaskPriority,
                     })
                   }
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   <option value="urgent">Urgent</option>
                   <option value="high">High</option>
@@ -919,7 +919,7 @@ export default function TasksManagementView({
                       assignedToRole: member ? member.role : "Nursing Staff",
                     });
                   }}
-                  className="w-full h-10 px-3 bg-[#F8FAF6] border border-[#DDE6DA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
+                  className="w-full h-10 px-3 bg-[#F3F7F2] border border-[#AEBEAA] rounded-xl text-xs text-[#1F2B46] font-medium focus:ring-2 focus:ring-[#015CA9] outline-none"
                 >
                   {INITIAL_STAFF_MEMBERS.map((m) => (
                     <option key={m.id} value={m.name}>

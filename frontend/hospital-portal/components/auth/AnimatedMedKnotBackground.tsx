@@ -3,25 +3,21 @@ import React from 'react';
 /**
  * AnimatedMedKnotBackground
  *
- * Full-viewport flowing silk gradient background using official MedKnot CI colors:
- *   - Fresh Blue     (#015CA9)
- *   - Light Blue     (#E1F2FD)
- *   - Sage Green     (#A3C8B4)
- *   - Creamy Avocado (#DFEEA9)
- *   - Soft Yellow    (#FAE193)
- *   - Soft White     (#F8FAF6)
+ * Full-viewport flowing organic gradient background for all authentication pages
+ * using the enriched MedKnot CI palette:
+ *   - Deep Blue          (#0C426D)
+ *   - Medium Blue        (#397EAA)
+ *   - Powder Blue        (#A9CDE7)
+ *   - Sage Green         (#B5D0A9)
+ *   - Soft Green         (#C9DFC5)
+ *   - Warm Pastel Yellow (#E8D99A)
  *
- * Visual composition mirrors the reference silk waves:
- *   - Luminous Soft White & Light Blue upper-left canvas for dark-navy text contrast
- *   - Flowing Fresh Blue → Light Blue liquid wave sweeping from bottom-left (20s, L→R)
- *   - Counter-flowing Sage Green → Creamy Avocado wave across center & upper-right (26s, R→L)
- *   - Warm Creamy Avocado → Soft Yellow silk glow beneath & right of the login card (22s)
- *   - Translucent Soft White / Light Blue silk ribbon folds adding organic depth (18s / 29s)
- *
- * Performance & accessibility:
- *   - Pure CSS GPU-composited translate3d / scale / rotate keyframes (zero React re-renders)
- *   - Static presentation when prefers-reduced-motion: reduce is active
- *   - Fixed full-screen z-0 layer with overflow: hidden and pointer-events: none
+ * Visual composition:
+ *   - Rich Deep Blue (#0C426D) anchored in the lower-left and lower region for depth
+ *   - Medium Blue (#397EAA) transitioning smoothly into Powder Blue (#A9CDE7)
+ *   - Powder Blue blending organically into Sage Green (#B5D0A9) & Soft Green (#C9DFC5)
+ *   - Warm Pastel Yellow (#E8D99A) illuminating the right and upper-right areas
+ *   - Zero harsh stripes, zero washed-out white base; pure CSS compositor animations
  */
 export default function AnimatedMedKnotBackground() {
   return (
@@ -33,110 +29,110 @@ export default function AnimatedMedKnotBackground() {
         zIndex: 0,
         overflow: 'hidden',
         pointerEvents: 'none',
-        backgroundColor: '#F8FAF6',
+        backgroundColor: '#A9CDE7',
       }}
     >
-      {/* ── Base layer: Soft White → Light Blue luminous silk backdrop ── */}
+      {/* ── Base layer: Continuous Deep Blue → Powder Blue → Sage → Pastel Yellow field ── */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(125deg, #F8FAF6 0%, #E1F2FD 42%, #F8FAF6 72%, #E1F2FD 100%)',
+            'radial-gradient(115% 105% at 15% 88%, #0C426D 0%, #397EAA 28%, #A9CDE7 56%, #B5D0A9 80%, #E8D99A 100%)',
         }}
       />
 
-      {/* ── Layer 1: Fresh Blue → Light Blue bottom-left wave, flows left-to-right (20s) ── */}
+      {/* ── Layer 1: Deep Blue → Medium Blue bottom-left wave for rich lower depth (20s) ── */}
       <div
         className="mk-anim-blue"
         style={{
           position: 'absolute',
-          bottom: '-26%',
-          left: '-18%',
-          width: '78vw',
-          height: '82vh',
+          bottom: '-24%',
+          left: '-16%',
+          width: '84vw',
+          height: '84vh',
           borderRadius: '48% 52% 45% 55%',
           background:
-            'radial-gradient(64% 58% at 28% 68%, #015CA9 0%, rgba(1,92,169,0.78) 28%, rgba(225,242,253,0.82) 64%, transparent 88%)',
-          filter: 'blur(38px)',
+            'radial-gradient(65% 60% at 28% 72%, rgba(12, 66, 109, 0.96) 0%, rgba(12, 66, 109, 0.84) 24%, rgba(57, 126, 170, 0.78) 52%, rgba(169, 205, 231, 0.48) 76%, transparent 94%)',
+          filter: 'blur(44px)',
         }}
       />
 
-      {/* ── Layer 2: Light Blue → Sage Green counter-wave, moves right-to-left (26s) ── */}
-      <div
-        className="mk-anim-green"
-        style={{
-          position: 'absolute',
-          top: '-12%',
-          right: '-14%',
-          width: '82vw',
-          height: '95vh',
-          borderRadius: '54% 46% 52% 48%',
-          background:
-            'radial-gradient(60% 56% at 56% 42%, rgba(163,200,180,0.82) 0%, rgba(225,242,253,0.88) 44%, rgba(223,238,169,0.5) 70%, transparent 90%)',
-          filter: 'blur(42px)',
-        }}
-      />
-
-      {/* ── Layer 3: Creamy Avocado → Soft Yellow organic ribbon, bottom-center to right (22s) ── */}
-      <div
-        className="mk-anim-yellow"
-        style={{
-          position: 'absolute',
-          bottom: '-22%',
-          left: '26%',
-          width: '76vw',
-          height: '78vh',
-          borderRadius: '44% 56% 50% 50%',
-          background:
-            'radial-gradient(62% 54% at 48% 58%, rgba(223,238,169,0.92) 0%, rgba(250,225,147,0.82) 36%, rgba(163,200,180,0.48) 66%, transparent 88%)',
-          filter: 'blur(36px)',
-        }}
-      />
-
-      {/* ── Layer 4: Light Blue secondary wave — mid-left diagonal shift (29s) ── */}
+      {/* ── Layer 2: Medium Blue → Powder Blue lower-center orbital bridge (29s) ── */}
       <div
         className="mk-anim-ambient"
         style={{
           position: 'absolute',
-          top: '14%',
-          left: '-10%',
-          width: '68vw',
-          height: '72vh',
+          bottom: '-18%',
+          left: '16%',
+          width: '76vw',
+          height: '76vh',
           borderRadius: '50%',
           background:
-            'radial-gradient(58% 52% at 40% 52%, rgba(225,242,253,0.95) 0%, rgba(1,92,169,0.34) 46%, rgba(163,200,180,0.28) 72%, transparent 90%)',
-          filter: 'blur(40px)',
+            'radial-gradient(62% 56% at 38% 68%, rgba(12, 66, 109, 0.62) 0%, rgba(57, 126, 170, 0.72) 34%, rgba(169, 205, 231, 0.72) 64%, transparent 92%)',
+          filter: 'blur(48px)',
         }}
       />
 
-      {/* ── Layer 5: Luminous Soft White silk ribbon fold for signature liquid sheen (18s) ── */}
+      {/* ── Layer 3: Powder Blue → Sage Green → Soft Green center transition (26s) ── */}
+      <div
+        className="mk-anim-green"
+        style={{
+          position: 'absolute',
+          top: '-14%',
+          left: '12%',
+          width: '82vw',
+          height: '88vh',
+          borderRadius: '54% 46% 52% 48%',
+          background:
+            'radial-gradient(62% 58% at 46% 42%, rgba(169, 205, 231, 0.82) 0%, rgba(181, 208, 169, 0.84) 44%, rgba(201, 223, 197, 0.66) 72%, transparent 92%)',
+          filter: 'blur(46px)',
+        }}
+      />
+
+      {/* ── Layer 4: Warm Pastel Yellow → Soft Green upper-right & right glow (22s) ── */}
+      <div
+        className="mk-anim-yellow"
+        style={{
+          position: 'absolute',
+          top: '-12%',
+          right: '-14%',
+          width: '78vw',
+          height: '88vh',
+          borderRadius: '44% 56% 50% 50%',
+          background:
+            'radial-gradient(64% 58% at 62% 36%, rgba(232, 217, 154, 0.88) 0%, rgba(201, 223, 197, 0.78) 42%, rgba(181, 208, 169, 0.56) 68%, transparent 92%)',
+          filter: 'blur(44px)',
+        }}
+      />
+
+      {/* ── Layer 5: Soft Green & Pastel Yellow diagonal silk shimmer on lower-right (18s) ── */}
       <div
         className="mk-anim-silk"
         style={{
           position: 'absolute',
-          top: '-18%',
-          left: '-15%',
-          width: '130vw',
-          height: '90vh',
+          bottom: '-10%',
+          right: '-8%',
+          width: '90vw',
+          height: '78vh',
           borderRadius: '45% 55% 60% 40%',
           background:
-            'linear-gradient(118deg, rgba(248,250,246,0.92) 8%, rgba(225,242,253,0.72) 32%, rgba(248,250,246,0.88) 50%, rgba(223,238,169,0.42) 68%, rgba(250,225,147,0.38) 84%, transparent 96%)',
-          filter: 'blur(30px)',
+            'radial-gradient(60% 54% at 68% 64%, rgba(232, 217, 154, 0.52) 0%, rgba(181, 208, 169, 0.58) 38%, rgba(169, 205, 231, 0.42) 70%, transparent 94%)',
+          filter: 'blur(42px)',
         }}
       />
 
-      {/* ── Layer 6: Soft White top-left readability mist behind hero typography ── */}
+      {/* ── Layer 6: Upper-left Powder Blue → Soft Green luminance without harsh whiteout ── */}
       <div
         style={{
           position: 'absolute',
-          top: '-8%',
-          left: '-6%',
-          width: '58vw',
-          height: '62vh',
+          top: '-12%',
+          left: '-10%',
+          width: '66vw',
+          height: '66vh',
           background:
-            'radial-gradient(62% 58% at 32% 32%, rgba(248,250,246,0.90) 0%, rgba(248,250,246,0.45) 55%, transparent 86%)',
-          filter: 'blur(32px)',
+            'radial-gradient(62% 58% at 32% 34%, rgba(169, 205, 231, 0.78) 0%, rgba(201, 223, 197, 0.46) 52%, transparent 88%)',
+          filter: 'blur(46px)',
         }}
       />
     </div>

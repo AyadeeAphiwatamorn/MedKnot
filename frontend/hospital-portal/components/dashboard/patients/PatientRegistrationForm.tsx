@@ -146,7 +146,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
           </nav>
 
           {/* Heading Bar */}
-          <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-2.5">
                 <span className="w-10 h-10 rounded-xl bg-[#E7F0FF] text-[#0055A4] flex items-center justify-center shrink-0">
@@ -162,7 +162,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
             </div>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#EDF2E9] text-[#2D382B] border border-[#DDE6DA]">
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#E3EBDD] text-[#2D382B] border border-[#C8D6C3]">
                 <span className="material-symbols-outlined text-xs text-[#0055A4]">domain</span>
                 <span>Facility Isolated Record</span>
               </span>
@@ -170,7 +170,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
           </div>
 
           {/* Compliance & Data Isolation Notice */}
-          <div className="p-4 bg-[#F1F5EF] border border-[#D5DFD2] rounded-xl text-xs text-[#5A6372] flex items-start gap-3">
+          <div className="p-4 bg-[#E3EBDD] border border-[#C8D6C3] rounded-xl text-xs text-[#5A6372] flex items-start gap-3">
             <span className="material-symbols-outlined text-[#0055A4] text-lg shrink-0 mt-0.5">info</span>
             <div className="leading-relaxed">
               <span className="font-semibold text-[#1F2B46]">Facility Scope Notice:</span> This patient record will be
@@ -183,8 +183,8 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
           {/* Registration Form */}
           <form onSubmit={handleOpenConfirm} className="space-y-6">
             {/* Section A: Personal Information */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 border-b border-[#DDE6DA] pb-3">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+              <div className="flex items-center gap-2.5 border-b border-[#C8D6C3] pb-3">
                 <span className="material-symbols-outlined text-[#0055A4]">badge</span>
                 <h2 className="text-sm font-bold text-[#1F2B46]">Personal Information</h2>
               </div>
@@ -201,7 +201,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                     placeholder="e.g. Eleanor"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.firstName ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.firstName ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.firstName && <p className="text-xs text-red-600 mt-1">{errors.firstName}</p>}
@@ -218,7 +218,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                     placeholder="e.g. Vance"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.lastName ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.lastName ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.lastName && <p className="text-xs text-red-600 mt-1">{errors.lastName}</p>}
@@ -234,7 +234,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     value={formData.dateOfBirth}
                     onChange={(e) => setFormData({ ...formData, dateOfBirth: e.target.value })}
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.dateOfBirth ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.dateOfBirth ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.dateOfBirth && <p className="text-xs text-red-600 mt-1">{errors.dateOfBirth}</p>}
@@ -248,7 +248,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                   <select
                     value={formData.gender}
                     onChange={(e) => setFormData({ ...formData, gender: e.target.value as PatientGender })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                   >
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
@@ -259,12 +259,12 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                 {/* Blood Group */}
                 <div>
                   <label className="block text-xs font-semibold text-[#1F2B46] mb-1">
-                    Blood Group <span className="text-xs text-[#727783] font-normal">(Optional)</span>
+                    Blood Group <span className="text-xs text-[#667085] font-normal">(Optional)</span>
                   </label>
                   <select
                     value={formData.bloodGroup}
                     onChange={(e) => setFormData({ ...formData, bloodGroup: e.target.value as BloodGroup })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                   >
                     <option value="Unknown">Unknown / Pending Lab</option>
                     <option value="A+">A+</option>
@@ -281,10 +281,10 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                 {/* Profile Photo stub */}
                 <div>
                   <label className="block text-xs font-semibold text-[#1F2B46] mb-1">
-                    Patient Photo Identification <span className="text-xs text-[#727783] font-normal">(Optional)</span>
+                    Patient Photo Identification <span className="text-xs text-[#667085] font-normal">(Optional)</span>
                   </label>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#F3F6F0] border border-[#DDE6DA] flex items-center justify-center text-[#727783]">
+                    <div className="w-10 h-10 rounded-xl bg-[#E3EBDD] border border-[#C8D6C3] flex items-center justify-center text-[#667085]">
                       <span className="material-symbols-outlined text-xl">account_circle</span>
                     </div>
                     <span className="text-xs text-[#5A6372]">Webcam capture available during OPD check-in station</span>
@@ -294,8 +294,8 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
             </div>
 
             {/* Section B: Contact Information */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 border-b border-[#DDE6DA] pb-3">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+              <div className="flex items-center gap-2.5 border-b border-[#C8D6C3] pb-3">
                 <span className="material-symbols-outlined text-[#0055A4]">contact_phone</span>
                 <h2 className="text-sm font-bold text-[#1F2B46]">Contact Information</h2>
               </div>
@@ -312,7 +312,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                     placeholder="+91 98200 12345"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.phoneNumber ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.phoneNumber ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.phoneNumber && <p className="text-xs text-red-600 mt-1">{errors.phoneNumber}</p>}
@@ -321,7 +321,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                 {/* Email Address */}
                 <div>
                   <label className="block text-xs font-semibold text-[#1F2B46] mb-1">
-                    Email Address <span className="text-xs text-[#727783] font-normal">(Optional)</span>
+                    Email Address <span className="text-xs text-[#667085] font-normal">(Optional)</span>
                   </label>
                   <input
                     type="email"
@@ -329,7 +329,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="patient@example.com"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.email ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.email ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email}</p>}
@@ -346,7 +346,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                     placeholder="Flat number, building, street, landmark"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.address ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.address ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.address && <p className="text-xs text-red-600 mt-1">{errors.address}</p>}
@@ -363,7 +363,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     placeholder="Mumbai"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.city ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.city ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.city && <p className="text-xs text-red-600 mt-1">{errors.city}</p>}
@@ -379,7 +379,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     value={formData.state}
                     onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                     placeholder="Maharashtra"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                   />
                 </div>
 
@@ -394,7 +394,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
                     placeholder="400050"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.postalCode ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.postalCode ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.postalCode && <p className="text-xs text-red-600 mt-1">{errors.postalCode}</p>}
@@ -403,8 +403,8 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
             </div>
 
             {/* Section C: Emergency Contact */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 border-b border-[#DDE6DA] pb-3">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+              <div className="flex items-center gap-2.5 border-b border-[#C8D6C3] pb-3">
                 <span className="material-symbols-outlined text-[#0055A4]">emergency</span>
                 <h2 className="text-sm font-bold text-[#1F2B46]">Emergency Contact</h2>
               </div>
@@ -421,7 +421,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, emergencyContactName: e.target.value })}
                     placeholder="e.g. Arthur Vance"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.emergencyContactName ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.emergencyContactName ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.emergencyContactName && (
@@ -437,7 +437,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                   <select
                     value={formData.emergencyContactRelation}
                     onChange={(e) => setFormData({ ...formData, emergencyContactRelation: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                   >
                     <option value="Spouse">Spouse</option>
                     <option value="Parent">Parent</option>
@@ -459,7 +459,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     onChange={(e) => setFormData({ ...formData, emergencyContactPhone: e.target.value })}
                     placeholder="+91 98200 99999"
                     className={`w-full px-3.5 py-2.5 rounded-xl border text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4] transition-all ${
-                      errors.emergencyContactPhone ? "border-red-500 ring-1 ring-red-200" : "border-[#DDE6DA]"
+                      errors.emergencyContactPhone ? "border-red-500 ring-1 ring-red-200" : "border-[#AEBEAA]"
                     }`}
                   />
                   {errors.emergencyContactPhone && (
@@ -470,8 +470,8 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
             </div>
 
             {/* Section D: Additional Information */}
-            <div className="bg-white border border-[#DDE6DA] rounded-2xl p-6 shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 border-b border-[#DDE6DA] pb-3">
+            <div className="bg-white border border-[#C5D2C0] rounded-2xl p-6 shadow-[0_3px_10px_rgba(31,43,70,0.10)] space-y-4">
+              <div className="flex items-center gap-2.5 border-b border-[#C8D6C3] pb-3">
                 <span className="material-symbols-outlined text-[#0055A4]">clinical_notes</span>
                 <h2 className="text-sm font-bold text-[#1F2B46]">Clinical Notes & Allergies (Optional)</h2>
               </div>
@@ -480,42 +480,42 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                 {/* Known Allergies */}
                 <div>
                   <label className="block text-xs font-semibold text-[#1F2B46] mb-1">
-                    Known Allergies <span className="text-xs text-[#727783] font-normal">(Comma-separated)</span>
+                    Known Allergies <span className="text-xs text-[#667085] font-normal">(Comma-separated)</span>
                   </label>
                   <input
                     type="text"
                     value={formData.knownAllergies}
                     onChange={(e) => setFormData({ ...formData, knownAllergies: e.target.value })}
                     placeholder="e.g. Penicillin, Peanuts, Latex"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                   />
                 </div>
 
                 {/* Medical Conditions */}
                 <div>
                   <label className="block text-xs font-semibold text-[#1F2B46] mb-1">
-                    Existing Medical Conditions <span className="text-xs text-[#727783] font-normal">(Comma-separated)</span>
+                    Existing Medical Conditions <span className="text-xs text-[#667085] font-normal">(Comma-separated)</span>
                   </label>
                   <input
                     type="text"
                     value={formData.medicalConditions}
                     onChange={(e) => setFormData({ ...formData, medicalConditions: e.target.value })}
                     placeholder="e.g. Hypertension, Type 2 Diabetes, Asthma"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                   />
                 </div>
 
                 {/* Notes */}
                 <div>
                   <label className="block text-xs font-semibold text-[#1F2B46] mb-1">
-                    Intake & Administrative Notes <span className="text-xs text-[#727783] font-normal">(Optional)</span>
+                    Intake & Administrative Notes <span className="text-xs text-[#667085] font-normal">(Optional)</span>
                   </label>
                   <textarea
                     rows={3}
                     value={formData.registrationNotes}
                     onChange={(e) => setFormData({ ...formData, registrationNotes: e.target.value })}
                     placeholder="Add special instructions, admission notes, or referral hospital references..."
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#DDE6DA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-[#AEBEAA] text-sm bg-white focus:outline-hidden focus:ring-2 focus:ring-[#0055A4]"
                   />
                 </div>
               </div>
@@ -525,7 +525,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
             <div className="flex items-center justify-end gap-3 pt-2">
               <Link
                 href="/dashboard/patients"
-                className="px-5 py-2.5 rounded-xl border border-[#DDE6DA] bg-white hover:bg-[#F3F6F0] text-xs font-semibold text-[#5A6372] transition-colors"
+                className="px-5 py-2.5 rounded-xl border border-[#C8D6C3] bg-white hover:bg-[#E6EDE2] text-xs font-semibold text-[#5A6372] transition-colors"
               >
                 Cancel
               </Link>
@@ -541,8 +541,8 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
           {/* Confirmation Modal */}
           {isConfirmModalOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in">
-              <div className="bg-white rounded-2xl border border-[#DDE6DA] shadow-xl w-full max-w-md overflow-hidden">
-                <div className="px-6 py-4 border-b border-[#DDE6DA] flex items-center justify-between bg-[#F3F6F0]">
+              <div className="bg-white rounded-2xl border border-[#C8D6C3] shadow-xl w-full max-w-md overflow-hidden">
+                <div className="px-6 py-4 border-b border-[#C8D6C3] flex items-center justify-between bg-[#E3EBDD]">
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[#0055A4]">how_to_reg</span>
                     <h3 className="text-base font-bold text-[#1F2B46]">Confirm Patient Intake</h3>
@@ -565,7 +565,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                     under St. Jude Medical Center (Campus North). A facility patient record will be generated.
                   </p>
 
-                  <div className="p-3 bg-[#F9FBF8] border border-[#DDE6DA] rounded-xl text-xs space-y-1.5">
+                  <div className="p-3 bg-[#E6EDE2] border border-[#C8D6C3] rounded-xl text-xs space-y-1.5">
                     <div className="flex justify-between">
                       <span className="text-[#5A6372]">Name:</span>
                       <span className="font-semibold text-[#1F2B46]">
@@ -595,7 +595,7 @@ export default function PatientRegistrationForm({ initialUser }: PatientRegistra
                       type="button"
                       disabled={isSubmitting}
                       onClick={() => setIsConfirmModalOpen(false)}
-                      className="px-4 py-2 rounded-xl border border-[#DDE6DA] text-xs font-semibold text-[#5A6372] hover:bg-[#F3F6F0]"
+                      className="px-4 py-2 rounded-xl border border-[#C8D6C3] text-xs font-semibold text-[#5A6372] hover:bg-[#E6EDE2]"
                     >
                       Back to Edit
                     </button>
